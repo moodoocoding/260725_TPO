@@ -1,0 +1,212 @@
+export type Slot = "top" | "bottom" | "shoes" | "accessory";
+
+export type ClothingItem = {
+  id: string;
+  name: string;
+  slot: Slot;
+  color: string;
+  accent: string;
+  symbol: string;
+  tags: string[];
+  note: string;
+};
+
+export const SLOT_LABELS: Record<Slot, string> = {
+  top: "겉옷",
+  bottom: "하의",
+  shoes: "신발",
+  accessory: "소품",
+};
+
+export const CLOTHING_ITEMS: ClothingItem[] = [
+  {
+    id: "yellow-raincoat",
+    name: "노란 우비",
+    slot: "top",
+    color: "#ffd54f",
+    accent: "#f3a712",
+    symbol: "우비",
+    tags: ["waterproof", "visible", "coverage", "practical"],
+    note: "비를 막고 어두운 길에서도 잘 보여요.",
+  },
+  {
+    id: "mint-windbreaker",
+    name: "민트 바람막이",
+    slot: "top",
+    color: "#73d8c7",
+    accent: "#2b9c91",
+    symbol: "재킷",
+    tags: ["water-resistant", "visible", "active", "practical"],
+    note: "가벼운 비와 바람을 막고 움직이기 편해요.",
+  },
+  {
+    id: "navy-cardigan",
+    name: "남색 가디건",
+    slot: "top",
+    color: "#263a5b",
+    accent: "#17243b",
+    symbol: "가디건",
+    tags: ["warm", "dark", "practical"],
+    note: "따뜻하지만 빗물에는 쉽게 젖어요.",
+  },
+  {
+    id: "cream-sweater",
+    name: "크림 니트",
+    slot: "top",
+    color: "#f2e8d1",
+    accent: "#cfbfa0",
+    symbol: "니트",
+    tags: ["warm", "light", "coverage"],
+    note: "포근하지만 비 오는 날에는 관리하기 어려워요.",
+  },
+  {
+    id: "active-pants",
+    name: "검정 활동 바지",
+    slot: "bottom",
+    color: "#343b4a",
+    accent: "#171b24",
+    symbol: "바지",
+    tags: ["active", "coverage", "practical", "dark"],
+    note: "걷기 편하고 다리를 가려줘요.",
+  },
+  {
+    id: "sky-denim",
+    name: "하늘색 청바지",
+    slot: "bottom",
+    color: "#78a7d8",
+    accent: "#3c70a8",
+    symbol: "청바지",
+    tags: ["coverage", "practical"],
+    note: "다리는 가려주지만 젖으면 무거워져요.",
+  },
+  {
+    id: "beige-shorts",
+    name: "베이지 반바지",
+    slot: "bottom",
+    color: "#d8b07b",
+    accent: "#9c7043",
+    symbol: "반바지",
+    tags: ["active", "exposed"],
+    note: "움직이기 편하지만 비와 찬 바람에 다리가 노출돼요.",
+  },
+  {
+    id: "long-skirt",
+    name: "긴 주름치마",
+    slot: "bottom",
+    color: "#bd86b8",
+    accent: "#8a5586",
+    symbol: "치마",
+    tags: ["coverage", "formal", "forbidden"],
+    note: "빗물에 젖거나 웅덩이에 끌릴 수 있어요.",
+  },
+  {
+    id: "rain-boots",
+    name: "노란 장화",
+    slot: "shoes",
+    color: "#ffc928",
+    accent: "#d89100",
+    symbol: "장화",
+    tags: ["waterproof", "grip", "coverage", "practical"],
+    note: "발을 빗물에서 보호하고 잘 미끄러지지 않아요.",
+  },
+  {
+    id: "sneakers",
+    name: "운동화",
+    slot: "shoes",
+    color: "#f7f4ec",
+    accent: "#4f8ec9",
+    symbol: "운동화",
+    tags: ["grip", "active", "practical"],
+    note: "걷기 편하지만 웅덩이에서는 젖을 수 있어요.",
+  },
+  {
+    id: "slippers",
+    name: "집 슬리퍼",
+    slot: "shoes",
+    color: "#f28f79",
+    accent: "#b95243",
+    symbol: "슬리퍼",
+    tags: ["open", "slippery", "forbidden"],
+    note: "빗길에서 미끄럽고 발이 쉽게 젖어요.",
+  },
+  {
+    id: "dress-shoes",
+    name: "검정 구두",
+    slot: "shoes",
+    color: "#262626",
+    accent: "#090909",
+    symbol: "구두",
+    tags: ["dark", "formal", "forbidden"],
+    note: "격식 있는 자리에는 좋지만 빗길 심부름에는 불편해요.",
+  },
+  {
+    id: "clear-umbrella",
+    name: "투명 우산",
+    slot: "accessory",
+    color: "#bdebf2",
+    accent: "#5a9eae",
+    symbol: "우산",
+    tags: ["waterproof", "transparent", "practical"],
+    note: "비를 막으면서 앞을 잘 볼 수 있어요.",
+  },
+  {
+    id: "black-umbrella",
+    name: "검정 우산",
+    slot: "accessory",
+    color: "#303342",
+    accent: "#12141c",
+    symbol: "우산",
+    tags: ["waterproof", "dark", "practical"],
+    note: "비는 막지만 어두운 저녁에는 눈에 덜 띄어요.",
+  },
+  {
+    id: "reflective-band",
+    name: "반사 밴드",
+    slot: "accessory",
+    color: "#e9ff5d",
+    accent: "#849317",
+    symbol: "밴드",
+    tags: ["visible", "safety", "practical"],
+    note: "빛을 반사해 어두운 길에서 잘 보이게 해요.",
+  },
+  {
+    id: "canvas-tote",
+    name: "장바구니",
+    slot: "accessory",
+    color: "#e5cda7",
+    accent: "#9e7c4e",
+    symbol: "가방",
+    tags: ["shopping", "practical"],
+    note: "물건을 담기 좋지만 비를 막아주지는 못해요.",
+  },
+];
+
+export const SCENARIO = {
+  slug: "rainy-market-errand",
+  title: "비 오는 날의 심부름",
+  kicker: "CHAPTER 2 · 날씨 특보",
+  timeLimitSeconds: 60,
+  tpo: {
+    time: "비가 많이 오는 저녁",
+    place: "집 앞 마트로 가는 길",
+    occasion: "우유를 사 오는 짧은 심부름",
+  },
+  messages: [
+    {
+      speaker: "하루",
+      text: "도와줘! 엄마가 우유를 사 오라고 하셨어.",
+    },
+    {
+      speaker: "하루",
+      text: "밖에 비가 많이 오고, 벌써 어두워졌어.",
+    },
+    {
+      speaker: "하루",
+      text: "집 앞 마트라 금방 다녀오면 되지만 큰 웅덩이를 지나야 해.",
+    },
+    {
+      speaker: "구조대",
+      text: "젖지 않고, 잘 보이고, 미끄러지지 않는 코디를 찾아보자!",
+    },
+  ],
+} as const;
