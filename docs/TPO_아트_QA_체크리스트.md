@@ -19,17 +19,16 @@ node --test tests/art-manifest.test.mjs
 - [ ] `public/art/v1/items` 디렉터리 이름이 게임 데이터 ID와 모두 일치한다.
 - [ ] 16개 아이템 모두 `thumb.webp`가 있다.
 - [ ] 썸네일은 WebP, 512×384px, 파일당 35KB 이하다.
-- [ ] 모든 착용 SVG의 `viewBox`가 `0 0 1024 1536`이다.
-- [ ] 단일 착용 아이템에 `wear-main.svg` 또는 지정된 `wear-front.svg`가 있다.
-- [ ] 노란 우비에 `wear-back.svg`와 `wear-main.svg`가 있다.
-- [ ] 투명·검정 우산에 각각 `wear-back.svg`와 `wear-front.svg`가 있다.
-- [ ] 장바구니에 `wear-back.svg`와 `wear-front.svg`가 있다.
-- [ ] 착용 SVG는 파일당 100KB 이하, 평균 60KB 이하다.
+- [ ] 모든 착용 WebP가 1024×1536 투명 캔버스다.
+- [ ] 단일 착용 아이템에 `wear-main.webp` 또는 지정된 `wear-front.webp`가 있다.
+- [ ] 노란 우비에 `wear-back.webp`와 `wear-main.webp`가 있다.
+- [ ] 투명·검정 우산에 각각 `wear-back.webp`와 `wear-front.webp`가 있다.
+- [ ] 장바구니에 `wear-back.webp`와 `wear-front.webp`가 있다.
+- [ ] 착용 WebP는 파일당 100KB 이하, 평균 60KB 이하다.
 - [ ] 배경은 WebP, 1920×1440px, 300KB 이하다.
 - [ ] 캐릭터와 표정 파일 합계가 300KB 이하다.
 - [ ] `public/art/v1` 전체가 2MB 이하다.
-- [ ] SVG에 스크립트, 이벤트 핸들러, 외부 실행 링크가 없다.
-- [ ] 런타임 아트 디렉터리에 검수용 PNG가 없다.
+- [ ] 런타임 아트 디렉터리에 SVG와 검수용 PNG가 없다.
 
 자동 검증 실패 시 아동 테스트 후보로 승인하지 않는다.
 
@@ -129,6 +128,8 @@ NVDA와 Chrome 또는 VoiceOver와 Safari 중 최소 한 조합으로 확인한�
 
 권장 대상은 초등 아동 5~8명이다. 보호자 동의를 받고 참가자 번호만
 기록한다. 진행자는 정답을 알려주거나 특정 아이템을 강조하지 않는다.
+현장 진행 대본과 기록지는 [`docs/usability`](usability/README.md)의 테스트
+패키지를 사용한다.
 
 ### 과업 A: 글자 없이 아이템 구분
 

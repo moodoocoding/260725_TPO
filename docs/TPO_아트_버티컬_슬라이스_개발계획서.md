@@ -108,7 +108,7 @@
 | 항목 | 규격 |
 |---|---|
 | 원본 캔버스 | 1024 × 1536px |
-| SVG viewBox | `0 0 1024 1536` |
+| 런타임 이미지 크기 | 1024 × 1536px |
 | 화면 기본 표시 | 256 × 384 CSS px |
 | 전역 기준점 | 하단 중앙 `(512, 1440)` |
 | 정렬 | `xMidYMax meet` |
@@ -116,7 +116,7 @@
 | 색상 공간 | sRGB |
 | 원본 앵커 허용 오차 | ±8px |
 
-모든 착용 SVG는 같은 캔버스와 기준점을 유지한다. 각 파일의 옷 부분만
+모든 착용 WebP는 같은 캔버스와 기준점을 유지한다. 각 파일의 옷 부분만
 잘라 저장하지 않는다.
 
 ### 4.3 주요 앵커
@@ -151,7 +151,7 @@
 
 | 용도 | 형식 | 기준 |
 |---|---|---|
-| 캐릭터·의상·소품·표정·효과 | 최적화 SVG | 텍스트·스크립트·외부 링크 금지 |
+| 캐릭터·의상·소품·표정·효과 | 투명 WebP | 1024×1536 공통 캔버스 |
 | 에피소드 배경 | WebP | 1920×1440, 300KB 이하 |
 | 옷장 썸네일 | WebP | 512×384, 35KB 이하 |
 | 검수 중간 파일 | PNG 허용 | 런타임에는 포함하지 않음 |
@@ -223,26 +223,26 @@
 ```text
 public/art/v1/
 ├─ character/
-│  ├─ base.svg
+│  ├─ base.webp
 │  └─ faces/
-│     ├─ ready.svg
-│     ├─ success.svg
-│     └─ retry.svg
+│     ├─ ready.webp
+│     ├─ success.webp
+│     └─ retry.webp
 ├─ episodes/
 │  └─ rainy-market-errand/
 │     ├─ background.webp
 │     └─ effects/
-│        ├─ rain-back.svg
-│        ├─ rain-front.svg
-│        └─ reflective-glow.svg
+│        ├─ rain-back.webp
+│        ├─ rain-front.webp
+│        └─ reflective-glow.webp
 ├─ items/
 │  ├─ yellow-raincoat/
-│  │  ├─ wear-back.svg
-│  │  ├─ wear-main.svg
+│  │  ├─ wear-back.webp
+│  │  ├─ wear-main.webp
 │  │  └─ thumb.webp
 │  ├─ clear-umbrella/
-│  │  ├─ wear-back.svg
-│  │  ├─ wear-front.svg
+│  │  ├─ wear-back.webp
+│  │  ├─ wear-front.webp
 │  │  └─ thumb.webp
 │  └─ ...
 └─ art-manifest.json
@@ -254,9 +254,9 @@ public/art/v1/
 - 영문 소문자와 하이픈만 사용
 - `final`, `new`, `수정본`과 같은 단어를 파일명에 사용하지 않음
 - 버전은 파일명이 아니라 `v1`, `v2` 상위 폴더로 관리
-- 단일 레이어는 `wear-main.svg`
-- 뒤쪽 레이어는 `wear-back.svg`
-- 앞쪽 레이어는 `wear-front.svg`
+- 단일 레이어는 `wear-main.webp`
+- 뒤쪽 레이어는 `wear-back.webp`
+- 앞쪽 레이어는 `wear-front.webp`
 - 썸네일은 `thumb.webp`
 
 ## 8. 아트 카탈로그와 렌더러
@@ -274,12 +274,12 @@ public/art/v1/
       "thumbnail": "items/clear-umbrella/thumb.webp",
       "layers": [
         {
-          "src": "items/clear-umbrella/wear-back.svg",
+          "src": "items/clear-umbrella/wear-back.webp",
           "plane": "accessoryBack",
           "order": 0
         },
         {
-          "src": "items/clear-umbrella/wear-front.svg",
+          "src": "items/clear-umbrella/wear-front.webp",
           "plane": "accessoryFront",
           "order": 0
         }
@@ -503,7 +503,7 @@ Revise이면 1~2주 수정 후 실패한 핵심 과업만 다시 검증한다.
 | 우산·가방이 몸을 잘못 가림 | 앞·뒤 레이어 분리와 고정 Z 규칙 |
 | 기능보다 장식이 강조됨 | 아이템별 필수 기능 단서를 브리프와 검수표에 포함 |
 | 색상에만 정보 의존 | 실루엣·외곽선·체크·문구 병행 |
-| SVG가 과도하게 복잡함 | 패스 단순화, 필터 제한, 파일별 용량 예산 |
+| WebP가 과도하게 큼 | 원본 패스 단순화, 품질 최적화, 파일별 용량 예산 |
 | 오답이 항상 나쁜 옷처럼 보임 | 매력은 유지하고 현재 상황의 적합성만 다르게 표현 |
 | 검증 전 전체 에피소드를 제작함 | Gate C 통과 전 에피소드 2 제작 금지 |
 | 외주 원본과 권리가 확보되지 않음 | 편집 원본, 상업 이용, 수정·파생 권한을 계약에 명시 |
