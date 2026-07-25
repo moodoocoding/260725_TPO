@@ -16,6 +16,10 @@ import {
   type Slot,
 } from "@/lib/game-data";
 import type { ScoreResult } from "@/lib/scoring";
+import {
+  CharacterRenderer,
+  ItemThumbnail,
+} from "@/components/character-renderer";
 
 type Stage =
   | "welcome"
@@ -36,17 +40,6 @@ const SCORE_LABELS: Array<[keyof ScoreResult["breakdown"], string, number]> = [
   ["completeness", "코디 완성도", 10],
   ["time", "시간 보너스", 10],
 ];
-
-function getGuestId() {
-  const existing = window.localStorage.getItem("tpo-guest-id");
-  if (existing) return existing;
-  const created =
-    typeof crypto.randomUUID === "function"
-      ? crypto.randomUUID()
-      : `guest-${Date.now()}-${Math.random().toString(16).slice(2)}`;
-  window.localStorage.setItem("tpo-guest-id", created);
-  return created;
-}
 
 function LogoMark() {
   return (
@@ -77,109 +70,6 @@ function AppHeader({
         <small>BEST</small>
       </div>
     </header>
-  );
-}
-
-function Character({
-  selectedItems,
-  mood = "ready",
-}: {
-  selectedItems: ClothingItem[];
-  mood?: "ready" | "happy" | "thinking";
-}) {
-  const bySlot = new Map(selectedItems.map((item) => [item.slot, item]));
-  const top = bySlot.get("top");
-  const bottom = bySlot.get("bottom");
-  const shoes = bySlot.get("shoes");
-  const accessory = bySlot.get("accessory");
-  const itemStyle = (item?: ClothingItem) =>
-    item
-      ? ({
-          "--item-color": item.color,
-          "--item-accent": item.accent,
-        } as CSSProperties)
-      : undefined;
-
-  return (
-    <div className={`character character-${mood}`} aria-label="코디 중인 하루 캐릭터">
-      <div className="character-shadow" />
-      {accessory?.id.includes("umbrella") && (
-        <div
-          className={`umbrella ${
-            accessory.id === "clear-umbrella" ? "umbrella-clear" : ""
-          }`}
-          style={itemStyle(accessory)}
-          aria-hidden="true"
-        >
-          <span className="umbrella-canopy" />
-          <span className="umbrella-stick" />
-        </div>
-      )}
-      <div className="character-head">
-        <span className="character-hair hair-left" />
-        <span className="character-hair hair-right" />
-        <span className="ear ear-left" />
-        <span className="ear ear-right" />
-        <span className="eye eye-left" />
-        <span className="eye eye-right" />
-        <span className="nose" />
-        <span className="mouth" />
-        <span className="cheek cheek-left" />
-        <span className="cheek cheek-right" />
-        {top?.id === "yellow-raincoat" && <span className="rain-hood" />}
-      </div>
-      <div className="character-neck" />
-      <div
-        className={`character-top ${top ? "has-item" : ""} ${
-          top?.id ?? "base-top"
-        }`}
-        style={itemStyle(top)}
-      >
-        <span className="top-collar" />
-        <span className="top-zip" />
-        <span className="top-pocket pocket-left" />
-        <span className="top-pocket pocket-right" />
-      </div>
-      <span
-        className={`arm arm-left ${top ? "has-item" : ""}`}
-        style={itemStyle(top)}
-      />
-      <span
-        className={`arm arm-right ${top ? "has-item" : ""}`}
-        style={itemStyle(top)}
-      />
-      <div
-        className={`character-bottom ${bottom ? "has-item" : ""} ${
-          bottom?.id ?? "base-bottom"
-        }`}
-        style={itemStyle(bottom)}
-      >
-        <span className="leg leg-left" />
-        <span className="leg leg-right" />
-      </div>
-      <span
-        className={`shoe shoe-left ${shoes?.id ?? "base-shoe"}`}
-        style={itemStyle(shoes)}
-      />
-      <span
-        className={`shoe shoe-right ${shoes?.id ?? "base-shoe"}`}
-        style={itemStyle(shoes)}
-      />
-      {accessory?.id === "reflective-band" && (
-        <span
-          className="reflective-band"
-          style={itemStyle(accessory)}
-          aria-hidden="true"
-        />
-      )}
-      {accessory?.id === "canvas-tote" && (
-        <span
-          className="tote-bag"
-          style={itemStyle(accessory)}
-          aria-hidden="true"
-        />
-      )}
-    </div>
   );
 }
 
@@ -253,7 +143,6 @@ export default function Home() {
           body: JSON.stringify({
             selectedItemIds: Object.values(selection),
             elapsedSeconds,
-            guestId: getGuestId(),
           }),
         });
 
@@ -329,7 +218,7 @@ export default function Home() {
             <span>긴급 문자 도착!</span>
             <strong>“비 오는 저녁에 뭘 입지?”</strong>
           </div>
-          <Character selectedItems={[]} mood="happy" />
+          <CharacterRenderer selectedItems={[]} mood="success" priority />
           <div className="hero-tags" aria-hidden="true">
             <span>TIME</span>
             <span>PLACE</span>
@@ -566,7 +455,7 @@ export default function Home() {
               </div>
             </div>
             <div className="avatar-stage">
-              <Character selectedItems={selectedItems} mood="thinking" />
+              <CharacterRenderer selectedItems={selectedItems} mood="ready" priority />
               <div className="selected-summary">
                 {slots.map((slot) => {
                   const item = selectedItems.find((selected) => selected.slot === slot);
@@ -623,7 +512,7 @@ export default function Home() {
                         } as CSSProperties
                       }
                     >
-                      <span>{item.symbol}</span>
+                      <ItemThumbnail item={item} />
                     </span>
                     <strong>{item.name}</strong>
                     <small>{item.note}</small>
@@ -671,7 +560,11 @@ export default function Home() {
                 : "빠뜨린 안전 단서를 확인하면 다음 도전에서는 훨씬 좋아질 거예요."}
             </p>
             <div className="result-character-wrap">
-              <Character selectedItems={selectedItems} mood="happy" />
+              <CharacterRenderer
+                selectedItems={selectedItems}
+                mood={result.stars > 0 ? "success" : "retry"}
+                priority
+              />
             </div>
             <div className="score-orbit">
               <span>총점</span>

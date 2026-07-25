@@ -1,7 +1,29 @@
 export type Slot = "top" | "bottom" | "shoes" | "accessory";
 
+export const CLOTHING_ITEM_IDS = [
+  "yellow-raincoat",
+  "mint-windbreaker",
+  "navy-cardigan",
+  "cream-sweater",
+  "active-pants",
+  "sky-denim",
+  "beige-shorts",
+  "long-skirt",
+  "rain-boots",
+  "sneakers",
+  "slippers",
+  "dress-shoes",
+  "clear-umbrella",
+  "black-umbrella",
+  "reflective-band",
+  "canvas-tote",
+] as const;
+
+export type ClothingItemId = (typeof CLOTHING_ITEM_IDS)[number];
+
 export type ClothingItem = {
-  id: string;
+  id: ClothingItemId;
+  assetId: ClothingItemId;
   name: string;
   slot: Slot;
   color: string;
@@ -21,6 +43,7 @@ export const SLOT_LABELS: Record<Slot, string> = {
 export const CLOTHING_ITEMS: ClothingItem[] = [
   {
     id: "yellow-raincoat",
+    assetId: "yellow-raincoat",
     name: "노란 우비",
     slot: "top",
     color: "#ffd54f",
@@ -31,6 +54,7 @@ export const CLOTHING_ITEMS: ClothingItem[] = [
   },
   {
     id: "mint-windbreaker",
+    assetId: "mint-windbreaker",
     name: "민트 바람막이",
     slot: "top",
     color: "#73d8c7",
@@ -41,6 +65,7 @@ export const CLOTHING_ITEMS: ClothingItem[] = [
   },
   {
     id: "navy-cardigan",
+    assetId: "navy-cardigan",
     name: "남색 가디건",
     slot: "top",
     color: "#263a5b",
@@ -51,6 +76,7 @@ export const CLOTHING_ITEMS: ClothingItem[] = [
   },
   {
     id: "cream-sweater",
+    assetId: "cream-sweater",
     name: "크림 니트",
     slot: "top",
     color: "#f2e8d1",
@@ -61,6 +87,7 @@ export const CLOTHING_ITEMS: ClothingItem[] = [
   },
   {
     id: "active-pants",
+    assetId: "active-pants",
     name: "검정 활동 바지",
     slot: "bottom",
     color: "#343b4a",
@@ -71,6 +98,7 @@ export const CLOTHING_ITEMS: ClothingItem[] = [
   },
   {
     id: "sky-denim",
+    assetId: "sky-denim",
     name: "하늘색 청바지",
     slot: "bottom",
     color: "#78a7d8",
@@ -81,6 +109,7 @@ export const CLOTHING_ITEMS: ClothingItem[] = [
   },
   {
     id: "beige-shorts",
+    assetId: "beige-shorts",
     name: "베이지 반바지",
     slot: "bottom",
     color: "#d8b07b",
@@ -91,6 +120,7 @@ export const CLOTHING_ITEMS: ClothingItem[] = [
   },
   {
     id: "long-skirt",
+    assetId: "long-skirt",
     name: "긴 주름치마",
     slot: "bottom",
     color: "#bd86b8",
@@ -101,6 +131,7 @@ export const CLOTHING_ITEMS: ClothingItem[] = [
   },
   {
     id: "rain-boots",
+    assetId: "rain-boots",
     name: "노란 장화",
     slot: "shoes",
     color: "#ffc928",
@@ -111,6 +142,7 @@ export const CLOTHING_ITEMS: ClothingItem[] = [
   },
   {
     id: "sneakers",
+    assetId: "sneakers",
     name: "운동화",
     slot: "shoes",
     color: "#f7f4ec",
@@ -121,6 +153,7 @@ export const CLOTHING_ITEMS: ClothingItem[] = [
   },
   {
     id: "slippers",
+    assetId: "slippers",
     name: "집 슬리퍼",
     slot: "shoes",
     color: "#f28f79",
@@ -131,6 +164,7 @@ export const CLOTHING_ITEMS: ClothingItem[] = [
   },
   {
     id: "dress-shoes",
+    assetId: "dress-shoes",
     name: "검정 구두",
     slot: "shoes",
     color: "#262626",
@@ -141,6 +175,7 @@ export const CLOTHING_ITEMS: ClothingItem[] = [
   },
   {
     id: "clear-umbrella",
+    assetId: "clear-umbrella",
     name: "투명 우산",
     slot: "accessory",
     color: "#bdebf2",
@@ -151,6 +186,7 @@ export const CLOTHING_ITEMS: ClothingItem[] = [
   },
   {
     id: "black-umbrella",
+    assetId: "black-umbrella",
     name: "검정 우산",
     slot: "accessory",
     color: "#303342",
@@ -161,6 +197,7 @@ export const CLOTHING_ITEMS: ClothingItem[] = [
   },
   {
     id: "reflective-band",
+    assetId: "reflective-band",
     name: "반사 밴드",
     slot: "accessory",
     color: "#e9ff5d",
@@ -171,6 +208,7 @@ export const CLOTHING_ITEMS: ClothingItem[] = [
   },
   {
     id: "canvas-tote",
+    assetId: "canvas-tote",
     name: "장바구니",
     slot: "accessory",
     color: "#e5cda7",

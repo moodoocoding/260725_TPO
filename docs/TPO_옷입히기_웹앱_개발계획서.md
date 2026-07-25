@@ -368,75 +368,34 @@ flowchart TD
 - 캐릭터의 외모나 체형을 평가하지 않는다.
 - 성별에 따라 옷을 제한하지 않는다.
 
-## 12. Supabase 설계
+## 12. 저장 전략
 
-### 12.1 사용 범위
+### 12.1 현재 스토리 MVP
 
-- 챕터와 시나리오 저장
-- 문자 메시지 내용 저장
-- 옷 아이템과 태그 저장
-- 시나리오 채점 규칙 저장
-- 게스트 세션과 진행 상황 저장
-- 플레이 결과와 최고 점수 저장
-- 캐릭터 및 옷 이미지 저장
-- 서버 측 채점 함수 실행
+현재 범위에서는 서버 데이터베이스를 사용하지 않는다.
 
-### 12.2 주요 테이블
+- 시나리오·문자·옷·채점 규칙은 프로젝트 코드에 포함한다.
+- 최고 점수와 진행 정보는 사용자 브라우저의 `localStorage`에 저장한다.
+- 최종 점수는 현재 웹앱의 서버 API에서 계산하되 플레이 기록은 남기지 않는다.
+- 캐릭터와 옷 이미지는 웹앱의 정적 에셋으로 배포한다.
+- 이름·이메일 등 개인정보를 수집하지 않는다.
 
-| 테이블 | 주요 필드 | 용도 |
-|---|---|---|
-| `chapters` | `id`, `slug`, `title`, `order_no`, `published` | 챕터 순서와 공개 상태 |
-| `scenarios` | `id`, `chapter_id`, `title`, `difficulty`, `time_limit_sec`, `tpo_*`, `published` | 에피소드 기본 정보 |
-| `scenario_messages` | `id`, `scenario_id`, `order_no`, `speaker`, `message` | 문자 대화 |
-| `clothing_items` | `id`, `name`, `slot`, `tags`, `asset_key`, `layer_order`, `active` | 옷과 소품 |
-| `scenario_items` | `scenario_id`, `item_id` | 에피소드에서 보여줄 옷 |
-| `scenario_rules` | `scenario_id`, `rule_type`, `tag`, `weight`, `mandatory`, `feedback` | 채점 기준 |
-| `guest_sessions` | `id`, `created_at`, `last_seen_at` | 로그인 전 사용자 구분 |
-| `story_runs` | `id`, `guest_id`, `scenario_id`, `started_at`, `submitted_at`, `score_total`, `score_breakdown` | 플레이 기록 |
-| `run_items` | `run_id`, `item_id`, `slot` | 제출한 코디 |
-| `story_progress` | `guest_id`, `scenario_id`, `best_score`, `best_time_ms`, `stars` | 에피소드 진행 상황 |
+이 구조는 로그인과 기기 간 동기화가 없는 현재 스토리 모드에 가장 단순하고
+안정적이며, 무료 데이터베이스의 휴면·비용·키 관리 부담도 만들지 않는다.
 
-실제 로그인을 도입할 때는 `profiles`를 `auth.users`와 연결하고,
-`guest_id`의 진행 기록을 사용자 계정으로 이전한다.
+### 12.2 서버 저장소를 다시 검토할 조건
 
-### 12.3 이미지 저장
+다음 기능 중 하나를 실제로 개발할 때 데이터베이스 도입을 다시 결정한다.
 
-Supabase Storage에 다음과 같은 버킷 또는 경로를 사용한다.
+- 실제 로그인과 여러 기기 간 진행도 공유
+- 전체·친구 랭킹
+- 교사용 학생 활동 기록
+- 배틀 매칭, 실시간 결과, 부정행위 검증
+- 아이템 보유·상점·수집 시스템
+- 운영자가 수정하는 동적 콘텐츠
 
-```text
-characters/{character_id}/base.png
-clothing/{item_id}/full.png
-clothing/{item_id}/thumbnail.png
-scenarios/{scenario_id}/background.png
-```
-
-아이템 이미지에는 버전 값을 두어 캐릭터 기준점이 바뀔 때 이전 이미지가
-잘못 조합되지 않게 한다.
-
-### 12.4 서버 채점
-
-최종 점수는 브라우저가 아닌 Supabase Edge Function에서 계산한다.
-
-권장 함수:
-
-```text
-start-story-run
-submit-story-run
-```
-
-- `start-story-run`: 서버 시작 시각과 플레이 토큰 생성
-- `submit-story-run`: 선택한 아이템과 서버 경과 시간을 검증하고 점수 계산
-- 클라이언트는 점수 규칙의 가중치와 정답을 직접 결정하지 않음
-- 배틀 모드에서도 같은 채점 코드를 재사용
-
-### 12.5 보안 원칙
-
-- 클라이언트에는 Supabase 공개 키만 사용한다.
-- 서비스 역할 키는 서버 함수에서만 사용한다.
-- 공개된 챕터·시나리오·아이템만 익명 읽기를 허용한다.
-- 플레이 결과 테이블은 클라이언트의 직접 쓰기를 막는다.
-- 결과는 서버 채점 함수를 통해서만 저장한다.
-- MVP에서는 이름, 이메일 등 개인정보를 수집하지 않는다.
+도입 전까지 특정 공급자에 종속되지 않도록 게임 데이터와 저장 인터페이스를
+분리한다. Supabase는 후속 후보 중 하나이며 현재 필수 기술이 아니다.
 
 ## 13. 웹앱 구조
 

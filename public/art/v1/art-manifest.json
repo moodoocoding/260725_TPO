@@ -1,0 +1,236 @@
+{
+  "version": 1,
+  "canvas": {
+    "width": 1024,
+    "height": 1536,
+    "groundAnchor": {
+      "x": 512,
+      "y": 1440
+    }
+  },
+  "character": {
+    "base": "character/base.webp",
+    "faces": {
+      "ready": "character/faces/ready.webp",
+      "success": "character/faces/success.webp",
+      "retry": "character/faces/retry.webp"
+    }
+  },
+  "episode": {
+    "id": "rainy-market-errand",
+    "background": "episodes/rainy-market-errand/background.webp",
+    "backgroundCanvas": {
+      "width": 1920,
+      "height": 1440
+    },
+    "effects": {
+      "rainBack": {
+        "src": "episodes/rainy-market-errand/effects/rain-back.webp",
+        "z": 10
+      },
+      "rainFront": {
+        "src": "episodes/rainy-market-errand/effects/rain-front.webp",
+        "z": 110
+      },
+      "reflectiveGlow": {
+        "src": "episodes/rainy-market-errand/effects/reflective-glow.webp",
+        "z": 100,
+        "whenItemSelected": "reflective-band"
+      }
+    }
+  },
+  "items": [
+    {
+      "id": "yellow-raincoat",
+      "slot": "top",
+      "thumbnail": "items/yellow-raincoat/thumb.webp",
+      "layers": [
+        {
+          "src": "items/yellow-raincoat/wear-back.webp",
+          "z": 30
+        },
+        {
+          "src": "items/yellow-raincoat/wear-main.webp",
+          "z": 70
+        }
+      ]
+    },
+    {
+      "id": "mint-windbreaker",
+      "slot": "top",
+      "thumbnail": "items/mint-windbreaker/thumb.webp",
+      "layers": [
+        {
+          "src": "items/mint-windbreaker/wear-main.webp",
+          "z": 70
+        }
+      ]
+    },
+    {
+      "id": "navy-cardigan",
+      "slot": "top",
+      "thumbnail": "items/navy-cardigan/thumb.webp",
+      "layers": [
+        {
+          "src": "items/navy-cardigan/wear-main.webp",
+          "z": 70
+        }
+      ]
+    },
+    {
+      "id": "cream-sweater",
+      "slot": "top",
+      "thumbnail": "items/cream-sweater/thumb.webp",
+      "layers": [
+        {
+          "src": "items/cream-sweater/wear-main.webp",
+          "z": 70
+        }
+      ]
+    },
+    {
+      "id": "active-pants",
+      "slot": "bottom",
+      "thumbnail": "items/active-pants/thumb.webp",
+      "layers": [
+        {
+          "src": "items/active-pants/wear-main.webp",
+          "z": 50
+        }
+      ]
+    },
+    {
+      "id": "sky-denim",
+      "slot": "bottom",
+      "thumbnail": "items/sky-denim/thumb.webp",
+      "layers": [
+        {
+          "src": "items/sky-denim/wear-main.webp",
+          "z": 50
+        }
+      ]
+    },
+    {
+      "id": "beige-shorts",
+      "slot": "bottom",
+      "thumbnail": "items/beige-shorts/thumb.webp",
+      "layers": [
+        {
+          "src": "items/beige-shorts/wear-main.webp",
+          "z": 50
+        }
+      ]
+    },
+    {
+      "id": "long-skirt",
+      "slot": "bottom",
+      "thumbnail": "items/long-skirt/thumb.webp",
+      "layers": [
+        {
+          "src": "items/long-skirt/wear-main.webp",
+          "z": 50
+        }
+      ]
+    },
+    {
+      "id": "rain-boots",
+      "slot": "shoes",
+      "thumbnail": "items/rain-boots/thumb.webp",
+      "layers": [
+        {
+          "src": "items/rain-boots/wear-main.webp",
+          "z": 60
+        }
+      ]
+    },
+    {
+      "id": "sneakers",
+      "slot": "shoes",
+      "thumbnail": "items/sneakers/thumb.webp",
+      "layers": [
+        {
+          "src": "items/sneakers/wear-main.webp",
+          "z": 60
+        }
+      ]
+    },
+    {
+      "id": "slippers",
+      "slot": "shoes",
+      "thumbnail": "items/slippers/thumb.webp",
+      "layers": [
+        {
+          "src": "items/slippers/wear-main.webp",
+          "z": 60
+        }
+      ]
+    },
+    {
+      "id": "dress-shoes",
+      "slot": "shoes",
+      "thumbnail": "items/dress-shoes/thumb.webp",
+      "layers": [
+        {
+          "src": "items/dress-shoes/wear-main.webp",
+          "z": 60
+        }
+      ]
+    },
+    {
+      "id": "clear-umbrella",
+      "slot": "accessory",
+      "thumbnail": "items/clear-umbrella/thumb.webp",
+      "layers": [
+        {
+          "src": "items/clear-umbrella/wear-back.webp",
+          "z": 20
+        },
+        {
+          "src": "items/clear-umbrella/wear-front.webp",
+          "z": 90
+        }
+      ]
+    },
+    {
+      "id": "black-umbrella",
+      "slot": "accessory",
+      "thumbnail": "items/black-umbrella/thumb.webp",
+      "layers": [
+        {
+          "src": "items/black-umbrella/wear-back.webp",
+          "z": 20
+        },
+        {
+          "src": "items/black-umbrella/wear-front.webp",
+          "z": 90
+        }
+      ]
+    },
+    {
+      "id": "reflective-band",
+      "slot": "accessory",
+      "thumbnail": "items/reflective-band/thumb.webp",
+      "layers": [
+        {
+          "src": "items/reflective-band/wear-front.webp",
+          "z": 90
+        }
+      ]
+    },
+    {
+      "id": "canvas-tote",
+      "slot": "accessory",
+      "thumbnail": "items/canvas-tote/thumb.webp",
+      "layers": [
+        {
+          "src": "items/canvas-tote/wear-back.webp",
+          "z": 20
+        },
+        {
+          "src": "items/canvas-tote/wear-front.webp",
+          "z": 90
+        }
+      ]
+    }
+  ]
+}
