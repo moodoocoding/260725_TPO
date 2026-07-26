@@ -40,6 +40,8 @@ export type ResolvedArtLayer = ArtLayer & {
 
 const ITEM_ROOT = "/art/v2/items";
 const CHARACTER_ROOT = "/art/v2/character";
+const EPISODE_ONE_SLUG = "rescue-team-trial";
+const EPISODE_ONE_ROOT = `/art/v3/episodes/${EPISODE_ONE_SLUG}`;
 
 const SLOT_PLANE: Record<Slot, ArtPlane> = {
   top: "top",
@@ -95,9 +97,19 @@ function resolveLayer(layer: ArtLayer): ResolvedArtLayer {
   };
 }
 
-function resolveItemLayers(item: WearableArtItem): ArtLayer[] {
-  const layerKinds = item.layerKinds?.length ? item.layerKinds : ["main"];
-  const root = `${ITEM_ROOT}/${item.assetId ?? item.id}`;
+function resolveItemLayers(
+  item: WearableArtItem,
+  episodeSlug?: string,
+): ArtLayer[] {
+  const isEpisodeOneSlice = episodeSlug === EPISODE_ONE_SLUG;
+  const layerKinds = isEpisodeOneSlice
+    ? ["main" as const]
+    : item.layerKinds?.length
+      ? item.layerKinds
+      : ["main" as const];
+  const root = isEpisodeOneSlice
+    ? `${EPISODE_ONE_ROOT}/items/${item.assetId ?? item.id}`
+    : `${ITEM_ROOT}/${item.assetId ?? item.id}`;
 
   return layerKinds.map((kind) => ({
     id: `${item.id}-${kind}`,
@@ -115,24 +127,48 @@ function resolveItemLayers(item: WearableArtItem): ArtLayer[] {
 export function resolveCharacterLayers(
   mood: ArtMood,
   items: readonly WearableArtItem[],
+  episodeSlug?: string,
 ): ResolvedArtLayer[] {
   const uniqueItems = [
     ...new Map(items.map((item) => [item.id, item])).values(),
   ];
+  const isEpisodeOneSlice = episodeSlug === EPISODE_ONE_SLUG;
+  const characterLayers = isEpisodeOneSlice
+    ? [
+        {
+          id: `episode-one-character-${mood}`,
+          src: `${EPISODE_ONE_ROOT}/character/${mood}.webp`,
+          plane: "body" as const,
+          order: 0,
+        },
+      ]
+    : [ART_MANIFEST.character.base];
+  const faceLayers = isEpisodeOneSlice
+    ? []
+    : [ART_MANIFEST.character.faces[mood]];
 
   return [
-    ART_MANIFEST.character.base,
-    ...uniqueItems.flatMap(resolveItemLayers),
-    ART_MANIFEST.character.faces[mood],
+    ...characterLayers,
+    ...uniqueItems.flatMap((item) => resolveItemLayers(item, episodeSlug)),
+    ...faceLayers,
   ]
     .map(resolveLayer)
     .sort((a, b) => a.zIndex - b.zIndex || a.id.localeCompare(b.id));
 }
 
-export function getItemThumbnail(assetId: string): string {
+export function getItemThumbnail(
+  assetId: string,
+  episodeSlug?: string,
+): string {
+  if (episodeSlug === EPISODE_ONE_SLUG) {
+    return `${EPISODE_ONE_ROOT}/items/${assetId}/thumb.webp`;
+  }
   return `${ITEM_ROOT}/${assetId}/thumb.webp`;
 }
 
 export function getEpisodeBackground(slug: string): string {
+  if (slug === EPISODE_ONE_SLUG) {
+    return `${EPISODE_ONE_ROOT}/background.webp`;
+  }
   return `${ART_MANIFEST.roots.episodes}/${slug}/background.webp`;
 }

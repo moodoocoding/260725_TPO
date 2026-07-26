@@ -1,0 +1,130 @@
+{
+  "schemaVersion": 3,
+  "artVersion": "v3-episode-slice",
+  "episode": "rescue-team-trial",
+  "canvas": {
+    "width": 1024,
+    "height": 1536
+  },
+  "generatedWith": "OpenAI built-in image generation",
+  "background": "background.webp",
+  "character": {
+    "ready": "character/ready.webp",
+    "success": "character/success.webp",
+    "retry": "character/retry.webp"
+  },
+  "items": [
+    {
+      "id": "rescue-jacket",
+      "thumbnail": "items/rescue-jacket/thumb.webp",
+      "layers": [
+        "items/rescue-jacket/wear-main.webp"
+      ]
+    },
+    {
+      "id": "sports-hoodie",
+      "thumbnail": "items/sports-hoodie/thumb.webp",
+      "layers": [
+        "items/sports-hoodie/wear-main.webp"
+      ]
+    },
+    {
+      "id": "yellow-raincoat",
+      "thumbnail": "items/yellow-raincoat/thumb.webp",
+      "layers": [
+        "items/yellow-raincoat/wear-main.webp"
+      ]
+    },
+    {
+      "id": "party-shirt",
+      "thumbnail": "items/party-shirt/thumb.webp",
+      "layers": [
+        "items/party-shirt/wear-main.webp"
+      ]
+    },
+    {
+      "id": "active-pants",
+      "thumbnail": "items/active-pants/thumb.webp",
+      "layers": [
+        "items/active-pants/wear-main.webp"
+      ]
+    },
+    {
+      "id": "sky-denim",
+      "thumbnail": "items/sky-denim/thumb.webp",
+      "layers": [
+        "items/sky-denim/wear-main.webp"
+      ]
+    },
+    {
+      "id": "beige-shorts",
+      "thumbnail": "items/beige-shorts/thumb.webp",
+      "layers": [
+        "items/beige-shorts/wear-main.webp"
+      ]
+    },
+    {
+      "id": "long-skirt",
+      "thumbnail": "items/long-skirt/thumb.webp",
+      "layers": [
+        "items/long-skirt/wear-main.webp"
+      ]
+    },
+    {
+      "id": "sneakers",
+      "thumbnail": "items/sneakers/thumb.webp",
+      "layers": [
+        "items/sneakers/wear-main.webp"
+      ]
+    },
+    {
+      "id": "rain-boots",
+      "thumbnail": "items/rain-boots/thumb.webp",
+      "layers": [
+        "items/rain-boots/wear-main.webp"
+      ]
+    },
+    {
+      "id": "slippers",
+      "thumbnail": "items/slippers/thumb.webp",
+      "layers": [
+        "items/slippers/wear-main.webp"
+      ]
+    },
+    {
+      "id": "dress-shoes",
+      "thumbnail": "items/dress-shoes/thumb.webp",
+      "layers": [
+        "items/dress-shoes/wear-main.webp"
+      ]
+    },
+    {
+      "id": "reflective-band",
+      "thumbnail": "items/reflective-band/thumb.webp",
+      "layers": [
+        "items/reflective-band/wear-main.webp"
+      ]
+    },
+    {
+      "id": "rescue-cap",
+      "thumbnail": "items/rescue-cap/thumb.webp",
+      "layers": [
+        "items/rescue-cap/wear-main.webp"
+      ]
+    },
+    {
+      "id": "whistle",
+      "thumbnail": "items/whistle/thumb.webp",
+      "layers": [
+        "items/whistle/wear-main.webp"
+      ]
+    },
+    {
+      "id": "canvas-tote",
+      "thumbnail": "items/canvas-tote/thumb.webp",
+      "layers": [
+        "items/canvas-tote/wear-main.webp"
+      ]
+    }
+  ]
+}

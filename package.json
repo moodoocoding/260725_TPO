@@ -17,8 +17,10 @@
     "test:art": "node --test tests/art-manifest.test.mjs",
     "story:generate": "node scripts/generate-story-catalog.mjs",
     "story:validate": "node --test tests/story-catalog.test.mjs",
+    "episode1-art:prepare": "node scripts/prepare-episode1-assets.mjs",
+    "episode1-art:validate": "node scripts/validate-episode1-assets.mjs",
     "story-art:generate": "node scripts/generate-story-assets.mjs",
-    "story-art:validate": "node scripts/validate-story-assets.mjs",
+    "story-art:validate": "node scripts/validate-story-assets.mjs && node scripts/validate-episode1-assets.mjs",
     "test": "npm run art:validate && npm run test:art && npm run story:validate && npm run story-art:validate && npm run build && npm run build:sites",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },

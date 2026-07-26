@@ -17,6 +17,7 @@ type CharacterRendererProps = {
   selectedItems: readonly ClothingItem[];
   mood?: ArtMood;
   priority?: boolean;
+  episodeSlug?: string;
 };
 
 type ImageCharacterRendererProps = {
@@ -25,6 +26,7 @@ type ImageCharacterRendererProps = {
   ariaLabel: string;
   priority: boolean;
   onAssetError: () => void;
+  episodeSlug?: string;
 };
 
 const LEGACY_MOOD: Record<ArtMood, LegacyCharacterMood> = {
@@ -49,10 +51,11 @@ export function ImageCharacterRenderer({
   ariaLabel,
   priority,
   onAssetError,
+  episodeSlug,
 }: ImageCharacterRendererProps) {
   const layers = useMemo(
-    () => resolveCharacterLayers(mood, selectedItems),
-    [mood, selectedItems],
+    () => resolveCharacterLayers(mood, selectedItems, episodeSlug),
+    [episodeSlug, mood, selectedItems],
   );
 
   return (
@@ -60,7 +63,9 @@ export function ImageCharacterRenderer({
       className="character image-character"
       role="img"
       aria-label={ariaLabel}
-      data-renderer="image-v2"
+      data-renderer={
+        episodeSlug === "rescue-team-trial" ? "image-v3" : "image-v2"
+      }
     >
       <div className="image-character-canvas" aria-hidden="true">
         {layers.map((layer) => (
@@ -86,8 +91,9 @@ export function CharacterRenderer({
   selectedItems,
   mood = "ready",
   priority = false,
+  episodeSlug,
 }: CharacterRendererProps) {
-  const assetSignature = `${mood}:${selectedItems
+  const assetSignature = `${episodeSlug ?? "global"}:${mood}:${selectedItems
     .map((item) => item.id)
     .sort()
     .join(",")}`;
@@ -110,12 +116,19 @@ export function CharacterRenderer({
       mood={mood}
       ariaLabel={ariaLabel}
       priority={priority}
+      episodeSlug={episodeSlug}
       onAssetError={() => setFailedSignature(assetSignature)}
     />
   );
 }
 
-export function ItemThumbnail({ item }: { item: ClothingItem }) {
+export function ItemThumbnail({
+  item,
+  episodeSlug,
+}: {
+  item: ClothingItem;
+  episodeSlug?: string;
+}) {
   const [failed, setFailed] = useState(false);
 
   if (failed) {
@@ -129,7 +142,7 @@ export function ItemThumbnail({ item }: { item: ClothingItem }) {
   return (
     <Image
       className="item-thumbnail-image"
-      src={getItemThumbnail(item.id)}
+      src={getItemThumbnail(item.id, episodeSlug)}
       alt=""
       fill
       sizes="(max-width: 720px) 42vw, 180px"

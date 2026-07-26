@@ -1642,6 +1642,36 @@ p {
   background-size: cover;
 }
 
+.avatar-panel--art-slice {
+  background-image:
+    linear-gradient(180deg, rgba(20, 36, 58, 0.02), rgba(20, 36, 58, 0.08)),
+    var(--episode-background-image);
+  background-position: 31% center;
+}
+
+.avatar-panel--art-slice .avatar-stage {
+  justify-content: flex-start;
+  gap: 0;
+  padding-right: 12px;
+  padding-left: clamp(20px, 3.2vw, 48px);
+}
+
+.avatar-panel--art-slice .avatar-stage::before {
+  display: none;
+}
+
+.avatar-panel--art-slice .avatar-stage .character {
+  width: clamp(250px, 29vw, 300px);
+  height: clamp(419px, 48.7vw, 503px);
+}
+
+.avatar-panel--art-slice .selected-summary {
+  position: absolute;
+  right: 18px;
+  bottom: 22px;
+  width: 145px;
+}
+
 .weather-strip {
   position: relative;
   z-index: 2;

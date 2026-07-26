@@ -722,7 +722,14 @@ export default function Home() {
           </div>
         </header>
         <section className="dress-layout">
-          <div className="avatar-panel" style={getAvatarStyle(activeEpisode)}>
+          <div
+            className={`avatar-panel ${
+              activeEpisode.slug === "rescue-team-trial"
+                ? "avatar-panel--art-slice"
+                : ""
+            }`}
+            style={getAvatarStyle(activeEpisode)}
+          >
             <div className="weather-strip">
               <span className="weather-icon" aria-hidden="true">
                 {activeEpisode.weatherIcon}
@@ -737,6 +744,7 @@ export default function Home() {
                 selectedItems={selectedItems}
                 mood="ready"
                 priority
+                episodeSlug={activeEpisode.slug}
               />
               <div className="selected-summary">
                 {slots.map((slot) => {
@@ -797,7 +805,10 @@ export default function Home() {
                         } as CSSProperties
                       }
                     >
-                      <ItemThumbnail item={item} />
+                      <ItemThumbnail
+                        item={item}
+                        episodeSlug={activeEpisode.slug}
+                      />
                     </span>
                     <strong>{item.name}</strong>
                     <small>{item.note}</small>
@@ -854,6 +865,7 @@ export default function Home() {
                 selectedItems={selectedItems}
                 mood={passed ? "success" : "retry"}
                 priority
+                episodeSlug={activeEpisode.slug}
               />
             </div>
             <div className="score-orbit">
