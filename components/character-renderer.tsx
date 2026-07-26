@@ -76,6 +76,7 @@ export function ImageCharacterRenderer({
             alt=""
             fill
             sizes="(max-width: 720px) 190px, 280px"
+            unoptimized
             priority={priority}
             draggable={false}
             onError={onAssetError}
@@ -146,6 +147,7 @@ export function ItemThumbnail({
       alt=""
       fill
       sizes="(max-width: 720px) 42vw, 180px"
+      unoptimized
       draggable={false}
       onError={() => setFailed(true)}
       aria-hidden="true"
