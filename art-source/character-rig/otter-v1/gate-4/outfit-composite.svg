@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536">
+  <image href="items/safety-helmet/layers/headwear-back.svg" width="1024" height="1536"/>
+  <image href="items/rescue-top/layers/top-back.svg" width="1024" height="1536"/>
+  <image href="otter-base.png" width="1024" height="1536"/>
+  <image href="items/activity-pants/layers/bottom-main.svg" width="1024" height="1536"/>
+  <image href="items/grip-sneakers/layers/shoes-main.svg" width="1024" height="1536"/>
+  <image href="items/rescue-top/layers/top-main.svg" width="1024" height="1536"/>
+  <image href="items/safety-helmet/layers/headwear-front.svg" width="1024" height="1536"/>
+</svg>

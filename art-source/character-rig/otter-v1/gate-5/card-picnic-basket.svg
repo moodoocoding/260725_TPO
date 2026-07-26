@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384" viewBox="640 680 400 300">
+  <rect x="640" y="680" width="400" height="300" rx="28" fill="#fff5df"/>
+  <circle cx="968" cy="730" r="70" fill="#f4d39b"/>
+  <image href="items/picnic-basket/layers/basket-back.svg" width="1024" height="1536"/>
+  <image href="items/picnic-basket/layers/basket-front.svg" width="1024" height="1536"/>
+</svg>

@@ -1,0 +1,72 @@
+{
+  "episodeId": "rescue-team-trial",
+  "characterRigVersion": "otter-v1.0.0",
+  "maxScore": 100,
+  "slots": [
+    {
+      "slot": "top",
+      "correctItemId": "rescue-training-top",
+      "distractor": {
+        "itemId": "formal-jacket",
+        "name": "멋진 정장 재킷",
+        "score": 7,
+        "feedback": "멋진 옷이지만 어두워서 멀리서 잘 보이지 않고 팔을 빠르게 움직이기 어려워요.",
+        "goodElsewhere": "발표회나 예의를 갖추는 자리에는 잘 어울려요.",
+        "thumbnailPath": "card-formal-jacket.svg",
+        "layers": ["items/formal-jacket/layers/top-main.svg"],
+        "tpoTags": ["formal", "dark-color", "limited-movement"]
+      }
+    },
+    {
+      "slot": "bottom",
+      "correctItemId": "navy-activity-pants",
+      "distractor": {
+        "itemId": "outing-skirt",
+        "name": "긴 나들이 치마",
+        "score": 5,
+        "feedback": "예쁘지만 긴 자락이 발에 걸려 빠르게 움직이기 어려울 수 있어요.",
+        "goodElsewhere": "천천히 걷는 나들이나 특별한 모임에 잘 어울려요.",
+        "thumbnailPath": "card-outing-skirt.svg",
+        "layers": ["items/outing-skirt/layers/bottom-main.svg"],
+        "tpoTags": ["outing", "long-hem", "limited-movement"]
+      }
+    },
+    {
+      "slot": "shoes",
+      "correctItemId": "blue-grip-sneakers",
+      "distractor": {
+        "itemId": "house-slippers",
+        "name": "포근한 실내 슬리퍼",
+        "score": 4,
+        "feedback": "편안하지만 뛰면 벗겨지거나 바닥에서 미끄러질 수 있어요.",
+        "goodElsewhere": "집 안에서 편안하게 쉴 때 좋아요.",
+        "thumbnailPath": "card-house-slippers.svg",
+        "layers": ["items/house-slippers/layers/shoes-main.svg"],
+        "tpoTags": ["indoors", "soft", "low-grip"]
+      }
+    },
+    {
+      "slot": "accessory",
+      "correctItemId": "yellow-safety-helmet",
+      "distractor": {
+        "itemId": "picnic-basket",
+        "name": "피크닉 바구니",
+        "score": 3,
+        "feedback": "물건을 담기에는 좋지만 손을 자유롭게 쓰기 어렵고 머리를 보호하지 못해요.",
+        "goodElsewhere": "공원으로 소풍 갈 때 유용해요.",
+        "thumbnailPath": "card-picnic-basket.svg",
+        "layers": [
+          "items/picnic-basket/layers/basket-back.svg",
+          "items/picnic-basket/layers/basket-front.svg"
+        ],
+        "tpoTags": ["picnic", "handheld", "no-protection"]
+      }
+    }
+  ],
+  "allDistractorOutfitScore": 19,
+  "feedbackTone": {
+    "title": "아깝다! 상황 단서를 다시 살펴보자.",
+    "support": "이 아이템들도 다른 상황에서는 좋은 선택이에요.",
+    "action": "다시 코디하기"
+  }
+}

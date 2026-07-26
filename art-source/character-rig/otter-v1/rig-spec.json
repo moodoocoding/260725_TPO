@@ -1,0 +1,219 @@
+{
+  "characterRigVersion": "otter-v1.0.0",
+  "status": "gate-3-passed",
+  "canvas": {
+    "width": 1024,
+    "height": 1536,
+    "coordinateSpace": "canvas-pixels",
+    "subjectBounds": {
+      "x": 224,
+      "y": 159,
+      "width": 604,
+      "height": 1119
+    },
+    "groundY": 1278
+  },
+  "baseAsset": {
+    "source": "gate-3/otter-base-keyed.png",
+    "transparent": "gate-3/otter-base.png",
+    "pose": "front-neutral",
+    "body": "small-eared-otter",
+    "style": "flat-vector-one-step-shadow"
+  },
+  "anchors": {
+    "headTop": { "x": 526, "y": 159 },
+    "headCenter": { "x": 526, "y": 360 },
+    "earLeft": { "x": 318, "y": 299 },
+    "earRight": { "x": 736, "y": 299 },
+    "neckCenter": { "x": 526, "y": 590 },
+    "shoulderLeft": { "x": 401, "y": 602 },
+    "shoulderRight": { "x": 650, "y": 602 },
+    "elbowLeft": { "x": 309, "y": 744 },
+    "elbowRight": { "x": 742, "y": 744 },
+    "wristLeft": { "x": 274, "y": 849 },
+    "wristRight": { "x": 779, "y": 849 },
+    "handLeft": { "x": 267, "y": 883 },
+    "handRight": { "x": 788, "y": 883 },
+    "waistCenter": { "x": 526, "y": 862 },
+    "hipLeft": { "x": 443, "y": 1002 },
+    "hipRight": { "x": 610, "y": 1002 },
+    "kneeLeft": { "x": 409, "y": 1093 },
+    "kneeRight": { "x": 643, "y": 1093 },
+    "ankleLeft": { "x": 410, "y": 1202 },
+    "ankleRight": { "x": 648, "y": 1202 },
+    "footLeft": { "x": 389, "y": 1242 },
+    "footRight": { "x": 671, "y": 1242 },
+    "groundCenter": { "x": 526, "y": 1278 }
+  },
+  "zGroups": {
+    "background": 0,
+    "bagBack": 10,
+    "headwearBack": 20,
+    "bottomBack": 30,
+    "topBack": 40,
+    "bodyBase": 50,
+    "bottomMain": 60,
+    "shoeMain": 65,
+    "topMain": 70,
+    "sleeveFront": 75,
+    "armAccessoryFront": 80,
+    "bagFront": 85,
+    "headwearFront": 90
+  },
+  "slots": {
+    "top": {
+      "requiredAnchors": [
+        "neckCenter",
+        "shoulderLeft",
+        "shoulderRight",
+        "wristLeft",
+        "wristRight",
+        "waistCenter"
+      ],
+      "layers": [
+        "top-back",
+        "top-main",
+        "sleeve-front-left",
+        "sleeve-front-right",
+        "hood-front"
+      ],
+      "occlusionMasks": ["neck-mask", "torso-mask"]
+    },
+    "bottom": {
+      "requiredAnchors": [
+        "waistCenter",
+        "hipLeft",
+        "hipRight",
+        "kneeLeft",
+        "kneeRight",
+        "ankleLeft",
+        "ankleRight"
+      ],
+      "layers": ["bottom-back", "bottom-main", "bottom-front"],
+      "occlusionMasks": ["waist-mask", "leg-mask"]
+    },
+    "shoes": {
+      "requiredAnchors": [
+        "ankleLeft",
+        "ankleRight",
+        "footLeft",
+        "footRight",
+        "groundCenter"
+      ],
+      "layers": ["shoe-left", "shoe-right"],
+      "occlusionMasks": ["feet-mask"]
+    },
+    "headwear": {
+      "requiredAnchors": [
+        "headTop",
+        "headCenter",
+        "earLeft",
+        "earRight"
+      ],
+      "layers": ["head-back", "head-front"],
+      "occlusionMasks": ["ear-mask", "head-mask"]
+    },
+    "armAccessory": {
+      "requiredAnchors": [
+        "elbowLeft",
+        "elbowRight",
+        "wristLeft",
+        "wristRight"
+      ],
+      "layers": ["arm-back", "arm-front"],
+      "occlusionMasks": ["forearm-mask"]
+    },
+    "bag": {
+      "requiredAnchors": [
+        "shoulderLeft",
+        "shoulderRight",
+        "waistCenter",
+        "hipLeft",
+        "hipRight"
+      ],
+      "layers": ["bag-back", "strap-front", "bag-front"],
+      "occlusionMasks": ["arm-mask", "torso-mask"]
+    }
+  },
+  "occlusionRules": [
+    {
+      "id": "hood-over-neck",
+      "rule": "hood-front covers the neck edge but never covers the muzzle"
+    },
+    {
+      "id": "top-over-bottom",
+      "rule": "top-main covers the upper 24px of bottom-main at the waist"
+    },
+    {
+      "id": "shoe-over-feet",
+      "rule": "shoe layers cover the base paws below both ankle anchors"
+    },
+    {
+      "id": "hat-around-ears",
+      "rule": "head-back sits behind ears and head-front may cover only the upper ear edges"
+    },
+    {
+      "id": "band-around-arm",
+      "rule": "arm-back sits behind the forearm and arm-front sits above bodyBase"
+    },
+    {
+      "id": "bag-around-arm",
+      "rule": "bag-back and side body remain behind the arm while strap-front remains visible over the torso"
+    }
+  ],
+  "pilotItems": [
+    {
+      "itemId": "pilot-top-short-hood",
+      "slot": "top",
+      "status": "passed",
+      "assets": [
+        "gate-3/pilot-items/top-back.svg",
+        "gate-3/pilot-items/top-main.svg"
+      ]
+    },
+    {
+      "itemId": "pilot-bottom-long-pants",
+      "slot": "bottom",
+      "status": "passed",
+      "assets": ["gate-3/pilot-items/bottom-main.svg"]
+    },
+    {
+      "itemId": "pilot-shoes-sneakers",
+      "slot": "shoes",
+      "status": "passed",
+      "assets": ["gate-3/pilot-items/shoes-main.svg"]
+    },
+    {
+      "itemId": "pilot-headwear-hat",
+      "slot": "headwear",
+      "status": "passed",
+      "assets": [
+        "gate-3/pilot-items/headwear-back.svg",
+        "gate-3/pilot-items/headwear-front.svg"
+      ]
+    },
+    {
+      "itemId": "pilot-accessory-reflective-band",
+      "slot": "armAccessory",
+      "status": "passed",
+      "assets": ["gate-3/pilot-items/arm-band.svg"]
+    },
+    {
+      "itemId": "pilot-accessory-bag",
+      "slot": "bag",
+      "status": "passed",
+      "assets": [
+        "gate-3/pilot-items/bag-back.svg",
+        "gate-3/pilot-items/bag-front.svg"
+      ]
+    }
+  ],
+  "gate3Qa": {
+    "baseBodyLeakUnderClothing": 0,
+    "missingLimbsOrTail": 0,
+    "floatingAccessories": 0,
+    "shoeGroundSeparationErrors": 0,
+    "positionShiftPixels": 0,
+    "result": "passed"
+  }
+}
