@@ -64,7 +64,7 @@ export function ImageCharacterRenderer({
       role="img"
       aria-label={ariaLabel}
       data-renderer={
-        episodeSlug === "rescue-team-trial" ? "image-v3" : "image-v2"
+        episodeSlug === "rescue-team-trial" ? "image-v4-otter" : "image-v2"
       }
     >
       <div className="image-character-canvas" aria-hidden="true">

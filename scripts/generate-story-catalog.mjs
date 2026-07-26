@@ -29,7 +29,7 @@ const item = (
 });
 
 const items = [
-  item("rescue-jacket", "구조대 재킷", "top", "#ff6b61", "#be3939", "구조대", "jacket", ["visible", "active", "practical", "rescue"], "밝고 움직이기 편한 구조대 활동복이에요."),
+  item("rescue-jacket", "구조 훈련복", "top", "#f6574f", "#c93538", "구조대", "jacket", ["visible", "active", "practical", "rescue", "coverage"], "밝아서 잘 보이고 팔을 움직이기 편한 구조 훈련복이에요.", ["back", "main"]),
   item("sports-hoodie", "활동 후드", "top", "#5b80ce", "#294a8b", "후드", "hoodie", ["active", "comfortable", "warm", "casual"], "몸을 움직이기 편하고 포근해요."),
   item("school-cardigan", "학교 가디건", "top", "#41577c", "#202d49", "가디건", "cardigan", ["school", "neat", "warm", "practical"], "학교에서 단정하고 편하게 입을 수 있어요."),
   item("party-shirt", "반짝 파티 셔츠", "top", "#f58ab8", "#a83e70", "파티복", "shirt", ["celebration", "flashy", "formal"], "즐거운 파티에는 어울리지만 차분한 자리에는 튈 수 있어요."),
@@ -90,8 +90,7 @@ const items = [
   item("black-umbrella", "검정 우산", "accessory", "#303342", "#12141c", "우산", "umbrella", ["waterproof", "dark", "practical"], "비는 막지만 어두운 길에서는 눈에 덜 띌 수 있어요.", ["back", "front"]),
   item("reflective-band", "반사 밴드", "accessory", "#e9ff5d", "#849317", "반사띠", "band", ["visible", "safety", "practical"], "빛을 반사해 어두운 길에서도 잘 보이게 해요."),
   item("canvas-tote", "장바구니", "accessory", "#e5cda7", "#9e7c4e", "가방", "tote", ["shopping", "practical", "storage"], "물건을 담기 좋지만 비를 막아 주지는 못해요.", ["back", "front"]),
-  item("rescue-cap", "구조대 모자", "accessory", "#ffcb4a", "#c17d0b", "구조대모", "cap", ["rescue", "visible", "practical"], "구조대 역할을 나타내고 밝아서 잘 보여요."),
-  item("whistle", "안전 호루라기", "accessory", "#f4f5f7", "#6d7886", "호루라기", "small-tool", ["safety", "rescue", "practical"], "도움이 필요할 때 위치를 알릴 수 있어요."),
+  item("rescue-cap", "노란 안전모", "accessory", "#ffc83d", "#e4a922", "안전모", "helmet", ["rescue", "visible", "practical", "safety", "protective"], "머리를 보호하고 밝은 색으로 위치를 잘 보이게 해요.", ["back", "front"]),
   item("school-backpack", "학교 책가방", "accessory", "#486fae", "#203d71", "책가방", "backpack", ["school", "storage", "practical"], "학교 준비물을 양손 자유롭게 옮길 수 있어요.", ["back", "front"]),
   item("sports-cap", "체육 모자", "accessory", "#f6c84d", "#b57912", "체육모", "cap", ["school", "active", "sun-protection"], "야외 체육 활동에서 햇빛을 가려 줘요."),
   item("party-hat", "화려한 파티 모자", "accessory", "#f06cae", "#963965", "파티모", "party-hat", ["celebration", "flashy", "casual"], "생일 파티는 즐겁게 꾸미지만 차분한 자리에는 맞지 않아요."),
@@ -179,7 +178,7 @@ const episodes = [
       message("나래 대장", "움직이기 편하고 잘 보이는 옷차림을 준비해 줘."),
       message("구조대", "안전과 활동성을 모두 살펴보고 출발하자!"),
     ],
-    itemIds: ["rescue-jacket", "sports-hoodie", "yellow-raincoat", "party-shirt", "active-pants", "sky-denim", "beige-shorts", "long-skirt", "sneakers", "rain-boots", "slippers", "dress-shoes", "reflective-band", "rescue-cap", "whistle", "canvas-tote"],
+    itemIds: ["rescue-jacket", "formal-jacket", "active-pants", "long-skirt", "sneakers", "slippers", "rescue-cap", "canvas-tote"],
     rules: rules({
       tpo: [["훈련 장소", ["rescue", "safety"], 10], ["활동 상황", ["active"], 10], ["잘 보이는 옷차림", ["visible"], 10]],
       function: [["미끄럼 방지", ["grip"], 10], ["몸 보호", ["coverage", "protective"], 10], ["실용성", ["practical"], 10]],
@@ -596,8 +595,16 @@ if (itemById.size !== items.length) {
 }
 
 for (const episode of episodes) {
-  if (episode.itemIds.length !== 16 || new Set(episode.itemIds).size !== 16) {
-    throw new Error(`${episode.slug} must contain 16 unique item ids`);
+  const expectedItemsPerSlot =
+    episode.slug === "rescue-team-trial" ? 2 : 4;
+  const expectedItemCount = expectedItemsPerSlot * validSlots.length;
+  if (
+    episode.itemIds.length !== expectedItemCount ||
+    new Set(episode.itemIds).size !== expectedItemCount
+  ) {
+    throw new Error(
+      `${episode.slug} must contain ${expectedItemCount} unique item ids`,
+    );
   }
 
   const counts = Object.fromEntries(validSlots.map((slot) => [slot, 0]));
@@ -608,8 +615,10 @@ for (const episode of episodes) {
   }
 
   for (const slot of validSlots) {
-    if (counts[slot] !== 4) {
-      throw new Error(`${episode.slug} requires 4 ${slot} items, received ${counts[slot]}`);
+    if (counts[slot] !== expectedItemsPerSlot) {
+      throw new Error(
+        `${episode.slug} requires ${expectedItemsPerSlot} ${slot} items, received ${counts[slot]}`,
+      );
     }
   }
 

@@ -41,7 +41,12 @@ export type ResolvedArtLayer = ArtLayer & {
 const ITEM_ROOT = "/art/v2/items";
 const CHARACTER_ROOT = "/art/v2/character";
 const EPISODE_ONE_SLUG = "rescue-team-trial";
-const EPISODE_ONE_ROOT = `/art/v3/episodes/${EPISODE_ONE_SLUG}`;
+const EPISODE_ONE_ROOT = `/art/v4/episodes/${EPISODE_ONE_SLUG}`;
+const EPISODE_ONE_ASSET_VERSION = "4.1.0";
+
+function versionEpisodeOneAsset(src: string): string {
+  return `${src}?v=${EPISODE_ONE_ASSET_VERSION}`;
+}
 
 const SLOT_PLANE: Record<Slot, ArtPlane> = {
   top: "top",
@@ -102,18 +107,18 @@ function resolveItemLayers(
   episodeSlug?: string,
 ): ArtLayer[] {
   const isEpisodeOneSlice = episodeSlug === EPISODE_ONE_SLUG;
-  const layerKinds = isEpisodeOneSlice
-    ? ["main" as const]
-    : item.layerKinds?.length
-      ? item.layerKinds
-      : ["main" as const];
+  const layerKinds = item.layerKinds?.length
+    ? item.layerKinds
+    : ["main" as const];
   const root = isEpisodeOneSlice
     ? `${EPISODE_ONE_ROOT}/items/${item.assetId ?? item.id}`
     : `${ITEM_ROOT}/${item.assetId ?? item.id}`;
 
   return layerKinds.map((kind) => ({
     id: `${item.id}-${kind}`,
-    src: `${root}/wear-${kind}.webp`,
+    src: isEpisodeOneSlice
+      ? versionEpisodeOneAsset(`${root}/wear-${kind}.webp`)
+      : `${root}/wear-${kind}.webp`,
     plane:
       kind === "back"
         ? "wearBack"
@@ -137,7 +142,9 @@ export function resolveCharacterLayers(
     ? [
         {
           id: `episode-one-character-${mood}`,
-          src: `${EPISODE_ONE_ROOT}/character/${mood}.webp`,
+          src: versionEpisodeOneAsset(
+            `${EPISODE_ONE_ROOT}/character/${mood}.webp`,
+          ),
           plane: "body" as const,
           order: 0,
         },
@@ -161,14 +168,16 @@ export function getItemThumbnail(
   episodeSlug?: string,
 ): string {
   if (episodeSlug === EPISODE_ONE_SLUG) {
-    return `${EPISODE_ONE_ROOT}/items/${assetId}/thumb.webp`;
+    return versionEpisodeOneAsset(
+      `${EPISODE_ONE_ROOT}/items/${assetId}/thumb.webp`,
+    );
   }
   return `${ITEM_ROOT}/${assetId}/thumb.webp`;
 }
 
 export function getEpisodeBackground(slug: string): string {
   if (slug === EPISODE_ONE_SLUG) {
-    return `${EPISODE_ONE_ROOT}/background.webp`;
+    return versionEpisodeOneAsset(`${EPISODE_ONE_ROOT}/background.webp`);
   }
   return `${ART_MANIFEST.roots.episodes}/${slug}/background.webp`;
 }
