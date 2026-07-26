@@ -7,7 +7,7 @@ import {
   resolveCharacterLayers,
   type ArtMood,
 } from "@/lib/art-manifest";
-import type { ClothingItem } from "@/lib/game-data";
+import type { ClothingItem } from "@/lib/story-data";
 import {
   LegacyCssCharacter,
   type LegacyCharacterMood,
@@ -51,11 +51,7 @@ export function ImageCharacterRenderer({
   onAssetError,
 }: ImageCharacterRendererProps) {
   const layers = useMemo(
-    () =>
-      resolveCharacterLayers(
-        mood,
-        selectedItems.map((item) => item.assetId),
-      ),
+    () => resolveCharacterLayers(mood, selectedItems),
     [mood, selectedItems],
   );
 
@@ -64,7 +60,7 @@ export function ImageCharacterRenderer({
       className="character image-character"
       role="img"
       aria-label={ariaLabel}
-      data-renderer="image-v1"
+      data-renderer="image-v2"
     >
       <div className="image-character-canvas" aria-hidden="true">
         {layers.map((layer) => (
@@ -92,7 +88,7 @@ export function CharacterRenderer({
   priority = false,
 }: CharacterRendererProps) {
   const assetSignature = `${mood}:${selectedItems
-    .map((item) => item.assetId)
+    .map((item) => item.id)
     .sort()
     .join(",")}`;
   const [failedSignature, setFailedSignature] = useState<string | null>(null);
@@ -133,7 +129,7 @@ export function ItemThumbnail({ item }: { item: ClothingItem }) {
   return (
     <Image
       className="item-thumbnail-image"
-      src={getItemThumbnail(item.assetId)}
+      src={getItemThumbnail(item.id)}
       alt=""
       fill
       sizes="(max-width: 720px) 42vw, 180px"

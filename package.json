@@ -12,7 +12,11 @@
     "art:generate": "node scripts/generate-art-assets.mjs",
     "art:validate": "node scripts/validate-art-assets.mjs",
     "test:art": "node --test tests/art-manifest.test.mjs",
-    "test": "npm run art:validate && npm run test:art && npm run build",
+    "story:generate": "node scripts/generate-story-catalog.mjs",
+    "story:validate": "node --test tests/story-catalog.test.mjs",
+    "story-art:generate": "node scripts/generate-story-assets.mjs",
+    "story-art:validate": "node scripts/validate-story-assets.mjs",
+    "test": "npm run art:validate && npm run test:art && npm run story:validate && npm run story-art:validate && npm run build",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },
   "dependencies": {

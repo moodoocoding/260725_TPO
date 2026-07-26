@@ -1,0 +1,4077 @@
+{
+  "version": 2,
+  "generatedAt": "2026-07-26",
+  "slots": [
+    "top",
+    "bottom",
+    "shoes",
+    "accessory"
+  ],
+  "chapters": [
+    {
+      "id": "prologue",
+      "title": "프롤로그",
+      "subtitle": "구조대원이 되는 첫걸음",
+      "color": "#f2b94b",
+      "episodeSlugs": [
+        "rescue-team-trial"
+      ]
+    },
+    {
+      "id": "busy-day",
+      "title": "1. 바쁜 하루",
+      "subtitle": "하루의 활동에 맞춰 입어요",
+      "color": "#e98372",
+      "episodeSlugs": [
+        "school-pe-rush",
+        "bedtime-ready",
+        "friend-birthday-party"
+      ]
+    },
+    {
+      "id": "weather-alert",
+      "title": "2. 날씨 특보",
+      "subtitle": "비, 더위, 눈에서 몸을 지켜요",
+      "color": "#5ba9c8",
+      "episodeSlugs": [
+        "rainy-market-errand",
+        "summer-waterpark",
+        "winter-ski-class"
+      ]
+    },
+    {
+      "id": "heart-and-manners",
+      "title": "3. 마음을 입어요",
+      "subtitle": "축하와 존중을 옷으로 표현해요",
+      "color": "#ba7da4",
+      "episodeSlugs": [
+        "wedding-flower-child",
+        "family-funeral",
+        "lunar-new-year-visit"
+      ]
+    },
+    {
+      "id": "safety-call",
+      "title": "4. 안전 출동",
+      "subtitle": "장소별 안전 원칙을 적용해요",
+      "color": "#6b8b61",
+      "episodeSlugs": [
+        "science-lab-experiment",
+        "family-cooking",
+        "zombie-city-escape"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "rescue-jacket",
+      "name": "구조대 재킷",
+      "slot": "top",
+      "color": "#ff6b61",
+      "accent": "#be3939",
+      "symbol": "구조대",
+      "styleKey": "jacket",
+      "tags": [
+        "visible",
+        "active",
+        "practical",
+        "rescue"
+      ],
+      "note": "밝고 움직이기 편한 구조대 활동복이에요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "sports-hoodie",
+      "name": "활동 후드",
+      "slot": "top",
+      "color": "#5b80ce",
+      "accent": "#294a8b",
+      "symbol": "후드",
+      "styleKey": "hoodie",
+      "tags": [
+        "active",
+        "comfortable",
+        "warm",
+        "casual"
+      ],
+      "note": "몸을 움직이기 편하고 포근해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "school-cardigan",
+      "name": "학교 가디건",
+      "slot": "top",
+      "color": "#41577c",
+      "accent": "#202d49",
+      "symbol": "가디건",
+      "styleKey": "cardigan",
+      "tags": [
+        "school",
+        "neat",
+        "warm",
+        "practical"
+      ],
+      "note": "학교에서 단정하고 편하게 입을 수 있어요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "party-shirt",
+      "name": "반짝 파티 셔츠",
+      "slot": "top",
+      "color": "#f58ab8",
+      "accent": "#a83e70",
+      "symbol": "파티복",
+      "styleKey": "shirt",
+      "tags": [
+        "celebration",
+        "flashy",
+        "formal"
+      ],
+      "note": "즐거운 파티에는 어울리지만 차분한 자리에는 튈 수 있어요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "yellow-raincoat",
+      "name": "노란 우비",
+      "slot": "top",
+      "color": "#ffd54f",
+      "accent": "#f3a712",
+      "symbol": "우비",
+      "styleKey": "raincoat",
+      "tags": [
+        "waterproof",
+        "visible",
+        "coverage",
+        "practical"
+      ],
+      "note": "비를 막고 어두운 길에서도 잘 보여요.",
+      "layerKinds": [
+        "back",
+        "main"
+      ]
+    },
+    {
+      "id": "mint-windbreaker",
+      "name": "민트 바람막이",
+      "slot": "top",
+      "color": "#73d8c7",
+      "accent": "#2b9c91",
+      "symbol": "바람막이",
+      "styleKey": "jacket",
+      "tags": [
+        "water-resistant",
+        "visible",
+        "active",
+        "practical"
+      ],
+      "note": "가벼운 비와 바람을 막고 움직이기 편해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "navy-cardigan",
+      "name": "남색 가디건",
+      "slot": "top",
+      "color": "#263a5b",
+      "accent": "#17243b",
+      "symbol": "가디건",
+      "styleKey": "cardigan",
+      "tags": [
+        "warm",
+        "dark",
+        "neat",
+        "practical"
+      ],
+      "note": "단정하고 따뜻하지만 비에는 젖기 쉬워요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "cream-sweater",
+      "name": "크림 니트",
+      "slot": "top",
+      "color": "#f2e8d1",
+      "accent": "#cfbfa0",
+      "symbol": "니트",
+      "styleKey": "sweater",
+      "tags": [
+        "warm",
+        "light",
+        "coverage",
+        "absorbent"
+      ],
+      "note": "포근하지만 물에 젖으면 무거워져요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "school-track-jacket",
+      "name": "학교 체육복 상의",
+      "slot": "top",
+      "color": "#68a8df",
+      "accent": "#326da5",
+      "symbol": "체육복",
+      "styleKey": "track-jacket",
+      "tags": [
+        "school",
+        "active",
+        "breathable",
+        "practical"
+      ],
+      "note": "학교와 체육 활동에 모두 편해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "white-shirt",
+      "name": "단정한 흰 셔츠",
+      "slot": "top",
+      "color": "#fffaf0",
+      "accent": "#9aa7b1",
+      "symbol": "셔츠",
+      "styleKey": "shirt",
+      "tags": [
+        "neat",
+        "formal",
+        "respectful"
+      ],
+      "note": "축하나 예의를 갖추는 자리에 단정해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "cotton-pajama-top",
+      "name": "면 잠옷 상의",
+      "slot": "top",
+      "color": "#9bc8e8",
+      "accent": "#5c8fb5",
+      "symbol": "잠옷",
+      "styleKey": "pajama",
+      "tags": [
+        "sleep",
+        "soft",
+        "comfortable",
+        "breathable"
+      ],
+      "note": "부드럽고 땀이 잘 빠져 잠잘 때 편해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "cotton-tshirt",
+      "name": "면 티셔츠",
+      "slot": "top",
+      "color": "#8bd6b4",
+      "accent": "#3f9c78",
+      "symbol": "티셔츠",
+      "styleKey": "tshirt",
+      "tags": [
+        "breathable",
+        "comfortable",
+        "casual",
+        "active"
+      ],
+      "note": "가볍고 편하지만 특별한 보호 기능은 적어요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "fleece-sweater",
+      "name": "포근한 수면 니트",
+      "slot": "top",
+      "color": "#bda2db",
+      "accent": "#7957a3",
+      "symbol": "수면복",
+      "styleKey": "sweater",
+      "tags": [
+        "sleep",
+        "soft",
+        "warm",
+        "comfortable"
+      ],
+      "note": "추운 밤에 포근하지만 더운 날에는 답답할 수 있어요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "formal-jacket",
+      "name": "단정한 재킷",
+      "slot": "top",
+      "color": "#333f5b",
+      "accent": "#151d30",
+      "symbol": "재킷",
+      "styleKey": "formal-jacket",
+      "tags": [
+        "formal",
+        "neat",
+        "respectful",
+        "dark"
+      ],
+      "note": "격식과 존중을 표현하는 단정한 옷이에요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "swim-rashguard",
+      "name": "수영 래시가드",
+      "slot": "top",
+      "color": "#36b6cd",
+      "accent": "#137085",
+      "symbol": "래시가드",
+      "styleKey": "rashguard",
+      "tags": [
+        "swim",
+        "quick-dry",
+        "sun-protection",
+        "coverage"
+      ],
+      "note": "물에서 잘 마르고 햇빛과 피부를 보호해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "ski-jacket",
+      "name": "방수 스키 재킷",
+      "slot": "top",
+      "color": "#ff7d4d",
+      "accent": "#b94322",
+      "symbol": "스키복",
+      "styleKey": "ski-jacket",
+      "tags": [
+        "snowproof",
+        "waterproof",
+        "warm",
+        "visible",
+        "coverage"
+      ],
+      "note": "눈과 찬 바람을 막고 체온을 지켜요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "wool-coat",
+      "name": "울 코트",
+      "slot": "top",
+      "color": "#8d6f67",
+      "accent": "#543c36",
+      "symbol": "코트",
+      "styleKey": "coat",
+      "tags": [
+        "warm",
+        "formal",
+        "absorbent",
+        "restrict"
+      ],
+      "note": "따뜻하지만 눈에 젖으면 무겁고 움직임이 불편해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "black-cardigan",
+      "name": "검정 가디건",
+      "slot": "top",
+      "color": "#30323b",
+      "accent": "#111218",
+      "symbol": "가디건",
+      "styleKey": "cardigan",
+      "tags": [
+        "dark",
+        "neat",
+        "respectful",
+        "simple"
+      ],
+      "note": "차분하고 단정해서 조용한 자리에 어울려요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "hanbok-jeogori",
+      "name": "한복 저고리",
+      "slot": "top",
+      "color": "#f3a3a9",
+      "accent": "#b64e60",
+      "symbol": "저고리",
+      "styleKey": "hanbok-top",
+      "tags": [
+        "traditional",
+        "respectful",
+        "neat",
+        "celebration"
+      ],
+      "note": "명절의 뜻을 살리고 웃어른께 예의를 표현해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "lab-coat",
+      "name": "실험복",
+      "slot": "top",
+      "color": "#eef7f7",
+      "accent": "#6f9098",
+      "symbol": "실험복",
+      "styleKey": "lab-coat",
+      "tags": [
+        "lab",
+        "coverage",
+        "protective",
+        "fitted"
+      ],
+      "note": "실험 재료가 옷과 피부에 닿는 것을 줄여요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "fitted-cooking-top",
+      "name": "소매가 고정된 조리복",
+      "slot": "top",
+      "color": "#f7efe0",
+      "accent": "#a47c55",
+      "symbol": "조리복",
+      "styleKey": "chef-top",
+      "tags": [
+        "cooking",
+        "fitted",
+        "neat",
+        "coverage"
+      ],
+      "note": "소매가 불이나 음식에 닿지 않게 고정돼요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "loose-sleeve-shirt",
+      "name": "소매가 넓은 셔츠",
+      "slot": "top",
+      "color": "#f0b7da",
+      "accent": "#9f5d86",
+      "symbol": "넓은소매",
+      "styleKey": "wide-shirt",
+      "tags": [
+        "loose-sleeve",
+        "snag-risk",
+        "flashy"
+      ],
+      "note": "넓은 소매가 실험 도구나 불에 닿을 수 있어요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "protective-jacket",
+      "name": "튼튼한 보호 재킷",
+      "slot": "top",
+      "color": "#6c7b52",
+      "accent": "#344129",
+      "symbol": "보호복",
+      "styleKey": "protective-jacket",
+      "tags": [
+        "protective",
+        "active",
+        "coverage",
+        "practical"
+      ],
+      "note": "몸을 가리면서 빠르게 움직이기 좋아요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "active-pants",
+      "name": "검정 활동 바지",
+      "slot": "bottom",
+      "color": "#343b4a",
+      "accent": "#171b24",
+      "symbol": "활동바지",
+      "styleKey": "pants",
+      "tags": [
+        "active",
+        "coverage",
+        "practical",
+        "dark"
+      ],
+      "note": "걷고 뛰기 편하면서 다리를 가려 줘요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "sky-denim",
+      "name": "하늘색 청바지",
+      "slot": "bottom",
+      "color": "#78a7d8",
+      "accent": "#3c70a8",
+      "symbol": "청바지",
+      "styleKey": "denim",
+      "tags": [
+        "coverage",
+        "practical",
+        "casual"
+      ],
+      "note": "다리를 가리지만 젖으면 무거워질 수 있어요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "beige-shorts",
+      "name": "베이지 반바지",
+      "slot": "bottom",
+      "color": "#d8b07b",
+      "accent": "#9c7043",
+      "symbol": "반바지",
+      "styleKey": "shorts",
+      "tags": [
+        "active",
+        "breathable",
+        "exposed"
+      ],
+      "note": "움직이기 편하지만 다리 보호는 적어요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "long-skirt",
+      "name": "긴 주름치마",
+      "slot": "bottom",
+      "color": "#bd86b8",
+      "accent": "#8a5586",
+      "symbol": "긴치마",
+      "styleKey": "skirt",
+      "tags": [
+        "coverage",
+        "formal",
+        "restrict",
+        "snag-risk"
+      ],
+      "note": "단정할 수 있지만 활동할 때 걸리거나 젖을 수 있어요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "school-track-pants",
+      "name": "학교 체육복 바지",
+      "slot": "bottom",
+      "color": "#426ea8",
+      "accent": "#213e6a",
+      "symbol": "체육바지",
+      "styleKey": "track-pants",
+      "tags": [
+        "school",
+        "active",
+        "breathable",
+        "practical"
+      ],
+      "note": "체육 수업에서 안전하게 움직이기 편해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "pajama-pants",
+      "name": "면 잠옷 바지",
+      "slot": "bottom",
+      "color": "#9bc8e8",
+      "accent": "#5c8fb5",
+      "symbol": "잠옷바지",
+      "styleKey": "pajama-pants",
+      "tags": [
+        "sleep",
+        "soft",
+        "comfortable",
+        "breathable"
+      ],
+      "note": "잠잘 때 부드럽고 몸을 조이지 않아요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "cotton-pants",
+      "name": "편한 면바지",
+      "slot": "bottom",
+      "color": "#b7a987",
+      "accent": "#716448",
+      "symbol": "면바지",
+      "styleKey": "pants",
+      "tags": [
+        "comfortable",
+        "coverage",
+        "practical",
+        "neat"
+      ],
+      "note": "여러 상황에서 편하고 단정하게 입을 수 있어요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "party-chinos",
+      "name": "단정한 파티 바지",
+      "slot": "bottom",
+      "color": "#d5b67a",
+      "accent": "#8b6b33",
+      "symbol": "파티바지",
+      "styleKey": "chinos",
+      "tags": [
+        "celebration",
+        "neat",
+        "comfortable",
+        "formal"
+      ],
+      "note": "축하 자리에서 단정하면서 움직이기 편해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "swim-shorts",
+      "name": "수영 반바지",
+      "slot": "bottom",
+      "color": "#3bb1db",
+      "accent": "#136f9a",
+      "symbol": "수영복",
+      "styleKey": "swim-shorts",
+      "tags": [
+        "swim",
+        "quick-dry",
+        "active",
+        "lightweight"
+      ],
+      "note": "물에서 움직이기 쉽고 빠르게 말라요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "ski-pants",
+      "name": "방수 스키 바지",
+      "slot": "bottom",
+      "color": "#2e517c",
+      "accent": "#162c49",
+      "symbol": "스키바지",
+      "styleKey": "ski-pants",
+      "tags": [
+        "snowproof",
+        "waterproof",
+        "warm",
+        "coverage"
+      ],
+      "note": "눈과 찬 바람을 막아 다리를 따뜻하게 지켜요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "formal-pants",
+      "name": "검정 정장 바지",
+      "slot": "bottom",
+      "color": "#292d39",
+      "accent": "#11131a",
+      "symbol": "정장바지",
+      "styleKey": "formal-pants",
+      "tags": [
+        "formal",
+        "neat",
+        "respectful",
+        "dark"
+      ],
+      "note": "격식 있는 자리에서 단정하고 차분해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "black-skirt",
+      "name": "검정 단정 치마",
+      "slot": "bottom",
+      "color": "#383945",
+      "accent": "#181820",
+      "symbol": "검정치마",
+      "styleKey": "skirt",
+      "tags": [
+        "formal",
+        "neat",
+        "respectful",
+        "dark"
+      ],
+      "note": "차분하고 단정한 자리에 어울려요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "hanbok-skirt",
+      "name": "한복 치마",
+      "slot": "bottom",
+      "color": "#77b9c4",
+      "accent": "#397985",
+      "symbol": "한복치마",
+      "styleKey": "hanbok-skirt",
+      "tags": [
+        "traditional",
+        "respectful",
+        "neat",
+        "celebration"
+      ],
+      "note": "명절의 전통과 예의를 표현해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "lab-pants",
+      "name": "긴 실험 바지",
+      "slot": "bottom",
+      "color": "#53647a",
+      "accent": "#283447",
+      "symbol": "실험바지",
+      "styleKey": "pants",
+      "tags": [
+        "lab",
+        "coverage",
+        "protective",
+        "practical"
+      ],
+      "note": "실험할 때 다리 노출을 줄여 줘요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "cooking-pants",
+      "name": "긴 조리 바지",
+      "slot": "bottom",
+      "color": "#6a6258",
+      "accent": "#38322d",
+      "symbol": "조리바지",
+      "styleKey": "pants",
+      "tags": [
+        "cooking",
+        "coverage",
+        "comfortable",
+        "practical"
+      ],
+      "note": "뜨거운 것이 튈 때 다리를 보호해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "protective-cargo-pants",
+      "name": "보호 카고 바지",
+      "slot": "bottom",
+      "color": "#58654c",
+      "accent": "#2c3726",
+      "symbol": "카고바지",
+      "styleKey": "cargo-pants",
+      "tags": [
+        "protective",
+        "active",
+        "coverage",
+        "practical"
+      ],
+      "note": "몸을 보호하고 필요한 물건을 넣기 좋아요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "rain-boots",
+      "name": "노란 장화",
+      "slot": "shoes",
+      "color": "#ffc928",
+      "accent": "#d89100",
+      "symbol": "장화",
+      "styleKey": "boots",
+      "tags": [
+        "waterproof",
+        "grip",
+        "coverage",
+        "practical"
+      ],
+      "note": "발을 빗물에서 보호하고 잘 미끄러지지 않아요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "sneakers",
+      "name": "운동화",
+      "slot": "shoes",
+      "color": "#f7f4ec",
+      "accent": "#4f8ec9",
+      "symbol": "운동화",
+      "styleKey": "sneakers",
+      "tags": [
+        "grip",
+        "active",
+        "practical",
+        "closed-shoe"
+      ],
+      "note": "걷고 뛰기 편한 막힌 신발이에요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "slippers",
+      "name": "집 슬리퍼",
+      "slot": "shoes",
+      "color": "#f28f79",
+      "accent": "#b95243",
+      "symbol": "슬리퍼",
+      "styleKey": "slippers",
+      "tags": [
+        "open",
+        "slippery",
+        "casual"
+      ],
+      "note": "집에서는 편하지만 밖이나 위험한 장소에는 부적절해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "dress-shoes",
+      "name": "검정 구두",
+      "slot": "shoes",
+      "color": "#262626",
+      "accent": "#090909",
+      "symbol": "구두",
+      "styleKey": "dress-shoes",
+      "tags": [
+        "dark",
+        "formal",
+        "smooth-sole",
+        "closed-shoe"
+      ],
+      "note": "격식에는 좋지만 빠른 활동에는 불편할 수 있어요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "running-shoes",
+      "name": "체육 운동화",
+      "slot": "shoes",
+      "color": "#f5f3ea",
+      "accent": "#f05f55",
+      "symbol": "체육화",
+      "styleKey": "sneakers",
+      "tags": [
+        "school",
+        "grip",
+        "active",
+        "closed-shoe"
+      ],
+      "note": "체육 활동에서 발을 잡아 주고 잘 미끄러지지 않아요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "sleep-socks",
+      "name": "부드러운 수면 양말",
+      "slot": "shoes",
+      "color": "#d9c8ef",
+      "accent": "#8d73ad",
+      "symbol": "수면양말",
+      "styleKey": "socks",
+      "tags": [
+        "sleep",
+        "soft",
+        "warm",
+        "comfortable"
+      ],
+      "note": "잠잘 때 발을 부드럽고 따뜻하게 해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "party-sneakers",
+      "name": "단정한 파티 운동화",
+      "slot": "shoes",
+      "color": "#fff5dd",
+      "accent": "#d4a247",
+      "symbol": "파티화",
+      "styleKey": "sneakers",
+      "tags": [
+        "celebration",
+        "neat",
+        "comfortable",
+        "active"
+      ],
+      "note": "축하 자리에서 단정하면서 편하게 움직여요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "aqua-shoes",
+      "name": "아쿠아 슈즈",
+      "slot": "shoes",
+      "color": "#40c7c6",
+      "accent": "#157d7d",
+      "symbol": "아쿠아화",
+      "styleKey": "aqua-shoes",
+      "tags": [
+        "swim",
+        "grip",
+        "quick-dry",
+        "closed-shoe"
+      ],
+      "note": "물놀이 바닥에서 발을 보호하고 미끄럼을 줄여요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "sandals",
+      "name": "샌들",
+      "slot": "shoes",
+      "color": "#e6a85f",
+      "accent": "#9b632c",
+      "symbol": "샌들",
+      "styleKey": "sandals",
+      "tags": [
+        "open",
+        "lightweight",
+        "casual"
+      ],
+      "note": "가볍지만 발가락 보호와 미끄럼 방지는 적어요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "ski-boots",
+      "name": "스키 부츠",
+      "slot": "shoes",
+      "color": "#4b5f82",
+      "accent": "#202d48",
+      "symbol": "스키부츠",
+      "styleKey": "ski-boots",
+      "tags": [
+        "snowproof",
+        "grip",
+        "protective",
+        "warm"
+      ],
+      "note": "스키에서 발목을 잡고 눈과 충격을 막아 줘요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "hiking-boots",
+      "name": "튼튼한 등산화",
+      "slot": "shoes",
+      "color": "#70543e",
+      "accent": "#38271c",
+      "symbol": "등산화",
+      "styleKey": "hiking-boots",
+      "tags": [
+        "grip",
+        "protective",
+        "coverage",
+        "active"
+      ],
+      "note": "거친 길에서 발목과 발바닥을 보호해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "formal-flats",
+      "name": "단정한 검정 단화",
+      "slot": "shoes",
+      "color": "#34323a",
+      "accent": "#15141a",
+      "symbol": "단화",
+      "styleKey": "flats",
+      "tags": [
+        "formal",
+        "neat",
+        "respectful",
+        "closed-shoe"
+      ],
+      "note": "격식 있는 자리에서 단정하고 비교적 편해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "hanbok-shoes",
+      "name": "한복 꽃신",
+      "slot": "shoes",
+      "color": "#d85d69",
+      "accent": "#8b2935",
+      "symbol": "꽃신",
+      "styleKey": "hanbok-shoes",
+      "tags": [
+        "traditional",
+        "neat",
+        "respectful"
+      ],
+      "note": "한복과 어울려 명절의 뜻을 살려요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "closed-safety-shoes",
+      "name": "막힌 안전화",
+      "slot": "shoes",
+      "color": "#4a535c",
+      "accent": "#20262c",
+      "symbol": "안전화",
+      "styleKey": "safety-shoes",
+      "tags": [
+        "closed-shoe",
+        "protective",
+        "grip",
+        "lab"
+      ],
+      "note": "실험 재료가 발에 닿는 것을 줄이고 발을 보호해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "kitchen-nonslip-shoes",
+      "name": "주방 미끄럼 방지화",
+      "slot": "shoes",
+      "color": "#3c4b4b",
+      "accent": "#162323",
+      "symbol": "주방화",
+      "styleKey": "safety-shoes",
+      "tags": [
+        "closed-shoe",
+        "grip",
+        "cooking",
+        "protective"
+      ],
+      "note": "젖을 수 있는 주방 바닥에서 발을 보호해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "clear-umbrella",
+      "name": "투명 우산",
+      "slot": "accessory",
+      "color": "#bdebf2",
+      "accent": "#5a9eae",
+      "symbol": "우산",
+      "styleKey": "umbrella",
+      "tags": [
+        "waterproof",
+        "transparent",
+        "practical"
+      ],
+      "note": "비를 막으면서 앞을 볼 수 있어요.",
+      "layerKinds": [
+        "back",
+        "front"
+      ]
+    },
+    {
+      "id": "black-umbrella",
+      "name": "검정 우산",
+      "slot": "accessory",
+      "color": "#303342",
+      "accent": "#12141c",
+      "symbol": "우산",
+      "styleKey": "umbrella",
+      "tags": [
+        "waterproof",
+        "dark",
+        "practical"
+      ],
+      "note": "비는 막지만 어두운 길에서는 눈에 덜 띌 수 있어요.",
+      "layerKinds": [
+        "back",
+        "front"
+      ]
+    },
+    {
+      "id": "reflective-band",
+      "name": "반사 밴드",
+      "slot": "accessory",
+      "color": "#e9ff5d",
+      "accent": "#849317",
+      "symbol": "반사띠",
+      "styleKey": "band",
+      "tags": [
+        "visible",
+        "safety",
+        "practical"
+      ],
+      "note": "빛을 반사해 어두운 길에서도 잘 보이게 해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "canvas-tote",
+      "name": "장바구니",
+      "slot": "accessory",
+      "color": "#e5cda7",
+      "accent": "#9e7c4e",
+      "symbol": "가방",
+      "styleKey": "tote",
+      "tags": [
+        "shopping",
+        "practical",
+        "storage"
+      ],
+      "note": "물건을 담기 좋지만 비를 막아 주지는 못해요.",
+      "layerKinds": [
+        "back",
+        "front"
+      ]
+    },
+    {
+      "id": "rescue-cap",
+      "name": "구조대 모자",
+      "slot": "accessory",
+      "color": "#ffcb4a",
+      "accent": "#c17d0b",
+      "symbol": "구조대모",
+      "styleKey": "cap",
+      "tags": [
+        "rescue",
+        "visible",
+        "practical"
+      ],
+      "note": "구조대 역할을 나타내고 밝아서 잘 보여요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "whistle",
+      "name": "안전 호루라기",
+      "slot": "accessory",
+      "color": "#f4f5f7",
+      "accent": "#6d7886",
+      "symbol": "호루라기",
+      "styleKey": "small-tool",
+      "tags": [
+        "safety",
+        "rescue",
+        "practical"
+      ],
+      "note": "도움이 필요할 때 위치를 알릴 수 있어요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "school-backpack",
+      "name": "학교 책가방",
+      "slot": "accessory",
+      "color": "#486fae",
+      "accent": "#203d71",
+      "symbol": "책가방",
+      "styleKey": "backpack",
+      "tags": [
+        "school",
+        "storage",
+        "practical"
+      ],
+      "note": "학교 준비물을 양손 자유롭게 옮길 수 있어요.",
+      "layerKinds": [
+        "back",
+        "front"
+      ]
+    },
+    {
+      "id": "sports-cap",
+      "name": "체육 모자",
+      "slot": "accessory",
+      "color": "#f6c84d",
+      "accent": "#b57912",
+      "symbol": "체육모",
+      "styleKey": "cap",
+      "tags": [
+        "school",
+        "active",
+        "sun-protection"
+      ],
+      "note": "야외 체육 활동에서 햇빛을 가려 줘요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "party-hat",
+      "name": "화려한 파티 모자",
+      "slot": "accessory",
+      "color": "#f06cae",
+      "accent": "#963965",
+      "symbol": "파티모",
+      "styleKey": "party-hat",
+      "tags": [
+        "celebration",
+        "flashy",
+        "casual"
+      ],
+      "note": "생일 파티는 즐겁게 꾸미지만 차분한 자리에는 맞지 않아요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "sleep-mask",
+      "name": "수면 안대",
+      "slot": "accessory",
+      "color": "#7d6bad",
+      "accent": "#3d315e",
+      "symbol": "안대",
+      "styleKey": "mask",
+      "tags": [
+        "sleep",
+        "comfortable",
+        "darkness"
+      ],
+      "note": "빛을 가려 잠들기 편하게 도와요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "blanket",
+      "name": "가벼운 담요",
+      "slot": "accessory",
+      "color": "#d5b6e8",
+      "accent": "#8f68aa",
+      "symbol": "담요",
+      "styleKey": "blanket",
+      "tags": [
+        "sleep",
+        "soft",
+        "warm"
+      ],
+      "note": "잠잘 때 체온을 포근하게 유지해요.",
+      "layerKinds": [
+        "back",
+        "front"
+      ]
+    },
+    {
+      "id": "scarf",
+      "name": "목도리",
+      "slot": "accessory",
+      "color": "#e96b64",
+      "accent": "#9e3632",
+      "symbol": "목도리",
+      "styleKey": "scarf",
+      "tags": [
+        "warm",
+        "snag-risk"
+      ],
+      "note": "추운 곳에서는 따뜻하지만 잠이나 활동 중에는 걸릴 수 있어요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "gift-bag",
+      "name": "생일 선물 가방",
+      "slot": "accessory",
+      "color": "#ffcc5c",
+      "accent": "#c17d1c",
+      "symbol": "선물",
+      "styleKey": "gift-bag",
+      "tags": [
+        "celebration",
+        "respectful",
+        "storage"
+      ],
+      "note": "친구를 축하하는 마음을 담아 가기 좋아요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "bow-tie",
+      "name": "단정한 나비넥타이",
+      "slot": "accessory",
+      "color": "#4f6ea6",
+      "accent": "#223b68",
+      "symbol": "나비넥타이",
+      "styleKey": "bow-tie",
+      "tags": [
+        "formal",
+        "neat",
+        "celebration"
+      ],
+      "note": "축하 자리에서 단정한 느낌을 더해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "swim-cap",
+      "name": "수영모",
+      "slot": "accessory",
+      "color": "#ff7e71",
+      "accent": "#b94339",
+      "symbol": "수영모",
+      "styleKey": "swim-cap",
+      "tags": [
+        "swim",
+        "hygiene",
+        "water-safety"
+      ],
+      "note": "머리카락을 정리해 안전하고 깨끗하게 물놀이해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "goggles",
+      "name": "물안경",
+      "slot": "accessory",
+      "color": "#49b7dc",
+      "accent": "#176d8f",
+      "symbol": "물안경",
+      "styleKey": "goggles",
+      "tags": [
+        "swim",
+        "eye-protection",
+        "water-safety"
+      ],
+      "note": "물속에서 눈을 보호하고 앞을 보게 해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "life-jacket",
+      "name": "구명조끼",
+      "slot": "accessory",
+      "color": "#ff8d3f",
+      "accent": "#b94a16",
+      "symbol": "구명조끼",
+      "styleKey": "life-jacket",
+      "tags": [
+        "swim",
+        "water-safety",
+        "protective",
+        "visible"
+      ],
+      "note": "물놀이 중 몸이 뜨도록 도와 안전을 지켜요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "towel",
+      "name": "큰 수건",
+      "slot": "accessory",
+      "color": "#f4f0df",
+      "accent": "#afa37c",
+      "symbol": "수건",
+      "styleKey": "towel",
+      "tags": [
+        "swim",
+        "dry",
+        "practical"
+      ],
+      "note": "물놀이 뒤 몸을 닦고 체온을 지켜요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "ski-helmet",
+      "name": "스키 헬멧",
+      "slot": "accessory",
+      "color": "#3f526e",
+      "accent": "#19283f",
+      "symbol": "헬멧",
+      "styleKey": "helmet",
+      "tags": [
+        "snow-safety",
+        "protective",
+        "ski"
+      ],
+      "note": "넘어지거나 부딪힐 때 머리를 보호해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "ski-goggles",
+      "name": "스키 고글",
+      "slot": "accessory",
+      "color": "#58a8ca",
+      "accent": "#245c75",
+      "symbol": "스키고글",
+      "styleKey": "goggles",
+      "tags": [
+        "snow-safety",
+        "eye-protection",
+        "ski"
+      ],
+      "note": "눈보라와 강한 햇빛에서 눈을 보호해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "gloves",
+      "name": "방한 장갑",
+      "slot": "accessory",
+      "color": "#536d9b",
+      "accent": "#273c63",
+      "symbol": "장갑",
+      "styleKey": "gloves",
+      "tags": [
+        "warm",
+        "protective",
+        "ski"
+      ],
+      "note": "손을 따뜻하게 하고 눈과 마찰에서 보호해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "flower-basket",
+      "name": "꽃바구니",
+      "slot": "accessory",
+      "color": "#efb6c5",
+      "accent": "#9d6172",
+      "symbol": "꽃바구니",
+      "styleKey": "basket",
+      "tags": [
+        "celebration",
+        "wedding",
+        "respectful"
+      ],
+      "note": "결혼을 축하하는 화동의 역할을 표현해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "simple-ribbon",
+      "name": "작은 단정 리본",
+      "slot": "accessory",
+      "color": "#6f7da0",
+      "accent": "#34405f",
+      "symbol": "리본",
+      "styleKey": "ribbon",
+      "tags": [
+        "neat",
+        "simple",
+        "respectful"
+      ],
+      "note": "눈에 띄지 않으면서 단정함을 더해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "black-bag",
+      "name": "작은 검정 가방",
+      "slot": "accessory",
+      "color": "#30323a",
+      "accent": "#121319",
+      "symbol": "검정가방",
+      "styleKey": "bag",
+      "tags": [
+        "dark",
+        "simple",
+        "respectful",
+        "storage"
+      ],
+      "note": "차분하고 단정하게 필요한 물건을 담아요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "flower-crown",
+      "name": "화려한 꽃관",
+      "slot": "accessory",
+      "color": "#f19bb5",
+      "accent": "#ac4668",
+      "symbol": "꽃관",
+      "styleKey": "flower-crown",
+      "tags": [
+        "celebration",
+        "flashy"
+      ],
+      "note": "축하 자리에는 어울리지만 추모 자리에는 너무 화려해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "bright-necklace",
+      "name": "반짝 목걸이",
+      "slot": "accessory",
+      "color": "#ffd45f",
+      "accent": "#af7d14",
+      "symbol": "목걸이",
+      "styleKey": "necklace",
+      "tags": [
+        "flashy",
+        "celebration",
+        "snag-risk"
+      ],
+      "note": "화려한 장식이라 차분한 자리나 활동에는 맞지 않을 수 있어요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "norigae",
+      "name": "전통 노리개",
+      "slot": "accessory",
+      "color": "#e76573",
+      "accent": "#9b2f40",
+      "symbol": "노리개",
+      "styleKey": "norigae",
+      "tags": [
+        "traditional",
+        "celebration",
+        "respectful"
+      ],
+      "note": "한복과 함께 명절의 멋과 뜻을 살려요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "hanbok-hat",
+      "name": "전통 복건",
+      "slot": "accessory",
+      "color": "#333a53",
+      "accent": "#161b2b",
+      "symbol": "복건",
+      "styleKey": "hanbok-hat",
+      "tags": [
+        "traditional",
+        "respectful",
+        "neat"
+      ],
+      "note": "전통 옷차림과 어울리는 단정한 장식이에요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "safety-goggles",
+      "name": "보안경",
+      "slot": "accessory",
+      "color": "#c8eef4",
+      "accent": "#4a8b99",
+      "symbol": "보안경",
+      "styleKey": "goggles",
+      "tags": [
+        "lab",
+        "eye-protection",
+        "protective"
+      ],
+      "note": "실험 재료가 눈에 튀는 것을 막아 줘요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "lab-gloves",
+      "name": "실험 장갑",
+      "slot": "accessory",
+      "color": "#85c9da",
+      "accent": "#347b8e",
+      "symbol": "실험장갑",
+      "styleKey": "gloves",
+      "tags": [
+        "lab",
+        "hand-protection",
+        "protective"
+      ],
+      "note": "실험 물질이 손에 직접 닿는 것을 줄여요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "notebook",
+      "name": "실험 기록장",
+      "slot": "accessory",
+      "color": "#f3e7bd",
+      "accent": "#9d8744",
+      "symbol": "기록장",
+      "styleKey": "book",
+      "tags": [
+        "lab",
+        "learning",
+        "practical"
+      ],
+      "note": "실험 과정을 적는 데 필요하지만 보호 장비는 아니에요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "dangling-scarf",
+      "name": "길게 늘어진 스카프",
+      "slot": "accessory",
+      "color": "#dd6f97",
+      "accent": "#8f3658",
+      "symbol": "긴스카프",
+      "styleKey": "scarf",
+      "tags": [
+        "snag-risk",
+        "loose",
+        "flashy"
+      ],
+      "note": "실험 도구나 불에 걸릴 수 있어 위험해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "apron",
+      "name": "앞치마",
+      "slot": "accessory",
+      "color": "#e9c27e",
+      "accent": "#9f7134",
+      "symbol": "앞치마",
+      "styleKey": "apron",
+      "tags": [
+        "cooking",
+        "protective",
+        "hygiene"
+      ],
+      "note": "음식과 뜨거운 것이 옷에 튀는 것을 줄여요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "oven-mitt",
+      "name": "오븐 장갑",
+      "slot": "accessory",
+      "color": "#ef765f",
+      "accent": "#a63628",
+      "symbol": "오븐장갑",
+      "styleKey": "oven-mitt",
+      "tags": [
+        "cooking",
+        "heat-protection",
+        "protective"
+      ],
+      "note": "뜨거운 그릇을 잡을 때 손을 보호해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "chef-hat",
+      "name": "조리 모자",
+      "slot": "accessory",
+      "color": "#fffaf0",
+      "accent": "#a4a09a",
+      "symbol": "조리모",
+      "styleKey": "chef-hat",
+      "tags": [
+        "cooking",
+        "hygiene",
+        "neat"
+      ],
+      "note": "머리카락을 정리해 음식을 깨끗하게 만들어요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "loose-bracelet",
+      "name": "늘어진 팔찌",
+      "slot": "accessory",
+      "color": "#e8b64e",
+      "accent": "#9d711e",
+      "symbol": "팔찌",
+      "styleKey": "bracelet",
+      "tags": [
+        "snag-risk",
+        "loose",
+        "flashy"
+      ],
+      "note": "조리 도구나 음식에 걸릴 수 있어요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "helmet",
+      "name": "튼튼한 헬멧",
+      "slot": "accessory",
+      "color": "#4f6174",
+      "accent": "#243444",
+      "symbol": "헬멧",
+      "styleKey": "helmet",
+      "tags": [
+        "protective",
+        "safety",
+        "active"
+      ],
+      "note": "부딪히거나 넘어질 때 머리를 보호해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "knee-pads",
+      "name": "무릎 보호대",
+      "slot": "accessory",
+      "color": "#586b78",
+      "accent": "#283945",
+      "symbol": "보호대",
+      "styleKey": "knee-pads",
+      "tags": [
+        "protective",
+        "active",
+        "safety"
+      ],
+      "note": "빠르게 움직이거나 넘어질 때 무릎을 보호해요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "flashlight",
+      "name": "밝은 손전등",
+      "slot": "accessory",
+      "color": "#ffd963",
+      "accent": "#a87a17",
+      "symbol": "손전등",
+      "styleKey": "flashlight",
+      "tags": [
+        "visible",
+        "practical",
+        "safety"
+      ],
+      "note": "어두운 길을 보고 위치를 알리는 데 도움이 돼요.",
+      "layerKinds": [
+        "main"
+      ]
+    },
+    {
+      "id": "cape",
+      "name": "길게 펄럭이는 망토",
+      "slot": "accessory",
+      "color": "#8f4f9f",
+      "accent": "#50255c",
+      "symbol": "망토",
+      "styleKey": "cape",
+      "tags": [
+        "snag-risk",
+        "restrict",
+        "flashy"
+      ],
+      "note": "멋져 보이지만 달릴 때 걸리거나 잡힐 수 있어요.",
+      "layerKinds": [
+        "back",
+        "front"
+      ]
+    }
+  ],
+  "episodes": [
+    {
+      "slug": "rescue-team-trial",
+      "chapterId": "prologue",
+      "order": 1,
+      "title": "구조대 입단 시험",
+      "kicker": "PROLOGUE · 첫 번째 임무",
+      "teaser": "안전하고 활동적인 코디로 구조대원이 될 준비를 해요.",
+      "sender": "나래 대장",
+      "weatherIcon": "★",
+      "weatherLabel": "맑은 오후 · 구조대 훈련장",
+      "weatherNote": "빠르게 움직이고 다른 사람에게 잘 보여야 해요",
+      "backgroundStyle": "rescue-hq",
+      "backgroundColors": [
+        "#f7c85b",
+        "#f06b5d"
+      ],
+      "timeLimitSeconds": 60,
+      "tpo": {
+        "time": "맑은 오후",
+        "place": "스타일 구조대 훈련장",
+        "occasion": "입단 시험과 안전 훈련"
+      },
+      "messages": [
+        {
+          "speaker": "나래 대장",
+          "text": "오늘은 스타일 구조대 입단 시험 날이야!"
+        },
+        {
+          "speaker": "나래 대장",
+          "text": "훈련장에서 걷고 뛰며 안전 단서를 찾게 될 거야."
+        },
+        {
+          "speaker": "나래 대장",
+          "text": "움직이기 편하고 잘 보이는 옷차림을 준비해 줘."
+        },
+        {
+          "speaker": "구조대",
+          "text": "안전과 활동성을 모두 살펴보고 출발하자!"
+        }
+      ],
+      "itemIds": [
+        "rescue-jacket",
+        "sports-hoodie",
+        "yellow-raincoat",
+        "party-shirt",
+        "active-pants",
+        "sky-denim",
+        "beige-shorts",
+        "long-skirt",
+        "sneakers",
+        "rain-boots",
+        "slippers",
+        "dress-shoes",
+        "reflective-band",
+        "rescue-cap",
+        "whistle",
+        "canvas-tote"
+      ],
+      "rules": {
+        "criteria": [
+          {
+            "category": "tpo",
+            "anyTags": [
+              "rescue",
+              "safety"
+            ],
+            "points": 10,
+            "strength": "\"훈련 장소\"에 맞는 선택을 잘했어요.",
+            "improvement": "훈련 장소 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "active"
+            ],
+            "points": 10,
+            "strength": "\"활동 상황\"에 맞는 선택을 잘했어요.",
+            "improvement": "활동 상황 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "visible"
+            ],
+            "points": 10,
+            "strength": "\"잘 보이는 옷차림\"에 맞는 선택을 잘했어요.",
+            "improvement": "잘 보이는 옷차림 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "grip"
+            ],
+            "points": 10,
+            "strength": "\"미끄럼 방지\"에 맞는 선택을 잘했어요.",
+            "improvement": "미끄럼 방지 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "coverage",
+              "protective"
+            ],
+            "points": 10,
+            "strength": "\"몸 보호\"에 맞는 선택을 잘했어요.",
+            "improvement": "몸 보호 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "practical"
+            ],
+            "points": 10,
+            "strength": "\"실용성\"에 맞는 선택을 잘했어요.",
+            "improvement": "실용성 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "rescue"
+            ],
+            "points": 10,
+            "strength": "\"구조대 역할\"에 맞는 선택을 잘했어요.",
+            "improvement": "구조대 역할 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "neat",
+              "practical"
+            ],
+            "points": 10,
+            "strength": "\"단정한 준비\"에 맞는 선택을 잘했어요.",
+            "improvement": "단정한 준비 조건을 옷의 기능에서 더 찾아보세요."
+          }
+        ],
+        "mandatory": [
+          {
+            "label": "활동하기 편한 옷",
+            "anyTags": [
+              "active"
+            ],
+            "improvement": "\"활동하기 편한 옷\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          },
+          {
+            "label": "안전하게 디딜 신발",
+            "anyTags": [
+              "grip"
+            ],
+            "improvement": "\"안전하게 디딜 신발\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          }
+        ],
+        "forbidden": [
+          {
+            "tag": "slippery",
+            "penalty": 8,
+            "feedback": "미끄러운 신발은 훈련 중 넘어질 수 있어요."
+          },
+          {
+            "tag": "restrict",
+            "penalty": 8,
+            "feedback": "움직임을 막는 긴 옷은 훈련에 불편해요."
+          }
+        ]
+      },
+      "successTitle": "구조대 입단 준비 완료!",
+      "retryTitle": "안전 장비를 다시 살펴볼까요?"
+    },
+    {
+      "slug": "school-pe-rush",
+      "chapterId": "busy-day",
+      "order": 2,
+      "title": "늦잠 후 등교와 체육 수업",
+      "kicker": "CHAPTER 1 · 바쁜 하루",
+      "teaser": "학교 예절과 체육 활동을 한 번에 만족하는 옷을 골라요.",
+      "sender": "민준",
+      "weatherIcon": "☀",
+      "weatherLabel": "평일 아침 · 20°C",
+      "weatherNote": "곧 등교하고 첫 시간에 체육 수업이 있어요",
+      "backgroundStyle": "school-yard",
+      "backgroundColors": [
+        "#a9d9f2",
+        "#72b87b"
+      ],
+      "timeLimitSeconds": 60,
+      "tpo": {
+        "time": "평일 아침",
+        "place": "학교와 운동장",
+        "occasion": "등교 후 체육 수업"
+      },
+      "messages": [
+        {
+          "speaker": "민준",
+          "text": "늦잠을 자서 곧 학교로 출발해야 해!"
+        },
+        {
+          "speaker": "민준",
+          "text": "오늘 첫 수업은 운동장에서 하는 체육이야."
+        },
+        {
+          "speaker": "민준",
+          "text": "학교에서 단정하면서 마음껏 뛸 수 있게 도와줘."
+        },
+        {
+          "speaker": "구조대",
+          "text": "학교, 활동, 안전한 신발 단서를 찾아보자!"
+        }
+      ],
+      "itemIds": [
+        "school-track-jacket",
+        "sports-hoodie",
+        "school-cardigan",
+        "party-shirt",
+        "school-track-pants",
+        "active-pants",
+        "sky-denim",
+        "long-skirt",
+        "running-shoes",
+        "sneakers",
+        "dress-shoes",
+        "slippers",
+        "school-backpack",
+        "sports-cap",
+        "reflective-band",
+        "party-hat"
+      ],
+      "rules": {
+        "criteria": [
+          {
+            "category": "tpo",
+            "anyTags": [
+              "school"
+            ],
+            "points": 10,
+            "strength": "\"학교 장소\"에 맞는 선택을 잘했어요.",
+            "improvement": "학교 장소 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "active"
+            ],
+            "points": 10,
+            "strength": "\"체육 수업\"에 맞는 선택을 잘했어요.",
+            "improvement": "체육 수업 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "practical"
+            ],
+            "points": 10,
+            "strength": "\"아침 준비\"에 맞는 선택을 잘했어요.",
+            "improvement": "아침 준비 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "grip"
+            ],
+            "points": 10,
+            "strength": "\"안전한 밑창\"에 맞는 선택을 잘했어요.",
+            "improvement": "안전한 밑창 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "breathable",
+              "active"
+            ],
+            "points": 10,
+            "strength": "\"통풍과 움직임\"에 맞는 선택을 잘했어요.",
+            "improvement": "통풍과 움직임 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "closed-shoe"
+            ],
+            "points": 10,
+            "strength": "\"발 보호\"에 맞는 선택을 잘했어요.",
+            "improvement": "발 보호 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "school",
+              "neat"
+            ],
+            "points": 10,
+            "strength": "\"학교의 단정함\"에 맞는 선택을 잘했어요.",
+            "improvement": "학교의 단정함 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "practical"
+            ],
+            "points": 10,
+            "strength": "\"과하지 않은 표현\"에 맞는 선택을 잘했어요.",
+            "improvement": "과하지 않은 표현 조건을 옷의 기능에서 더 찾아보세요."
+          }
+        ],
+        "mandatory": [
+          {
+            "label": "체육 활동성",
+            "anyTags": [
+              "active"
+            ],
+            "improvement": "\"체육 활동성\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          },
+          {
+            "label": "미끄럼을 줄이는 신발",
+            "anyTags": [
+              "grip"
+            ],
+            "improvement": "\"미끄럼을 줄이는 신발\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          }
+        ],
+        "forbidden": [
+          {
+            "tag": "slippery",
+            "penalty": 8,
+            "feedback": "슬리퍼는 달릴 때 벗겨지거나 미끄러질 수 있어요."
+          },
+          {
+            "tag": "restrict",
+            "penalty": 8,
+            "feedback": "긴 옷은 체육 활동에서 움직임을 방해할 수 있어요."
+          }
+        ]
+      },
+      "successTitle": "학교와 체육 준비를 모두 마쳤어요!",
+      "retryTitle": "체육 시간에 움직일 수 있을지 다시 볼까요?"
+    },
+    {
+      "slug": "bedtime-ready",
+      "chapterId": "busy-day",
+      "order": 3,
+      "title": "저녁에 잠잘 준비",
+      "kicker": "CHAPTER 1 · 바쁜 하루",
+      "teaser": "몸을 조이지 않고 편안히 잘 수 있는 옷을 찾아요.",
+      "sender": "소미",
+      "weatherIcon": "☾",
+      "weatherLabel": "늦은 밤 · 포근한 방",
+      "weatherNote": "몸을 편하게 쉬게 하고 숙면을 준비해요",
+      "backgroundStyle": "cozy-bedroom",
+      "backgroundColors": [
+        "#6b72a8",
+        "#c7a9d8"
+      ],
+      "timeLimitSeconds": 60,
+      "tpo": {
+        "time": "잠들기 전 늦은 밤",
+        "place": "집의 침실",
+        "occasion": "편안한 수면 준비"
+      },
+      "messages": [
+        {
+          "speaker": "소미",
+          "text": "오늘 하루가 길어서 이제 푹 쉬고 싶어."
+        },
+        {
+          "speaker": "소미",
+          "text": "방은 조금 서늘하지만 이불 속은 따뜻해."
+        },
+        {
+          "speaker": "소미",
+          "text": "몸을 조이지 않고 편안히 잘 수 있게 골라 줘."
+        },
+        {
+          "speaker": "구조대",
+          "text": "부드러움, 통풍, 편안함을 살펴보자!"
+        }
+      ],
+      "itemIds": [
+        "cotton-pajama-top",
+        "cotton-tshirt",
+        "fleece-sweater",
+        "formal-jacket",
+        "pajama-pants",
+        "cotton-pants",
+        "active-pants",
+        "sky-denim",
+        "sleep-socks",
+        "slippers",
+        "running-shoes",
+        "dress-shoes",
+        "sleep-mask",
+        "blanket",
+        "scarf",
+        "school-backpack"
+      ],
+      "rules": {
+        "criteria": [
+          {
+            "category": "tpo",
+            "anyTags": [
+              "sleep"
+            ],
+            "points": 10,
+            "strength": "\"수면 시간\"에 맞는 선택을 잘했어요.",
+            "improvement": "수면 시간 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "comfortable"
+            ],
+            "points": 10,
+            "strength": "\"침실 장소\"에 맞는 선택을 잘했어요.",
+            "improvement": "침실 장소 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "warm"
+            ],
+            "points": 10,
+            "strength": "\"서늘한 밤\"에 맞는 선택을 잘했어요.",
+            "improvement": "서늘한 밤 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "soft"
+            ],
+            "points": 10,
+            "strength": "\"부드러운 재질\"에 맞는 선택을 잘했어요.",
+            "improvement": "부드러운 재질 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "breathable"
+            ],
+            "points": 10,
+            "strength": "\"통풍\"에 맞는 선택을 잘했어요.",
+            "improvement": "통풍 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "comfortable"
+            ],
+            "points": 10,
+            "strength": "\"몸을 조이지 않음\"에 맞는 선택을 잘했어요.",
+            "improvement": "몸을 조이지 않음 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "sleep",
+              "comfortable"
+            ],
+            "points": 10,
+            "strength": "\"편안한 생활복\"에 맞는 선택을 잘했어요.",
+            "improvement": "편안한 생활복 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "soft",
+              "practical"
+            ],
+            "points": 10,
+            "strength": "\"침실에 맞는 단순함\"에 맞는 선택을 잘했어요.",
+            "improvement": "침실에 맞는 단순함 조건을 옷의 기능에서 더 찾아보세요."
+          }
+        ],
+        "mandatory": [
+          {
+            "label": "잠자기 편한 옷",
+            "anyTags": [
+              "sleep"
+            ],
+            "improvement": "\"잠자기 편한 옷\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          },
+          {
+            "label": "몸을 조이지 않는 준비",
+            "anyTags": [
+              "comfortable"
+            ],
+            "improvement": "\"몸을 조이지 않는 준비\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          }
+        ],
+        "forbidden": [
+          {
+            "tag": "formal",
+            "penalty": 8,
+            "feedback": "딱딱하고 격식 있는 옷은 잠잘 때 몸을 쉬게 하기 어려워요."
+          },
+          {
+            "tag": "snag-risk",
+            "penalty": 8,
+            "feedback": "길게 늘어진 소품은 잠잘 때 걸릴 수 있어요."
+          }
+        ]
+      },
+      "successTitle": "포근한 잠잘 준비가 끝났어요!",
+      "retryTitle": "몸이 편하게 쉴 수 있을지 다시 볼까요?"
+    },
+    {
+      "slug": "friend-birthday-party",
+      "chapterId": "busy-day",
+      "order": 4,
+      "title": "친구의 생일 파티",
+      "kicker": "CHAPTER 1 · 바쁜 하루",
+      "teaser": "친구를 축하하면서도 편하게 놀 수 있는 코디를 만들어요.",
+      "sender": "지우",
+      "weatherIcon": "♬",
+      "weatherLabel": "토요일 오후 · 실내 파티",
+      "weatherNote": "친구를 축하하고 함께 게임을 하며 놀아요",
+      "backgroundStyle": "birthday-party",
+      "backgroundColors": [
+        "#ffd06b",
+        "#ee7fa8"
+      ],
+      "timeLimitSeconds": 60,
+      "tpo": {
+        "time": "토요일 오후",
+        "place": "친구 집의 실내 파티",
+        "occasion": "생일 축하와 놀이"
+      },
+      "messages": [
+        {
+          "speaker": "지우",
+          "text": "오늘은 내 친구 유나의 생일 파티야!"
+        },
+        {
+          "speaker": "지우",
+          "text": "친구 집에서 케이크를 먹고 신나는 게임도 할 거래."
+        },
+        {
+          "speaker": "지우",
+          "text": "축하하는 마음이 보이면서 편하게 놀고 싶어."
+        },
+        {
+          "speaker": "구조대",
+          "text": "축하, 단정함, 편안함을 함께 찾아보자!"
+        }
+      ],
+      "itemIds": [
+        "party-shirt",
+        "white-shirt",
+        "sports-hoodie",
+        "yellow-raincoat",
+        "party-chinos",
+        "sky-denim",
+        "active-pants",
+        "pajama-pants",
+        "party-sneakers",
+        "dress-shoes",
+        "sneakers",
+        "rain-boots",
+        "gift-bag",
+        "party-hat",
+        "bow-tie",
+        "black-umbrella"
+      ],
+      "rules": {
+        "criteria": [
+          {
+            "category": "tpo",
+            "anyTags": [
+              "celebration"
+            ],
+            "points": 10,
+            "strength": "\"생일 축하\"에 맞는 선택을 잘했어요.",
+            "improvement": "생일 축하 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "comfortable",
+              "neat"
+            ],
+            "points": 10,
+            "strength": "\"실내 장소\"에 맞는 선택을 잘했어요.",
+            "improvement": "실내 장소 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "active"
+            ],
+            "points": 10,
+            "strength": "\"함께 노는 활동\"에 맞는 선택을 잘했어요.",
+            "improvement": "함께 노는 활동 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "comfortable",
+              "active"
+            ],
+            "points": 10,
+            "strength": "\"편한 움직임\"에 맞는 선택을 잘했어요.",
+            "improvement": "편한 움직임 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "grip",
+              "closed-shoe"
+            ],
+            "points": 10,
+            "strength": "\"안전한 신발\"에 맞는 선택을 잘했어요.",
+            "improvement": "안전한 신발 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "storage",
+              "practical"
+            ],
+            "points": 10,
+            "strength": "\"선물 수납\"에 맞는 선택을 잘했어요.",
+            "improvement": "선물 수납 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "celebration"
+            ],
+            "points": 10,
+            "strength": "\"축하하는 표현\"에 맞는 선택을 잘했어요.",
+            "improvement": "축하하는 표현 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "neat",
+              "formal"
+            ],
+            "points": 10,
+            "strength": "\"단정한 개성\"에 맞는 선택을 잘했어요.",
+            "improvement": "단정한 개성 조건을 옷의 기능에서 더 찾아보세요."
+          }
+        ],
+        "mandatory": [
+          {
+            "label": "친구를 축하하는 표현",
+            "anyTags": [
+              "celebration"
+            ],
+            "improvement": "\"친구를 축하하는 표현\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          },
+          {
+            "label": "편하게 참여할 준비",
+            "anyTags": [
+              "comfortable",
+              "active"
+            ],
+            "improvement": "\"편하게 참여할 준비\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          }
+        ],
+        "forbidden": [
+          {
+            "tag": "sleep",
+            "penalty": 8,
+            "feedback": "잠옷은 친구의 초대에 대한 예의를 충분히 표현하기 어려워요."
+          },
+          {
+            "tag": "waterproof",
+            "penalty": 8,
+            "feedback": "실내 파티에 우비나 우산은 불필요하고 움직임을 방해해요."
+          }
+        ]
+      },
+      "successTitle": "즐겁고 단정한 파티 코디예요!",
+      "retryTitle": "축하와 편안함을 함께 찾아볼까요?"
+    },
+    {
+      "slug": "rainy-market-errand",
+      "chapterId": "weather-alert",
+      "order": 5,
+      "title": "비 오는 날 마트 심부름",
+      "kicker": "CHAPTER 2 · 날씨 특보",
+      "teaser": "비와 어두운 길에서 몸을 보호하고 잘 보이는 옷을 골라요.",
+      "sender": "하루",
+      "weatherIcon": "☂",
+      "weatherLabel": "비 오는 저녁 · 18°C",
+      "weatherNote": "어두운 길과 큰 웅덩이를 조심해요",
+      "backgroundStyle": "rainy-street",
+      "backgroundColors": [
+        "#88afc5",
+        "#334f69"
+      ],
+      "timeLimitSeconds": 60,
+      "tpo": {
+        "time": "비가 많이 오는 저녁",
+        "place": "집 앞 마트로 가는 길",
+        "occasion": "우유를 사 오는 짧은 심부름"
+      },
+      "messages": [
+        {
+          "speaker": "하루",
+          "text": "저녁 준비 중 엄마가 우유를 사 오라고 하셨어."
+        },
+        {
+          "speaker": "하루",
+          "text": "밖에 비가 많이 오고 벌써 어두워졌어."
+        },
+        {
+          "speaker": "하루",
+          "text": "집 앞 마트라 금방 다녀오지만 큰 웅덩이를 지나야 해."
+        },
+        {
+          "speaker": "구조대",
+          "text": "젖지 않고, 잘 보이고, 미끄러지지 않는 코디를 찾아보자!"
+        }
+      ],
+      "itemIds": [
+        "yellow-raincoat",
+        "mint-windbreaker",
+        "navy-cardigan",
+        "cream-sweater",
+        "active-pants",
+        "sky-denim",
+        "beige-shorts",
+        "long-skirt",
+        "rain-boots",
+        "sneakers",
+        "slippers",
+        "dress-shoes",
+        "clear-umbrella",
+        "black-umbrella",
+        "reflective-band",
+        "canvas-tote"
+      ],
+      "rules": {
+        "criteria": [
+          {
+            "category": "tpo",
+            "anyTags": [
+              "waterproof",
+              "water-resistant"
+            ],
+            "points": 10,
+            "strength": "\"비 오는 날씨\"에 맞는 선택을 잘했어요.",
+            "improvement": "비 오는 날씨 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "visible"
+            ],
+            "points": 10,
+            "strength": "\"어두운 시간\"에 맞는 선택을 잘했어요.",
+            "improvement": "어두운 시간 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "shopping",
+              "practical"
+            ],
+            "points": 10,
+            "strength": "\"마트 심부름\"에 맞는 선택을 잘했어요.",
+            "improvement": "마트 심부름 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "waterproof",
+              "water-resistant"
+            ],
+            "points": 10,
+            "strength": "\"빗물 보호\"에 맞는 선택을 잘했어요.",
+            "improvement": "빗물 보호 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "grip"
+            ],
+            "points": 10,
+            "strength": "\"미끄럼 방지\"에 맞는 선택을 잘했어요.",
+            "improvement": "미끄럼 방지 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "coverage"
+            ],
+            "points": 10,
+            "strength": "\"몸 가리기\"에 맞는 선택을 잘했어요.",
+            "improvement": "몸 가리기 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "practical"
+            ],
+            "points": 10,
+            "strength": "\"실용적인 선택\"에 맞는 선택을 잘했어요.",
+            "improvement": "실용적인 선택 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "visible",
+              "safety"
+            ],
+            "points": 10,
+            "strength": "\"안전을 배려한 표현\"에 맞는 선택을 잘했어요.",
+            "improvement": "안전을 배려한 표현 조건을 옷의 기능에서 더 찾아보세요."
+          }
+        ],
+        "mandatory": [
+          {
+            "label": "비를 막는 준비",
+            "anyTags": [
+              "waterproof",
+              "water-resistant"
+            ],
+            "improvement": "\"비를 막는 준비\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          },
+          {
+            "label": "젖은 길에서 안전한 신발",
+            "anyTags": [
+              "grip"
+            ],
+            "improvement": "\"젖은 길에서 안전한 신발\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          },
+          {
+            "label": "어두운 길에서 보이는 준비",
+            "anyTags": [
+              "visible"
+            ],
+            "improvement": "\"어두운 길에서 보이는 준비\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          }
+        ],
+        "forbidden": [
+          {
+            "tag": "slippery",
+            "penalty": 8,
+            "feedback": "미끄러운 신발은 빗길에서 넘어질 수 있어요."
+          },
+          {
+            "tag": "restrict",
+            "penalty": 8,
+            "feedback": "긴 옷은 젖은 바닥에서 움직임을 방해할 수 있어요."
+          }
+        ]
+      },
+      "successTitle": "하루가 안전하게 마트로 출발했어요!",
+      "retryTitle": "비와 어두운 길 단서를 다시 볼까요?"
+    },
+    {
+      "slug": "summer-waterpark",
+      "chapterId": "weather-alert",
+      "order": 6,
+      "title": "여름 워터파크",
+      "kicker": "CHAPTER 2 · 날씨 특보",
+      "teaser": "물과 햇빛에서 몸을 지키며 안전하게 놀 준비를 해요.",
+      "sender": "서준",
+      "weatherIcon": "☀",
+      "weatherLabel": "한여름 낮 · 31°C",
+      "weatherNote": "강한 햇빛과 미끄러운 물놀이 바닥을 조심해요",
+      "backgroundStyle": "waterpark",
+      "backgroundColors": [
+        "#63d0ec",
+        "#43b889"
+      ],
+      "timeLimitSeconds": 60,
+      "tpo": {
+        "time": "햇빛이 강한 여름 낮",
+        "place": "야외 워터파크",
+        "occasion": "수영과 물놀이"
+      },
+      "messages": [
+        {
+          "speaker": "서준",
+          "text": "오늘 가족과 야외 워터파크에 왔어!"
+        },
+        {
+          "speaker": "서준",
+          "text": "햇빛이 아주 강하고 바닥에는 물이 많아."
+        },
+        {
+          "speaker": "서준",
+          "text": "물에서 잘 움직이고 몸도 안전하게 지키고 싶어."
+        },
+        {
+          "speaker": "구조대",
+          "text": "수영복, 빠른 건조, 물놀이 안전 단서를 찾아보자!"
+        }
+      ],
+      "itemIds": [
+        "swim-rashguard",
+        "cotton-tshirt",
+        "yellow-raincoat",
+        "cream-sweater",
+        "swim-shorts",
+        "beige-shorts",
+        "active-pants",
+        "long-skirt",
+        "aqua-shoes",
+        "sandals",
+        "sneakers",
+        "dress-shoes",
+        "swim-cap",
+        "goggles",
+        "life-jacket",
+        "towel"
+      ],
+      "rules": {
+        "criteria": [
+          {
+            "category": "tpo",
+            "anyTags": [
+              "swim"
+            ],
+            "points": 10,
+            "strength": "\"물놀이 상황\"에 맞는 선택을 잘했어요.",
+            "improvement": "물놀이 상황 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "sun-protection"
+            ],
+            "points": 10,
+            "strength": "\"강한 햇빛\"에 맞는 선택을 잘했어요.",
+            "improvement": "강한 햇빛 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "quick-dry",
+              "breathable"
+            ],
+            "points": 10,
+            "strength": "\"더운 날씨\"에 맞는 선택을 잘했어요.",
+            "improvement": "더운 날씨 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "water-safety"
+            ],
+            "points": 10,
+            "strength": "\"물 안전\"에 맞는 선택을 잘했어요.",
+            "improvement": "물 안전 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "grip"
+            ],
+            "points": 10,
+            "strength": "\"미끄럼 방지\"에 맞는 선택을 잘했어요.",
+            "improvement": "미끄럼 방지 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "quick-dry"
+            ],
+            "points": 10,
+            "strength": "\"빠른 건조\"에 맞는 선택을 잘했어요.",
+            "improvement": "빠른 건조 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "swim"
+            ],
+            "points": 10,
+            "strength": "\"물놀이에 맞는 준비\"에 맞는 선택을 잘했어요.",
+            "improvement": "물놀이에 맞는 준비 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "hygiene",
+              "practical"
+            ],
+            "points": 10,
+            "strength": "\"위생과 배려\"에 맞는 선택을 잘했어요.",
+            "improvement": "위생과 배려 조건을 옷의 기능에서 더 찾아보세요."
+          }
+        ],
+        "mandatory": [
+          {
+            "label": "물놀이용 옷",
+            "anyTags": [
+              "swim"
+            ],
+            "improvement": "\"물놀이용 옷\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          },
+          {
+            "label": "물에서 몸을 보호할 준비",
+            "anyTags": [
+              "water-safety"
+            ],
+            "improvement": "\"물에서 몸을 보호할 준비\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          },
+          {
+            "label": "미끄러운 바닥용 신발",
+            "anyTags": [
+              "grip"
+            ],
+            "improvement": "\"미끄러운 바닥용 신발\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          }
+        ],
+        "forbidden": [
+          {
+            "tag": "absorbent",
+            "penalty": 8,
+            "feedback": "물을 많이 머금는 옷은 무거워져 움직이기 어려워요."
+          },
+          {
+            "tag": "smooth-sole",
+            "penalty": 8,
+            "feedback": "매끄러운 밑창은 젖은 바닥에서 미끄러울 수 있어요."
+          }
+        ]
+      },
+      "successTitle": "시원하고 안전한 물놀이 준비 완료!",
+      "retryTitle": "물과 햇빛에서 몸을 지킬 준비를 다시 볼까요?"
+    },
+    {
+      "slug": "winter-ski-class",
+      "chapterId": "weather-alert",
+      "order": 7,
+      "title": "겨울 스키 교실",
+      "kicker": "CHAPTER 2 · 날씨 특보",
+      "teaser": "눈과 찬 바람, 넘어짐에 대비한 스키 코디를 만들어요.",
+      "sender": "예린",
+      "weatherIcon": "❄",
+      "weatherLabel": "겨울 아침 · -6°C",
+      "weatherNote": "눈보라와 찬 바람, 미끄러운 슬로프를 조심해요",
+      "backgroundStyle": "ski-slope",
+      "backgroundColors": [
+        "#cbe9f4",
+        "#6b91bd"
+      ],
+      "timeLimitSeconds": 60,
+      "tpo": {
+        "time": "영하의 겨울 아침",
+        "place": "눈 덮인 스키장",
+        "occasion": "스키 수업과 안전 훈련"
+      },
+      "messages": [
+        {
+          "speaker": "예린",
+          "text": "오늘 처음으로 스키 교실에 참가해!"
+        },
+        {
+          "speaker": "예린",
+          "text": "밖은 영하이고 눈바람도 조금 불어."
+        },
+        {
+          "speaker": "예린",
+          "text": "따뜻하면서 넘어질 때 몸을 지킬 수 있게 도와줘."
+        },
+        {
+          "speaker": "구조대",
+          "text": "방수, 보온, 눈 위 안전 장비를 찾아보자!"
+        }
+      ],
+      "itemIds": [
+        "ski-jacket",
+        "wool-coat",
+        "cream-sweater",
+        "cotton-tshirt",
+        "ski-pants",
+        "active-pants",
+        "sky-denim",
+        "beige-shorts",
+        "ski-boots",
+        "hiking-boots",
+        "sneakers",
+        "slippers",
+        "ski-helmet",
+        "ski-goggles",
+        "gloves",
+        "party-hat"
+      ],
+      "rules": {
+        "criteria": [
+          {
+            "category": "tpo",
+            "anyTags": [
+              "snowproof",
+              "waterproof"
+            ],
+            "points": 10,
+            "strength": "\"눈 오는 날씨\"에 맞는 선택을 잘했어요.",
+            "improvement": "눈 오는 날씨 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "warm"
+            ],
+            "points": 10,
+            "strength": "\"영하의 기온\"에 맞는 선택을 잘했어요.",
+            "improvement": "영하의 기온 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "ski",
+              "snow-safety"
+            ],
+            "points": 10,
+            "strength": "\"스키 수업\"에 맞는 선택을 잘했어요.",
+            "improvement": "스키 수업 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "warm"
+            ],
+            "points": 10,
+            "strength": "\"체온 보호\"에 맞는 선택을 잘했어요.",
+            "improvement": "체온 보호 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "protective",
+              "snow-safety"
+            ],
+            "points": 10,
+            "strength": "\"눈과 충격 보호\"에 맞는 선택을 잘했어요.",
+            "improvement": "눈과 충격 보호 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "grip",
+              "snowproof"
+            ],
+            "points": 10,
+            "strength": "\"눈 위 접지\"에 맞는 선택을 잘했어요.",
+            "improvement": "눈 위 접지 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "ski",
+              "snow-safety"
+            ],
+            "points": 10,
+            "strength": "\"수업에 맞는 장비\"에 맞는 선택을 잘했어요.",
+            "improvement": "수업에 맞는 장비 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "protective"
+            ],
+            "points": 10,
+            "strength": "\"안전을 우선한 선택\"에 맞는 선택을 잘했어요.",
+            "improvement": "안전을 우선한 선택 조건을 옷의 기능에서 더 찾아보세요."
+          }
+        ],
+        "mandatory": [
+          {
+            "label": "눈과 찬 바람을 막는 옷",
+            "anyTags": [
+              "snowproof",
+              "waterproof"
+            ],
+            "improvement": "\"눈과 찬 바람을 막는 옷\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          },
+          {
+            "label": "체온을 지킬 준비",
+            "anyTags": [
+              "warm"
+            ],
+            "improvement": "\"체온을 지킬 준비\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          },
+          {
+            "label": "스키 안전 장비",
+            "anyTags": [
+              "snow-safety"
+            ],
+            "improvement": "\"스키 안전 장비\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          }
+        ],
+        "forbidden": [
+          {
+            "tag": "exposed",
+            "penalty": 8,
+            "feedback": "반바지는 영하의 날씨에서 체온을 지키기 어려워요."
+          },
+          {
+            "tag": "slippery",
+            "penalty": 8,
+            "feedback": "슬리퍼는 눈 위에서 미끄럽고 발을 보호하지 못해요."
+          }
+        ]
+      },
+      "successTitle": "따뜻하고 안전한 스키 준비 완료!",
+      "retryTitle": "눈과 추위, 넘어짐 단서를 다시 볼까요?"
+    },
+    {
+      "slug": "wedding-flower-child",
+      "chapterId": "heart-and-manners",
+      "order": 8,
+      "title": "친척 결혼식의 화동",
+      "kicker": "CHAPTER 3 · 마음을 입어요",
+      "teaser": "결혼을 축하하고 화동 역할에 맞는 단정한 옷을 골라요.",
+      "sender": "다온",
+      "weatherIcon": "♡",
+      "weatherLabel": "주말 낮 · 결혼식장",
+      "weatherNote": "축하하는 마음과 화동 역할을 옷으로 표현해요",
+      "backgroundStyle": "wedding-hall",
+      "backgroundColors": [
+        "#f7dce2",
+        "#d9b77d"
+      ],
+      "timeLimitSeconds": 60,
+      "tpo": {
+        "time": "주말 낮",
+        "place": "친척의 결혼식장",
+        "occasion": "화동 역할과 결혼 축하"
+      },
+      "messages": [
+        {
+          "speaker": "다온",
+          "text": "오늘 친척 언니의 결혼식에서 화동을 맡았어."
+        },
+        {
+          "speaker": "다온",
+          "text": "꽃바구니를 들고 천천히 걸으며 축하할 거야."
+        },
+        {
+          "speaker": "다온",
+          "text": "단정하고 역할에 어울리면서 편하게 걷고 싶어."
+        },
+        {
+          "speaker": "구조대",
+          "text": "격식, 축하, 화동 역할 단서를 찾아보자!"
+        }
+      ],
+      "itemIds": [
+        "formal-jacket",
+        "white-shirt",
+        "navy-cardigan",
+        "yellow-raincoat",
+        "formal-pants",
+        "black-skirt",
+        "party-chinos",
+        "active-pants",
+        "formal-flats",
+        "dress-shoes",
+        "party-sneakers",
+        "rain-boots",
+        "bow-tie",
+        "flower-basket",
+        "simple-ribbon",
+        "party-hat"
+      ],
+      "rules": {
+        "criteria": [
+          {
+            "category": "tpo",
+            "anyTags": [
+              "celebration",
+              "wedding"
+            ],
+            "points": 10,
+            "strength": "\"결혼 축하\"에 맞는 선택을 잘했어요.",
+            "improvement": "결혼 축하 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "formal"
+            ],
+            "points": 10,
+            "strength": "\"결혼식 장소\"에 맞는 선택을 잘했어요.",
+            "improvement": "결혼식 장소 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "wedding",
+              "respectful"
+            ],
+            "points": 10,
+            "strength": "\"화동 역할\"에 맞는 선택을 잘했어요.",
+            "improvement": "화동 역할 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "comfortable",
+              "active"
+            ],
+            "points": 10,
+            "strength": "\"편하게 걷기\"에 맞는 선택을 잘했어요.",
+            "improvement": "편하게 걷기 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "closed-shoe",
+              "neat"
+            ],
+            "points": 10,
+            "strength": "\"막힌 단정한 신발\"에 맞는 선택을 잘했어요.",
+            "improvement": "막힌 단정한 신발 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "wedding"
+            ],
+            "points": 10,
+            "strength": "\"역할 소품\"에 맞는 선택을 잘했어요.",
+            "improvement": "역할 소품 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "formal",
+              "respectful"
+            ],
+            "points": 10,
+            "strength": "\"격식과 존중\"에 맞는 선택을 잘했어요.",
+            "improvement": "격식과 존중 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "celebration",
+              "wedding"
+            ],
+            "points": 10,
+            "strength": "\"축하하는 표현\"에 맞는 선택을 잘했어요.",
+            "improvement": "축하하는 표현 조건을 옷의 기능에서 더 찾아보세요."
+          }
+        ],
+        "mandatory": [
+          {
+            "label": "결혼식을 존중하는 단정함",
+            "anyTags": [
+              "formal",
+              "respectful"
+            ],
+            "improvement": "\"결혼식을 존중하는 단정함\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          },
+          {
+            "label": "축하나 화동 역할 표현",
+            "anyTags": [
+              "celebration",
+              "wedding"
+            ],
+            "improvement": "\"축하나 화동 역할 표현\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          }
+        ],
+        "forbidden": [
+          {
+            "tag": "waterproof",
+            "penalty": 8,
+            "feedback": "결혼식장 안에서 우비와 장화는 역할과 격식에 맞지 않아요."
+          },
+          {
+            "tag": "casual",
+            "penalty": 8,
+            "feedback": "너무 일상적인 옷은 화동 역할을 충분히 표현하기 어려워요."
+          }
+        ]
+      },
+      "successTitle": "축하하는 마음이 보이는 화동 코디예요!",
+      "retryTitle": "결혼식과 화동 역할을 다시 생각해 볼까요?"
+    },
+    {
+      "slug": "family-funeral",
+      "chapterId": "heart-and-manners",
+      "order": 9,
+      "title": "장례식 참석",
+      "kicker": "CHAPTER 3 · 마음을 입어요",
+      "teaser": "슬픔을 함께하고 조용한 존중을 표현하는 옷을 골라요.",
+      "sender": "은호",
+      "weatherIcon": "●",
+      "weatherLabel": "저녁 · 조용한 추모 공간",
+      "weatherNote": "화려함을 줄이고 슬픔과 존중을 표현해요",
+      "backgroundStyle": "memorial-hall",
+      "backgroundColors": [
+        "#777a82",
+        "#30333b"
+      ],
+      "timeLimitSeconds": 60,
+      "tpo": {
+        "time": "차분한 저녁",
+        "place": "가족 장례식장",
+        "occasion": "고인을 추모하고 가족을 위로함"
+      },
+      "messages": [
+        {
+          "speaker": "은호",
+          "text": "오늘 가족과 함께 장례식장에 가게 되었어."
+        },
+        {
+          "speaker": "은호",
+          "text": "큰 소리나 화려한 장식은 줄이고 조용히 인사드릴 거야."
+        },
+        {
+          "speaker": "은호",
+          "text": "슬픔을 함께하고 존중하는 마음이 보이게 도와줘."
+        },
+        {
+          "speaker": "구조대",
+          "text": "어두운색, 단정함, 장식 최소화 단서를 찾아보자."
+        }
+      ],
+      "itemIds": [
+        "black-cardigan",
+        "navy-cardigan",
+        "formal-jacket",
+        "party-shirt",
+        "formal-pants",
+        "black-skirt",
+        "active-pants",
+        "long-skirt",
+        "dress-shoes",
+        "formal-flats",
+        "sneakers",
+        "rain-boots",
+        "simple-ribbon",
+        "black-bag",
+        "flower-crown",
+        "bright-necklace"
+      ],
+      "rules": {
+        "criteria": [
+          {
+            "category": "tpo",
+            "anyTags": [
+              "respectful"
+            ],
+            "points": 10,
+            "strength": "\"추모 상황\"에 맞는 선택을 잘했어요.",
+            "improvement": "추모 상황 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "dark",
+              "simple"
+            ],
+            "points": 10,
+            "strength": "\"차분한 장소\"에 맞는 선택을 잘했어요.",
+            "improvement": "차분한 장소 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "neat"
+            ],
+            "points": 10,
+            "strength": "\"조용한 저녁\"에 맞는 선택을 잘했어요.",
+            "improvement": "조용한 저녁 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "comfortable",
+              "practical"
+            ],
+            "points": 10,
+            "strength": "\"오래 머물 편안함\"에 맞는 선택을 잘했어요.",
+            "improvement": "오래 머물 편안함 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "closed-shoe",
+              "formal"
+            ],
+            "points": 10,
+            "strength": "\"단정한 막힌 신발\"에 맞는 선택을 잘했어요.",
+            "improvement": "단정한 막힌 신발 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "simple"
+            ],
+            "points": 10,
+            "strength": "\"과하지 않은 장식\"에 맞는 선택을 잘했어요.",
+            "improvement": "과하지 않은 장식 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "respectful"
+            ],
+            "points": 10,
+            "strength": "\"슬픔과 존중\"에 맞는 선택을 잘했어요.",
+            "improvement": "슬픔과 존중 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "dark",
+              "simple"
+            ],
+            "points": 10,
+            "strength": "\"차분한 표현\"에 맞는 선택을 잘했어요.",
+            "improvement": "차분한 표현 조건을 옷의 기능에서 더 찾아보세요."
+          }
+        ],
+        "mandatory": [
+          {
+            "label": "추모의 존중",
+            "anyTags": [
+              "respectful"
+            ],
+            "improvement": "\"추모의 존중\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          },
+          {
+            "label": "차분하고 단정한 표현",
+            "anyTags": [
+              "dark",
+              "simple",
+              "neat"
+            ],
+            "improvement": "\"차분하고 단정한 표현\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          }
+        ],
+        "forbidden": [
+          {
+            "tag": "flashy",
+            "penalty": 8,
+            "feedback": "화려한 장식은 조용히 추모하는 분위기와 맞지 않아요."
+          },
+          {
+            "tag": "celebration",
+            "penalty": 8,
+            "feedback": "축하용 장식은 추모의 뜻을 다르게 보이게 할 수 있어요."
+          }
+        ]
+      },
+      "successTitle": "차분하게 존중을 표현한 옷차림이에요.",
+      "retryTitle": "추모의 마음을 어떻게 표현할지 다시 볼까요?"
+    },
+    {
+      "slug": "lunar-new-year-visit",
+      "chapterId": "heart-and-manners",
+      "order": 10,
+      "title": "설날 할머니 댁 방문",
+      "kicker": "CHAPTER 3 · 마음을 입어요",
+      "teaser": "전통과 예의를 살리면서 가족과 편하게 지낼 옷을 골라요.",
+      "sender": "하린",
+      "weatherIcon": "福",
+      "weatherLabel": "설날 아침 · 할머니 댁",
+      "weatherNote": "웃어른께 인사하고 가족과 명절을 보내요",
+      "backgroundStyle": "hanok-holiday",
+      "backgroundColors": [
+        "#e8c684",
+        "#8cb6a2"
+      ],
+      "timeLimitSeconds": 60,
+      "tpo": {
+        "time": "겨울 설날 아침",
+        "place": "할머니의 한옥집",
+        "occasion": "세배와 가족 명절 모임"
+      },
+      "messages": [
+        {
+          "speaker": "하린",
+          "text": "설날이라 가족과 할머니 댁에 가는 중이야."
+        },
+        {
+          "speaker": "하린",
+          "text": "도착하면 웃어른께 세배하고 사촌들과 놀 거야."
+        },
+        {
+          "speaker": "하린",
+          "text": "전통과 예의를 살리면서 편하게 지내고 싶어."
+        },
+        {
+          "speaker": "구조대",
+          "text": "명절, 웃어른께 대한 예의, 편안함을 찾아보자!"
+        }
+      ],
+      "itemIds": [
+        "hanbok-jeogori",
+        "formal-jacket",
+        "navy-cardigan",
+        "sports-hoodie",
+        "hanbok-skirt",
+        "formal-pants",
+        "black-skirt",
+        "active-pants",
+        "hanbok-shoes",
+        "formal-flats",
+        "sneakers",
+        "slippers",
+        "norigae",
+        "hanbok-hat",
+        "black-bag",
+        "ski-goggles"
+      ],
+      "rules": {
+        "criteria": [
+          {
+            "category": "tpo",
+            "anyTags": [
+              "traditional"
+            ],
+            "points": 10,
+            "strength": "\"설날 명절\"에 맞는 선택을 잘했어요.",
+            "improvement": "설날 명절 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "respectful"
+            ],
+            "points": 10,
+            "strength": "\"웃어른 방문\"에 맞는 선택을 잘했어요.",
+            "improvement": "웃어른 방문 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "comfortable",
+              "celebration"
+            ],
+            "points": 10,
+            "strength": "\"가족 모임\"에 맞는 선택을 잘했어요.",
+            "improvement": "가족 모임 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "warm",
+              "coverage"
+            ],
+            "points": 10,
+            "strength": "\"겨울 보온\"에 맞는 선택을 잘했어요.",
+            "improvement": "겨울 보온 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "comfortable",
+              "active"
+            ],
+            "points": 10,
+            "strength": "\"실내 활동 편안함\"에 맞는 선택을 잘했어요.",
+            "improvement": "실내 활동 편안함 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "neat",
+              "traditional"
+            ],
+            "points": 10,
+            "strength": "\"단정한 신발\"에 맞는 선택을 잘했어요.",
+            "improvement": "단정한 신발 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "traditional",
+              "formal"
+            ],
+            "points": 10,
+            "strength": "\"전통 또는 단정함\"에 맞는 선택을 잘했어요.",
+            "improvement": "전통 또는 단정함 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "respectful"
+            ],
+            "points": 10,
+            "strength": "\"웃어른께 예의\"에 맞는 선택을 잘했어요.",
+            "improvement": "웃어른께 예의 조건을 옷의 기능에서 더 찾아보세요."
+          }
+        ],
+        "mandatory": [
+          {
+            "label": "웃어른께 대한 예의",
+            "anyTags": [
+              "respectful"
+            ],
+            "improvement": "\"웃어른께 대한 예의\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          },
+          {
+            "label": "명절을 나타내는 전통 또는 단정함",
+            "anyTags": [
+              "traditional",
+              "formal",
+              "neat"
+            ],
+            "improvement": "\"명절을 나타내는 전통 또는 단정함\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          }
+        ],
+        "forbidden": [
+          {
+            "tag": "ski",
+            "penalty": 8,
+            "feedback": "스키 장비는 명절 인사와 실내 가족 모임에 필요하지 않아요."
+          },
+          {
+            "tag": "slippery",
+            "penalty": 8,
+            "feedback": "헐거운 슬리퍼는 이동하거나 세배할 때 벗겨질 수 있어요."
+          }
+        ]
+      },
+      "successTitle": "전통과 예의를 살린 설날 코디예요!",
+      "retryTitle": "명절과 웃어른께 대한 예의를 다시 볼까요?"
+    },
+    {
+      "slug": "science-lab-experiment",
+      "chapterId": "safety-call",
+      "order": 11,
+      "title": "과학실 실험",
+      "kicker": "CHAPTER 4 · 안전 출동",
+      "teaser": "눈과 피부, 발을 보호하는 실험실 안전복을 준비해요.",
+      "sender": "도윤",
+      "weatherIcon": "⚗",
+      "weatherLabel": "평일 오전 · 학교 과학실",
+      "weatherNote": "액체가 튀거나 도구가 떨어질 수 있어요",
+      "backgroundStyle": "science-lab",
+      "backgroundColors": [
+        "#b8dce1",
+        "#5d8c99"
+      ],
+      "timeLimitSeconds": 60,
+      "tpo": {
+        "time": "평일 오전 수업",
+        "place": "학교 과학실",
+        "occasion": "액체를 사용하는 과학 실험"
+      },
+      "messages": [
+        {
+          "speaker": "도윤",
+          "text": "오늘 과학실에서 색이 변하는 액체 실험을 해."
+        },
+        {
+          "speaker": "도윤",
+          "text": "선생님이 액체가 눈이나 피부에 닿지 않게 조심하라고 하셨어."
+        },
+        {
+          "speaker": "도윤",
+          "text": "실험 도구에 걸리지 않고 몸을 보호하게 도와줘."
+        },
+        {
+          "speaker": "구조대",
+          "text": "보안경, 긴 옷, 막힌 신발 단서를 찾아보자!"
+        }
+      ],
+      "itemIds": [
+        "lab-coat",
+        "fitted-cooking-top",
+        "cotton-tshirt",
+        "loose-sleeve-shirt",
+        "lab-pants",
+        "cotton-pants",
+        "beige-shorts",
+        "long-skirt",
+        "closed-safety-shoes",
+        "sneakers",
+        "sandals",
+        "slippers",
+        "safety-goggles",
+        "lab-gloves",
+        "notebook",
+        "dangling-scarf"
+      ],
+      "rules": {
+        "criteria": [
+          {
+            "category": "tpo",
+            "anyTags": [
+              "lab"
+            ],
+            "points": 10,
+            "strength": "\"과학실 장소\"에 맞는 선택을 잘했어요.",
+            "improvement": "과학실 장소 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "protective"
+            ],
+            "points": 10,
+            "strength": "\"액체 실험\"에 맞는 선택을 잘했어요.",
+            "improvement": "액체 실험 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "learning",
+              "practical"
+            ],
+            "points": 10,
+            "strength": "\"수업 상황\"에 맞는 선택을 잘했어요.",
+            "improvement": "수업 상황 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "eye-protection"
+            ],
+            "points": 10,
+            "strength": "\"눈 보호\"에 맞는 선택을 잘했어요.",
+            "improvement": "눈 보호 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "coverage"
+            ],
+            "points": 10,
+            "strength": "\"피부 가리기\"에 맞는 선택을 잘했어요.",
+            "improvement": "피부 가리기 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "closed-shoe"
+            ],
+            "points": 10,
+            "strength": "\"발 보호\"에 맞는 선택을 잘했어요.",
+            "improvement": "발 보호 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "lab",
+              "protective"
+            ],
+            "points": 10,
+            "strength": "\"안전 규칙 준수\"에 맞는 선택을 잘했어요.",
+            "improvement": "안전 규칙 준수 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "fitted",
+              "neat"
+            ],
+            "points": 10,
+            "strength": "\"정돈된 준비\"에 맞는 선택을 잘했어요.",
+            "improvement": "정돈된 준비 조건을 옷의 기능에서 더 찾아보세요."
+          }
+        ],
+        "mandatory": [
+          {
+            "label": "눈 보호 장비",
+            "anyTags": [
+              "eye-protection"
+            ],
+            "improvement": "\"눈 보호 장비\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          },
+          {
+            "label": "팔과 다리를 가리는 옷",
+            "anyTags": [
+              "coverage"
+            ],
+            "improvement": "\"팔과 다리를 가리는 옷\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          },
+          {
+            "label": "막힌 신발",
+            "anyTags": [
+              "closed-shoe"
+            ],
+            "improvement": "\"막힌 신발\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          }
+        ],
+        "forbidden": [
+          {
+            "tag": "loose-sleeve",
+            "penalty": 8,
+            "feedback": "넓은 소매는 실험 도구나 액체에 닿을 수 있어요."
+          },
+          {
+            "tag": "open",
+            "penalty": 8,
+            "feedback": "발이 열린 신발은 떨어진 물질로부터 발을 보호하기 어려워요."
+          },
+          {
+            "tag": "snag-risk",
+            "penalty": 8,
+            "feedback": "늘어진 소품은 실험 도구에 걸릴 수 있어요."
+          }
+        ]
+      },
+      "successTitle": "과학실 안전 준비를 모두 갖췄어요!",
+      "retryTitle": "눈, 피부, 발 보호를 다시 확인할까요?"
+    },
+    {
+      "slug": "family-cooking",
+      "chapterId": "safety-call",
+      "order": 12,
+      "title": "가족을 위한 요리",
+      "kicker": "CHAPTER 4 · 안전 출동",
+      "teaser": "불과 뜨거운 그릇, 미끄러운 바닥에 대비해요.",
+      "sender": "채원",
+      "weatherIcon": "♨",
+      "weatherLabel": "저녁 준비 시간 · 집 주방",
+      "weatherNote": "불과 뜨거운 냄비, 젖은 바닥을 조심해요",
+      "backgroundStyle": "family-kitchen",
+      "backgroundColors": [
+        "#f1c47d",
+        "#b86e4d"
+      ],
+      "timeLimitSeconds": 60,
+      "tpo": {
+        "time": "가족 저녁 준비 시간",
+        "place": "집의 주방",
+        "occasion": "불과 칼을 사용하는 요리"
+      },
+      "messages": [
+        {
+          "speaker": "채원",
+          "text": "오늘 가족을 위해 따뜻한 수프를 만들 거야."
+        },
+        {
+          "speaker": "채원",
+          "text": "주방에는 뜨거운 냄비가 있고 바닥에 물이 튈 수도 있어."
+        },
+        {
+          "speaker": "채원",
+          "text": "소매와 머리카락을 정리하고 안전하게 요리하고 싶어."
+        },
+        {
+          "speaker": "구조대",
+          "text": "고정된 소매, 긴 바지, 미끄럼 방지, 조리 보호를 찾자!"
+        }
+      ],
+      "itemIds": [
+        "fitted-cooking-top",
+        "cotton-tshirt",
+        "lab-coat",
+        "loose-sleeve-shirt",
+        "cooking-pants",
+        "cotton-pants",
+        "beige-shorts",
+        "long-skirt",
+        "kitchen-nonslip-shoes",
+        "closed-safety-shoes",
+        "sandals",
+        "slippers",
+        "apron",
+        "oven-mitt",
+        "chef-hat",
+        "loose-bracelet"
+      ],
+      "rules": {
+        "criteria": [
+          {
+            "category": "tpo",
+            "anyTags": [
+              "cooking"
+            ],
+            "points": 10,
+            "strength": "\"주방 장소\"에 맞는 선택을 잘했어요.",
+            "improvement": "주방 장소 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "heat-protection",
+              "protective"
+            ],
+            "points": 10,
+            "strength": "\"불과 뜨거운 도구\"에 맞는 선택을 잘했어요.",
+            "improvement": "불과 뜨거운 도구 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "hygiene",
+              "neat"
+            ],
+            "points": 10,
+            "strength": "\"가족 식사 준비\"에 맞는 선택을 잘했어요.",
+            "improvement": "가족 식사 준비 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "fitted"
+            ],
+            "points": 10,
+            "strength": "\"고정된 소매\"에 맞는 선택을 잘했어요.",
+            "improvement": "고정된 소매 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "grip"
+            ],
+            "points": 10,
+            "strength": "\"미끄럼 방지\"에 맞는 선택을 잘했어요.",
+            "improvement": "미끄럼 방지 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "heat-protection",
+              "protective"
+            ],
+            "points": 10,
+            "strength": "\"열과 음식 보호\"에 맞는 선택을 잘했어요.",
+            "improvement": "열과 음식 보호 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "hygiene",
+              "cooking"
+            ],
+            "points": 10,
+            "strength": "\"깨끗한 조리 준비\"에 맞는 선택을 잘했어요.",
+            "improvement": "깨끗한 조리 준비 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "neat",
+              "practical"
+            ],
+            "points": 10,
+            "strength": "\"가족을 배려한 단정함\"에 맞는 선택을 잘했어요.",
+            "improvement": "가족을 배려한 단정함 조건을 옷의 기능에서 더 찾아보세요."
+          }
+        ],
+        "mandatory": [
+          {
+            "label": "불에 닿지 않는 고정된 옷",
+            "anyTags": [
+              "fitted"
+            ],
+            "improvement": "\"불에 닿지 않는 고정된 옷\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          },
+          {
+            "label": "주방 바닥에서 안전한 신발",
+            "anyTags": [
+              "grip",
+              "closed-shoe"
+            ],
+            "improvement": "\"주방 바닥에서 안전한 신발\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          },
+          {
+            "label": "조리 보호 장비",
+            "anyTags": [
+              "heat-protection",
+              "cooking"
+            ],
+            "improvement": "\"조리 보호 장비\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          }
+        ],
+        "forbidden": [
+          {
+            "tag": "loose-sleeve",
+            "penalty": 8,
+            "feedback": "넓은 소매는 불이나 음식에 닿을 수 있어요."
+          },
+          {
+            "tag": "snag-risk",
+            "penalty": 8,
+            "feedback": "늘어진 장식은 조리 도구에 걸릴 수 있어요."
+          },
+          {
+            "tag": "open",
+            "penalty": 8,
+            "feedback": "발이 열린 신발은 뜨거운 것이 떨어질 때 발을 보호하기 어려워요."
+          }
+        ]
+      },
+      "successTitle": "깨끗하고 안전한 요리 준비 완료!",
+      "retryTitle": "불, 뜨거운 그릇, 바닥 안전을 다시 볼까요?"
+    },
+    {
+      "slug": "zombie-city-escape",
+      "chapterId": "safety-call",
+      "order": 13,
+      "title": "좀비 도시 탈출",
+      "kicker": "CHAPTER 4 · 안전 출동",
+      "teaser": "가상의 위험 속에서도 활동성과 신체 보호 원칙을 적용해요.",
+      "sender": "태오",
+      "weatherIcon": "!",
+      "weatherLabel": "어두운 밤 · 가상의 좀비 도시",
+      "weatherNote": "빠르게 이동하고 몸을 보호하며 길을 밝혀야 해요",
+      "backgroundStyle": "zombie-city",
+      "backgroundColors": [
+        "#47526a",
+        "#26362e"
+      ],
+      "timeLimitSeconds": 60,
+      "tpo": {
+        "time": "어두운 밤",
+        "place": "가상의 좀비 도시",
+        "occasion": "안전한 곳까지 빠르게 이동하는 탈출 훈련"
+      },
+      "messages": [
+        {
+          "speaker": "태오",
+          "text": "게임 속 도시에서 좀비를 피해 안전지대로 가야 해!"
+        },
+        {
+          "speaker": "태오",
+          "text": "길은 어둡고 바닥에는 장애물이 많아."
+        },
+        {
+          "speaker": "태오",
+          "text": "빠르게 움직이면서 몸과 발을 지킬 수 있게 해 줘."
+        },
+        {
+          "speaker": "구조대",
+          "text": "활동성, 신체 보호, 접지력, 가시성을 찾아보자!"
+        }
+      ],
+      "itemIds": [
+        "protective-jacket",
+        "sports-hoodie",
+        "ski-jacket",
+        "party-shirt",
+        "protective-cargo-pants",
+        "active-pants",
+        "sky-denim",
+        "long-skirt",
+        "hiking-boots",
+        "running-shoes",
+        "dress-shoes",
+        "slippers",
+        "helmet",
+        "knee-pads",
+        "flashlight",
+        "cape"
+      ],
+      "rules": {
+        "criteria": [
+          {
+            "category": "tpo",
+            "anyTags": [
+              "visible"
+            ],
+            "points": 10,
+            "strength": "\"어두운 시간\"에 맞는 선택을 잘했어요.",
+            "improvement": "어두운 시간 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "protective",
+              "grip"
+            ],
+            "points": 10,
+            "strength": "\"장애물 많은 장소\"에 맞는 선택을 잘했어요.",
+            "improvement": "장애물 많은 장소 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "tpo",
+            "anyTags": [
+              "active"
+            ],
+            "points": 10,
+            "strength": "\"빠른 탈출\"에 맞는 선택을 잘했어요.",
+            "improvement": "빠른 탈출 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "protective"
+            ],
+            "points": 10,
+            "strength": "\"신체 보호\"에 맞는 선택을 잘했어요.",
+            "improvement": "신체 보호 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "grip"
+            ],
+            "points": 10,
+            "strength": "\"안전한 밑창\"에 맞는 선택을 잘했어요.",
+            "improvement": "안전한 밑창 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "function",
+            "anyTags": [
+              "coverage"
+            ],
+            "points": 10,
+            "strength": "\"몸 가리기\"에 맞는 선택을 잘했어요.",
+            "improvement": "몸 가리기 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "practical",
+              "safety"
+            ],
+            "points": 10,
+            "strength": "\"실용적인 생존 준비\"에 맞는 선택을 잘했어요.",
+            "improvement": "실용적인 생존 준비 조건을 옷의 기능에서 더 찾아보세요."
+          },
+          {
+            "category": "expression",
+            "anyTags": [
+              "protective",
+              "active"
+            ],
+            "points": 10,
+            "strength": "\"위험을 줄이는 선택\"에 맞는 선택을 잘했어요.",
+            "improvement": "위험을 줄이는 선택 조건을 옷의 기능에서 더 찾아보세요."
+          }
+        ],
+        "mandatory": [
+          {
+            "label": "빠르게 움직일 옷",
+            "anyTags": [
+              "active"
+            ],
+            "improvement": "\"빠르게 움직일 옷\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          },
+          {
+            "label": "몸을 보호할 준비",
+            "anyTags": [
+              "protective"
+            ],
+            "improvement": "\"몸을 보호할 준비\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          },
+          {
+            "label": "안전하게 디딜 신발",
+            "anyTags": [
+              "grip"
+            ],
+            "improvement": "\"안전하게 디딜 신발\"에 맞는 아이템이 안전과 목적에 꼭 필요해요."
+          }
+        ],
+        "forbidden": [
+          {
+            "tag": "snag-risk",
+            "penalty": 8,
+            "feedback": "길게 늘어진 옷은 장애물에 걸릴 수 있어요."
+          },
+          {
+            "tag": "slippery",
+            "penalty": 8,
+            "feedback": "미끄러운 신발은 빠르게 이동할 때 위험해요."
+          },
+          {
+            "tag": "restrict",
+            "penalty": 8,
+            "feedback": "움직임을 제한하는 옷은 탈출을 방해해요."
+          }
+        ]
+      },
+      "successTitle": "안전지대로 출발할 준비 완료!",
+      "retryTitle": "활동성과 몸 보호를 다시 살펴볼까요?"
+    }
+  ]
+}

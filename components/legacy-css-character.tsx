@@ -1,5 +1,5 @@
 import type { CSSProperties } from "react";
-import type { ClothingItem } from "@/lib/game-data";
+import type { ClothingItem } from "@/lib/story-data";
 
 export type LegacyCharacterMood = "ready" | "happy" | "thinking";
 
@@ -19,6 +19,12 @@ export function LegacyCssCharacter({
   const bottom = bySlot.get("bottom");
   const shoes = bySlot.get("shoes");
   const accessory = bySlot.get("accessory");
+  const accessoryStyle = accessory?.styleKey ?? "";
+  const isUmbrella = accessoryStyle === "umbrella";
+  const isBand = accessoryStyle === "band";
+  const isBag = ["backpack", "bag", "basket", "gift-bag", "tote"].includes(
+    accessoryStyle,
+  );
   const itemStyle = (item?: ClothingItem) =>
     item
       ? ({
@@ -35,10 +41,10 @@ export function LegacyCssCharacter({
       data-renderer="legacy-css"
     >
       <div className="character-shadow" aria-hidden="true" />
-      {accessory?.id.includes("umbrella") && (
+      {accessory && isUmbrella && (
         <div
           className={`umbrella ${
-            accessory.id === "clear-umbrella" ? "umbrella-clear" : ""
+            accessory.tags.includes("transparent") ? "umbrella-clear" : ""
           }`}
           style={itemStyle(accessory)}
           aria-hidden="true"
@@ -63,7 +69,7 @@ export function LegacyCssCharacter({
       <div className="character-neck" aria-hidden="true" />
       <div
         className={`character-top ${top ? "has-item" : ""} ${
-          top?.id ?? "base-top"
+          top?.styleKey ?? "base-top"
         }`}
         style={itemStyle(top)}
         aria-hidden="true"
@@ -85,7 +91,7 @@ export function LegacyCssCharacter({
       />
       <div
         className={`character-bottom ${bottom ? "has-item" : ""} ${
-          bottom?.id ?? "base-bottom"
+          bottom?.styleKey ?? "base-bottom"
         }`}
         style={itemStyle(bottom)}
         aria-hidden="true"
@@ -94,28 +100,41 @@ export function LegacyCssCharacter({
         <span className="leg leg-right" />
       </div>
       <span
-        className={`shoe shoe-left ${shoes?.id ?? "base-shoe"}`}
+        className={`shoe shoe-left ${shoes ? "has-item" : ""} ${
+          shoes?.styleKey ?? "base-shoe"
+        }`}
         style={itemStyle(shoes)}
         aria-hidden="true"
       />
       <span
-        className={`shoe shoe-right ${shoes?.id ?? "base-shoe"}`}
+        className={`shoe shoe-right ${shoes ? "has-item" : ""} ${
+          shoes?.styleKey ?? "base-shoe"
+        }`}
         style={itemStyle(shoes)}
         aria-hidden="true"
       />
-      {accessory?.id === "reflective-band" && (
+      {accessory && isBand && (
         <span
           className="reflective-band"
           style={itemStyle(accessory)}
           aria-hidden="true"
         />
       )}
-      {accessory?.id === "canvas-tote" && (
+      {accessory && isBag && (
         <span
           className="tote-bag"
           style={itemStyle(accessory)}
           aria-hidden="true"
         />
+      )}
+      {accessory && !isUmbrella && !isBand && !isBag && (
+        <span
+          className="generic-accessory"
+          style={itemStyle(accessory)}
+          aria-hidden="true"
+        >
+          {accessory.symbol}
+        </span>
       )}
     </div>
   );

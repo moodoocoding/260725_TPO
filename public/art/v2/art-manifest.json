@@ -1,0 +1,840 @@
+{
+  "schemaVersion": 2,
+  "catalogVersion": 2,
+  "generatedAt": "2026-07-26T00:01:21.953Z",
+  "canvas": {
+    "width": 1024,
+    "height": 1536
+  },
+  "thumbnailCanvas": {
+    "width": 512,
+    "height": 384
+  },
+  "backgroundCanvas": {
+    "width": 1920,
+    "height": 1440
+  },
+  "character": {
+    "base": "character/base.webp",
+    "faces": {
+      "ready": "character/faces/ready.webp",
+      "success": "character/faces/success.webp",
+      "retry": "character/faces/retry.webp"
+    }
+  },
+  "items": {
+    "rescue-jacket": {
+      "slot": "top",
+      "styleKey": "jacket",
+      "thumbnail": "items/rescue-jacket/thumb.webp",
+      "layers": {
+        "main": "items/rescue-jacket/wear-main.webp"
+      }
+    },
+    "sports-hoodie": {
+      "slot": "top",
+      "styleKey": "hoodie",
+      "thumbnail": "items/sports-hoodie/thumb.webp",
+      "layers": {
+        "main": "items/sports-hoodie/wear-main.webp"
+      }
+    },
+    "school-cardigan": {
+      "slot": "top",
+      "styleKey": "cardigan",
+      "thumbnail": "items/school-cardigan/thumb.webp",
+      "layers": {
+        "main": "items/school-cardigan/wear-main.webp"
+      }
+    },
+    "party-shirt": {
+      "slot": "top",
+      "styleKey": "shirt",
+      "thumbnail": "items/party-shirt/thumb.webp",
+      "layers": {
+        "main": "items/party-shirt/wear-main.webp"
+      }
+    },
+    "yellow-raincoat": {
+      "slot": "top",
+      "styleKey": "raincoat",
+      "thumbnail": "items/yellow-raincoat/thumb.webp",
+      "layers": {
+        "back": "items/yellow-raincoat/wear-back.webp",
+        "main": "items/yellow-raincoat/wear-main.webp"
+      }
+    },
+    "mint-windbreaker": {
+      "slot": "top",
+      "styleKey": "jacket",
+      "thumbnail": "items/mint-windbreaker/thumb.webp",
+      "layers": {
+        "main": "items/mint-windbreaker/wear-main.webp"
+      }
+    },
+    "navy-cardigan": {
+      "slot": "top",
+      "styleKey": "cardigan",
+      "thumbnail": "items/navy-cardigan/thumb.webp",
+      "layers": {
+        "main": "items/navy-cardigan/wear-main.webp"
+      }
+    },
+    "cream-sweater": {
+      "slot": "top",
+      "styleKey": "sweater",
+      "thumbnail": "items/cream-sweater/thumb.webp",
+      "layers": {
+        "main": "items/cream-sweater/wear-main.webp"
+      }
+    },
+    "school-track-jacket": {
+      "slot": "top",
+      "styleKey": "track-jacket",
+      "thumbnail": "items/school-track-jacket/thumb.webp",
+      "layers": {
+        "main": "items/school-track-jacket/wear-main.webp"
+      }
+    },
+    "white-shirt": {
+      "slot": "top",
+      "styleKey": "shirt",
+      "thumbnail": "items/white-shirt/thumb.webp",
+      "layers": {
+        "main": "items/white-shirt/wear-main.webp"
+      }
+    },
+    "cotton-pajama-top": {
+      "slot": "top",
+      "styleKey": "pajama",
+      "thumbnail": "items/cotton-pajama-top/thumb.webp",
+      "layers": {
+        "main": "items/cotton-pajama-top/wear-main.webp"
+      }
+    },
+    "cotton-tshirt": {
+      "slot": "top",
+      "styleKey": "tshirt",
+      "thumbnail": "items/cotton-tshirt/thumb.webp",
+      "layers": {
+        "main": "items/cotton-tshirt/wear-main.webp"
+      }
+    },
+    "fleece-sweater": {
+      "slot": "top",
+      "styleKey": "sweater",
+      "thumbnail": "items/fleece-sweater/thumb.webp",
+      "layers": {
+        "main": "items/fleece-sweater/wear-main.webp"
+      }
+    },
+    "formal-jacket": {
+      "slot": "top",
+      "styleKey": "formal-jacket",
+      "thumbnail": "items/formal-jacket/thumb.webp",
+      "layers": {
+        "main": "items/formal-jacket/wear-main.webp"
+      }
+    },
+    "swim-rashguard": {
+      "slot": "top",
+      "styleKey": "rashguard",
+      "thumbnail": "items/swim-rashguard/thumb.webp",
+      "layers": {
+        "main": "items/swim-rashguard/wear-main.webp"
+      }
+    },
+    "ski-jacket": {
+      "slot": "top",
+      "styleKey": "ski-jacket",
+      "thumbnail": "items/ski-jacket/thumb.webp",
+      "layers": {
+        "main": "items/ski-jacket/wear-main.webp"
+      }
+    },
+    "wool-coat": {
+      "slot": "top",
+      "styleKey": "coat",
+      "thumbnail": "items/wool-coat/thumb.webp",
+      "layers": {
+        "main": "items/wool-coat/wear-main.webp"
+      }
+    },
+    "black-cardigan": {
+      "slot": "top",
+      "styleKey": "cardigan",
+      "thumbnail": "items/black-cardigan/thumb.webp",
+      "layers": {
+        "main": "items/black-cardigan/wear-main.webp"
+      }
+    },
+    "hanbok-jeogori": {
+      "slot": "top",
+      "styleKey": "hanbok-top",
+      "thumbnail": "items/hanbok-jeogori/thumb.webp",
+      "layers": {
+        "main": "items/hanbok-jeogori/wear-main.webp"
+      }
+    },
+    "lab-coat": {
+      "slot": "top",
+      "styleKey": "lab-coat",
+      "thumbnail": "items/lab-coat/thumb.webp",
+      "layers": {
+        "main": "items/lab-coat/wear-main.webp"
+      }
+    },
+    "fitted-cooking-top": {
+      "slot": "top",
+      "styleKey": "chef-top",
+      "thumbnail": "items/fitted-cooking-top/thumb.webp",
+      "layers": {
+        "main": "items/fitted-cooking-top/wear-main.webp"
+      }
+    },
+    "loose-sleeve-shirt": {
+      "slot": "top",
+      "styleKey": "wide-shirt",
+      "thumbnail": "items/loose-sleeve-shirt/thumb.webp",
+      "layers": {
+        "main": "items/loose-sleeve-shirt/wear-main.webp"
+      }
+    },
+    "protective-jacket": {
+      "slot": "top",
+      "styleKey": "protective-jacket",
+      "thumbnail": "items/protective-jacket/thumb.webp",
+      "layers": {
+        "main": "items/protective-jacket/wear-main.webp"
+      }
+    },
+    "active-pants": {
+      "slot": "bottom",
+      "styleKey": "pants",
+      "thumbnail": "items/active-pants/thumb.webp",
+      "layers": {
+        "main": "items/active-pants/wear-main.webp"
+      }
+    },
+    "sky-denim": {
+      "slot": "bottom",
+      "styleKey": "denim",
+      "thumbnail": "items/sky-denim/thumb.webp",
+      "layers": {
+        "main": "items/sky-denim/wear-main.webp"
+      }
+    },
+    "beige-shorts": {
+      "slot": "bottom",
+      "styleKey": "shorts",
+      "thumbnail": "items/beige-shorts/thumb.webp",
+      "layers": {
+        "main": "items/beige-shorts/wear-main.webp"
+      }
+    },
+    "long-skirt": {
+      "slot": "bottom",
+      "styleKey": "skirt",
+      "thumbnail": "items/long-skirt/thumb.webp",
+      "layers": {
+        "main": "items/long-skirt/wear-main.webp"
+      }
+    },
+    "school-track-pants": {
+      "slot": "bottom",
+      "styleKey": "track-pants",
+      "thumbnail": "items/school-track-pants/thumb.webp",
+      "layers": {
+        "main": "items/school-track-pants/wear-main.webp"
+      }
+    },
+    "pajama-pants": {
+      "slot": "bottom",
+      "styleKey": "pajama-pants",
+      "thumbnail": "items/pajama-pants/thumb.webp",
+      "layers": {
+        "main": "items/pajama-pants/wear-main.webp"
+      }
+    },
+    "cotton-pants": {
+      "slot": "bottom",
+      "styleKey": "pants",
+      "thumbnail": "items/cotton-pants/thumb.webp",
+      "layers": {
+        "main": "items/cotton-pants/wear-main.webp"
+      }
+    },
+    "party-chinos": {
+      "slot": "bottom",
+      "styleKey": "chinos",
+      "thumbnail": "items/party-chinos/thumb.webp",
+      "layers": {
+        "main": "items/party-chinos/wear-main.webp"
+      }
+    },
+    "swim-shorts": {
+      "slot": "bottom",
+      "styleKey": "swim-shorts",
+      "thumbnail": "items/swim-shorts/thumb.webp",
+      "layers": {
+        "main": "items/swim-shorts/wear-main.webp"
+      }
+    },
+    "ski-pants": {
+      "slot": "bottom",
+      "styleKey": "ski-pants",
+      "thumbnail": "items/ski-pants/thumb.webp",
+      "layers": {
+        "main": "items/ski-pants/wear-main.webp"
+      }
+    },
+    "formal-pants": {
+      "slot": "bottom",
+      "styleKey": "formal-pants",
+      "thumbnail": "items/formal-pants/thumb.webp",
+      "layers": {
+        "main": "items/formal-pants/wear-main.webp"
+      }
+    },
+    "black-skirt": {
+      "slot": "bottom",
+      "styleKey": "skirt",
+      "thumbnail": "items/black-skirt/thumb.webp",
+      "layers": {
+        "main": "items/black-skirt/wear-main.webp"
+      }
+    },
+    "hanbok-skirt": {
+      "slot": "bottom",
+      "styleKey": "hanbok-skirt",
+      "thumbnail": "items/hanbok-skirt/thumb.webp",
+      "layers": {
+        "main": "items/hanbok-skirt/wear-main.webp"
+      }
+    },
+    "lab-pants": {
+      "slot": "bottom",
+      "styleKey": "pants",
+      "thumbnail": "items/lab-pants/thumb.webp",
+      "layers": {
+        "main": "items/lab-pants/wear-main.webp"
+      }
+    },
+    "cooking-pants": {
+      "slot": "bottom",
+      "styleKey": "pants",
+      "thumbnail": "items/cooking-pants/thumb.webp",
+      "layers": {
+        "main": "items/cooking-pants/wear-main.webp"
+      }
+    },
+    "protective-cargo-pants": {
+      "slot": "bottom",
+      "styleKey": "cargo-pants",
+      "thumbnail": "items/protective-cargo-pants/thumb.webp",
+      "layers": {
+        "main": "items/protective-cargo-pants/wear-main.webp"
+      }
+    },
+    "rain-boots": {
+      "slot": "shoes",
+      "styleKey": "boots",
+      "thumbnail": "items/rain-boots/thumb.webp",
+      "layers": {
+        "main": "items/rain-boots/wear-main.webp"
+      }
+    },
+    "sneakers": {
+      "slot": "shoes",
+      "styleKey": "sneakers",
+      "thumbnail": "items/sneakers/thumb.webp",
+      "layers": {
+        "main": "items/sneakers/wear-main.webp"
+      }
+    },
+    "slippers": {
+      "slot": "shoes",
+      "styleKey": "slippers",
+      "thumbnail": "items/slippers/thumb.webp",
+      "layers": {
+        "main": "items/slippers/wear-main.webp"
+      }
+    },
+    "dress-shoes": {
+      "slot": "shoes",
+      "styleKey": "dress-shoes",
+      "thumbnail": "items/dress-shoes/thumb.webp",
+      "layers": {
+        "main": "items/dress-shoes/wear-main.webp"
+      }
+    },
+    "running-shoes": {
+      "slot": "shoes",
+      "styleKey": "sneakers",
+      "thumbnail": "items/running-shoes/thumb.webp",
+      "layers": {
+        "main": "items/running-shoes/wear-main.webp"
+      }
+    },
+    "sleep-socks": {
+      "slot": "shoes",
+      "styleKey": "socks",
+      "thumbnail": "items/sleep-socks/thumb.webp",
+      "layers": {
+        "main": "items/sleep-socks/wear-main.webp"
+      }
+    },
+    "party-sneakers": {
+      "slot": "shoes",
+      "styleKey": "sneakers",
+      "thumbnail": "items/party-sneakers/thumb.webp",
+      "layers": {
+        "main": "items/party-sneakers/wear-main.webp"
+      }
+    },
+    "aqua-shoes": {
+      "slot": "shoes",
+      "styleKey": "aqua-shoes",
+      "thumbnail": "items/aqua-shoes/thumb.webp",
+      "layers": {
+        "main": "items/aqua-shoes/wear-main.webp"
+      }
+    },
+    "sandals": {
+      "slot": "shoes",
+      "styleKey": "sandals",
+      "thumbnail": "items/sandals/thumb.webp",
+      "layers": {
+        "main": "items/sandals/wear-main.webp"
+      }
+    },
+    "ski-boots": {
+      "slot": "shoes",
+      "styleKey": "ski-boots",
+      "thumbnail": "items/ski-boots/thumb.webp",
+      "layers": {
+        "main": "items/ski-boots/wear-main.webp"
+      }
+    },
+    "hiking-boots": {
+      "slot": "shoes",
+      "styleKey": "hiking-boots",
+      "thumbnail": "items/hiking-boots/thumb.webp",
+      "layers": {
+        "main": "items/hiking-boots/wear-main.webp"
+      }
+    },
+    "formal-flats": {
+      "slot": "shoes",
+      "styleKey": "flats",
+      "thumbnail": "items/formal-flats/thumb.webp",
+      "layers": {
+        "main": "items/formal-flats/wear-main.webp"
+      }
+    },
+    "hanbok-shoes": {
+      "slot": "shoes",
+      "styleKey": "hanbok-shoes",
+      "thumbnail": "items/hanbok-shoes/thumb.webp",
+      "layers": {
+        "main": "items/hanbok-shoes/wear-main.webp"
+      }
+    },
+    "closed-safety-shoes": {
+      "slot": "shoes",
+      "styleKey": "safety-shoes",
+      "thumbnail": "items/closed-safety-shoes/thumb.webp",
+      "layers": {
+        "main": "items/closed-safety-shoes/wear-main.webp"
+      }
+    },
+    "kitchen-nonslip-shoes": {
+      "slot": "shoes",
+      "styleKey": "safety-shoes",
+      "thumbnail": "items/kitchen-nonslip-shoes/thumb.webp",
+      "layers": {
+        "main": "items/kitchen-nonslip-shoes/wear-main.webp"
+      }
+    },
+    "clear-umbrella": {
+      "slot": "accessory",
+      "styleKey": "umbrella",
+      "thumbnail": "items/clear-umbrella/thumb.webp",
+      "layers": {
+        "back": "items/clear-umbrella/wear-back.webp",
+        "front": "items/clear-umbrella/wear-front.webp"
+      }
+    },
+    "black-umbrella": {
+      "slot": "accessory",
+      "styleKey": "umbrella",
+      "thumbnail": "items/black-umbrella/thumb.webp",
+      "layers": {
+        "back": "items/black-umbrella/wear-back.webp",
+        "front": "items/black-umbrella/wear-front.webp"
+      }
+    },
+    "reflective-band": {
+      "slot": "accessory",
+      "styleKey": "band",
+      "thumbnail": "items/reflective-band/thumb.webp",
+      "layers": {
+        "main": "items/reflective-band/wear-main.webp"
+      }
+    },
+    "canvas-tote": {
+      "slot": "accessory",
+      "styleKey": "tote",
+      "thumbnail": "items/canvas-tote/thumb.webp",
+      "layers": {
+        "back": "items/canvas-tote/wear-back.webp",
+        "front": "items/canvas-tote/wear-front.webp"
+      }
+    },
+    "rescue-cap": {
+      "slot": "accessory",
+      "styleKey": "cap",
+      "thumbnail": "items/rescue-cap/thumb.webp",
+      "layers": {
+        "main": "items/rescue-cap/wear-main.webp"
+      }
+    },
+    "whistle": {
+      "slot": "accessory",
+      "styleKey": "small-tool",
+      "thumbnail": "items/whistle/thumb.webp",
+      "layers": {
+        "main": "items/whistle/wear-main.webp"
+      }
+    },
+    "school-backpack": {
+      "slot": "accessory",
+      "styleKey": "backpack",
+      "thumbnail": "items/school-backpack/thumb.webp",
+      "layers": {
+        "back": "items/school-backpack/wear-back.webp",
+        "front": "items/school-backpack/wear-front.webp"
+      }
+    },
+    "sports-cap": {
+      "slot": "accessory",
+      "styleKey": "cap",
+      "thumbnail": "items/sports-cap/thumb.webp",
+      "layers": {
+        "main": "items/sports-cap/wear-main.webp"
+      }
+    },
+    "party-hat": {
+      "slot": "accessory",
+      "styleKey": "party-hat",
+      "thumbnail": "items/party-hat/thumb.webp",
+      "layers": {
+        "main": "items/party-hat/wear-main.webp"
+      }
+    },
+    "sleep-mask": {
+      "slot": "accessory",
+      "styleKey": "mask",
+      "thumbnail": "items/sleep-mask/thumb.webp",
+      "layers": {
+        "main": "items/sleep-mask/wear-main.webp"
+      }
+    },
+    "blanket": {
+      "slot": "accessory",
+      "styleKey": "blanket",
+      "thumbnail": "items/blanket/thumb.webp",
+      "layers": {
+        "back": "items/blanket/wear-back.webp",
+        "front": "items/blanket/wear-front.webp"
+      }
+    },
+    "scarf": {
+      "slot": "accessory",
+      "styleKey": "scarf",
+      "thumbnail": "items/scarf/thumb.webp",
+      "layers": {
+        "main": "items/scarf/wear-main.webp"
+      }
+    },
+    "gift-bag": {
+      "slot": "accessory",
+      "styleKey": "gift-bag",
+      "thumbnail": "items/gift-bag/thumb.webp",
+      "layers": {
+        "main": "items/gift-bag/wear-main.webp"
+      }
+    },
+    "bow-tie": {
+      "slot": "accessory",
+      "styleKey": "bow-tie",
+      "thumbnail": "items/bow-tie/thumb.webp",
+      "layers": {
+        "main": "items/bow-tie/wear-main.webp"
+      }
+    },
+    "swim-cap": {
+      "slot": "accessory",
+      "styleKey": "swim-cap",
+      "thumbnail": "items/swim-cap/thumb.webp",
+      "layers": {
+        "main": "items/swim-cap/wear-main.webp"
+      }
+    },
+    "goggles": {
+      "slot": "accessory",
+      "styleKey": "goggles",
+      "thumbnail": "items/goggles/thumb.webp",
+      "layers": {
+        "main": "items/goggles/wear-main.webp"
+      }
+    },
+    "life-jacket": {
+      "slot": "accessory",
+      "styleKey": "life-jacket",
+      "thumbnail": "items/life-jacket/thumb.webp",
+      "layers": {
+        "main": "items/life-jacket/wear-main.webp"
+      }
+    },
+    "towel": {
+      "slot": "accessory",
+      "styleKey": "towel",
+      "thumbnail": "items/towel/thumb.webp",
+      "layers": {
+        "main": "items/towel/wear-main.webp"
+      }
+    },
+    "ski-helmet": {
+      "slot": "accessory",
+      "styleKey": "helmet",
+      "thumbnail": "items/ski-helmet/thumb.webp",
+      "layers": {
+        "main": "items/ski-helmet/wear-main.webp"
+      }
+    },
+    "ski-goggles": {
+      "slot": "accessory",
+      "styleKey": "goggles",
+      "thumbnail": "items/ski-goggles/thumb.webp",
+      "layers": {
+        "main": "items/ski-goggles/wear-main.webp"
+      }
+    },
+    "gloves": {
+      "slot": "accessory",
+      "styleKey": "gloves",
+      "thumbnail": "items/gloves/thumb.webp",
+      "layers": {
+        "main": "items/gloves/wear-main.webp"
+      }
+    },
+    "flower-basket": {
+      "slot": "accessory",
+      "styleKey": "basket",
+      "thumbnail": "items/flower-basket/thumb.webp",
+      "layers": {
+        "main": "items/flower-basket/wear-main.webp"
+      }
+    },
+    "simple-ribbon": {
+      "slot": "accessory",
+      "styleKey": "ribbon",
+      "thumbnail": "items/simple-ribbon/thumb.webp",
+      "layers": {
+        "main": "items/simple-ribbon/wear-main.webp"
+      }
+    },
+    "black-bag": {
+      "slot": "accessory",
+      "styleKey": "bag",
+      "thumbnail": "items/black-bag/thumb.webp",
+      "layers": {
+        "main": "items/black-bag/wear-main.webp"
+      }
+    },
+    "flower-crown": {
+      "slot": "accessory",
+      "styleKey": "flower-crown",
+      "thumbnail": "items/flower-crown/thumb.webp",
+      "layers": {
+        "main": "items/flower-crown/wear-main.webp"
+      }
+    },
+    "bright-necklace": {
+      "slot": "accessory",
+      "styleKey": "necklace",
+      "thumbnail": "items/bright-necklace/thumb.webp",
+      "layers": {
+        "main": "items/bright-necklace/wear-main.webp"
+      }
+    },
+    "norigae": {
+      "slot": "accessory",
+      "styleKey": "norigae",
+      "thumbnail": "items/norigae/thumb.webp",
+      "layers": {
+        "main": "items/norigae/wear-main.webp"
+      }
+    },
+    "hanbok-hat": {
+      "slot": "accessory",
+      "styleKey": "hanbok-hat",
+      "thumbnail": "items/hanbok-hat/thumb.webp",
+      "layers": {
+        "main": "items/hanbok-hat/wear-main.webp"
+      }
+    },
+    "safety-goggles": {
+      "slot": "accessory",
+      "styleKey": "goggles",
+      "thumbnail": "items/safety-goggles/thumb.webp",
+      "layers": {
+        "main": "items/safety-goggles/wear-main.webp"
+      }
+    },
+    "lab-gloves": {
+      "slot": "accessory",
+      "styleKey": "gloves",
+      "thumbnail": "items/lab-gloves/thumb.webp",
+      "layers": {
+        "main": "items/lab-gloves/wear-main.webp"
+      }
+    },
+    "notebook": {
+      "slot": "accessory",
+      "styleKey": "book",
+      "thumbnail": "items/notebook/thumb.webp",
+      "layers": {
+        "main": "items/notebook/wear-main.webp"
+      }
+    },
+    "dangling-scarf": {
+      "slot": "accessory",
+      "styleKey": "scarf",
+      "thumbnail": "items/dangling-scarf/thumb.webp",
+      "layers": {
+        "main": "items/dangling-scarf/wear-main.webp"
+      }
+    },
+    "apron": {
+      "slot": "accessory",
+      "styleKey": "apron",
+      "thumbnail": "items/apron/thumb.webp",
+      "layers": {
+        "main": "items/apron/wear-main.webp"
+      }
+    },
+    "oven-mitt": {
+      "slot": "accessory",
+      "styleKey": "oven-mitt",
+      "thumbnail": "items/oven-mitt/thumb.webp",
+      "layers": {
+        "main": "items/oven-mitt/wear-main.webp"
+      }
+    },
+    "chef-hat": {
+      "slot": "accessory",
+      "styleKey": "chef-hat",
+      "thumbnail": "items/chef-hat/thumb.webp",
+      "layers": {
+        "main": "items/chef-hat/wear-main.webp"
+      }
+    },
+    "loose-bracelet": {
+      "slot": "accessory",
+      "styleKey": "bracelet",
+      "thumbnail": "items/loose-bracelet/thumb.webp",
+      "layers": {
+        "main": "items/loose-bracelet/wear-main.webp"
+      }
+    },
+    "helmet": {
+      "slot": "accessory",
+      "styleKey": "helmet",
+      "thumbnail": "items/helmet/thumb.webp",
+      "layers": {
+        "main": "items/helmet/wear-main.webp"
+      }
+    },
+    "knee-pads": {
+      "slot": "accessory",
+      "styleKey": "knee-pads",
+      "thumbnail": "items/knee-pads/thumb.webp",
+      "layers": {
+        "main": "items/knee-pads/wear-main.webp"
+      }
+    },
+    "flashlight": {
+      "slot": "accessory",
+      "styleKey": "flashlight",
+      "thumbnail": "items/flashlight/thumb.webp",
+      "layers": {
+        "main": "items/flashlight/wear-main.webp"
+      }
+    },
+    "cape": {
+      "slot": "accessory",
+      "styleKey": "cape",
+      "thumbnail": "items/cape/thumb.webp",
+      "layers": {
+        "back": "items/cape/wear-back.webp",
+        "front": "items/cape/wear-front.webp"
+      }
+    }
+  },
+  "episodes": {
+    "rescue-team-trial": {
+      "background": "episodes/rescue-team-trial/background.webp",
+      "backgroundStyle": "rescue-hq"
+    },
+    "school-pe-rush": {
+      "background": "episodes/school-pe-rush/background.webp",
+      "backgroundStyle": "school-yard"
+    },
+    "bedtime-ready": {
+      "background": "episodes/bedtime-ready/background.webp",
+      "backgroundStyle": "cozy-bedroom"
+    },
+    "friend-birthday-party": {
+      "background": "episodes/friend-birthday-party/background.webp",
+      "backgroundStyle": "birthday-party"
+    },
+    "rainy-market-errand": {
+      "background": "episodes/rainy-market-errand/background.webp",
+      "backgroundStyle": "rainy-street"
+    },
+    "summer-waterpark": {
+      "background": "episodes/summer-waterpark/background.webp",
+      "backgroundStyle": "waterpark"
+    },
+    "winter-ski-class": {
+      "background": "episodes/winter-ski-class/background.webp",
+      "backgroundStyle": "ski-slope"
+    },
+    "wedding-flower-child": {
+      "background": "episodes/wedding-flower-child/background.webp",
+      "backgroundStyle": "wedding-hall"
+    },
+    "family-funeral": {
+      "background": "episodes/family-funeral/background.webp",
+      "backgroundStyle": "memorial-hall"
+    },
+    "lunar-new-year-visit": {
+      "background": "episodes/lunar-new-year-visit/background.webp",
+      "backgroundStyle": "hanok-holiday"
+    },
+    "science-lab-experiment": {
+      "background": "episodes/science-lab-experiment/background.webp",
+      "backgroundStyle": "science-lab"
+    },
+    "family-cooking": {
+      "background": "episodes/family-cooking/background.webp",
+      "backgroundStyle": "family-kitchen"
+    },
+    "zombie-city-escape": {
+      "background": "episodes/zombie-city-escape/background.webp",
+      "backgroundStyle": "zombie-city"
+    }
+  }
+}
