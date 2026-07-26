@@ -1,0 +1,203 @@
+{
+  "revision": "R2",
+  "generatedAt": "2026-07-26T14:52:17.389Z",
+  "result": "passed",
+  "inventoryCount": 16,
+  "slotCounts": {
+    "top": 4,
+    "bottom": 4,
+    "shoes": 4,
+    "accessory": 4
+  },
+  "roleCounts": {
+    "top": {
+      "best": 1,
+      "acceptable": 1,
+      "partial": 1,
+      "mismatch": 1
+    },
+    "bottom": {
+      "best": 1,
+      "acceptable": 1,
+      "partial": 1,
+      "mismatch": 1
+    },
+    "shoes": {
+      "best": 1,
+      "acceptable": 1,
+      "partial": 1,
+      "mismatch": 1
+    },
+    "accessory": {
+      "best": 1,
+      "acceptable": 1,
+      "partial": 1,
+      "mismatch": 1
+    }
+  },
+  "sourceResults": [
+    {
+      "itemId": "rescue-jacket",
+      "slot": "top",
+      "waistMode": "over",
+      "overlap": 28,
+      "pathCount": 9,
+      "gzipBytes": 711
+    },
+    {
+      "itemId": "mint-windbreaker",
+      "slot": "top",
+      "waistMode": "over",
+      "overlap": 28,
+      "pathCount": 9,
+      "gzipBytes": 661
+    },
+    {
+      "itemId": "sports-hoodie",
+      "slot": "top",
+      "waistMode": "over",
+      "overlap": 28,
+      "pathCount": 9,
+      "gzipBytes": 746
+    },
+    {
+      "itemId": "formal-jacket",
+      "slot": "top",
+      "waistMode": "open",
+      "overlap": 28,
+      "pathCount": 8,
+      "gzipBytes": 649
+    },
+    {
+      "itemId": "active-pants",
+      "slot": "bottom",
+      "waistMode": "over",
+      "overlap": 28,
+      "pathCount": 6,
+      "gzipBytes": 618
+    },
+    {
+      "itemId": "protective-cargo-pants",
+      "slot": "bottom",
+      "waistMode": "over",
+      "overlap": 28,
+      "pathCount": 8,
+      "gzipBytes": 637
+    },
+    {
+      "itemId": "beige-shorts",
+      "slot": "bottom",
+      "waistMode": "over",
+      "overlap": 28,
+      "pathCount": 4,
+      "gzipBytes": 486
+    },
+    {
+      "itemId": "long-skirt",
+      "slot": "bottom",
+      "waistMode": "over",
+      "overlap": 28,
+      "pathCount": 4,
+      "gzipBytes": 564
+    }
+  ],
+  "thumbnailResults": [
+    {
+      "itemId": "active-pants",
+      "width": 384,
+      "height": 240,
+      "bytes": 9034
+    },
+    {
+      "itemId": "beige-shorts",
+      "width": 384,
+      "height": 240,
+      "bytes": 11440
+    },
+    {
+      "itemId": "canvas-tote",
+      "width": 384,
+      "height": 240,
+      "bytes": 11196
+    },
+    {
+      "itemId": "dress-shoes",
+      "width": 384,
+      "height": 240,
+      "bytes": 8478
+    },
+    {
+      "itemId": "formal-jacket",
+      "width": 384,
+      "height": 240,
+      "bytes": 14792
+    },
+    {
+      "itemId": "hiking-boots",
+      "width": 384,
+      "height": 240,
+      "bytes": 11446
+    },
+    {
+      "itemId": "long-skirt",
+      "width": 384,
+      "height": 240,
+      "bytes": 10876
+    },
+    {
+      "itemId": "mint-windbreaker",
+      "width": 384,
+      "height": 240,
+      "bytes": 14974
+    },
+    {
+      "itemId": "protective-cargo-pants",
+      "width": 384,
+      "height": 240,
+      "bytes": 10744
+    },
+    {
+      "itemId": "reflective-band",
+      "width": 384,
+      "height": 240,
+      "bytes": 5174
+    },
+    {
+      "itemId": "rescue-cap",
+      "width": 384,
+      "height": 240,
+      "bytes": 13292
+    },
+    {
+      "itemId": "rescue-jacket",
+      "width": 384,
+      "height": 240,
+      "bytes": 15956
+    },
+    {
+      "itemId": "slippers",
+      "width": 384,
+      "height": 240,
+      "bytes": 10626
+    },
+    {
+      "itemId": "sneakers",
+      "width": 384,
+      "height": 240,
+      "bytes": 12164
+    },
+    {
+      "itemId": "sports-hoodie",
+      "width": 384,
+      "height": 240,
+      "bytes": 14752
+    },
+    {
+      "itemId": "whistle",
+      "width": 384,
+      "height": 240,
+      "bytes": 9328
+    }
+  ],
+  "failures": []
+}

@@ -129,6 +129,24 @@ export function scoreOutfit(
     improvements.push("겉옷, 하의, 신발, 소품을 모두 골라 코디를 완성해 보세요.");
   }
   if (missingMandatory.length > 0) total = Math.min(total, 59);
+
+  if (episode.itemRoles && selected.length === 4) {
+    const selectedRoles = selected.map(
+      (item) => episode.itemRoles?.[item.id] ?? "mismatch",
+    );
+    if (selectedRoles.includes("mismatch")) {
+      total = Math.min(total, 45);
+    } else if (selectedRoles.includes("partial")) {
+      total = Math.min(total, 59);
+    } else if (episode.canonicalItemIds) {
+      const selectedIds = new Set(selected.map((item) => item.id));
+      const isCanonical =
+        selectedIds.size === episode.canonicalItemIds.length &&
+        episode.canonicalItemIds.every((itemId) => selectedIds.has(itemId));
+      if (!isCanonical) total = Math.min(total, 94);
+    }
+  }
+
   total = clamp(total, 0, 100);
 
   return {

@@ -19,10 +19,15 @@
     "story:validate": "node --test tests/story-catalog.test.mjs",
     "episode1-art:prepare": "node scripts/prepare-episode1-assets.mjs",
     "episode1-otter:prepare": "node scripts/prepare-episode1-otter-assets.mjs",
+    "episode1-rig:validate": "node scripts/validate-episode1-rig.mjs && node scripts/validate-episode1-production-rig.mjs",
+    "episode1-rig:prototype": "node scripts/validate-episode1-rig.mjs && node scripts/render-episode1-rig-prototype.mjs",
+    "episode1-rig:matrix": "node scripts/render-episode1-production-matrix.mjs",
+    "episode1-rig:simulate": "node scripts/simulate-episode1-outfits.mjs",
+    "episode1-rig:production": "npm run episode1-rig:validate && npm run episode1-rig:matrix && npm run episode1-rig:simulate",
     "episode1-art:validate": "node scripts/validate-episode1-assets.mjs",
     "story-art:generate": "node scripts/generate-story-assets.mjs",
     "story-art:validate": "node scripts/validate-story-assets.mjs && node scripts/validate-episode1-assets.mjs",
-    "test": "npm run art:validate && npm run test:art && npm run story:validate && npm run story-art:validate && npm run build && npm run build:sites",
+    "test": "npm run art:validate && npm run test:art && npm run story:validate && npm run story-art:validate && npm run episode1-rig:validate && npm run build && npm run build:sites",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },
   "dependencies": {

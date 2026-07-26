@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536"
+     data-item-id="mint-windbreaker" data-slot="top" data-waist-mode="over"
+     data-rig-center-x="526" data-waist-y="858" data-connection-left="382"
+     data-connection-right="670" data-hem-y="878" data-overlap="28">
+  <g stroke="#112d55" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M410 588 C370 599 340 629 319 675 L278 782
+             C296 803 324 814 354 812 L410 708 L425 644 Z" fill="#73d8c7"/>
+    <path d="M642 588 C682 599 712 629 733 675 L774 782
+             C756 803 728 814 698 812 L642 708 L627 644 Z" fill="#73d8c7"/>
+    <path d="M410 586 C449 570 487 562 526 562 C565 562 603 570 642 586
+             L670 878 C628 884 580 886 526 886 C472 886 424 884 382 878 Z"
+          fill="#73d8c7"/>
+  </g>
+  <path d="M450 578 C462 616 488 638 526 638 C564 638 590 616 602 578"
+        fill="#e8fff9" stroke="#112d55" stroke-width="7"/>
+  <path d="M526 638 V872" fill="none" stroke="#112d55" stroke-width="6"/>
+  <path d="M391 832 C434 841 479 846 526 846 C573 846 618 841 661 832
+           L670 878 C628 884 580 886 526 886 C472 886 424 884 382 878 Z"
+        fill="#2b9c91" stroke="#112d55" stroke-width="6"/>
+  <g fill="#2b9c91" stroke="#112d55" stroke-width="6">
+    <path d="M286 753 L365 778 L354 812 C325 813 300 804 279 786 Z"/>
+    <path d="M766 753 L687 778 L698 812 C727 813 752 804 773 786 Z"/>
+  </g>
+  <path d="M451 720 C474 737 496 746 526 746 C556 746 578 737 601 720"
+        fill="none" stroke="#2b9c91" stroke-width="5"/>
+</svg>

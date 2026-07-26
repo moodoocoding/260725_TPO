@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536"
+     data-item-id="active-pants" data-slot="bottom" data-waist-mode="over"
+     data-rig-center-x="526" data-waist-y="858" data-connection-left="382"
+     data-connection-right="670" data-top-y="850" data-overlap="28">
+  <g stroke="#263746" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M382 850 C428 844 477 842 526 842 C575 842 624 844 670 850
+             C680 887 692 927 700 970 L702 1207
+             C660 1219 618 1218 574 1205 L550 1018 L526 982
+             L502 1018 L478 1205 C434 1218 392 1219 350 1207 L352 970
+             C360 927 372 887 382 850 Z"
+          fill="#77858f"/>
+    <path d="M382 850 C428 858 477 862 526 862 C575 862 624 858 670 850
+             L680 892 C629 903 578 908 526 908 C474 908 423 903 372 892 Z"
+          fill="#5e6d78"/>
+  </g>
+  <path d="M526 908 V982" fill="none" stroke="#263746" stroke-width="6"/>
+  <g fill="#89959e" stroke="#263746" stroke-width="6">
+    <path d="M359 1052 C395 1041 431 1041 467 1052 L475 1118
+             C437 1128 399 1128 361 1118 Z"/>
+    <path d="M693 1052 C657 1041 621 1041 585 1052 L577 1118
+             C615 1128 653 1128 691 1118 Z"/>
+  </g>
+  <path d="M352 1188 C394 1199 436 1199 478 1188 M574 1188 C616 1199 658 1199 700 1188"
+        fill="none" stroke="#263746" stroke-width="6"/>
+</svg>

@@ -368,12 +368,6 @@ export default function Home() {
     return () => window.clearInterval(timer);
   }, [stage]);
 
-  useEffect(() => {
-    if (stage !== "dress" || timeLeft !== 0 || submitting) return;
-    const autoSubmit = window.setTimeout(() => void submitOutfit(true), 0);
-    return () => window.clearTimeout(autoSubmit);
-  }, [stage, submitOutfit, submitting, timeLeft]);
-
   const selectItem = (item: ClothingItem) => {
     setSelection((current) => ({ ...current, [item.slot]: item.id }));
   };

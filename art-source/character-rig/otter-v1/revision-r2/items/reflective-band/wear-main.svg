@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536" data-item-id="reflective-band" data-slot="accessory">
+  <g stroke="#112d55" stroke-width="7" stroke-linejoin="round">
+    <path d="M286 741 C308 749 333 758 361 766 L347 806 C321 801 297 791 276 779 Z" fill="#e9ff5d"/>
+    <path d="M766 741 C744 749 719 758 691 766 L705 806 C731 801 755 791 776 779 Z" fill="#e9ff5d"/>
+  </g>
+  <path d="M294 757 L354 779 M758 757 L698 779" stroke="#ffffff" stroke-width="9" stroke-linecap="round"/>
+</svg>

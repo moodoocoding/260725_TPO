@@ -81,6 +81,22 @@ function scoreCombination(episode, outfit, elapsedSeconds = 0) {
   );
 
   if (missingMandatory) total = Math.min(total, 59);
+  if (episode.itemRoles) {
+    const selectedRoles = outfit.map(
+      (item) => episode.itemRoles[item.id] ?? "mismatch",
+    );
+    if (selectedRoles.includes("mismatch")) {
+      total = Math.min(total, 45);
+    } else if (selectedRoles.includes("partial")) {
+      total = Math.min(total, 59);
+    } else if (episode.canonicalItemIds) {
+      const selectedIds = new Set(outfit.map((item) => item.id));
+      const isCanonical =
+        selectedIds.size === episode.canonicalItemIds.length &&
+        episode.canonicalItemIds.every((itemId) => selectedIds.has(itemId));
+      if (!isCanonical) total = Math.min(total, 94);
+    }
+  }
   return Math.max(0, Math.min(100, total));
 }
 
@@ -155,8 +171,7 @@ test("아이템 ID와 에피소드 콘텐츠가 완전하다", () => {
 
   for (const episode of catalog.episodes) {
     assert.match(episode.slug, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
-    const expectedItemsPerSlot =
-      episode.slug === "rescue-team-trial" ? 2 : 4;
+    const expectedItemsPerSlot = 4;
     const expectedItemCount = expectedItemsPerSlot * slotNames.length;
     assert.equal(episode.itemIds.length, expectedItemCount, episode.slug);
     assert.equal(
@@ -244,8 +259,7 @@ test("모든 에피소드의 배점은 30·30·20이고 안전 필수 규칙이 
 test("각 에피소드는 충분한 조합과 안전 조건을 충족하는 조합을 가진다", () => {
   for (const episode of catalog.episodes) {
     const combinations = combinationsForEpisode(episode);
-    const expectedCombinations =
-      episode.slug === "rescue-team-trial" ? 16 : 256;
+    const expectedCombinations = 256;
     assert.equal(combinations.length, expectedCombinations, episode.slug);
     assert.ok(
       combinations.some((outfit) => satisfiesMandatory(episode, outfit)),
@@ -274,6 +288,22 @@ test("모든 조합을 채점하면 각 에피소드에 100점·통과·실패�
       `${episode.slug}: no failing outfit`,
     );
   }
+});
+
+test("1화는 하나의 대표 만점 조합과 8~24개의 안전한 통과 조합을 가진다", () => {
+  const episode = catalog.episodes.find(
+    (entry) => entry.slug === "rescue-team-trial",
+  );
+  assert.ok(episode);
+  assert.equal(Object.keys(episode.itemRoles ?? {}).length, 16);
+  assert.equal(episode.canonicalItemIds?.length, 4);
+
+  const scores = combinationsForEpisode(episode).map((outfit) =>
+    scoreCombination(episode, outfit),
+  );
+  const passingCount = scores.filter((score) => score >= 60).length;
+  assert.ok(passingCount >= 8 && passingCount <= 24, passingCount);
+  assert.equal(scores.filter((score) => score === 100).length, 1);
 });
 
 test("카탈로그 텍스트에 깨진 문자나 데이터베이스 의존성이 없다", () => {

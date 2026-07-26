@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536" data-item-id="whistle" data-slot="accessory">
+  <path d="M465 624 C476 678 493 727 526 777 C559 727 576 678 587 624"
+        fill="none" stroke="#112d55" stroke-width="11" stroke-linecap="round"/>
+  <path d="M465 624 C476 678 493 727 526 777 C559 727 576 678 587 624"
+        fill="none" stroke="#f2c94c" stroke-width="6" stroke-linecap="round"/>
+  <g stroke="#112d55" stroke-width="7" stroke-linejoin="round">
+    <path d="M502 766 H550 L573 790 L552 824 H500 C480 824 470 812 470 795
+             C470 778 482 766 502 766 Z" fill="#f2c94c"/>
+    <circle cx="532" cy="795" r="10" fill="#fff2b8"/>
+  </g>
+  <path d="M550 778 H578 V796 H558 Z" fill="#d69a1f" stroke="#112d55" stroke-width="6"/>
+</svg>

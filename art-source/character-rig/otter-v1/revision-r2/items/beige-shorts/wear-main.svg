@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536"
+     data-item-id="beige-shorts" data-slot="bottom" data-waist-mode="over"
+     data-rig-center-x="526" data-waist-y="858" data-connection-left="382"
+     data-connection-right="670" data-top-y="850" data-overlap="28">
+  <g stroke="#112d55" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M382 850 C428 844 477 842 526 842 C575 842 624 844 670 850
+             L692 1018 C654 1032 614 1032 572 1018 L548 978 L526 960
+             L504 978 L480 1018 C438 1032 398 1032 360 1018 Z"
+          fill="#d8b07b"/>
+    <path d="M382 850 C428 858 477 862 526 862 C575 862 624 858 670 850
+             L676 892 C626 902 577 907 526 907 C475 907 426 902 376 892 Z"
+          fill="#9c7043"/>
+  </g>
+  <path d="M526 907 V960" fill="none" stroke="#112d55" stroke-width="6"/>
+  <path d="M372 993 C409 1005 444 1005 480 993 M572 993 C608 1005 643 1005 680 993"
+        fill="none" stroke="#9c7043" stroke-width="6"/>
+</svg>

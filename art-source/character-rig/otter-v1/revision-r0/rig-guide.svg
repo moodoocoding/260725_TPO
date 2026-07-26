@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536" role="img" aria-labelledby="title desc">
+  <title id="title">Otter clothing rig R0 guide</title>
+  <desc id="desc">Shared waist, safe-area, body and ground anchors for episode one clothing.</desc>
+  <rect width="1024" height="1536" fill="#f7f2e8"/>
+  <rect x="64" y="48" width="896" height="1440" rx="20" fill="none" stroke="#91a2b3" stroke-width="4" stroke-dasharray="14 10"/>
+  <rect x="208" y="112" width="608" height="1340" rx="18" fill="#dbe8ef" fill-opacity=".28" stroke="#6c8798" stroke-width="3" stroke-dasharray="10 9"/>
+  <rect x="272" y="96" width="480" height="1356" rx="18" fill="#c7dbe5" fill-opacity=".3" stroke="#47697d" stroke-width="4" stroke-dasharray="12 8"/>
+  <path d="M526 80 V1470" fill="none" stroke="#24435f" stroke-width="3" stroke-dasharray="8 8"/>
+  <path d="M512 80 V1470" fill="none" stroke="#7e8d99" stroke-width="2" stroke-dasharray="4 10"/>
+  <rect x="382" y="842" width="288" height="36" fill="#f36a5d" fill-opacity=".22" stroke="#d64b42" stroke-width="4"/>
+  <path d="M382 858 H670" fill="none" stroke="#d64b42" stroke-width="5"/>
+  <circle cx="526" cy="858" r="13" fill="#fff" stroke="#d64b42" stroke-width="5"/>
+  <path d="M64 1450 H960" fill="none" stroke="#24435f" stroke-width="5"/>
+  <g fill="#18324a" font-family="Arial, sans-serif">
+    <text x="84" y="90" font-size="26" font-weight="700">R0 RIG GUIDE · 1024 × 1536</text>
+    <text x="542" y="830" font-size="22" font-weight="700">WAIST W=(526,858)</text>
+    <text x="542" y="890" font-size="18">connection x=382…670 · band y=842…878</text>
+    <text x="72" y="1435" font-size="18">GROUND y=1450 ±2</text>
+    <text x="536" y="130" font-size="17">rig center x=526</text>
+    <text x="414" y="155" font-size="17" fill="#697886">canvas center x=512</text>
+  </g>
+  <g font-family="Arial, sans-serif">
+    <g transform="translate(80 1060)">
+      <rect width="190" height="160" rx="14" fill="#fff" stroke="#9eabb4" stroke-width="3"/>
+      <path d="M35 56 H155 V96 H35 Z" fill="#aeb8bf"/>
+      <path d="M35 88 H155 V126 H35 Z" fill="#697986"/>
+      <path d="M35 88 H155" stroke="#f36a5d" stroke-width="4"/>
+      <text x="18" y="28" fill="#18324a" font-size="18" font-weight="700">OVER</text>
+    </g>
+    <g transform="translate(300 1060)">
+      <rect width="190" height="160" rx="14" fill="#fff" stroke="#9eabb4" stroke-width="3"/>
+      <path d="M35 56 H155 V112 H35 Z" fill="#aeb8bf"/>
+      <path d="M35 86 H155 V126 H35 Z" fill="#697986"/>
+      <path d="M35 86 H155" stroke="#f36a5d" stroke-width="4"/>
+      <text x="18" y="28" fill="#18324a" font-size="18" font-weight="700">TUCKED</text>
+    </g>
+    <g transform="translate(520 1060)">
+      <rect width="190" height="160" rx="14" fill="#fff" stroke="#9eabb4" stroke-width="3"/>
+      <path d="M35 56 H82 L68 112 H35 Z M108 56 H155 V112 H122 Z" fill="#aeb8bf"/>
+      <path d="M68 86 H122 V126 H68 Z" fill="#697986"/>
+      <text x="18" y="28" fill="#18324a" font-size="18" font-weight="700">OPEN</text>
+    </g>
+    <g transform="translate(740 1060)">
+      <rect width="204" height="160" rx="14" fill="#fff" stroke="#9eabb4" stroke-width="3"/>
+      <path d="M36 56 H168 L158 132 H46 Z" fill="#aeb8bf"/>
+      <path d="M64 88 H140 V126 H64 Z" fill="#697986"/>
+      <text x="18" y="28" fill="#18324a" font-size="18" font-weight="700">LONG-OVER</text>
+    </g>
+  </g>
+</svg>

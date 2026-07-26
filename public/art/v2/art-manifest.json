@@ -1,7 +1,7 @@
 {
   "schemaVersion": 2,
-  "catalogVersion": 2,
-  "generatedAt": "2026-07-26T00:01:21.953Z",
+  "catalogVersion": 3,
+  "generatedAt": "2026-07-26T14:52:07.555Z",
   "canvas": {
     "width": 1024,
     "height": 1536
@@ -28,6 +28,7 @@
       "styleKey": "jacket",
       "thumbnail": "items/rescue-jacket/thumb.webp",
       "layers": {
+        "back": "items/rescue-jacket/wear-back.webp",
         "main": "items/rescue-jacket/wear-main.webp"
       }
     },
@@ -493,18 +494,11 @@
     },
     "rescue-cap": {
       "slot": "accessory",
-      "styleKey": "cap",
+      "styleKey": "helmet",
       "thumbnail": "items/rescue-cap/thumb.webp",
       "layers": {
-        "main": "items/rescue-cap/wear-main.webp"
-      }
-    },
-    "whistle": {
-      "slot": "accessory",
-      "styleKey": "small-tool",
-      "thumbnail": "items/whistle/thumb.webp",
-      "layers": {
-        "main": "items/whistle/wear-main.webp"
+        "back": "items/rescue-cap/wear-back.webp",
+        "front": "items/rescue-cap/wear-front.webp"
       }
     },
     "school-backpack": {
@@ -780,6 +774,14 @@
       "layers": {
         "back": "items/cape/wear-back.webp",
         "front": "items/cape/wear-front.webp"
+      }
+    },
+    "whistle": {
+      "slot": "accessory",
+      "styleKey": "whistle",
+      "thumbnail": "items/whistle/thumb.webp",
+      "layers": {
+        "main": "items/whistle/wear-main.webp"
       }
     }
   },

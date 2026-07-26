@@ -61,6 +61,11 @@ export type StoryEpisode = {
     text: string;
   }>;
   itemIds: string[];
+  itemRoles?: Record<
+    string,
+    "best" | "acceptable" | "partial" | "mismatch"
+  >;
+  canonicalItemIds?: string[];
   rules: {
     criteria: ScoreCriterion[];
     mandatory: MandatoryRule[];

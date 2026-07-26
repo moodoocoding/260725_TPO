@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536"
+     data-item-id="long-skirt" data-slot="bottom" data-waist-mode="over"
+     data-rig-center-x="526" data-waist-y="858" data-connection-left="382"
+     data-connection-right="670" data-top-y="850" data-overlap="28">
+  <g stroke="#112d55" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M382 850 C428 844 477 842 526 842 C575 842 624 844 670 850
+             C681 950 714 1070 764 1196 C696 1226 617 1241 526 1241
+             C435 1241 356 1226 288 1196 C338 1070 371 950 382 850 Z"
+          fill="#bd86b8"/>
+    <path d="M382 850 C428 858 477 862 526 862 C575 862 624 858 670 850
+             L676 892 C627 902 577 907 526 907 C475 907 425 902 376 892 Z"
+          fill="#8a5586"/>
+  </g>
+  <path d="M526 907 C565 907 602 903 637 896 C653 1010 682 1110 724 1198
+           C670 1214 604 1222 526 1222 Z"
+        fill="#8a5586" opacity=".5"/>
+  <path d="M448 908 C430 1008 414 1110 402 1212 M526 907 V1231 M604 908 C622 1008 638 1110 650 1212"
+        fill="none" stroke="#74466f" stroke-width="6" stroke-linecap="round"/>
+</svg>

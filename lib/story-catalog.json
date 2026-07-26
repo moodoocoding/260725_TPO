@@ -1,5 +1,5 @@
 {
-  "version": 2,
+  "version": 3,
   "generatedAt": "2026-07-26",
   "slots": [
     "top",
@@ -1795,6 +1795,24 @@
         "back",
         "front"
       ]
+    },
+    {
+      "id": "whistle",
+      "name": "구조 신호 호루라기",
+      "slot": "accessory",
+      "color": "#f2c94c",
+      "accent": "#d69a1f",
+      "symbol": "호루라기",
+      "styleKey": "whistle",
+      "tags": [
+        "rescue",
+        "signaling",
+        "practical"
+      ],
+      "note": "멀리 있는 사람에게 위치를 알리는 데 도움되지만 몸을 보호해 주지는 않아요.",
+      "layerKinds": [
+        "main"
+      ]
     }
   ],
   "episodes": [
@@ -1814,7 +1832,7 @@
         "#f7c85b",
         "#f06b5d"
       ],
-      "timeLimitSeconds": 60,
+      "timeLimitSeconds": 90,
       "tpo": {
         "time": "맑은 오후",
         "place": "스타일 구조대 훈련장",
@@ -1840,13 +1858,45 @@
       ],
       "itemIds": [
         "rescue-jacket",
+        "mint-windbreaker",
+        "sports-hoodie",
         "formal-jacket",
         "active-pants",
+        "protective-cargo-pants",
+        "beige-shorts",
         "long-skirt",
         "sneakers",
+        "hiking-boots",
+        "dress-shoes",
         "slippers",
         "rescue-cap",
+        "reflective-band",
+        "whistle",
         "canvas-tote"
+      ],
+      "itemRoles": {
+        "rescue-jacket": "best",
+        "mint-windbreaker": "acceptable",
+        "sports-hoodie": "partial",
+        "formal-jacket": "mismatch",
+        "active-pants": "best",
+        "protective-cargo-pants": "acceptable",
+        "beige-shorts": "partial",
+        "long-skirt": "mismatch",
+        "sneakers": "best",
+        "hiking-boots": "acceptable",
+        "dress-shoes": "partial",
+        "slippers": "mismatch",
+        "rescue-cap": "best",
+        "reflective-band": "acceptable",
+        "whistle": "partial",
+        "canvas-tote": "mismatch"
+      },
+      "canonicalItemIds": [
+        "rescue-jacket",
+        "active-pants",
+        "sneakers",
+        "rescue-cap"
       ],
       "rules": {
         "criteria": [

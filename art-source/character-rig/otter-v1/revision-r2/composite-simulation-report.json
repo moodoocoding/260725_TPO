@@ -1,0 +1,25 @@
+{
+  "revision": "R5",
+  "generatedAt": "2026-07-26T14:50:48.514Z",
+  "result": "passed",
+  "dimensions": {
+    "width": 128,
+    "height": 192
+  },
+  "slots": {
+    "top": 5,
+    "bottom": 5,
+    "shoes": 5,
+    "accessory": 5
+  },
+  "moods": [
+    "ready",
+    "success",
+    "retry"
+  ],
+  "statesPerMood": 625,
+  "compositeCount": 1875,
+  "expectedCompositeCount": 1875,
+  "contactSheetCells": 625,
+  "failures": []
+}

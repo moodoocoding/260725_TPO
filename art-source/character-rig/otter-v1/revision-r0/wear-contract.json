@@ -1,0 +1,199 @@
+{
+  "schemaVersion": 1,
+  "revision": "R0",
+  "status": "frozen",
+  "characterRigVersion": "otter-v1.1.0-r0",
+  "canvas": {
+    "width": 1024,
+    "height": 1536,
+    "center": { "x": 512, "y": 768 },
+    "viewBox": "0 0 1024 1536",
+    "safeArea": { "left": 64, "top": 48, "right": 960, "bottom": 1488 },
+    "bodySafeArea": { "left": 272, "top": 96, "right": 752, "bottom": 1452 },
+    "expandedSafeArea": { "left": 208, "top": 112, "right": 816, "bottom": 1452 }
+  },
+  "rig": {
+    "centerX": 526,
+    "waistAnchor": { "x": 526, "y": 858 },
+    "waistConnection": {
+      "left": 382,
+      "right": 670,
+      "bandTop": 842,
+      "bandBottom": 878,
+      "targetOverlap": { "min": 24, "max": 30 },
+      "acceptedOverlap": { "min": 20, "max": 36 },
+      "hardFailureOverlap": { "below": 20, "above": 40 },
+      "maxAnchorDrift": 4,
+      "maxSideError": 6,
+      "maxVisibleStep": 8,
+      "maxBodyLeak": 2
+    },
+    "groundY": 1450,
+    "groundTolerance": 2
+  },
+  "waistModes": {
+    "over": "상의 옷자락이 하의 허리 밴드를 24~30px 덮는다.",
+    "tucked": "하의 waist-front 레이어가 상의 끝을 덮는다.",
+    "open": "재킷 앞판 사이로 내부 상의와 하의 연결부가 보인다.",
+    "long-over": "긴 외투가 허리를 덮되 손과 다리 움직임을 가리지 않는다."
+  },
+  "layerOrder": [
+    { "name": "tail/accessory-back", "z": 10 },
+    { "name": "body", "z": 20 },
+    { "name": "top-back", "z": 25 },
+    { "name": "bottom-back", "z": 30 },
+    { "name": "shoe-main", "z": 35 },
+    { "name": "bottom-main", "z": 40 },
+    { "name": "top-main", "z": 45 },
+    { "name": "top-front", "z": 50 },
+    { "name": "bottom-waist-front", "z": 54 },
+    { "name": "shoe-front", "z": 56 },
+    { "name": "bottom-cuff-front", "z": 58 },
+    { "name": "hands-front", "z": 60 },
+    { "name": "accessory-main", "z": 65 },
+    { "name": "head/accessory-front", "z": 70 },
+    { "name": "face", "z": 80 }
+  ],
+  "sourcePolicy": {
+    "wearMaster": "SVG",
+    "thumbnail": "wear-master-derived",
+    "runtimePerItemTransform": false,
+    "embeddedBitmap": false,
+    "filter": false,
+    "foreignObject": false,
+    "grid": 2,
+    "outerStroke": 6,
+    "innerStroke": "3~4",
+    "maxSvgGzipBytes": 122880,
+    "preferredSvgGzipBytes": 81920,
+    "maxPathsPerItem": 220
+  },
+  "inventory": [
+    {
+      "id": "rescue-jacket",
+      "slot": "top",
+      "role": "best",
+      "status": "existing-adjust",
+      "waistMode": "over",
+      "functions": ["visibility", "mobility", "protection"]
+    },
+    {
+      "id": "mint-windbreaker",
+      "slot": "top",
+      "role": "acceptable",
+      "status": "new",
+      "waistMode": "over",
+      "functions": ["mobility", "visibility"]
+    },
+    {
+      "id": "sports-hoodie",
+      "slot": "top",
+      "role": "partial",
+      "status": "new",
+      "waistMode": "over",
+      "functions": ["mobility"]
+    },
+    {
+      "id": "formal-jacket",
+      "slot": "top",
+      "role": "mismatch",
+      "status": "existing-adjust",
+      "waistMode": "open",
+      "functions": []
+    },
+    {
+      "id": "active-pants",
+      "slot": "bottom",
+      "role": "best",
+      "status": "existing-adjust",
+      "waistMode": "over",
+      "functions": ["mobility", "protection"]
+    },
+    {
+      "id": "protective-cargo-pants",
+      "slot": "bottom",
+      "role": "acceptable",
+      "status": "new",
+      "waistMode": "over",
+      "functions": ["protection", "mobility"]
+    },
+    {
+      "id": "beige-shorts",
+      "slot": "bottom",
+      "role": "partial",
+      "status": "new",
+      "waistMode": "over",
+      "functions": ["mobility"]
+    },
+    {
+      "id": "long-skirt",
+      "slot": "bottom",
+      "role": "mismatch",
+      "status": "existing-adjust",
+      "waistMode": "over",
+      "functions": []
+    },
+    {
+      "id": "sneakers",
+      "slot": "shoes",
+      "role": "best",
+      "status": "existing-adjust",
+      "functions": ["grip", "mobility"]
+    },
+    {
+      "id": "hiking-boots",
+      "slot": "shoes",
+      "role": "acceptable",
+      "status": "new",
+      "functions": ["grip", "protection"]
+    },
+    {
+      "id": "dress-shoes",
+      "slot": "shoes",
+      "role": "partial",
+      "status": "new",
+      "functions": ["protection"]
+    },
+    {
+      "id": "slippers",
+      "slot": "shoes",
+      "role": "mismatch",
+      "status": "existing-adjust",
+      "functions": []
+    },
+    {
+      "id": "rescue-cap",
+      "slot": "accessory",
+      "role": "best",
+      "status": "existing-adjust",
+      "functions": ["protection", "visibility"]
+    },
+    {
+      "id": "reflective-band",
+      "slot": "accessory",
+      "role": "acceptable",
+      "status": "new",
+      "functions": ["visibility"]
+    },
+    {
+      "id": "whistle",
+      "slot": "accessory",
+      "role": "partial",
+      "status": "new",
+      "functions": ["signaling"]
+    },
+    {
+      "id": "canvas-tote",
+      "slot": "accessory",
+      "role": "mismatch",
+      "status": "existing-adjust",
+      "functions": []
+    }
+  ],
+  "r1PrototypeItems": [
+    "rescue-jacket",
+    "mint-windbreaker",
+    "active-pants",
+    "protective-cargo-pants"
+  ]
+}

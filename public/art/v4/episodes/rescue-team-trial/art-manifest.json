@@ -1,13 +1,13 @@
 {
   "schemaVersion": 4,
-  "artVersion": "v4-otter-vertical-slice",
+  "artVersion": "v4-otter-r2-inventory",
   "episode": "rescue-team-trial",
   "characterRigVersion": "otter-v1.0.0",
   "canvas": {
     "width": 1024,
     "height": 1536
   },
-  "sourcePolicy": "thumbnail and wear layers share the same SVG source",
+  "sourcePolicy": "thumbnail is derived from the same SVG wear master",
   "background": "background.webp",
   "character": {
     "ready": "character/ready.webp",
@@ -18,14 +18,32 @@
     {
       "id": "rescue-jacket",
       "thumbnail": "items/rescue-jacket/thumb.webp",
+      "waistMode": "over",
       "layers": [
         "items/rescue-jacket/wear-back.webp",
         "items/rescue-jacket/wear-main.webp"
       ]
     },
     {
+      "id": "mint-windbreaker",
+      "thumbnail": "items/mint-windbreaker/thumb.webp",
+      "waistMode": "over",
+      "layers": [
+        "items/mint-windbreaker/wear-main.webp"
+      ]
+    },
+    {
+      "id": "sports-hoodie",
+      "thumbnail": "items/sports-hoodie/thumb.webp",
+      "waistMode": "over",
+      "layers": [
+        "items/sports-hoodie/wear-main.webp"
+      ]
+    },
+    {
       "id": "formal-jacket",
       "thumbnail": "items/formal-jacket/thumb.webp",
+      "waistMode": "open",
       "layers": [
         "items/formal-jacket/wear-main.webp"
       ]
@@ -35,6 +53,20 @@
       "thumbnail": "items/active-pants/thumb.webp",
       "layers": [
         "items/active-pants/wear-main.webp"
+      ]
+    },
+    {
+      "id": "protective-cargo-pants",
+      "thumbnail": "items/protective-cargo-pants/thumb.webp",
+      "layers": [
+        "items/protective-cargo-pants/wear-main.webp"
+      ]
+    },
+    {
+      "id": "beige-shorts",
+      "thumbnail": "items/beige-shorts/thumb.webp",
+      "layers": [
+        "items/beige-shorts/wear-main.webp"
       ]
     },
     {
@@ -52,6 +84,20 @@
       ]
     },
     {
+      "id": "hiking-boots",
+      "thumbnail": "items/hiking-boots/thumb.webp",
+      "layers": [
+        "items/hiking-boots/wear-main.webp"
+      ]
+    },
+    {
+      "id": "dress-shoes",
+      "thumbnail": "items/dress-shoes/thumb.webp",
+      "layers": [
+        "items/dress-shoes/wear-main.webp"
+      ]
+    },
+    {
       "id": "slippers",
       "thumbnail": "items/slippers/thumb.webp",
       "layers": [
@@ -64,6 +110,20 @@
       "layers": [
         "items/rescue-cap/wear-back.webp",
         "items/rescue-cap/wear-front.webp"
+      ]
+    },
+    {
+      "id": "reflective-band",
+      "thumbnail": "items/reflective-band/thumb.webp",
+      "layers": [
+        "items/reflective-band/wear-main.webp"
+      ]
+    },
+    {
+      "id": "whistle",
+      "thumbnail": "items/whistle/thumb.webp",
+      "layers": [
+        "items/whistle/wear-main.webp"
       ]
     },
     {

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536"
+     data-item-id="rescue-jacket" data-slot="top" data-waist-mode="over"
+     data-rig-center-x="526" data-waist-y="858" data-connection-left="382"
+     data-connection-right="670" data-hem-y="878" data-overlap="28">
+  <g stroke="#112d55" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M408 586 C367 600 338 636 319 681 L279 786
+             C299 804 325 814 354 814 L411 704 L422 646 Z" fill="#f45b50"/>
+    <path d="M644 586 C685 600 714 636 733 681 L773 786
+             C753 804 727 814 698 814 L641 704 L630 646 Z" fill="#f45b50"/>
+    <path d="M408 584 C446 568 486 560 526 560 C566 560 606 568 644 584
+             L670 878 C627 884 579 886 526 886 C473 886 425 884 382 878 Z"
+          fill="#f45b50"/>
+    <path d="M448 578 C467 616 493 634 526 634 C559 634 585 616 604 578" fill="none"/>
+  </g>
+  <path d="M588 638 L645 640 L667 874 C645 878 619 882 588 884 Z" fill="#d83e3b" opacity=".74"/>
+  <path d="M391 714 C433 725 478 730 526 730 C574 730 619 725 661 714
+           L665 754 C621 765 575 770 526 770 C477 770 431 765 387 754 Z"
+        fill="#fff2b8" stroke="#112d55" stroke-width="6"/>
+  <path d="M526 638 V872" fill="none" stroke="#112d55" stroke-width="6"/>
+  <g fill="#fff2b8" stroke="#112d55" stroke-width="6">
+    <path d="M295 726 L370 749 L356 788 C329 785 305 775 286 760 Z"/>
+    <path d="M757 726 L682 749 L696 788 C723 785 747 775 766 760 Z"/>
+  </g>
+  <circle cx="526" cy="682" r="6" fill="#fff2b8"/>
+  <circle cx="526" cy="812" r="6" fill="#fff2b8"/>
+</svg>

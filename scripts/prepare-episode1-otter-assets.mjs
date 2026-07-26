@@ -12,6 +12,7 @@ const rigRoot = path.join(
 );
 const gate4Root = path.join(rigRoot, "gate-4");
 const gate5Root = path.join(rigRoot, "gate-5");
+const revisionR2Root = path.join(rigRoot, "revision-r2", "items");
 const outputRoot = path.join(
   root,
   "public",
@@ -24,58 +25,102 @@ const outputRoot = path.join(
 const items = [
   {
     id: "rescue-jacket",
-    card: path.join(gate4Root, "card-rescue-top.svg"),
     layers: [
       ["back", path.join(gate4Root, "items", "rescue-top", "layers", "top-back.svg")],
-      ["main", path.join(gate4Root, "items", "rescue-top", "layers", "top-main.svg")],
+      ["main", path.join(revisionR2Root, "rescue-jacket", "wear-main.svg")],
     ],
+    waistMode: "over",
+  },
+  {
+    id: "mint-windbreaker",
+    layers: [
+      ["main", path.join(revisionR2Root, "mint-windbreaker", "wear-main.svg")],
+    ],
+    waistMode: "over",
+  },
+  {
+    id: "sports-hoodie",
+    layers: [
+      ["main", path.join(revisionR2Root, "sports-hoodie", "wear-main.svg")],
+    ],
+    waistMode: "over",
   },
   {
     id: "formal-jacket",
-    card: path.join(gate5Root, "card-formal-jacket.svg"),
     layers: [
-      ["main", path.join(gate5Root, "items", "formal-jacket", "layers", "top-main.svg")],
+      ["main", path.join(revisionR2Root, "formal-jacket", "wear-main.svg")],
     ],
+    waistMode: "open",
   },
   {
     id: "active-pants",
-    card: path.join(gate4Root, "card-activity-pants.svg"),
     layers: [
-      ["main", path.join(gate4Root, "items", "activity-pants", "layers", "bottom-main.svg")],
+      ["main", path.join(revisionR2Root, "active-pants", "wear-main.svg")],
+    ],
+  },
+  {
+    id: "protective-cargo-pants",
+    layers: [
+      ["main", path.join(revisionR2Root, "protective-cargo-pants", "wear-main.svg")],
+    ],
+  },
+  {
+    id: "beige-shorts",
+    layers: [
+      ["main", path.join(revisionR2Root, "beige-shorts", "wear-main.svg")],
     ],
   },
   {
     id: "long-skirt",
-    card: path.join(gate5Root, "card-outing-skirt.svg"),
     layers: [
-      ["main", path.join(gate5Root, "items", "outing-skirt", "layers", "bottom-main.svg")],
+      ["main", path.join(revisionR2Root, "long-skirt", "wear-main.svg")],
     ],
   },
   {
     id: "sneakers",
-    card: path.join(gate4Root, "card-grip-sneakers.svg"),
     layers: [
       ["main", path.join(gate4Root, "items", "grip-sneakers", "layers", "shoes-main.svg")],
     ],
   },
   {
+    id: "hiking-boots",
+    layers: [
+      ["main", path.join(revisionR2Root, "hiking-boots", "wear-main.svg")],
+    ],
+  },
+  {
+    id: "dress-shoes",
+    layers: [
+      ["main", path.join(revisionR2Root, "dress-shoes", "wear-main.svg")],
+    ],
+  },
+  {
     id: "slippers",
-    card: path.join(gate5Root, "card-house-slippers.svg"),
     layers: [
       ["main", path.join(gate5Root, "items", "house-slippers", "layers", "shoes-main.svg")],
     ],
   },
   {
     id: "rescue-cap",
-    card: path.join(gate4Root, "card-safety-helmet.svg"),
     layers: [
       ["back", path.join(gate4Root, "items", "safety-helmet", "layers", "headwear-back.svg")],
       ["front", path.join(gate4Root, "items", "safety-helmet", "layers", "headwear-front.svg")],
     ],
   },
   {
+    id: "reflective-band",
+    layers: [
+      ["main", path.join(revisionR2Root, "reflective-band", "wear-main.svg")],
+    ],
+  },
+  {
+    id: "whistle",
+    layers: [
+      ["main", path.join(revisionR2Root, "whistle", "wear-main.svg")],
+    ],
+  },
+  {
     id: "canvas-tote",
-    card: path.join(gate5Root, "card-picnic-basket.svg"),
     layers: [
       ["back", path.join(gate5Root, "items", "picnic-basket", "layers", "basket-back.svg")],
       ["front", path.join(gate5Root, "items", "picnic-basket", "layers", "basket-front.svg")],
@@ -116,21 +161,40 @@ async function prepareItem(item) {
   const itemRoot = path.join(outputRoot, "items", item.id);
   await ensureDirectory(itemRoot);
 
-  await renderSvg(item.card, path.join(itemRoot, "thumb.webp"), {
-    width: 512,
-    height: 384,
-    fit: "contain",
-    background: { r: 0, g: 0, b: 0, alpha: 0 },
-  });
-
+  const renderedLayers = [];
   for (const [kind, source] of item.layers) {
-    await renderSvg(source, path.join(itemRoot, `wear-${kind}.webp`), {
+    const destination = path.join(itemRoot, `wear-${kind}.webp`);
+    await renderSvg(source, destination, {
       width: 1024,
       height: 1536,
       fit: "contain",
       background: { r: 0, g: 0, b: 0, alpha: 0 },
     });
+    renderedLayers.push(destination);
   }
+
+  const thumbnailMaster = await sharp({
+    create: {
+      width: 1024,
+      height: 1536,
+      channels: 4,
+      background: { r: 0, g: 0, b: 0, alpha: 0 },
+    },
+  })
+    .composite(renderedLayers.map((input) => ({ input })))
+    .png()
+    .toBuffer();
+
+  await sharp(thumbnailMaster)
+    .trim({ background: { r: 0, g: 0, b: 0, alpha: 0 } })
+    .resize({
+      width: 384,
+      height: 240,
+      fit: "contain",
+      background: { r: 0, g: 0, b: 0, alpha: 0 },
+    })
+    .webp({ quality: 91, alphaQuality: 100 })
+    .toFile(path.join(itemRoot, "thumb.webp"));
 }
 
 async function makePreview() {
@@ -170,14 +234,74 @@ async function makePreview() {
     .toFile(path.join(outputRoot, "preview-best-outfit.webp"));
 }
 
+async function makeInventoryPreview() {
+  const cardWidth = 300;
+  const cardHeight = 220;
+  const gap = 18;
+  const margin = 24;
+  const cards = [];
+
+  for (const item of items) {
+    const thumbnail = await sharp(
+      path.join(outputRoot, "items", item.id, "thumb.webp"),
+    )
+      .resize({
+        width: 250,
+        height: 150,
+        fit: "contain",
+        background: { r: 0, g: 0, b: 0, alpha: 0 },
+      })
+      .png()
+      .toBuffer();
+    const label = Buffer.from(`
+      <svg xmlns="http://www.w3.org/2000/svg" width="${cardWidth}" height="${cardHeight}">
+        <rect x="1" y="1" width="${cardWidth - 2}" height="${cardHeight - 2}" rx="14"
+              fill="#fffaf0" stroke="#cad3da" stroke-width="2"/>
+        <text x="${cardWidth / 2}" y="198" text-anchor="middle"
+              font-family="Arial, sans-serif" font-size="17" font-weight="700"
+              fill="#18324a">${item.id}</text>
+      </svg>
+    `);
+    cards.push(
+      await sharp(label)
+        .composite([{ input: thumbnail, left: 25, top: 20 }])
+        .png()
+        .toBuffer(),
+    );
+  }
+
+  const columns = 4;
+  const rows = Math.ceil(cards.length / columns);
+  const width = margin * 2 + columns * cardWidth + (columns - 1) * gap;
+  const height = margin * 2 + rows * cardHeight + (rows - 1) * gap;
+
+  await sharp({
+    create: {
+      width,
+      height,
+      channels: 4,
+      background: { r: 224, g: 233, b: 238, alpha: 1 },
+    },
+  })
+    .composite(
+      cards.map((input, index) => ({
+        input,
+        left: margin + (index % columns) * (cardWidth + gap),
+        top: margin + Math.floor(index / columns) * (cardHeight + gap),
+      })),
+    )
+    .webp({ quality: 92 })
+    .toFile(path.join(outputRoot, "preview-all-items.webp"));
+}
+
 async function writeManifest() {
   const manifest = {
     schemaVersion: 4,
-    artVersion: "v4-otter-vertical-slice",
+    artVersion: "v4-otter-r2-inventory",
     episode: "rescue-team-trial",
     characterRigVersion: "otter-v1.0.0",
     canvas: { width: 1024, height: 1536 },
-    sourcePolicy: "thumbnail and wear layers share the same SVG source",
+    sourcePolicy: "thumbnail is derived from the same SVG wear master",
     background: "background.webp",
     character: {
       ready: "character/ready.webp",
@@ -187,6 +311,7 @@ async function writeManifest() {
     items: items.map((item) => ({
       id: item.id,
       thumbnail: `items/${item.id}/thumb.webp`,
+      ...(item.waistMode ? { waistMode: item.waistMode } : {}),
       layers: item.layers.map(
         ([kind]) => `items/${item.id}/wear-${kind}.webp`,
       ),
@@ -217,6 +342,7 @@ async function main() {
   for (const item of items) await prepareItem(item);
   await writeManifest();
   await makePreview();
+  await makeInventoryPreview();
 
   console.log(`Prepared episode 1 otter assets at ${outputRoot}`);
 }

@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536" data-item-id="hiking-boots" data-slot="shoes">
+  <g stroke="#112d55" stroke-width="9" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M332 1168 C368 1144 423 1148 462 1178 L484 1246
+             C474 1284 441 1298 389 1298 C341 1298 311 1280 309 1252
+             C312 1215 320 1186 332 1168 Z" fill="#70543e"/>
+    <path d="M720 1168 C684 1144 629 1148 590 1178 L568 1246
+             C578 1284 611 1298 663 1298 C711 1298 741 1280 743 1252
+             C740 1215 732 1186 720 1168 Z" fill="#70543e"/>
+    <path d="M310 1246 C350 1263 407 1267 484 1246 L482 1278
+             C456 1297 425 1305 389 1304 C342 1303 312 1286 309 1259 Z" fill="#38271c"/>
+    <path d="M742 1246 C702 1263 645 1267 568 1246 L570 1278
+             C596 1297 627 1305 663 1304 C710 1303 740 1286 743 1259 Z" fill="#38271c"/>
+  </g>
+  <g fill="none" stroke="#f0cf8b" stroke-width="6" stroke-linecap="round">
+    <path d="M355 1192 L438 1232 M438 1192 L355 1232"/>
+    <path d="M697 1192 L614 1232 M614 1192 L697 1232"/>
+  </g>
+  <g fill="none" stroke="#112d55" stroke-width="4">
+    <path d="M328 1284 L356 1293 M377 1286 L406 1295 M428 1285 L456 1291"/>
+    <path d="M724 1284 L696 1293 M675 1286 L646 1295 M624 1285 L596 1291"/>
+  </g>
+</svg>

@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536"
+     data-item-id="protective-cargo-pants" data-slot="bottom" data-waist-mode="over"
+     data-rig-center-x="526" data-waist-y="858" data-connection-left="382"
+     data-connection-right="670" data-top-y="850" data-overlap="28">
+  <g stroke="#112d55" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M382 850 C428 844 477 842 526 842 C575 842 624 844 670 850
+             C681 892 694 935 702 982 L704 1210
+             C662 1223 619 1221 574 1207 L550 1018 L526 982
+             L502 1018 L478 1207 C433 1221 390 1223 348 1210 L350 982
+             C358 935 371 892 382 850 Z"
+          fill="#58654c"/>
+    <path d="M382 850 C428 858 477 862 526 862 C575 862 624 858 670 850
+             L680 892 C630 902 579 907 526 907 C473 907 422 902 372 892 Z"
+          fill="#344129"/>
+  </g>
+  <path d="M526 907 V982" fill="none" stroke="#112d55" stroke-width="6"/>
+  <g fill="#718164" stroke="#112d55" stroke-width="6">
+    <path d="M352 966 L460 952 L469 1054 L357 1068 Z"/>
+    <path d="M700 966 L592 952 L583 1054 L695 1068 Z"/>
+  </g>
+  <path d="M378 982 L435 975 M674 982 L617 975" stroke="#344129" stroke-width="5"/>
+  <g fill="#344129" stroke="#112d55" stroke-width="6">
+    <path d="M354 1148 C394 1158 436 1158 479 1148 L478 1207
+             C433 1221 390 1223 348 1210 Z"/>
+    <path d="M698 1148 C658 1158 616 1158 573 1148 L574 1207
+             C619 1221 662 1223 704 1210 Z"/>
+  </g>
+</svg>

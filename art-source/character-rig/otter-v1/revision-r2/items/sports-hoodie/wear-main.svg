@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536"
+     data-item-id="sports-hoodie" data-slot="top" data-waist-mode="over"
+     data-rig-center-x="526" data-waist-y="858" data-connection-left="382"
+     data-connection-right="670" data-hem-y="878" data-overlap="28">
+  <g stroke="#112d55" stroke-width="8" stroke-linejoin="round" stroke-linecap="round">
+    <path d="M410 588 C368 600 338 635 318 682 L278 786
+             C298 805 326 815 355 812 L412 704 L425 644 Z" fill="#5b80ce"/>
+    <path d="M642 588 C684 600 714 635 734 682 L774 786
+             C754 805 726 815 697 812 L640 704 L627 644 Z" fill="#5b80ce"/>
+    <path d="M410 586 C449 570 487 562 526 562 C565 562 603 570 642 586
+             L670 878 C628 884 580 886 526 886 C472 886 424 884 382 878 Z"
+          fill="#5b80ce"/>
+  </g>
+  <path d="M442 579 C458 618 486 642 526 642 C566 642 594 618 610 579
+           L632 606 C611 665 575 690 526 690 C477 690 441 665 420 606 Z"
+        fill="#294a8b" stroke="#112d55" stroke-width="7"/>
+  <path d="M478 698 L468 758 M574 698 L584 758" fill="none" stroke="#f6f2e7" stroke-width="5"/>
+  <circle cx="467" cy="765" r="7" fill="#f6f2e7"/>
+  <circle cx="585" cy="765" r="7" fill="#f6f2e7"/>
+  <path d="M440 790 C466 773 492 766 526 766 C560 766 586 773 612 790
+           L600 834 H452 Z"
+        fill="#4b70bd" stroke="#294a8b" stroke-width="5"/>
+  <path d="M391 836 C434 844 479 848 526 848 C573 848 618 844 661 836
+           L670 878 C628 884 580 886 526 886 C472 886 424 884 382 878 Z"
+        fill="#294a8b" stroke="#112d55" stroke-width="6"/>
+  <g fill="#294a8b" stroke="#112d55" stroke-width="6">
+    <path d="M286 754 L365 778 L355 812 C326 814 300 805 279 786 Z"/>
+    <path d="M766 754 L687 778 L697 812 C726 814 752 805 773 786 Z"/>
+  </g>
+</svg>

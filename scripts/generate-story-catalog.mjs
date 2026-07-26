@@ -127,6 +127,20 @@ const items = [
   item("cape", "길게 펄럭이는 망토", "accessory", "#8f4f9f", "#50255c", "망토", "cape", ["snag-risk", "restrict", "flashy"], "멋져 보이지만 달릴 때 걸리거나 잡힐 수 있어요.", ["back", "front"]),
 ];
 
+items.push(
+  item(
+    "whistle",
+    "구조 신호 호루라기",
+    "accessory",
+    "#f2c94c",
+    "#d69a1f",
+    "호루라기",
+    "whistle",
+    ["rescue", "signaling", "practical"],
+    "멀리 있는 사람에게 위치를 알리는 데 도움되지만 몸을 보호해 주지는 않아요.",
+  ),
+);
+
 const criteria = (category, groups) =>
   groups.map(([label, anyTags, points]) => ({
     category,
@@ -170,7 +184,7 @@ const episodes = [
     weatherNote: "빠르게 움직이고 다른 사람에게 잘 보여야 해요",
     backgroundStyle: "rescue-hq",
     backgroundColors: ["#f7c85b", "#f06b5d"],
-    timeLimitSeconds: 60,
+    timeLimitSeconds: 90,
     tpo: { time: "맑은 오후", place: "스타일 구조대 훈련장", occasion: "입단 시험과 안전 훈련" },
     messages: [
       message("나래 대장", "오늘은 스타일 구조대 입단 시험 날이야!"),
@@ -178,7 +192,48 @@ const episodes = [
       message("나래 대장", "움직이기 편하고 잘 보이는 옷차림을 준비해 줘."),
       message("구조대", "안전과 활동성을 모두 살펴보고 출발하자!"),
     ],
-    itemIds: ["rescue-jacket", "formal-jacket", "active-pants", "long-skirt", "sneakers", "slippers", "rescue-cap", "canvas-tote"],
+    itemIds: [
+      "rescue-jacket",
+      "mint-windbreaker",
+      "sports-hoodie",
+      "formal-jacket",
+      "active-pants",
+      "protective-cargo-pants",
+      "beige-shorts",
+      "long-skirt",
+      "sneakers",
+      "hiking-boots",
+      "dress-shoes",
+      "slippers",
+      "rescue-cap",
+      "reflective-band",
+      "whistle",
+      "canvas-tote",
+    ],
+    itemRoles: {
+      "rescue-jacket": "best",
+      "mint-windbreaker": "acceptable",
+      "sports-hoodie": "partial",
+      "formal-jacket": "mismatch",
+      "active-pants": "best",
+      "protective-cargo-pants": "acceptable",
+      "beige-shorts": "partial",
+      "long-skirt": "mismatch",
+      "sneakers": "best",
+      "hiking-boots": "acceptable",
+      "dress-shoes": "partial",
+      "slippers": "mismatch",
+      "rescue-cap": "best",
+      "reflective-band": "acceptable",
+      "whistle": "partial",
+      "canvas-tote": "mismatch",
+    },
+    canonicalItemIds: [
+      "rescue-jacket",
+      "active-pants",
+      "sneakers",
+      "rescue-cap",
+    ],
     rules: rules({
       tpo: [["훈련 장소", ["rescue", "safety"], 10], ["활동 상황", ["active"], 10], ["잘 보이는 옷차림", ["visible"], 10]],
       function: [["미끄럼 방지", ["grip"], 10], ["몸 보호", ["coverage", "protective"], 10], ["실용성", ["practical"], 10]],
@@ -595,8 +650,7 @@ if (itemById.size !== items.length) {
 }
 
 for (const episode of episodes) {
-  const expectedItemsPerSlot =
-    episode.slug === "rescue-team-trial" ? 2 : 4;
+  const expectedItemsPerSlot = 4;
   const expectedItemCount = expectedItemsPerSlot * validSlots.length;
   if (
     episode.itemIds.length !== expectedItemCount ||
@@ -622,6 +676,27 @@ for (const episode of episodes) {
     }
   }
 
+  if (episode.itemRoles) {
+    const validRoles = new Set(["best", "acceptable", "partial", "mismatch"]);
+    const roleIds = Object.keys(episode.itemRoles);
+    if (
+      roleIds.length !== episode.itemIds.length ||
+      roleIds.some((id) => !episode.itemIds.includes(id)) ||
+      Object.values(episode.itemRoles).some((role) => !validRoles.has(role))
+    ) {
+      throw new Error(`${episode.slug} has an invalid item role map`);
+    }
+    if (
+      !Array.isArray(episode.canonicalItemIds) ||
+      episode.canonicalItemIds.length !== validSlots.length ||
+      episode.canonicalItemIds.some(
+        (id) => episode.itemRoles[id] !== "best",
+      )
+    ) {
+      throw new Error(`${episode.slug} has an invalid canonical outfit`);
+    }
+  }
+
   const categoryTotals = { tpo: 0, function: 0, expression: 0 };
   for (const criterion of episode.rules.criteria) {
     categoryTotals[criterion.category] += criterion.points;
@@ -637,7 +712,7 @@ for (const episode of episodes) {
 }
 
 const catalog = {
-  version: 2,
+  version: 3,
   generatedAt: "2026-07-26",
   slots: validSlots,
   chapters,

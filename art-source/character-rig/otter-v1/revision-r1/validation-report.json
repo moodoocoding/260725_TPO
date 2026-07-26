@@ -1,0 +1,62 @@
+{
+  "revision": "R1",
+  "generatedAt": "2026-07-26T14:52:17.228Z",
+  "result": "passed",
+  "contract": "art-source/character-rig/otter-v1/revision-r0/wear-contract.json",
+  "prototypes": [
+    {
+      "itemId": "rescue-jacket",
+      "slot": "top",
+      "waistMode": "over",
+      "connection": {
+        "left": 382,
+        "right": 670
+      },
+      "overlap": 28,
+      "pathCount": 9,
+      "sourceBytes": 1597,
+      "gzipBytes": 702
+    },
+    {
+      "itemId": "mint-windbreaker",
+      "slot": "top",
+      "waistMode": "over",
+      "connection": {
+        "left": 382,
+        "right": 670
+      },
+      "overlap": 28,
+      "pathCount": 9,
+      "sourceBytes": 1585,
+      "gzipBytes": 662
+    },
+    {
+      "itemId": "active-pants",
+      "slot": "bottom",
+      "waistMode": "over",
+      "connection": {
+        "left": 382,
+        "right": 670
+      },
+      "overlap": 28,
+      "pathCount": 6,
+      "sourceBytes": 1397,
+      "gzipBytes": 616
+    },
+    {
+      "itemId": "protective-cargo-pants",
+      "slot": "bottom",
+      "waistMode": "over",
+      "connection": {
+        "left": 382,
+        "right": 670
+      },
+      "overlap": 28,
+      "pathCount": 8,
+      "sourceBytes": 1521,
+      "gzipBytes": 639
+    }
+  ],
+  "combinations": 4,
+  "failures": []
+}
