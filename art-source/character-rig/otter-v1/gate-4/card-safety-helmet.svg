@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="512" height="384" viewBox="260 20 532 399">
+  <rect x="260" y="20" width="532" height="399" rx="28" fill="#fff8dc"/>
+  <circle cx="710" cy="83" r="82" fill="#ffe99a"/>
+  <image href="items/safety-helmet/layers/headwear-back.svg" width="1024" height="1536"/>
+  <image href="items/safety-helmet/layers/headwear-front.svg" width="1024" height="1536"/>
+</svg>

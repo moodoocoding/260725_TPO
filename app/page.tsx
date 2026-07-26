@@ -14,6 +14,7 @@ import {
 } from "@/components/character-renderer";
 import { getEpisodeBackground } from "@/lib/art-manifest";
 import type { ScoreResult } from "@/lib/scoring";
+import { getEpisodeLearning } from "@/lib/tpo-learning";
 import {
   SLOT_LABELS,
   STORY_CHAPTERS,
@@ -171,6 +172,8 @@ export default function Home() {
   const [progress, setProgress] = useState<StoryProgress>(EMPTY_PROGRESS);
   const [legacyBestScore, setLegacyBestScore] = useState(0);
   const [progressLoaded, setProgressLoaded] = useState(false);
+  const [reasonRevealed, setReasonRevealed] = useState(false);
+  const [transferChoice, setTransferChoice] = useState<string | null>(null);
   const startedAtRef = useRef(0);
   const deadlineAtRef = useRef(0);
   const submitLockRef = useRef(false);
@@ -200,6 +203,10 @@ export default function Home() {
   );
   const activeProgress = progress.episodes[activeEpisode.slug];
   const nextEpisode = getNextEpisode(activeEpisode);
+  const episodeLearning = getEpisodeLearning(activeEpisode.slug);
+  const transferPassed =
+    !episodeLearning ||
+    transferChoice === episodeLearning.transfer.correctOptionId;
 
   useEffect(() => {
     const syncStoredProgress = window.setTimeout(() => {
@@ -239,6 +246,8 @@ export default function Home() {
       setSelection({});
       setResult(null);
       setSubmitError("");
+      setReasonRevealed(false);
+      setTransferChoice(null);
       setActiveSlot("top");
       setTimeLeft(episode.timeLimitSeconds);
       startedAtRef.current = 0;
@@ -252,6 +261,8 @@ export default function Home() {
     setSelection({});
     setResult(null);
     setSubmitError("");
+    setReasonRevealed(false);
+    setTransferChoice(null);
     setActiveSlot("top");
     setTimeLeft(activeEpisode.timeLimitSeconds);
     startedAtRef.current = Date.now();
@@ -405,7 +416,12 @@ export default function Home() {
             <span>긴급 문자 도착!</span>
             <strong>“오늘은 어떤 옷이 알맞을까?”</strong>
           </div>
-          <CharacterRenderer selectedItems={[]} mood="success" priority />
+          <CharacterRenderer
+            selectedItems={[]}
+            mood="success"
+            priority
+            episodeSlug={firstEpisode.slug}
+          />
           <div className="hero-tags" aria-hidden="true">
             <span>TIME</span>
             <span>PLACE</span>
@@ -937,6 +953,70 @@ export default function Home() {
               <span>P</span><strong>{activeEpisode.tpo.place}</strong>
               <span>O</span><strong>{activeEpisode.tpo.occasion}</strong>
             </div>
+            {episodeLearning && (
+              <section className="learning-check" aria-labelledby="learning-title">
+                <div className="learning-reason">
+                  <span className="feedback-index">WHY TPO?</span>
+                  <h3 id="learning-title">{episodeLearning.reasonPrompt}</h3>
+                  <p>아래 단서를 사용해 먼저 소리 내어 설명해 보세요.</p>
+                  <div className="reason-clues">
+                    {episodeLearning.reasonClues.map((clue) => (
+                      <span key={clue}>{clue}</span>
+                    ))}
+                  </div>
+                  <button
+                    className="reason-reveal-button"
+                    onClick={() => setReasonRevealed((current) => !current)}
+                    aria-expanded={reasonRevealed}
+                  >
+                    {reasonRevealed ? "예시 설명 닫기" : "예시 설명 확인하기"}
+                  </button>
+                  {reasonRevealed && (
+                    <p className="model-answer">{episodeLearning.modelAnswer}</p>
+                  )}
+                </div>
+                <div className="transfer-check">
+                  <span className="feedback-index">NEW TPO</span>
+                  <h3>{episodeLearning.transfer.situation}</h3>
+                  <p>{episodeLearning.transfer.question}</p>
+                  <div
+                    className="transfer-options"
+                    role="group"
+                    aria-label="새 상황에 필요한 기능 선택"
+                  >
+                    {episodeLearning.transfer.options.map((option) => (
+                      <button
+                        key={option.id}
+                        className={
+                          transferChoice === option.id
+                            ? option.id ===
+                              episodeLearning.transfer.correctOptionId
+                              ? "transfer-correct"
+                              : "transfer-wrong"
+                            : ""
+                        }
+                        onClick={() => setTransferChoice(option.id)}
+                        aria-pressed={transferChoice === option.id}
+                      >
+                        {option.label}
+                      </button>
+                    ))}
+                  </div>
+                  {transferChoice && (
+                    <p
+                      className={`transfer-feedback ${
+                        transferPassed ? "transfer-feedback-correct" : ""
+                      }`}
+                      role="status"
+                    >
+                      {transferPassed
+                        ? episodeLearning.transfer.successFeedback
+                        : episodeLearning.transfer.retryFeedback}
+                    </p>
+                  )}
+                </div>
+              </section>
+            )}
             <div className="result-actions">
               <button className="secondary-button" onClick={beginDressing}>
                 다시 코디하기
@@ -951,8 +1031,10 @@ export default function Home() {
                 <button
                   className="primary-button"
                   onClick={() => openEpisode(nextEpisode)}
+                  disabled={!transferPassed}
                 >
-                  다음 임무 <span aria-hidden="true">→</span>
+                  {transferPassed ? "다음 임무" : "새 상황을 먼저 풀어 주세요"}
+                  <span aria-hidden="true">→</span>
                 </button>
               ) : (
                 <button

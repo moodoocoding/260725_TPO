@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="1080" viewBox="0 0 1600 1080">
+  <defs>
+    <style>
+      .ui { font-family: Pretendard, "Noto Sans KR", Arial, sans-serif; fill: #11243f; }
+      .slot { font-size: 17px; font-weight: 900; fill: #e95445; }
+      .name { font-size: 22px; font-weight: 900; }
+      .reason { font-size: 15px; font-weight: 650; fill: #5d6b7f; }
+      .badge { font-size: 15px; font-weight: 900; fill: #fff; }
+    </style>
+  </defs>
+  <rect width="1600" height="1080" fill="#fbf7ef"/>
+  <g class="ui">
+    <text x="70" y="70" font-size="16" font-weight="900" letter-spacing=".14em" fill="#e95445">GATE 5 · CHOICE MATRIX</text>
+    <text x="70" y="122" font-size="38" font-weight="950">같은 슬롯, 다른 기능</text>
+    <text x="70" y="158" font-size="17" font-weight="650" fill="#5d6b7f">오답도 다른 상황에서는 좋은 옷입니다. 지금 상황에 필요한 기능을 비교해요.</text>
+
+    <g transform="translate(70 202)">
+      <rect width="1460" height="194" rx="18" fill="#fff" stroke="#d9e0e8" stroke-width="3"/>
+      <text class="slot" x="26" y="38">상의</text>
+      <image href="correct-card-rescue-top.png" x="110" y="16" width="220" height="165"/>
+      <rect x="352" y="22" width="70" height="30" rx="15" fill="#39a96b"/><text class="badge" x="387" y="43" text-anchor="middle">정답</text>
+      <text class="name" x="352" y="83">구조 훈련복</text>
+      <text class="reason" x="352" y="116">반사 띠로 잘 보이고 팔을 움직이기 쉬워요.</text>
+      <image href="distractor-card-formal-jacket.png" x="817" y="16" width="220" height="165"/>
+      <rect x="1059" y="22" width="70" height="30" rx="15" fill="#f0a332"/><text class="badge" x="1094" y="43" text-anchor="middle">다른 때</text>
+      <text class="name" x="1059" y="83">멋진 정장 재킷</text>
+      <text class="reason" x="1059" y="116">어둡고 팔을 빠르게 움직이기 어려워요.</text>
+      <text class="reason" x="1059" y="148">발표회에는 잘 어울려요.</text>
+    </g>
+
+    <g transform="translate(70 414)">
+      <rect width="1460" height="194" rx="18" fill="#fff" stroke="#d9e0e8" stroke-width="3"/>
+      <text class="slot" x="26" y="38">하의</text>
+      <image href="correct-card-activity-pants.png" x="110" y="16" width="220" height="165"/>
+      <rect x="352" y="22" width="70" height="30" rx="15" fill="#39a96b"/><text class="badge" x="387" y="43" text-anchor="middle">정답</text>
+      <text class="name" x="352" y="83">활동 바지</text>
+      <text class="reason" x="352" y="116">무릎을 움직이기 쉽고 피부를 보호해요.</text>
+      <image href="distractor-card-outing-skirt.png" x="817" y="16" width="220" height="165"/>
+      <rect x="1059" y="22" width="70" height="30" rx="15" fill="#f0a332"/><text class="badge" x="1094" y="43" text-anchor="middle">다른 때</text>
+      <text class="name" x="1059" y="83">긴 나들이 치마</text>
+      <text class="reason" x="1059" y="116">긴 자락이 발에 걸릴 수 있어요.</text>
+      <text class="reason" x="1059" y="148">천천히 걷는 나들이에는 잘 어울려요.</text>
+    </g>
+
+    <g transform="translate(70 626)">
+      <rect width="1460" height="194" rx="18" fill="#fff" stroke="#d9e0e8" stroke-width="3"/>
+      <text class="slot" x="26" y="38">신발</text>
+      <image href="correct-card-grip-sneakers.png" x="110" y="16" width="220" height="165"/>
+      <rect x="352" y="22" width="70" height="30" rx="15" fill="#39a96b"/><text class="badge" x="387" y="43" text-anchor="middle">정답</text>
+      <text class="name" x="352" y="83">논슬립 운동화</text>
+      <text class="reason" x="352" y="116">미끄러지지 않고 빠르게 움직여요.</text>
+      <image href="distractor-card-house-slippers.png" x="817" y="16" width="220" height="165"/>
+      <rect x="1059" y="22" width="70" height="30" rx="15" fill="#f0a332"/><text class="badge" x="1094" y="43" text-anchor="middle">다른 때</text>
+      <text class="name" x="1059" y="83">포근한 실내 슬리퍼</text>
+      <text class="reason" x="1059" y="116">뛰면 벗겨지거나 미끄러질 수 있어요.</text>
+      <text class="reason" x="1059" y="148">집에서 쉴 때 좋아요.</text>
+    </g>
+
+    <g transform="translate(70 838)">
+      <rect width="1460" height="194" rx="18" fill="#fff" stroke="#d9e0e8" stroke-width="3"/>
+      <text class="slot" x="26" y="38">소품</text>
+      <image href="correct-card-safety-helmet.png" x="110" y="16" width="220" height="165"/>
+      <rect x="352" y="22" width="70" height="30" rx="15" fill="#39a96b"/><text class="badge" x="387" y="43" text-anchor="middle">정답</text>
+      <text class="name" x="352" y="83">안전모</text>
+      <text class="reason" x="352" y="116">머리를 보호하고 밝은 색이라 잘 보여요.</text>
+      <image href="distractor-card-picnic-basket.png" x="817" y="16" width="220" height="165"/>
+      <rect x="1059" y="22" width="70" height="30" rx="15" fill="#f0a332"/><text class="badge" x="1094" y="43" text-anchor="middle">다른 때</text>
+      <text class="name" x="1059" y="83">피크닉 바구니</text>
+      <text class="reason" x="1059" y="116">손을 자유롭게 쓰기 어렵고 머리를 보호하지 못해요.</text>
+      <text class="reason" x="1059" y="148">소풍 갈 때 유용해요.</text>
+    </g>
+  </g>
+</svg>

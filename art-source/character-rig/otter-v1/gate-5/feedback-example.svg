@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <style>
+      .ui { font-family: Pretendard, "Noto Sans KR", Arial, sans-serif; fill: #11243f; }
+      .hint-title { font-size: 18px; font-weight: 900; }
+      .hint-copy { font-size: 14px; font-weight: 650; fill: #5d6b7f; }
+    </style>
+    <clipPath id="stageClip"><rect width="670" height="900"/></clipPath>
+  </defs>
+
+  <g clip-path="url(#stageClip)">
+    <image href="scene-background.svg" x="0" y="0" width="670" height="900" preserveAspectRatio="xMidYMid slice"/>
+    <rect width="670" height="900" fill="#eef5f9" opacity=".22"/>
+    <image href="wrong-outfit-composite.svg" x="38" y="72" width="600" height="900"/>
+  </g>
+
+  <g class="ui">
+    <rect x="22" y="22" width="626" height="82" rx="8" fill="#f8fbfd" stroke="#11243f" stroke-width="4"/>
+    <rect x="28" y="98" width="626" height="8" fill="#11243f"/>
+    <circle cx="66" cy="63" r="22" fill="#ffc83d"/>
+    <text x="102" y="57" font-size="21" font-weight="850">맑은 오후 · 구조대 훈련장</text>
+    <text x="102" y="82" font-size="14" font-weight="650" fill="#5d6b7f">빠르게 움직이고 다른 사람에게 잘 보여야 해요</text>
+  </g>
+
+  <rect x="670" width="930" height="900" fill="#fbf7ef"/>
+  <g class="ui">
+    <text x="724" y="68" font-size="16" font-weight="900" letter-spacing=".12em" fill="#e95445">TRY AGAIN</text>
+    <text x="724" y="119" font-size="36" font-weight="950">아깝다! 상황 단서를 다시 살펴보자</text>
+    <text x="724" y="154" font-size="17" font-weight="650" fill="#5d6b7f">이 아이템들도 다른 상황에서는 좋은 선택이에요.</text>
+
+    <g transform="translate(724 188)">
+      <rect width="250" height="78" rx="14" fill="#fff3cb" stroke="#efc34a" stroke-width="3"/>
+      <circle cx="42" cy="39" r="22" fill="#ffc83d"/><text x="42" y="47" text-anchor="middle" font-size="22" font-weight="900">1</text>
+      <text x="78" y="34" font-size="16" font-weight="900">빠르게 움직이기</text>
+      <text x="78" y="56" font-size="13" font-weight="650" fill="#5d6b7f">자락과 신발을 살펴봐요.</text>
+    </g>
+    <g transform="translate(994 188)">
+      <rect width="250" height="78" rx="14" fill="#ffe6d9" stroke="#f09968" stroke-width="3"/>
+      <circle cx="42" cy="39" r="22" fill="#f6a46e"/><text x="42" y="47" text-anchor="middle" font-size="22" font-weight="900">2</text>
+      <text x="78" y="34" font-size="16" font-weight="900">멀리서 잘 보이기</text>
+      <text x="78" y="56" font-size="13" font-weight="650" fill="#5d6b7f">밝은 색과 반사 띠가 필요해요.</text>
+    </g>
+    <g transform="translate(1264 188)">
+      <rect width="250" height="78" rx="14" fill="#e5f1ff" stroke="#83add9" stroke-width="3"/>
+      <circle cx="42" cy="39" r="22" fill="#84b3e3"/><text x="42" y="47" text-anchor="middle" font-size="22" font-weight="900">3</text>
+      <text x="78" y="34" font-size="16" font-weight="900">몸 보호하기</text>
+      <text x="78" y="56" font-size="13" font-weight="650" fill="#5d6b7f">머리와 발을 보호해야 해요.</text>
+    </g>
+
+    <g transform="translate(724 298)">
+      <rect width="790" height="92" rx="14" fill="#ffffff" stroke="#d9e0e8" stroke-width="3"/>
+      <image href="distractor-card-formal-jacket.png" x="12" y="10" width="96" height="72"/>
+      <text class="hint-title" x="128" y="36">정장 재킷</text>
+      <text class="hint-copy" x="128" y="64">어두워서 잘 보이지 않고 팔을 빠르게 움직이기 어려워요.</text>
+    </g>
+    <g transform="translate(724 408)">
+      <rect width="790" height="92" rx="14" fill="#ffffff" stroke="#d9e0e8" stroke-width="3"/>
+      <image href="distractor-card-outing-skirt.png" x="12" y="10" width="96" height="72"/>
+      <text class="hint-title" x="128" y="36">긴 나들이 치마</text>
+      <text class="hint-copy" x="128" y="64">긴 자락이 발에 걸려 빠르게 움직이기 어려울 수 있어요.</text>
+    </g>
+    <g transform="translate(724 518)">
+      <rect width="790" height="92" rx="14" fill="#ffffff" stroke="#d9e0e8" stroke-width="3"/>
+      <image href="distractor-card-house-slippers.png" x="12" y="10" width="96" height="72"/>
+      <text class="hint-title" x="128" y="36">실내 슬리퍼</text>
+      <text class="hint-copy" x="128" y="64">뛰면 벗겨지거나 바닥에서 미끄러질 수 있어요.</text>
+    </g>
+    <g transform="translate(724 628)">
+      <rect width="790" height="92" rx="14" fill="#ffffff" stroke="#d9e0e8" stroke-width="3"/>
+      <image href="distractor-card-picnic-basket.png" x="12" y="10" width="96" height="72"/>
+      <text class="hint-title" x="128" y="36">피크닉 바구니</text>
+      <text class="hint-copy" x="128" y="64">손을 자유롭게 쓰기 어렵고 머리를 보호하지 못해요.</text>
+    </g>
+
+    <rect x="670" y="758" width="930" height="142" fill="#ffffff" stroke="#11243f" stroke-width="3"/>
+    <text x="724" y="805" font-size="14" font-weight="750" fill="#5d6b7f">이번 코디 점수</text>
+    <text x="724" y="851" font-size="32" font-weight="950">19 / 100</text>
+    <rect x="1252" y="785" width="262" height="78" rx="14" fill="#f26455"/>
+    <rect x="1252" y="851" width="262" height="12" rx="6" fill="#c94137"/>
+    <text x="1383" y="833" text-anchor="middle" font-size="22" font-weight="950" fill="#ffffff">다시 코디하기 →</text>
+  </g>
+</svg>

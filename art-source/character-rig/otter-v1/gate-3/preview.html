@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>작은귀수달 Gate 3 착용 구조 시험</title>
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; padding: 24px; background: #e9eef4; color: #11243f; font-family: system-ui, sans-serif; }
+    main { display: grid; grid-template-columns: minmax(320px, 640px) minmax(260px, 360px); gap: 24px; max-width: 1050px; margin: auto; }
+    .stage { position: relative; width: 100%; aspect-ratio: 2 / 3; overflow: hidden; background: #f8f4ea; border: 3px solid #11243f; border-radius: 18px; }
+    .layer { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: contain; pointer-events: none; }
+    .panel { background: white; border: 2px solid #c8d2df; border-radius: 16px; padding: 20px; align-self: start; }
+    h1 { margin: 0 0 8px; font-size: 24px; }
+    p { margin: 0 0 18px; line-height: 1.55; }
+    label { display: flex; gap: 10px; align-items: center; padding: 10px 0; border-top: 1px solid #e1e6ed; font-weight: 700; }
+    input { width: 20px; height: 20px; accent-color: #f45b50; }
+    .note { margin-top: 18px; padding: 12px; background: #fff5d8; border-left: 5px solid #f2b72b; font-size: 14px; }
+    @media (max-width: 780px) { main { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="stage" aria-label="착용 구조 미리보기">
+      <img class="layer item bag" src="pilot-items/bag-back.svg" alt="">
+      <img class="layer item hat" src="pilot-items/headwear-back.svg" alt="">
+      <img class="layer item top" src="pilot-items/top-back.svg" alt="">
+      <img class="layer" src="otter-base.png" alt="작은귀수달 캐릭터">
+      <img class="layer item bottom" src="pilot-items/bottom-main.svg" alt="">
+      <img class="layer item shoes" src="pilot-items/shoes-main.svg" alt="">
+      <img class="layer item top" src="pilot-items/top-main.svg" alt="">
+      <img class="layer item band" src="pilot-items/arm-band.svg" alt="">
+      <img class="layer item bag" src="pilot-items/bag-front.svg" alt="">
+      <img class="layer item hat" src="pilot-items/headwear-front.svg" alt="">
+    </section>
+    <aside class="panel">
+      <h1>Gate 3 시험 착용</h1>
+      <p>각 슬롯을 켜고 끄며 목, 소매, 허리, 바짓단, 발, 귀, 팔, 가방 끈의 겹침을 확인합니다.</p>
+      <label><input type="checkbox" data-slot="top" checked> 짧은 소매 후드</label>
+      <label><input type="checkbox" data-slot="bottom" checked> 긴 바지</label>
+      <label><input type="checkbox" data-slot="shoes" checked> 운동화</label>
+      <label><input type="checkbox" data-slot="hat" checked> 구조 모자</label>
+      <label><input type="checkbox" data-slot="band" checked> 반사 밴드</label>
+      <label><input type="checkbox" data-slot="bag" checked> 가방</label>
+      <div class="note">이 화면은 게임 코드가 아니라 레이어 구조 검증용 독립 미리보기입니다.</div>
+    </aside>
+  </main>
+  <script>
+    document.querySelectorAll('[data-slot]').forEach((control) => {
+      control.addEventListener('change', () => {
+        document.querySelectorAll(`.${control.dataset.slot}`).forEach((layer) => {
+          layer.hidden = !control.checked;
+        });
+      });
+    });
+  </script>
+</body>
+</html>

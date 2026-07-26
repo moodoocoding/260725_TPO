@@ -2214,6 +2214,117 @@ p {
   font-size: 11px;
 }
 
+.learning-check {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: 16px;
+  margin: 0 0 22px;
+}
+
+.learning-reason,
+.transfer-check {
+  border: 2px solid var(--ink);
+  padding: 20px;
+  background: #fff;
+}
+
+.learning-reason {
+  border-top: 8px solid var(--mint);
+}
+
+.transfer-check {
+  border-top: 8px solid var(--coral);
+}
+
+.learning-check h3 {
+  margin: 7px 0 8px;
+  font-size: 16px;
+}
+
+.learning-check p {
+  margin: 0;
+  color: var(--ink-soft);
+  font-size: 11px;
+  line-height: 1.55;
+}
+
+.reason-clues {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin: 12px 0;
+}
+
+.reason-clues span {
+  border: 1px solid var(--ink);
+  border-radius: 999px;
+  padding: 5px 8px;
+  background: #eef8f2;
+  font-size: 10px;
+  font-weight: 800;
+}
+
+.reason-reveal-button {
+  border: 0;
+  padding: 0;
+  color: var(--coral-dark);
+  background: transparent;
+  font-size: 11px;
+  font-weight: 900;
+  cursor: pointer;
+}
+
+.learning-check .model-answer {
+  margin-top: 10px;
+  border-left: 3px solid var(--mint);
+  padding: 8px 10px;
+  color: var(--ink);
+  background: #f3faf6;
+  font-weight: 700;
+}
+
+.transfer-options {
+  display: grid;
+  gap: 7px;
+  margin-top: 12px;
+}
+
+.transfer-options button {
+  border: 1px solid #b9c2c9;
+  border-radius: 6px;
+  padding: 9px 10px;
+  color: var(--ink);
+  background: #f8fafb;
+  text-align: left;
+  font-size: 11px;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.transfer-options button:hover {
+  border-color: var(--ink);
+}
+
+.transfer-options .transfer-correct {
+  border-color: #398b61;
+  background: #e5f5eb;
+}
+
+.transfer-options .transfer-wrong {
+  border-color: var(--coral);
+  background: #fff0ed;
+}
+
+.learning-check .transfer-feedback {
+  margin-top: 10px;
+  color: #9b4238;
+  font-weight: 750;
+}
+
+.learning-check .transfer-feedback-correct {
+  color: #2f7751;
+}
+
 .result-actions {
   display: flex;
   justify-content: flex-end;
@@ -2257,6 +2368,10 @@ p {
 
   .result-layout {
     grid-template-columns: 390px minmax(0, 1fr);
+  }
+
+  .learning-check {
+    grid-template-columns: 1fr;
   }
 }
 

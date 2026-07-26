@@ -65,20 +65,22 @@
   "items": [
     {
       "id": "rescue-jacket",
-      "name": "구조대 재킷",
+      "name": "구조 훈련복",
       "slot": "top",
-      "color": "#ff6b61",
-      "accent": "#be3939",
+      "color": "#f6574f",
+      "accent": "#c93538",
       "symbol": "구조대",
       "styleKey": "jacket",
       "tags": [
         "visible",
         "active",
         "practical",
-        "rescue"
+        "rescue",
+        "coverage"
       ],
-      "note": "밝고 움직이기 편한 구조대 활동복이에요.",
+      "note": "밝아서 잘 보이고 팔을 움직이기 편한 구조 훈련복이에요.",
       "layerKinds": [
+        "back",
         "main"
       ]
     },
@@ -1160,38 +1162,23 @@
     },
     {
       "id": "rescue-cap",
-      "name": "구조대 모자",
+      "name": "노란 안전모",
       "slot": "accessory",
-      "color": "#ffcb4a",
-      "accent": "#c17d0b",
-      "symbol": "구조대모",
-      "styleKey": "cap",
+      "color": "#ffc83d",
+      "accent": "#e4a922",
+      "symbol": "안전모",
+      "styleKey": "helmet",
       "tags": [
         "rescue",
         "visible",
-        "practical"
-      ],
-      "note": "구조대 역할을 나타내고 밝아서 잘 보여요.",
-      "layerKinds": [
-        "main"
-      ]
-    },
-    {
-      "id": "whistle",
-      "name": "안전 호루라기",
-      "slot": "accessory",
-      "color": "#f4f5f7",
-      "accent": "#6d7886",
-      "symbol": "호루라기",
-      "styleKey": "small-tool",
-      "tags": [
+        "practical",
         "safety",
-        "rescue",
-        "practical"
+        "protective"
       ],
-      "note": "도움이 필요할 때 위치를 알릴 수 있어요.",
+      "note": "머리를 보호하고 밝은 색으로 위치를 잘 보이게 해요.",
       "layerKinds": [
-        "main"
+        "back",
+        "front"
       ]
     },
     {
@@ -1853,20 +1840,12 @@
       ],
       "itemIds": [
         "rescue-jacket",
-        "sports-hoodie",
-        "yellow-raincoat",
-        "party-shirt",
+        "formal-jacket",
         "active-pants",
-        "sky-denim",
-        "beige-shorts",
         "long-skirt",
         "sneakers",
-        "rain-boots",
         "slippers",
-        "dress-shoes",
-        "reflective-band",
         "rescue-cap",
-        "whistle",
         "canvas-tote"
       ],
       "rules": {

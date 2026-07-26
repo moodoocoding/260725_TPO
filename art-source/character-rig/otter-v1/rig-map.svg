@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536">
+  <style>
+    .anchor { fill: #ff5a4f; stroke: #ffffff; stroke-width: 4; }
+    .guide { stroke: #1d3b66; stroke-width: 3; stroke-dasharray: 10 8; opacity: .72; }
+    .label { fill: #11243f; font: 700 20px sans-serif; paint-order: stroke; stroke: #ffffff; stroke-width: 5; stroke-linejoin: round; }
+    .bound { fill: none; stroke: #ffb000; stroke-width: 4; stroke-dasharray: 16 10; }
+  </style>
+  <rect width="1024" height="1536" fill="#f8f4ea"/>
+  <image href="gate-3/otter-base.png" width="1024" height="1536"/>
+  <rect class="bound" x="224" y="159" width="604" height="1119"/>
+  <line class="guide" x1="526" y1="120" x2="526" y2="1315"/>
+  <line class="guide" x1="180" y1="862" x2="870" y2="862"/>
+  <line class="guide" x1="180" y1="1278" x2="870" y2="1278"/>
+
+  <g>
+    <circle class="anchor" cx="526" cy="159" r="10"/><text class="label" x="544" y="151">headTop</text>
+    <circle class="anchor" cx="318" cy="299" r="10"/><text class="label" x="100" y="292">earLeft</text>
+    <circle class="anchor" cx="736" cy="299" r="10"/><text class="label" x="756" y="292">earRight</text>
+    <circle class="anchor" cx="526" cy="590" r="10"/><text class="label" x="544" y="584">neckCenter</text>
+    <circle class="anchor" cx="401" cy="602" r="10"/><text class="label" x="205" y="625">shoulderLeft</text>
+    <circle class="anchor" cx="650" cy="602" r="10"/><text class="label" x="672" y="625">shoulderRight</text>
+    <circle class="anchor" cx="309" cy="744" r="10"/><text class="label" x="118" y="738">elbowLeft</text>
+    <circle class="anchor" cx="742" cy="744" r="10"/><text class="label" x="764" y="738">elbowRight</text>
+    <circle class="anchor" cx="274" cy="849" r="10"/><text class="label" x="110" y="842">wristLeft</text>
+    <circle class="anchor" cx="779" cy="849" r="10"/><text class="label" x="801" y="842">wristRight</text>
+    <circle class="anchor" cx="526" cy="862" r="10"/><text class="label" x="544" y="889">waistCenter</text>
+    <circle class="anchor" cx="443" cy="1002" r="10"/><text class="label" x="270" y="994">hipLeft</text>
+    <circle class="anchor" cx="610" cy="1002" r="10"/><text class="label" x="632" y="994">hipRight</text>
+    <circle class="anchor" cx="409" cy="1093" r="10"/><text class="label" x="236" y="1087">kneeLeft</text>
+    <circle class="anchor" cx="643" cy="1093" r="10"/><text class="label" x="665" y="1087">kneeRight</text>
+    <circle class="anchor" cx="410" cy="1202" r="10"/><text class="label" x="230" y="1195">ankleLeft</text>
+    <circle class="anchor" cx="648" cy="1202" r="10"/><text class="label" x="670" y="1195">ankleRight</text>
+    <circle class="anchor" cx="389" cy="1242" r="10"/><text class="label" x="223" y="1270">footLeft</text>
+    <circle class="anchor" cx="671" cy="1242" r="10"/><text class="label" x="693" y="1270">footRight</text>
+    <circle class="anchor" cx="526" cy="1278" r="10"/><text class="label" x="544" y="1307">groundCenter</text>
+  </g>
+</svg>

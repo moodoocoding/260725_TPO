@@ -10,7 +10,7 @@ const outputRoot = path.join(
   projectRoot,
   "public",
   "art",
-  "v3",
+  "v4",
   "episodes",
   episodeSlug,
 );
@@ -73,7 +73,7 @@ async function validateImage(
 }
 
 if (!episode) fail(`catalog episode ${episodeSlug} is missing`);
-if (manifest.schemaVersion !== 3) fail("manifest schemaVersion must be 3");
+if (manifest.schemaVersion !== 4) fail("manifest schemaVersion must be 4");
 if (manifest.episode !== episodeSlug) fail("manifest episode slug mismatch");
 if (manifest.canvas?.width !== 1024 || manifest.canvas?.height !== 1536) {
   fail("manifest character canvas must be 1024x1536");
@@ -86,8 +86,8 @@ if (JSON.stringify(manifestItemIds) !== JSON.stringify(episodeItemIds)) {
 }
 
 await validateImage("background.webp", {
-  width: 1536,
-  height: 1152,
+  width: 1024,
+  height: 1536,
   transparency: "opaque",
   maxBytes: 2_000_000,
 });
@@ -100,22 +100,34 @@ for (const mood of ["ready", "success", "retry"]) {
   });
 }
 for (const itemId of episodeItemIds) {
-  await validateImage(`items/${itemId}/thumb.webp`, {
+  const manifestItem = manifest.items.find((item) => item.id === itemId);
+  if (!manifestItem) {
+    fail(`${itemId}: manifest item is missing`);
+    continue;
+  }
+  await validateImage(manifestItem.thumbnail, {
     maxWidth: 720,
     maxHeight: 720,
     transparency: "required",
     maxBytes: 700_000,
   });
-  await validateImage(`items/${itemId}/wear-main.webp`, {
-    width: 1024,
-    height: 1536,
-    transparency: "required",
-    maxBytes: 1_500_000,
-  });
+  for (const layer of manifestItem.layers) {
+    await validateImage(layer, {
+      width: 1024,
+      height: 1536,
+      transparency: "required",
+      maxBytes: 1_500_000,
+    });
+  }
 }
 
-if (checked.length !== 36) {
-  fail(`expected 36 images, checked ${checked.length}`);
+const expectedImageCount =
+  1 +
+  3 +
+  manifest.items.length +
+  manifest.items.reduce((sum, item) => sum + item.layers.length, 0);
+if (checked.length !== expectedImageCount) {
+  fail(`expected ${expectedImageCount} images, checked ${checked.length}`);
 }
 
 if (failures.length) {

@@ -155,8 +155,15 @@ test("아이템 ID와 에피소드 콘텐츠가 완전하다", () => {
 
   for (const episode of catalog.episodes) {
     assert.match(episode.slug, /^[a-z0-9]+(?:-[a-z0-9]+)*$/);
-    assert.equal(episode.itemIds.length, 16, episode.slug);
-    assert.equal(new Set(episode.itemIds).size, 16, episode.slug);
+    const expectedItemsPerSlot =
+      episode.slug === "rescue-team-trial" ? 2 : 4;
+    const expectedItemCount = expectedItemsPerSlot * slotNames.length;
+    assert.equal(episode.itemIds.length, expectedItemCount, episode.slug);
+    assert.equal(
+      new Set(episode.itemIds).size,
+      expectedItemCount,
+      episode.slug,
+    );
     assert.equal(episode.messages.length, 4, episode.slug);
     assert.equal(episode.backgroundColors.length, 2, episode.slug);
     assert.ok(
@@ -177,12 +184,12 @@ test("아이템 ID와 에피소드 콘텐츠가 완전하다", () => {
       assert.ok(itemById.has(itemId), `${episode.slug}: ${itemId}`);
       counts[itemById.get(itemId).slot] += 1;
     }
-    assert.deepEqual(counts, {
-      top: 4,
-      bottom: 4,
-      shoes: 4,
-      accessory: 4,
-    });
+    assert.deepEqual(
+      counts,
+      Object.fromEntries(
+        slotNames.map((slot) => [slot, expectedItemsPerSlot]),
+      ),
+    );
   }
 });
 
@@ -234,10 +241,12 @@ test("모든 에피소드의 배점은 30·30·20이고 안전 필수 규칙이 
   }
 });
 
-test("각 에피소드는 256개 조합과 안전 조건을 충족하는 조합을 가진다", () => {
+test("각 에피소드는 충분한 조합과 안전 조건을 충족하는 조합을 가진다", () => {
   for (const episode of catalog.episodes) {
     const combinations = combinationsForEpisode(episode);
-    assert.equal(combinations.length, 256, episode.slug);
+    const expectedCombinations =
+      episode.slug === "rescue-team-trial" ? 16 : 256;
+    assert.equal(combinations.length, expectedCombinations, episode.slug);
     assert.ok(
       combinations.some((outfit) => satisfiesMandatory(episode, outfit)),
       `${episode.slug} has no safe outfit`,
@@ -249,7 +258,7 @@ test("각 에피소드는 256개 조합과 안전 조건을 충족하는 조합�
   }
 });
 
-test("모든 256개 조합을 채점하면 각 에피소드에 100점·통과·실패가 모두 존재한다", () => {
+test("모든 조합을 채점하면 각 에피소드에 100점·통과·실패가 모두 존재한다", () => {
   for (const episode of catalog.episodes) {
     const scores = combinationsForEpisode(episode).map((outfit) =>
       scoreCombination(episode, outfit),

@@ -1,0 +1,79 @@
+{
+  "episodeId": "rescue-team-trial",
+  "characterRigVersion": "otter-v1.0.0",
+  "status": "gate-4-review",
+  "correctOutfit": {
+    "top": "rescue-training-top",
+    "bottom": "navy-activity-pants",
+    "shoes": "blue-grip-sneakers",
+    "accessory": "yellow-safety-helmet"
+  },
+  "items": [
+    {
+      "itemId": "rescue-training-top",
+      "slot": "top",
+      "name": "구조 훈련복",
+      "reason": "밝은 색과 반사 띠가 있어 훈련장에서 잘 보여요.",
+      "characterRigVersion": "otter-v1.0.0",
+      "requiredAnchors": ["neckCenter", "shoulderLeft", "shoulderRight", "wristLeft", "wristRight", "waistCenter"],
+      "zGroups": ["topBack", "topMain"],
+      "occlusionMasks": ["neck-mask", "torso-mask"],
+      "compatibleBody": ["small-eared-otter"],
+      "boundingBox": { "x": 278, "y": 495, "width": 496, "height": 406 },
+      "thumbnailPath": "card-rescue-top.svg",
+      "layers": [
+        "items/rescue-top/layers/top-back.svg",
+        "items/rescue-top/layers/top-main.svg"
+      ],
+      "tpoTags": ["visibility", "movement", "rescue-training"]
+    },
+    {
+      "itemId": "navy-activity-pants",
+      "slot": "bottom",
+      "name": "활동 바지",
+      "reason": "무릎을 움직이기 쉽고 피부를 보호해요.",
+      "characterRigVersion": "otter-v1.0.0",
+      "requiredAnchors": ["waistCenter", "hipLeft", "hipRight", "kneeLeft", "kneeRight", "ankleLeft", "ankleRight"],
+      "zGroups": ["bottomMain"],
+      "occlusionMasks": ["waist-mask", "leg-mask"],
+      "compatibleBody": ["small-eared-otter"],
+      "boundingBox": { "x": 346, "y": 826, "width": 360, "height": 394 },
+      "thumbnailPath": "card-activity-pants.svg",
+      "layers": ["items/activity-pants/layers/bottom-main.svg"],
+      "tpoTags": ["movement", "protection", "rescue-training"]
+    },
+    {
+      "itemId": "blue-grip-sneakers",
+      "slot": "shoes",
+      "name": "논슬립 운동화",
+      "reason": "잘 미끄러지지 않고 빠르게 움직일 수 있어요.",
+      "characterRigVersion": "otter-v1.0.0",
+      "requiredAnchors": ["ankleLeft", "ankleRight", "footLeft", "footRight", "groundCenter"],
+      "zGroups": ["shoeMain"],
+      "occlusionMasks": ["feet-mask"],
+      "compatibleBody": ["small-eared-otter"],
+      "boundingBox": { "x": 307, "y": 1173, "width": 438, "height": 129 },
+      "thumbnailPath": "card-grip-sneakers.svg",
+      "layers": ["items/grip-sneakers/layers/shoes-main.svg"],
+      "tpoTags": ["movement", "grip", "rescue-training"]
+    },
+    {
+      "itemId": "yellow-safety-helmet",
+      "slot": "accessory",
+      "name": "안전모",
+      "reason": "훈련 중 머리를 보호하고 밝은 색이라 잘 보여요.",
+      "characterRigVersion": "otter-v1.0.0",
+      "requiredAnchors": ["headTop", "headCenter", "earLeft", "earRight"],
+      "zGroups": ["headwearBack", "headwearFront"],
+      "occlusionMasks": ["ear-mask", "head-mask"],
+      "compatibleBody": ["small-eared-otter"],
+      "boundingBox": { "x": 304, "y": 116, "width": 444, "height": 211 },
+      "thumbnailPath": "card-safety-helmet.svg",
+      "layers": [
+        "items/safety-helmet/layers/headwear-back.svg",
+        "items/safety-helmet/layers/headwear-front.svg"
+      ],
+      "tpoTags": ["safety", "visibility", "rescue-training"]
+    }
+  ]
+}

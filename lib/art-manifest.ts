@@ -41,7 +41,7 @@ export type ResolvedArtLayer = ArtLayer & {
 const ITEM_ROOT = "/art/v2/items";
 const CHARACTER_ROOT = "/art/v2/character";
 const EPISODE_ONE_SLUG = "rescue-team-trial";
-const EPISODE_ONE_ROOT = `/art/v3/episodes/${EPISODE_ONE_SLUG}`;
+const EPISODE_ONE_ROOT = `/art/v4/episodes/${EPISODE_ONE_SLUG}`;
 
 const SLOT_PLANE: Record<Slot, ArtPlane> = {
   top: "top",
@@ -102,11 +102,9 @@ function resolveItemLayers(
   episodeSlug?: string,
 ): ArtLayer[] {
   const isEpisodeOneSlice = episodeSlug === EPISODE_ONE_SLUG;
-  const layerKinds = isEpisodeOneSlice
-    ? ["main" as const]
-    : item.layerKinds?.length
-      ? item.layerKinds
-      : ["main" as const];
+  const layerKinds = item.layerKinds?.length
+    ? item.layerKinds
+    : ["main" as const];
   const root = isEpisodeOneSlice
     ? `${EPISODE_ONE_ROOT}/items/${item.assetId ?? item.id}`
     : `${ITEM_ROOT}/${item.assetId ?? item.id}`;

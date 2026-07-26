@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 4,
+  "artVersion": "v4-otter-vertical-slice",
+  "episode": "rescue-team-trial",
+  "characterRigVersion": "otter-v1.0.0",
+  "canvas": {
+    "width": 1024,
+    "height": 1536
+  },
+  "sourcePolicy": "thumbnail and wear layers share the same SVG source",
+  "background": "background.webp",
+  "character": {
+    "ready": "character/ready.webp",
+    "success": "character/success.webp",
+    "retry": "character/retry.webp"
+  },
+  "items": [
+    {
+      "id": "rescue-jacket",
+      "thumbnail": "items/rescue-jacket/thumb.webp",
+      "layers": [
+        "items/rescue-jacket/wear-back.webp",
+        "items/rescue-jacket/wear-main.webp"
+      ]
+    },
+    {
+      "id": "formal-jacket",
+      "thumbnail": "items/formal-jacket/thumb.webp",
+      "layers": [
+        "items/formal-jacket/wear-main.webp"
+      ]
+    },
+    {
+      "id": "active-pants",
+      "thumbnail": "items/active-pants/thumb.webp",
+      "layers": [
+        "items/active-pants/wear-main.webp"
+      ]
+    },
+    {
+      "id": "long-skirt",
+      "thumbnail": "items/long-skirt/thumb.webp",
+      "layers": [
+        "items/long-skirt/wear-main.webp"
+      ]
+    },
+    {
+      "id": "sneakers",
+      "thumbnail": "items/sneakers/thumb.webp",
+      "layers": [
+        "items/sneakers/wear-main.webp"
+      ]
+    },
+    {
+      "id": "slippers",
+      "thumbnail": "items/slippers/thumb.webp",
+      "layers": [
+        "items/slippers/wear-main.webp"
+      ]
+    },
+    {
+      "id": "rescue-cap",
+      "thumbnail": "items/rescue-cap/thumb.webp",
+      "layers": [
+        "items/rescue-cap/wear-back.webp",
+        "items/rescue-cap/wear-front.webp"
+      ]
+    },
+    {
+      "id": "canvas-tote",
+      "thumbnail": "items/canvas-tote/thumb.webp",
+      "layers": [
+        "items/canvas-tote/wear-back.webp",
+        "items/canvas-tote/wear-front.webp"
+      ]
+    }
+  ]
+}
