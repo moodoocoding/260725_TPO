@@ -60,6 +60,22 @@ const SCORE_LABELS: Array<[keyof ScoreResult["breakdown"], string, number]> = [
   ["time", "시간 보너스", 10],
 ];
 
+function getConversationLabel(sender: string) {
+  const trimmedSender = sender.trim();
+  const lastCharacter = trimmedSender.at(-1);
+
+  if (!lastCharacter) {
+    return "문자 대화";
+  }
+
+  const codePoint = lastCharacter.charCodeAt(0);
+  const isHangulSyllable = codePoint >= 0xac00 && codePoint <= 0xd7a3;
+  const hasFinalConsonant =
+    isHangulSyllable && (codePoint - 0xac00) % 28 !== 0;
+
+  return `${trimmedSender}${hasFinalConsonant ? "과" : "와"}의 문자 대화`;
+}
+
 function parseProgress(raw: string | null): StoryProgress {
   if (!raw) return EMPTY_PROGRESS;
   try {
@@ -655,7 +671,10 @@ export default function Home() {
               <div><span>O</span><strong>{activeEpisode.tpo.occasion}</strong></div>
             </div>
           </div>
-          <div className="phone-frame" aria-label={`${activeEpisode.sender}와의 문자 대화`}>
+          <div
+            className="phone-frame"
+            aria-label={getConversationLabel(activeEpisode.sender)}
+          >
             <div className="phone-top">
               <button
                 onClick={() => setStage("story")}
