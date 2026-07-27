@@ -15,7 +15,7 @@
     "art:generate": "node scripts/generate-art-assets.mjs",
     "art:validate": "node scripts/validate-art-assets.mjs",
     "test:art": "node --test tests/art-manifest.test.mjs",
-    "test:logic": "node --experimental-strip-types --test tests/game-timer.test.mjs tests/progress-storage.test.mjs tests/score-request.test.mjs",
+    "test:logic": "node --experimental-strip-types --test tests/art-paths.test.mjs tests/cutscene-visual.test.mjs tests/game-timer.test.mjs tests/progress-storage.test.mjs tests/score-request.test.mjs",
     "story:generate": "node scripts/generate-story-catalog.mjs",
     "story:validate": "node --test tests/story-catalog.test.mjs tests/story-narrative.test.mjs tests/tpo-learning.test.mjs",
     "episode1-art:prepare": "node scripts/prepare-episode1-assets.mjs",

@@ -1,4 +1,9 @@
 import type { Slot } from "@/lib/story-data";
+import {
+  EPISODE_ONE_SLUG,
+  getEpisodeItemAssetPath,
+  getEpisodeOneRoot,
+} from "@/lib/art-paths";
 import storyArtManifestSource from "@/public/art/v5/character-manifest.json";
 
 export const ART_CANVAS = {
@@ -41,8 +46,7 @@ export type ResolvedArtLayer = ArtLayer & {
 
 const CHARACTER_ROOT = "/art/v2/character";
 const STORY_ART_ROOT = "/art/v5";
-const EPISODE_ONE_SLUG = "rescue-team-trial";
-const EPISODE_ONE_ROOT = `/art/v4/episodes/${EPISODE_ONE_SLUG}`;
+const EPISODE_ONE_ROOT = getEpisodeOneRoot();
 
 type StoryCharacterEntry = {
   mode: "full-frame-moods" | "layered-base-face";
@@ -130,13 +134,19 @@ function resolveStoryAssetUrl(src: string): string {
 
 function resolveItemLayers(
   item: WearableArtItem,
+  episodeSlug?: string,
 ): ArtLayer[] {
   const assetId = item.assetId ?? item.id;
   const manifestItem = STORY_ART_MANIFEST.items[assetId];
-  const layers = manifestItem?.layers;
-  const layerKinds = (["back", "main", "front"] as const).filter(
-    (kind) => layers?.[kind],
-  );
+  const usesEpisodeAssets = episodeSlug === EPISODE_ONE_SLUG;
+  const layers = usesEpisodeAssets ? undefined : manifestItem?.layers;
+  const layerKinds = usesEpisodeAssets
+    ? item.layerKinds?.length
+      ? item.layerKinds
+      : (["main"] as const)
+    : (["back", "main", "front"] as const).filter(
+        (kind) => layers?.[kind],
+      );
   const resolvedKinds = layerKinds.length
     ? layerKinds
     : item.layerKinds?.length
@@ -145,9 +155,15 @@ function resolveItemLayers(
 
   return resolvedKinds.map((kind) => ({
     id: `${item.id}-${kind}`,
-    src: layers?.[kind]
-      ? resolveStoryAssetUrl(layers[kind])
-      : `${STORY_ART_MANIFEST.roots.items}/${assetId}/wear-${kind}.webp`,
+    src:
+      getEpisodeItemAssetPath(
+        episodeSlug,
+        assetId,
+        `wear-${kind}.webp`,
+      ) ??
+      (layers?.[kind]
+        ? resolveStoryAssetUrl(layers[kind])
+        : `${STORY_ART_MANIFEST.roots.items}/${assetId}/wear-${kind}.webp`),
     plane:
       kind === "back"
         ? "wearBack"
@@ -211,14 +227,24 @@ export function resolveCharacterLayers(
 
   return [
     ...characterLayers,
-    ...uniqueItems.flatMap((item) => resolveItemLayers(item)),
+    ...uniqueItems.flatMap((item) => resolveItemLayers(item, episodeSlug)),
     ...faceLayers,
   ]
     .map(resolveLayer)
     .sort((a, b) => a.zIndex - b.zIndex || a.id.localeCompare(b.id));
 }
 
-export function getItemThumbnail(assetId: string): string {
+export function getItemThumbnail(
+  assetId: string,
+  episodeSlug?: string,
+): string {
+  const episodeAsset = getEpisodeItemAssetPath(
+    episodeSlug,
+    assetId,
+    "thumb.webp",
+  );
+  if (episodeAsset) return episodeAsset;
+
   const thumbnail = STORY_ART_MANIFEST.items[assetId]?.thumbnail;
   return thumbnail
     ? resolveStoryAssetUrl(thumbnail)

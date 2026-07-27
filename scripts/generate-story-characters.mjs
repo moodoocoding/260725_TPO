@@ -169,8 +169,9 @@ function ears(character) {
   const ink = "#18324a";
   const { species, fur, shade, patch } = character;
   if (species === "puppy") {
-    return `<path d="M359 276 C300 242 266 302 283 411 C292 456 331 452 365 397 L401 312 Z" fill="${shade}" stroke="${ink}" stroke-width="9"/>
-    <path d="M693 276 C752 242 786 302 769 411 C760 456 721 452 687 397 L651 312 Z" fill="${shade}" stroke="${ink}" stroke-width="9"/>`;
+    return `<path d="M382 250 C319 201 263 249 270 350 C274 421 300 475 337 470 C371 466 391 409 401 326 Z" fill="${shade}" stroke="${ink}" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M670 250 C733 201 789 249 782 350 C778 421 752 475 715 470 C681 466 661 409 651 326 Z" fill="${shade}" stroke="${ink}" stroke-width="10" stroke-linejoin="round"/>
+    <path d="M362 273 C326 248 299 273 302 346 C304 387 316 417 333 421 C353 414 365 371 370 314 Z M690 273 C726 248 753 273 750 346 C748 387 736 417 719 421 C699 414 687 371 682 314 Z" fill="${fur}" opacity=".55"/>`;
   }
   if (["red-panda", "silver-fox", "calico-cat"].includes(species)) {
     return `<path d="M348 279 L373 112 L472 224 Z" fill="${fur}" stroke="${ink}" stroke-width="9" stroke-linejoin="round"/>
@@ -189,6 +190,14 @@ function ears(character) {
 
 function markings(character) {
   const { species, shade, patch } = character;
+  if (species === "puppy") {
+    return `<g id="puppy-markings">
+      <path d="M480 168 C493 148 511 145 526 160 C541 145 559 148 572 168 L552 318 C544 341 508 341 500 318 Z" fill="${patch}" opacity=".92"/>
+      <ellipse cx="478" cy="429" rx="76" ry="65" fill="${patch}"/>
+      <ellipse cx="574" cy="429" rx="76" ry="65" fill="${patch}"/>
+      <path d="M400 285 C420 243 462 229 491 253 C468 288 436 307 400 285 Z" fill="${shade}" opacity=".32"/>
+    </g>`;
+  }
   if (species === "red-panda") {
     return `<path d="M365 330 C414 286 472 291 507 340 C478 406 413 426 365 385 Z M687 330 C638 286 580 291 545 340 C574 406 639 426 687 385 Z" fill="${shade}" opacity=".9"/>`;
   }
@@ -254,6 +263,15 @@ function characterBase(character) {
 }
 
 function faceExtras(character) {
+  if (character.species === "puppy") {
+    return `<g id="puppy-face-details">
+      <circle cx="476" cy="433" r="4" fill="${character.shade}" opacity=".72"/>
+      <circle cx="458" cy="446" r="4" fill="${character.shade}" opacity=".72"/>
+      <circle cx="576" cy="433" r="4" fill="${character.shade}" opacity=".72"/>
+      <circle cx="594" cy="446" r="4" fill="${character.shade}" opacity=".72"/>
+      <path d="M526 442 C507 442 494 450 484 462 M526 442 C545 442 558 450 568 462" fill="none" stroke="${character.shade}" stroke-width="5" stroke-linecap="round"/>
+    </g>`;
+  }
   if (["calico-cat", "silver-fox", "red-panda"].includes(character.species)) {
     return `<path d="M456 410 L374 394 M456 431 L371 438 M596 410 L678 394 M596 431 L681 438" fill="none" stroke="${character.shade}" stroke-width="5" stroke-linecap="round"/>`;
   }
@@ -266,6 +284,7 @@ function faceExtras(character) {
 function characterFace(character, mood) {
   const ink = "#18324a";
   const mouth = "#8e4b43";
+  const nose = character.species === "puppy" ? "#2d2422" : character.shade;
   let expression;
   if (mood === "success") {
     expression = `<path d="M405 324 C438 299 468 305 488 321 M564 321 C584 305 614 299 647 324" fill="none" stroke="${ink}" stroke-width="12" stroke-linecap="round"/>
@@ -293,7 +312,7 @@ function characterFace(character, mood) {
     },
     `<g id="face-${mood}">
       ${expression}
-      <path d="M507 404 Q526 391 545 404 Q542 426 526 433 Q510 426 507 404 Z" fill="${character.shade}" stroke="${ink}" stroke-width="6"/>
+      <path d="M507 404 Q526 391 545 404 Q542 426 526 433 Q510 426 507 404 Z" fill="${nose}" stroke="${ink}" stroke-width="6"/>
       <path d="M526 431 V442" stroke="${ink}" stroke-width="5" stroke-linecap="round"/>
       ${faceExtras(character)}
     </g>`,

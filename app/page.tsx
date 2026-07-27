@@ -22,6 +22,7 @@ import {
   writeStorageValues,
   type StoryProgress,
 } from "@/lib/progress-storage";
+import { getCutsceneVisualEpisodeSlug } from "@/lib/cutscene-visual";
 import type { ScoreResult } from "@/lib/scoring";
 import {
   STORY_FINAL_ENDING,
@@ -744,8 +745,15 @@ export default function Home() {
       stage === "chapterOutro" &&
       Boolean(nextEpisode) &&
       cutsceneIndex >= (chapterNarrative?.ending.length ?? 0);
+    const cutsceneEpisodeSlug = getCutsceneVisualEpisodeSlug({
+      stage,
+      activeEpisodeSlug: activeEpisode.slug,
+      protagonistEpisodeSlug: firstEpisode.slug,
+      nextEpisodeSlug: nextEpisode?.slug,
+      isNextChapterHook,
+    });
     const cutsceneEpisode =
-      isNextChapterHook && nextEpisode ? nextEpisode : activeEpisode;
+      getEpisode(cutsceneEpisodeSlug) ?? firstEpisode;
     const cutsceneWearerName = getWearerName(cutsceneEpisode);
 
     return (
@@ -1144,6 +1152,7 @@ export default function Home() {
                     >
                       <ItemThumbnail
                         item={item}
+                        episodeSlug={activeEpisode.slug}
                       />
                     </span>
                     <strong>{item.name}</strong>

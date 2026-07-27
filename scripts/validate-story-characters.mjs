@@ -219,6 +219,32 @@ async function validateSvg(filePath, attributes) {
   }
 }
 
+const minjunBaseSource = await readFile(
+  path.join(
+    sourceRoot,
+    "characters",
+    "minjun-puppy",
+    "base.svg",
+  ),
+  "utf8",
+);
+if (!minjunBaseSource.includes('id="puppy-markings"')) {
+  fail("minjun-puppy: dog-specific face markings are missing");
+}
+const minjunReadyFaceSource = await readFile(
+  path.join(
+    sourceRoot,
+    "characters",
+    "minjun-puppy",
+    "faces",
+    "ready.svg",
+  ),
+  "utf8",
+);
+if (!minjunReadyFaceSource.includes('id="puppy-face-details"')) {
+  fail("minjun-puppy: dog-specific muzzle details are missing");
+}
+
 if (manifest.schemaVersion !== 2) fail("manifest schemaVersion must be 2");
 if (manifest.deterministic !== true) fail("manifest must be deterministic");
 if (!same(manifest.canvas, { width: 1024, height: 1536 })) {

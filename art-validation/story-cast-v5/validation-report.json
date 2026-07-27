@@ -56,47 +56,47 @@
   "characterResults": [
     {
       "id": "minjun-puppy",
-      "baseBytes": 41710,
+      "baseBytes": 47880,
       "bounds": {
         "left": 245,
         "top": 113,
         "right": 806,
         "bottom": 1277,
-        "count": 384983
+        "count": 398013
       },
       "bodyHash": "774df23179c2eda6977011e0b69fc40f9710ea531b32b63da7c1f281ed315278",
       "faces": [
         {
           "mood": "ready",
-          "bytes": 6158,
+          "bytes": 6924,
           "bounds": {
             "left": 403,
             "top": 299,
             "right": 648,
             "bottom": 480,
-            "count": 19184
+            "count": 19941
           }
         },
         {
           "mood": "success",
-          "bytes": 5446,
+          "bytes": 6212,
           "bounds": {
             "left": 399,
             "top": 301,
             "right": 652,
             "bottom": 495,
-            "count": 10849
+            "count": 11395
           }
         },
         {
           "mood": "retry",
-          "bytes": 6168,
+          "bytes": 6946,
           "bounds": {
             "left": 399,
             "top": 300,
             "right": 653,
             "bottom": 475,
-            "count": 18128
+            "count": 18925
           }
         }
       ]

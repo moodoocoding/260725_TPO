@@ -127,8 +127,10 @@ export function CharacterRenderer({
 
 export function ItemThumbnail({
   item,
+  episodeSlug,
 }: {
   item: ClothingItem;
+  episodeSlug?: string;
 }) {
   const [failed, setFailed] = useState(false);
 
@@ -143,7 +145,7 @@ export function ItemThumbnail({
   return (
     <Image
       className="item-thumbnail-image"
-      src={getItemThumbnail(item.id)}
+      src={getItemThumbnail(item.id, episodeSlug)}
       alt=""
       fill
       sizes="(max-width: 720px) 42vw, 180px"
