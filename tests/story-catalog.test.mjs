@@ -306,6 +306,23 @@ test("1화는 하나의 대표 만점 조합과 8~24개의 안전한 통과 조�
   assert.equal(scores.filter((score) => score === 100).length, 1);
 });
 
+test("첫 카드만 반복 선택하는 위치 전략으로는 전편을 통과할 수 없다", () => {
+  const firstCardScores = catalog.episodes.map((episode) => {
+    const outfit = slotNames.map((slot, slotIndex) => {
+      const items = episode.itemIds
+        .map((itemId) => itemById.get(itemId))
+        .filter((item) => item.slot === slot);
+      const rotation = (episode.order + slotIndex * 2 + 1) % items.length;
+      return items[rotation];
+    });
+    return scoreCombination(episode, outfit);
+  });
+  const passingCount = firstCardScores.filter((score) => score >= 60).length;
+
+  assert.ok(passingCount <= 4, `first-card passes: ${passingCount}/13`);
+  assert.ok(firstCardScores.some((score) => score < 60));
+});
+
 test("카탈로그 텍스트에 깨진 문자나 데이터베이스 의존성이 없다", () => {
   const serialized = JSON.stringify(catalog);
   assert.equal(serialized.includes("\uFFFD"), false);

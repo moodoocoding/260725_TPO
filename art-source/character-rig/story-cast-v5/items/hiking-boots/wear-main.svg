@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536" data-rig-id="otter-v1.0.0" data-item-id="hiking-boots" data-slot="shoes" data-layer="main">
+  <defs><linearGradient id="fabric" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#70543e"/>
+    <stop offset=".7" stop-color="#70543e"/>
+    <stop offset="1" stop-color="#38271c"/>
+  </linearGradient></defs>
+  <path d="M327 1118 C360 1100 418 1101 463 1128 L488 1254 C479 1284 445 1302 389 1302 C340 1302 309 1285 307 1258 C309 1227 315 1208 327 1118 Z" fill="url(#fabric)" stroke="#18324a" stroke-width="8"/>
+    <path d="M725 1118 C692 1100 634 1101 589 1128 L564 1254 C573 1284 607 1302 663 1302 C712 1302 743 1285 745 1258 C743 1227 737 1208 725 1118 Z" fill="url(#fabric)" stroke="#18324a" stroke-width="8"/>
+
+    <path d="M309 1252 C345 1270 405 1274 487 1254 M743 1252 C707 1270 647 1274 565 1254" fill="none" stroke="#38271c" stroke-width="11"/>
+</svg>

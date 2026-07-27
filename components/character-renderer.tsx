@@ -18,6 +18,7 @@ type CharacterRendererProps = {
   mood?: ArtMood;
   priority?: boolean;
   episodeSlug?: string;
+  characterName?: string;
 };
 
 type ImageCharacterRendererProps = {
@@ -35,12 +36,15 @@ const LEGACY_MOOD: Record<ArtMood, LegacyCharacterMood> = {
   retry: "thinking",
 };
 
-function getCharacterSummary(selectedItems: readonly ClothingItem[]): string {
+function getCharacterSummary(
+  selectedItems: readonly ClothingItem[],
+  characterName: string,
+): string {
   if (selectedItems.length === 0) {
-    return "옷을 고르기 전의 하루 캐릭터";
+    return `옷을 고르기 전의 ${characterName} 캐릭터`;
   }
 
-  return `하루의 현재 코디: ${selectedItems
+  return `${characterName}의 현재 코디: ${selectedItems
     .map((item) => item.name)
     .join(", ")}`;
 }
@@ -63,9 +67,7 @@ export function ImageCharacterRenderer({
       className="character image-character"
       role="img"
       aria-label={ariaLabel}
-      data-renderer={
-        episodeSlug === "rescue-team-trial" ? "image-v4-otter" : "image-v2"
-      }
+      data-renderer="image-v5-animal"
     >
       <div className="image-character-canvas" aria-hidden="true">
         {layers.map((layer) => (
@@ -93,13 +95,14 @@ export function CharacterRenderer({
   mood = "ready",
   priority = false,
   episodeSlug,
+  characterName = "하루",
 }: CharacterRendererProps) {
   const assetSignature = `${episodeSlug ?? "global"}:${mood}:${selectedItems
     .map((item) => item.id)
     .sort()
     .join(",")}`;
   const [failedSignature, setFailedSignature] = useState<string | null>(null);
-  const ariaLabel = getCharacterSummary(selectedItems);
+  const ariaLabel = getCharacterSummary(selectedItems, characterName);
 
   if (failedSignature === assetSignature) {
     return (
@@ -125,10 +128,8 @@ export function CharacterRenderer({
 
 export function ItemThumbnail({
   item,
-  episodeSlug,
 }: {
   item: ClothingItem;
-  episodeSlug?: string;
 }) {
   const [failed, setFailed] = useState(false);
 
@@ -143,7 +144,7 @@ export function ItemThumbnail({
   return (
     <Image
       className="item-thumbnail-image"
-      src={getItemThumbnail(item.id, episodeSlug)}
+      src={getItemThumbnail(item.id)}
       alt=""
       fill
       sizes="(max-width: 720px) 42vw, 180px"

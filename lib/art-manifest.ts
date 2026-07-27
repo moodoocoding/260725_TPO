@@ -1,4 +1,5 @@
 import type { Slot } from "@/lib/story-data";
+import storyArtManifestSource from "@/public/art/v5/character-manifest.json";
 
 export const ART_CANVAS = {
   width: 1024,
@@ -38,10 +39,35 @@ export type ResolvedArtLayer = ArtLayer & {
   zIndex: number;
 };
 
-const ITEM_ROOT = "/art/v2/items";
 const CHARACTER_ROOT = "/art/v2/character";
+const STORY_ART_ROOT = "/art/v5";
 const EPISODE_ONE_SLUG = "rescue-team-trial";
 const EPISODE_ONE_ROOT = `/art/v4/episodes/${EPISODE_ONE_SLUG}`;
+
+type StoryCharacterEntry = {
+  mode: "full-frame-moods" | "layered-base-face";
+  base?: string;
+  faces?: Partial<Record<ArtMood, string>>;
+  moods?: Partial<Record<ArtMood, string>>;
+};
+
+type StoryItemEntry = {
+  thumbnail: string;
+  layers: Partial<Record<WearLayerKind, string>>;
+};
+
+type StoryArtManifest = {
+  artVersion: string;
+  roots: {
+    characters: string;
+    items: string;
+  };
+  episodeMap: Record<string, StoryCharacterEntry>;
+  items: Record<string, StoryItemEntry>;
+};
+
+const STORY_ART_MANIFEST =
+  storyArtManifestSource as unknown as StoryArtManifest;
 
 const SLOT_PLANE: Record<Slot, ArtPlane> = {
   top: "top",
@@ -52,11 +78,12 @@ const SLOT_PLANE: Record<Slot, ArtPlane> = {
 
 export const ART_MANIFEST = {
   schemaVersion: 2,
-  artVersion: "v2",
+  artVersion: STORY_ART_MANIFEST.artVersion,
   canvas: ART_CANVAS,
   roots: {
     character: CHARACTER_ROOT,
-    items: ITEM_ROOT,
+    storyCharacters: STORY_ART_MANIFEST.roots.characters,
+    items: STORY_ART_MANIFEST.roots.items,
     episodes: "/art/v2/episodes",
   },
   character: {
@@ -97,21 +124,30 @@ function resolveLayer(layer: ArtLayer): ResolvedArtLayer {
   };
 }
 
+function resolveStoryAssetUrl(src: string): string {
+  return src.startsWith("/") ? src : `${STORY_ART_ROOT}/${src}`;
+}
+
 function resolveItemLayers(
   item: WearableArtItem,
-  episodeSlug?: string,
 ): ArtLayer[] {
-  const isEpisodeOneSlice = episodeSlug === EPISODE_ONE_SLUG;
-  const layerKinds = item.layerKinds?.length
-    ? item.layerKinds
-    : ["main" as const];
-  const root = isEpisodeOneSlice
-    ? `${EPISODE_ONE_ROOT}/items/${item.assetId ?? item.id}`
-    : `${ITEM_ROOT}/${item.assetId ?? item.id}`;
+  const assetId = item.assetId ?? item.id;
+  const manifestItem = STORY_ART_MANIFEST.items[assetId];
+  const layers = manifestItem?.layers;
+  const layerKinds = (["back", "main", "front"] as const).filter(
+    (kind) => layers?.[kind],
+  );
+  const resolvedKinds = layerKinds.length
+    ? layerKinds
+    : item.layerKinds?.length
+      ? item.layerKinds
+      : (["main"] as const);
 
-  return layerKinds.map((kind) => ({
+  return resolvedKinds.map((kind) => ({
     id: `${item.id}-${kind}`,
-    src: `${root}/wear-${kind}.webp`,
+    src: layers?.[kind]
+      ? resolveStoryAssetUrl(layers[kind])
+      : `${STORY_ART_MANIFEST.roots.items}/${assetId}/wear-${kind}.webp`,
     plane:
       kind === "back"
         ? "wearBack"
@@ -130,38 +166,63 @@ export function resolveCharacterLayers(
   const uniqueItems = [
     ...new Map(items.map((item) => [item.id, item])).values(),
   ];
-  const isEpisodeOneSlice = episodeSlug === EPISODE_ONE_SLUG;
-  const characterLayers = isEpisodeOneSlice
+  const storyCharacter = episodeSlug
+    ? STORY_ART_MANIFEST.episodeMap[episodeSlug]
+    : undefined;
+  const moodAsset =
+    storyCharacter?.mode === "full-frame-moods"
+      ? storyCharacter.moods?.[mood]
+      : undefined;
+  const characterLayers = moodAsset
     ? [
         {
-          id: `episode-one-character-${mood}`,
-          src: `${EPISODE_ONE_ROOT}/character/${mood}.webp`,
+          id: `${episodeSlug}-character-${mood}`,
+          src: resolveStoryAssetUrl(moodAsset),
           plane: "body" as const,
           order: 0,
         },
       ]
+    : storyCharacter?.mode === "layered-base-face" && storyCharacter.base
+      ? [
+          {
+            id: `${episodeSlug}-character-base`,
+            src: resolveStoryAssetUrl(storyCharacter.base),
+            plane: "body" as const,
+            order: 0,
+          },
+        ]
     : [ART_MANIFEST.character.base];
-  const faceLayers = isEpisodeOneSlice
+  const faceAsset =
+    storyCharacter?.mode === "layered-base-face"
+      ? storyCharacter.faces?.[mood]
+      : undefined;
+  const faceLayers = moodAsset
     ? []
-    : [ART_MANIFEST.character.faces[mood]];
+    : faceAsset
+      ? [
+          {
+            id: `${episodeSlug}-face-${mood}`,
+            src: resolveStoryAssetUrl(faceAsset),
+            plane: "face" as const,
+            order: 0,
+          },
+        ]
+      : [ART_MANIFEST.character.faces[mood]];
 
   return [
     ...characterLayers,
-    ...uniqueItems.flatMap((item) => resolveItemLayers(item, episodeSlug)),
+    ...uniqueItems.flatMap((item) => resolveItemLayers(item)),
     ...faceLayers,
   ]
     .map(resolveLayer)
     .sort((a, b) => a.zIndex - b.zIndex || a.id.localeCompare(b.id));
 }
 
-export function getItemThumbnail(
-  assetId: string,
-  episodeSlug?: string,
-): string {
-  if (episodeSlug === EPISODE_ONE_SLUG) {
-    return `${EPISODE_ONE_ROOT}/items/${assetId}/thumb.webp`;
-  }
-  return `${ITEM_ROOT}/${assetId}/thumb.webp`;
+export function getItemThumbnail(assetId: string): string {
+  const thumbnail = STORY_ART_MANIFEST.items[assetId]?.thumbnail;
+  return thumbnail
+    ? resolveStoryAssetUrl(thumbnail)
+    : `${STORY_ART_MANIFEST.roots.items}/${assetId}/thumb.webp`;
 }
 
 export function getEpisodeBackground(slug: string): string {

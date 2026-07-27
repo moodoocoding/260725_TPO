@@ -133,6 +133,25 @@ export function getItemsForEpisode(
   });
 }
 
+export function getItemsForEpisodeSlot(
+  episodeOrSlug: StoryEpisode | string,
+  slot: Slot,
+): ClothingItem[] {
+  const episode =
+    typeof episodeOrSlug === "string"
+      ? getEpisode(episodeOrSlug)
+      : episodeOrSlug;
+
+  if (!episode) return [];
+
+  const items = getItemsForEpisode(episode).filter((item) => item.slot === slot);
+  if (items.length < 2) return items;
+
+  const slotIndex = STORY_SLOTS.indexOf(slot);
+  const rotation = (episode.order + slotIndex * 2 + 1) % items.length;
+  return [...items.slice(rotation), ...items.slice(0, rotation)];
+}
+
 export function getItem(itemId: string): ClothingItem | undefined {
   return itemsById.get(itemId);
 }

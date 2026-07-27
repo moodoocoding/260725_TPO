@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536" data-rig-id="otter-v1.0.0" data-character-id="harin-squirrel" data-species="squirrel" data-layer="ready">
+
+  <g id="face-ready">
+      <path d="M409 320 C436 300 465 302 486 319 M566 319 C587 302 616 300 643 320" fill="none" stroke="#18324a" stroke-width="12" stroke-linecap="round"/>
+    <ellipse cx="450" cy="355" rx="41" ry="50" fill="#fffdf5" stroke="#18324a" stroke-width="8"/><ellipse cx="602" cy="355" rx="41" ry="50" fill="#fffdf5" stroke="#18324a" stroke-width="8"/>
+    <ellipse cx="454" cy="363" rx="25" ry="34" fill="#4f3022"/><ellipse cx="598" cy="363" rx="25" ry="34" fill="#4f3022"/>
+    <circle cx="463" cy="349" r="9" fill="#fff"/><circle cx="607" cy="349" r="9" fill="#fff"/>
+    <path d="M473 458 C503 482 549 482 579 458" fill="none" stroke="#8e4b43" stroke-width="9" stroke-linecap="round"/>
+      <path d="M507 404 Q526 391 545 404 Q542 426 526 433 Q510 426 507 404 Z" fill="#82452f" stroke="#18324a" stroke-width="6"/>
+      <path d="M526 431 V442" stroke="#18324a" stroke-width="5" stroke-linecap="round"/>
+
+    </g>
+</svg>

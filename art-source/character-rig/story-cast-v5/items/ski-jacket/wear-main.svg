@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536" data-rig-id="otter-v1.0.0" data-item-id="ski-jacket" data-slot="top" data-layer="main">
+  <defs><linearGradient id="fabric" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ff7d4d"/>
+    <stop offset=".7" stop-color="#ff7d4d"/>
+    <stop offset="1" stop-color="#b94322"/>
+  </linearGradient></defs>
+  <path d="M437 594 C425 522 468 494 526 494 C584 494 627 522 615 594 L583 612 C570 571 482 571 469 612 Z" fill="#b94322" stroke="#18324a" stroke-width="8"/>
+    <path d="M405 589 C365 604 337 635 320 676 L278 780 C300 800 326 812 355 815 L410 706 L421 660 Z" fill="url(#fabric)" stroke="#18324a" stroke-width="9"/>
+    <path d="M647 589 C687 604 715 635 732 676 L774 780 C752 800 726 812 697 815 L642 706 L631 660 Z" fill="url(#fabric)" stroke="#18324a" stroke-width="9"/>
+    <path d="M407 586 C446 566 485 558 526 558 C567 558 606 566 645 586 L668 870 C625 902 427 902 384 870 Z" fill="url(#fabric)" stroke="#18324a" stroke-width="9"/>
+    <path d="M463 579 C480 620 572 620 589 579" fill="none" stroke="#b94322" stroke-width="18"/>
+    <path d="M526 650 V868" stroke="#b94322" stroke-width="11"/>
+    <path d="M397 852 C440 865 483 870 526 870 C569 870 612 865 655 852" fill="none" stroke="#b94322" stroke-width="12"/>
+</svg>

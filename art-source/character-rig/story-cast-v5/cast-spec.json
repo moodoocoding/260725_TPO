@@ -1,0 +1,373 @@
+{
+  "artVersion": "v5-v4-rig-requester-cast-1.0.0",
+  "canvas": {
+    "width": 1024,
+    "height": 1536
+  },
+  "rig": {
+    "id": "otter-v1.0.0",
+    "anchors": {
+      "headTop": {
+        "x": 526,
+        "y": 159
+      },
+      "headCenter": {
+        "x": 526,
+        "y": 360
+      },
+      "earLeft": {
+        "x": 318,
+        "y": 299
+      },
+      "earRight": {
+        "x": 736,
+        "y": 299
+      },
+      "neckCenter": {
+        "x": 526,
+        "y": 590
+      },
+      "shoulderLeft": {
+        "x": 401,
+        "y": 602
+      },
+      "shoulderRight": {
+        "x": 650,
+        "y": 602
+      },
+      "elbowLeft": {
+        "x": 309,
+        "y": 744
+      },
+      "elbowRight": {
+        "x": 742,
+        "y": 744
+      },
+      "wristLeft": {
+        "x": 274,
+        "y": 849
+      },
+      "wristRight": {
+        "x": 779,
+        "y": 849
+      },
+      "handLeft": {
+        "x": 267,
+        "y": 883
+      },
+      "handRight": {
+        "x": 788,
+        "y": 883
+      },
+      "waistCenter": {
+        "x": 526,
+        "y": 862
+      },
+      "hipLeft": {
+        "x": 443,
+        "y": 1002
+      },
+      "hipRight": {
+        "x": 610,
+        "y": 1002
+      },
+      "kneeLeft": {
+        "x": 409,
+        "y": 1093
+      },
+      "kneeRight": {
+        "x": 643,
+        "y": 1093
+      },
+      "ankleLeft": {
+        "x": 410,
+        "y": 1202
+      },
+      "ankleRight": {
+        "x": 648,
+        "y": 1202
+      },
+      "footLeft": {
+        "x": 389,
+        "y": 1242
+      },
+      "footRight": {
+        "x": 671,
+        "y": 1242
+      },
+      "groundCenter": {
+        "x": 526,
+        "y": 1278
+      }
+    },
+    "safeAreas": {
+      "character": {
+        "left": 208,
+        "top": 96,
+        "right": 828,
+        "bottom": 1278
+      },
+      "face": {
+        "left": 345,
+        "top": 270,
+        "right": 707,
+        "bottom": 510
+      },
+      "wear": {
+        "left": 100,
+        "top": 48,
+        "right": 940,
+        "bottom": 1312
+      }
+    },
+    "baseGroundY": 1278,
+    "shoeGroundY": 1308,
+    "planeZ": {
+      "wearBack": 10,
+      "body": 20,
+      "bottom": 30,
+      "shoes": 40,
+      "top": 50,
+      "accessory": 60,
+      "wearFront": 70,
+      "face": 80
+    },
+    "moodAliases": {
+      "neutral": "ready",
+      "happy": "success",
+      "worried": "retry"
+    }
+  },
+  "cast": [
+    {
+      "episodeSlug": "school-pe-rush",
+      "episodeOrder": 2,
+      "name": "민준",
+      "id": "minjun-puppy",
+      "species": "puppy",
+      "fur": "#c98c58",
+      "shade": "#8d5738",
+      "patch": "#f8dbb2",
+      "accent": "#3f79b8",
+      "iris": "#50301f"
+    },
+    {
+      "episodeSlug": "bedtime-ready",
+      "episodeOrder": 3,
+      "name": "소미",
+      "id": "somi-hamster",
+      "species": "hamster",
+      "fur": "#d7a065",
+      "shade": "#9a6241",
+      "patch": "#f8dfbd",
+      "accent": "#a56ca8",
+      "iris": "#4c2e22"
+    },
+    {
+      "episodeSlug": "friend-birthday-party",
+      "episodeOrder": 4,
+      "name": "지우",
+      "id": "jiwoo-quokka",
+      "species": "quokka",
+      "fur": "#b98255",
+      "shade": "#754b34",
+      "patch": "#efd0a8",
+      "accent": "#e65d7a",
+      "iris": "#493026"
+    },
+    {
+      "episodeSlug": "summer-waterpark",
+      "episodeOrder": 6,
+      "name": "서준",
+      "id": "seojun-penguin",
+      "species": "penguin",
+      "fur": "#34485c",
+      "shade": "#1f2f40",
+      "patch": "#f2f5f4",
+      "accent": "#2e9fc3",
+      "iris": "#26384a"
+    },
+    {
+      "episodeSlug": "winter-ski-class",
+      "episodeOrder": 7,
+      "name": "예린",
+      "id": "yerin-polar-bear",
+      "species": "polar-bear",
+      "fur": "#f2f4ef",
+      "shade": "#b8c7cf",
+      "patch": "#fffdf5",
+      "accent": "#7c74c9",
+      "iris": "#435360"
+    },
+    {
+      "episodeSlug": "wedding-flower-child",
+      "episodeOrder": 8,
+      "name": "다온",
+      "id": "daon-red-panda",
+      "species": "red-panda",
+      "fur": "#ce6d3c",
+      "shade": "#673c31",
+      "patch": "#fff0d4",
+      "accent": "#d7879f",
+      "iris": "#52362a"
+    },
+    {
+      "episodeSlug": "family-funeral",
+      "episodeOrder": 9,
+      "name": "은호",
+      "id": "eunho-silver-fox",
+      "species": "silver-fox",
+      "fur": "#9aa6b1",
+      "shade": "#46525f",
+      "patch": "#edf1f2",
+      "accent": "#647083",
+      "iris": "#29343e"
+    },
+    {
+      "episodeSlug": "lunar-new-year-visit",
+      "episodeOrder": 10,
+      "name": "하린",
+      "id": "harin-squirrel",
+      "species": "squirrel",
+      "fur": "#c87745",
+      "shade": "#82452f",
+      "patch": "#f5d7aa",
+      "accent": "#d64c4c",
+      "iris": "#4f3022"
+    },
+    {
+      "episodeSlug": "science-lab-experiment",
+      "episodeOrder": 11,
+      "name": "도윤",
+      "id": "doyoon-badger",
+      "species": "badger",
+      "fur": "#6e7780",
+      "shade": "#38414a",
+      "patch": "#e7e4dc",
+      "accent": "#4f94a3",
+      "iris": "#25303a"
+    },
+    {
+      "episodeSlug": "family-cooking",
+      "episodeOrder": 12,
+      "name": "채원",
+      "id": "chaewon-calico-cat",
+      "species": "calico-cat",
+      "fur": "#f0dfc4",
+      "shade": "#d1793e",
+      "patch": "#fff8e9",
+      "accent": "#d8794f",
+      "iris": "#3d2a20"
+    },
+    {
+      "episodeSlug": "zombie-city-escape",
+      "episodeOrder": 13,
+      "name": "태오",
+      "id": "taeo-ferret",
+      "species": "ferret",
+      "fur": "#c8a27a",
+      "shade": "#625044",
+      "patch": "#f1d8b8",
+      "accent": "#7b9b57",
+      "iris": "#342a25"
+    }
+  ],
+  "preservedHaru": {
+    "id": "haru-otter-v4",
+    "source": "public/art/v4/episodes/rescue-team-trial/character",
+    "copiedForEpisode": 5
+  },
+  "itemIds": [
+    "active-pants",
+    "apron",
+    "aqua-shoes",
+    "beige-shorts",
+    "black-bag",
+    "black-cardigan",
+    "black-skirt",
+    "black-umbrella",
+    "blanket",
+    "bow-tie",
+    "bright-necklace",
+    "canvas-tote",
+    "cape",
+    "chef-hat",
+    "clear-umbrella",
+    "closed-safety-shoes",
+    "cooking-pants",
+    "cotton-pajama-top",
+    "cotton-pants",
+    "cotton-tshirt",
+    "cream-sweater",
+    "dangling-scarf",
+    "dress-shoes",
+    "fitted-cooking-top",
+    "flashlight",
+    "fleece-sweater",
+    "flower-basket",
+    "flower-crown",
+    "formal-flats",
+    "formal-jacket",
+    "formal-pants",
+    "gift-bag",
+    "gloves",
+    "goggles",
+    "hanbok-hat",
+    "hanbok-jeogori",
+    "hanbok-shoes",
+    "hanbok-skirt",
+    "helmet",
+    "hiking-boots",
+    "kitchen-nonslip-shoes",
+    "knee-pads",
+    "lab-coat",
+    "lab-gloves",
+    "lab-pants",
+    "life-jacket",
+    "long-skirt",
+    "loose-bracelet",
+    "loose-sleeve-shirt",
+    "mint-windbreaker",
+    "navy-cardigan",
+    "norigae",
+    "notebook",
+    "oven-mitt",
+    "pajama-pants",
+    "party-chinos",
+    "party-hat",
+    "party-shirt",
+    "party-sneakers",
+    "protective-cargo-pants",
+    "protective-jacket",
+    "rain-boots",
+    "reflective-band",
+    "running-shoes",
+    "safety-goggles",
+    "sandals",
+    "scarf",
+    "school-backpack",
+    "school-cardigan",
+    "school-track-jacket",
+    "school-track-pants",
+    "simple-ribbon",
+    "ski-boots",
+    "ski-goggles",
+    "ski-helmet",
+    "ski-jacket",
+    "ski-pants",
+    "sky-denim",
+    "sleep-mask",
+    "sleep-socks",
+    "slippers",
+    "sneakers",
+    "sports-cap",
+    "sports-hoodie",
+    "swim-cap",
+    "swim-rashguard",
+    "swim-shorts",
+    "towel",
+    "white-shirt",
+    "wool-coat",
+    "yellow-raincoat"
+  ]
+}

@@ -12,8 +12,15 @@ import {
   CharacterRenderer,
   ItemThumbnail,
 } from "@/components/character-renderer";
+import { StoryCutscene } from "@/components/story-cutscene";
 import { getEpisodeBackground } from "@/lib/art-manifest";
 import type { ScoreResult } from "@/lib/scoring";
+import {
+  STORY_FINAL_ENDING,
+  STORY_NARRATIVE_TITLE,
+  getChapterNarrative,
+  getEpisodeNarrative,
+} from "@/lib/story-narrative";
 import { getEpisodeLearning } from "@/lib/tpo-learning";
 import {
   SLOT_LABELS,
@@ -22,6 +29,7 @@ import {
   STORY_SLOTS,
   getEpisode,
   getItemsForEpisode,
+  getItemsForEpisodeSlot,
   getNextEpisode,
   type ClothingItem,
   type Slot,
@@ -33,9 +41,12 @@ type Stage =
   | "login"
   | "modes"
   | "story"
+  | "chapterIntro"
+  | "episodeIntro"
   | "messages"
   | "dress"
-  | "result";
+  | "result"
+  | "chapterOutro";
 
 type Selection = Partial<Record<Slot, string>>;
 type EpisodeProgress = {
@@ -44,12 +55,21 @@ type EpisodeProgress = {
   bestScore: number;
 };
 type StoryProgress = {
-  version: 2;
+  version: 3;
   episodes: Record<string, EpisodeProgress>;
+  seenChapterOpenings: string[];
+  seenChapterEndings: string[];
 };
 
-const PROGRESS_KEY = "tpo-story-progress-v2";
-const EMPTY_PROGRESS: StoryProgress = { version: 2, episodes: {} };
+const PROGRESS_KEY = "tpo-story-progress-v3";
+const LEGACY_PROGRESS_KEY = "tpo-story-progress-v2";
+const nowInMilliseconds = () => Date.now();
+const EMPTY_PROGRESS: StoryProgress = {
+  version: 3,
+  episodes: {},
+  seenChapterOpenings: [],
+  seenChapterEndings: [],
+};
 const slots = STORY_SLOTS;
 const firstEpisode = STORY_EPISODES[0];
 const SCORE_LABELS: Array<[keyof ScoreResult["breakdown"], string, number]> = [
@@ -79,8 +99,13 @@ function getConversationLabel(sender: string) {
 function parseProgress(raw: string | null): StoryProgress {
   if (!raw) return EMPTY_PROGRESS;
   try {
-    const parsed = JSON.parse(raw) as Partial<StoryProgress>;
-    if (parsed.version !== 2 || typeof parsed.episodes !== "object") {
+    const parsed = JSON.parse(raw) as Partial<StoryProgress> & {
+      version?: number;
+    };
+    if (
+      ![2, 3].includes(parsed.version ?? 0) ||
+      typeof parsed.episodes !== "object"
+    ) {
       return EMPTY_PROGRESS;
     }
 
@@ -99,7 +124,22 @@ function parseProgress(raw: string | null): StoryProgress {
         completed: bestScore >= 60 && safeStars >= 1,
       };
     }
-    return { version: 2, episodes };
+    const chapterIds = new Set(STORY_CHAPTERS.map((chapter) => chapter.id));
+    const seenChapterOpenings =
+      parsed.version === 3 && Array.isArray(parsed.seenChapterOpenings)
+        ? parsed.seenChapterOpenings.filter((id) => chapterIds.has(id))
+        : [];
+    const seenChapterEndings =
+      parsed.version === 3 && Array.isArray(parsed.seenChapterEndings)
+        ? parsed.seenChapterEndings.filter((id) => chapterIds.has(id))
+        : [];
+
+    return {
+      version: 3,
+      episodes,
+      seenChapterOpenings,
+      seenChapterEndings,
+    };
   } catch {
     return EMPTY_PROGRESS;
   }
@@ -175,6 +215,10 @@ function getChapterStyle(color: string): CSSProperties {
   return { "--chapter-accent": color } as CSSProperties;
 }
 
+function getWearerName(episode: StoryEpisode): string {
+  return episode.slug === "rescue-team-trial" ? "하루" : episode.sender;
+}
+
 export default function Home() {
   const [stage, setStage] = useState<Stage>("welcome");
   const [activeEpisodeSlug, setActiveEpisodeSlug] = useState(firstEpisode.slug);
@@ -190,6 +234,7 @@ export default function Home() {
   const [progressLoaded, setProgressLoaded] = useState(false);
   const [reasonRevealed, setReasonRevealed] = useState(false);
   const [transferChoice, setTransferChoice] = useState<string | null>(null);
+  const [cutsceneIndex, setCutsceneIndex] = useState(0);
   const startedAtRef = useRef(0);
   const deadlineAtRef = useRef(0);
   const submitLockRef = useRef(false);
@@ -221,13 +266,25 @@ export default function Home() {
   const activeProgress = progress.episodes[activeEpisode.slug];
   const nextEpisode = getNextEpisode(activeEpisode);
   const episodeLearning = getEpisodeLearning(activeEpisode.slug);
+  const activeChapter =
+    STORY_CHAPTERS.find(
+      (chapter) => chapter.id === activeEpisode.chapterId,
+    ) ?? STORY_CHAPTERS[0];
+  const chapterNarrative = getChapterNarrative(activeChapter.id);
+  const episodeNarrative = getEpisodeNarrative(activeEpisode.slug);
+  const wearerName = getWearerName(activeEpisode);
   const transferPassed =
     !episodeLearning ||
     transferChoice === episodeLearning.transfer.correctOptionId;
 
   useEffect(() => {
     const syncStoredProgress = window.setTimeout(() => {
-      setProgress(parseProgress(window.localStorage.getItem(PROGRESS_KEY)));
+      setProgress(
+        parseProgress(
+          window.localStorage.getItem(PROGRESS_KEY) ??
+            window.localStorage.getItem(LEGACY_PROGRESS_KEY),
+        ),
+      );
       const oldBest = Number(
         window.localStorage.getItem("tpo-best-score") || 0,
       );
@@ -271,11 +328,16 @@ export default function Home() {
       setTransferChoice(null);
       setActiveSlot("top");
       setTimeLeft(episode.timeLimitSeconds);
+      setCutsceneIndex(0);
       startedAtRef.current = 0;
       deadlineAtRef.current = 0;
-      setStage("messages");
+      setStage(
+        progress.seenChapterOpenings.includes(episode.chapterId)
+          ? "episodeIntro"
+          : "chapterIntro",
+      );
     },
-    [isEpisodeUnlocked],
+    [isEpisodeUnlocked, progress.seenChapterOpenings],
   );
 
   const beginDressing = () => {
@@ -286,7 +348,18 @@ export default function Home() {
     setTransferChoice(null);
     setActiveSlot("top");
     setTimeLeft(activeEpisode.timeLimitSeconds);
-    startedAtRef.current = Date.now();
+    startedAtRef.current = 0;
+    deadlineAtRef.current = 0;
+    setStage("dress");
+  };
+
+  const retryDressing = () => {
+    setResult(null);
+    setSubmitError("");
+    setReasonRevealed(false);
+    setTransferChoice(null);
+    setTimeLeft(activeEpisode.timeLimitSeconds);
+    startedAtRef.current = nowInMilliseconds();
     deadlineAtRef.current =
       startedAtRef.current + activeEpisode.timeLimitSeconds * 1000;
     setStage("dress");
@@ -311,7 +384,7 @@ export default function Home() {
       setSubmitError("");
 
       const measuredElapsed = startedAtRef.current
-        ? Math.round((Date.now() - startedAtRef.current) / 1000)
+        ? Math.round((nowInMilliseconds() - startedAtRef.current) / 1000)
         : activeEpisode.timeLimitSeconds - timeLeft;
       const elapsedSeconds = timedOut
         ? activeEpisode.timeLimitSeconds
@@ -346,7 +419,8 @@ export default function Home() {
           const bestEpisodeScore = Math.max(previous.bestScore, scored.total);
           const bestStars = Math.max(previous.stars, scored.stars);
           return {
-            version: 2,
+            ...current,
+            version: 3,
             episodes: {
               ...current.episodes,
               [activeEpisode.slug]: {
@@ -382,9 +456,10 @@ export default function Home() {
   useEffect(() => {
     if (stage !== "dress") return;
     const updateRemainingTime = () => {
+      if (!deadlineAtRef.current) return;
       const remaining = Math.max(
         0,
-        Math.ceil((deadlineAtRef.current - Date.now()) / 1000),
+        Math.ceil((deadlineAtRef.current - nowInMilliseconds()) / 1000),
       );
       setTimeLeft(remaining);
     };
@@ -396,6 +471,11 @@ export default function Home() {
   }, [stage]);
 
   const selectItem = (item: ClothingItem) => {
+    if (!startedAtRef.current) {
+      startedAtRef.current = nowInMilliseconds();
+      deadlineAtRef.current =
+        startedAtRef.current + activeEpisode.timeLimitSeconds * 1000;
+    }
     setSelection((current) => ({ ...current, [item.slot]: item.id }));
   };
 
@@ -404,6 +484,73 @@ export default function Home() {
     setLoginNotice("");
     setSubmitError("");
   };
+
+  const rememberChapterOpening = () => {
+    setProgress((current) => ({
+      ...current,
+      seenChapterOpenings: current.seenChapterOpenings.includes(
+        activeChapter.id,
+      )
+        ? current.seenChapterOpenings
+        : [...current.seenChapterOpenings, activeChapter.id],
+    }));
+  };
+
+  const completeChapterIntro = () => {
+    rememberChapterOpening();
+    setCutsceneIndex(0);
+    setStage("episodeIntro");
+  };
+
+  const completeEpisodeIntro = () => {
+    setCutsceneIndex(0);
+    setStage("messages");
+  };
+
+  const startChapterOutro = () => {
+    setCutsceneIndex(0);
+    setStage("chapterOutro");
+  };
+
+  const completeChapterOutro = () => {
+    setProgress((current) => ({
+      ...current,
+      seenChapterEndings: current.seenChapterEndings.includes(activeChapter.id)
+        ? current.seenChapterEndings
+        : [...current.seenChapterEndings, activeChapter.id],
+    }));
+    setCutsceneIndex(0);
+    if (nextEpisode) {
+      openEpisode(nextEpisode);
+    } else {
+      setStage("story");
+    }
+  };
+
+  const replayChapterOpening = (chapterId: string) => {
+    const chapter = STORY_CHAPTERS.find((entry) => entry.id === chapterId);
+    const episode = chapter
+      ? getEpisode(chapter.episodeSlugs[0])
+      : undefined;
+    if (!episode || !isEpisodeUnlocked(episode)) return;
+    setActiveEpisodeSlug(episode.slug);
+    setSelection({});
+    setResult(null);
+    setSubmitError("");
+    setReasonRevealed(false);
+    setTransferChoice(null);
+    setCutsceneIndex(0);
+    setStage("chapterIntro");
+  };
+
+  const chapterOutroBeats = chapterNarrative
+    ? activeChapter.id === "safety-call"
+      ? [
+          ...STORY_FINAL_ENDING.ending,
+          ...STORY_FINAL_ENDING.nextSeasonHook.slice(-1),
+        ]
+      : [...chapterNarrative.ending, ...chapterNarrative.nextHook]
+    : [];
 
   if (stage === "welcome") {
     return (
@@ -422,7 +569,7 @@ export default function Home() {
             딱 맞는 옷은?
           </h1>
           <p className="welcome-lead">
-            때·장소·상황을 읽고, 13개의 임무에서 하루의 코디를 완성해 주세요.
+            때·장소·상황을 읽고, 13개 임무의 동물 친구들에게 꼭 맞는 코디를 완성해 주세요.
           </p>
           <button
             className="primary-button welcome-button"
@@ -442,6 +589,7 @@ export default function Home() {
             mood="success"
             priority
             episodeSlug={firstEpisode.slug}
+            characterName={getWearerName(firstEpisode)}
           />
           <div className="hero-tags" aria-hidden="true">
             <span>TIME</span>
@@ -535,7 +683,7 @@ export default function Home() {
               <div>
                 <span className="mode-kicker">혼자 차근차근</span>
                 <h2>스토리 모드</h2>
-                <p>문자를 읽고 하루의 옷차림을 도와주세요.</p>
+                <p>문자를 읽고 동물 친구들의 옷차림을 도와주세요.</p>
               </div>
               <span className="mode-arrow" aria-hidden="true">→</span>
             </button>
@@ -550,6 +698,96 @@ export default function Home() {
             </button>
           </div>
         </section>
+      </main>
+    );
+  }
+
+  if (
+    stage === "chapterIntro" ||
+    stage === "episodeIntro" ||
+    stage === "chapterOutro"
+  ) {
+    const isChapterIntro = stage === "chapterIntro";
+    const isEpisodeIntro = stage === "episodeIntro";
+    const beats = isChapterIntro
+      ? chapterNarrative?.opening ?? []
+      : isEpisodeIntro
+        ? episodeNarrative?.intro ?? []
+        : chapterOutroBeats;
+    const isLastBeat = cutsceneIndex >= beats.length - 1;
+    const completeCutscene = isChapterIntro
+      ? completeChapterIntro
+      : isEpisodeIntro
+        ? completeEpisodeIntro
+        : completeChapterOutro;
+    const cutsceneTitle = isChapterIntro
+      ? activeChapter.title
+      : isEpisodeIntro
+        ? activeEpisode.title
+        : activeChapter.id === "safety-call"
+          ? STORY_FINAL_ENDING.title
+          : `${chapterNarrative?.badgeName ?? "배지"} 획득`;
+    const nextLabel = isChapterIntro
+      ? "이 임무 만나기"
+      : isEpisodeIntro
+        ? "문자 확인하기"
+        : nextEpisode
+          ? "다음 챕터 열기"
+          : "완성한 이야기 보기";
+    const isNextChapterHook =
+      stage === "chapterOutro" &&
+      Boolean(nextEpisode) &&
+      cutsceneIndex >= (chapterNarrative?.ending.length ?? 0);
+    const cutsceneEpisode =
+      isNextChapterHook && nextEpisode ? nextEpisode : activeEpisode;
+    const cutsceneWearerName = getWearerName(cutsceneEpisode);
+
+    return (
+      <main className="game-shell cutscene-screen">
+        <AppHeader
+          onHome={() => setStage("story")}
+          bestScore={bestScore}
+          homeLabel="스토리 맵으로 이동"
+        />
+        <StoryCutscene
+          eyebrow={
+            isChapterIntro
+              ? STORY_NARRATIVE_TITLE
+              : isEpisodeIntro
+                ? `EPISODE ${String(activeEpisode.order).padStart(2, "0")}`
+                : "CHAPTER COMPLETE"
+          }
+          title={cutsceneTitle}
+          beats={beats}
+          activeIndex={cutsceneIndex}
+          backgroundImage={getEpisodeBackground(cutsceneEpisode.slug)}
+          accent={activeChapter.color}
+          episodeSlug={cutsceneEpisode.slug}
+          characterName={cutsceneWearerName}
+          badgeName={
+            isChapterIntro || stage === "chapterOutro"
+              ? chapterNarrative?.badgeName
+              : undefined
+          }
+          nextLabel={nextLabel}
+          onBack={() => {
+            if (cutsceneIndex > 0) {
+              setCutsceneIndex((current) => current - 1);
+            } else {
+              setStage(stage === "chapterOutro" ? "result" : "story");
+            }
+          }}
+          onNext={() => {
+            if (isLastBeat) {
+              completeCutscene();
+            } else {
+              setCutsceneIndex((current) => current + 1);
+            }
+          }}
+          onSkip={
+            stage === "chapterOutro" ? undefined : completeCutscene
+          }
+        />
       </main>
     );
   }
@@ -593,7 +831,19 @@ export default function Home() {
                       <small>CHAPTER</small>
                       <h2 id={`chapter-${chapter.id}`}>{chapter.title}</h2>
                     </div>
-                    <p>{chapter.subtitle}</p>
+                    <div className="chapter-heading-actions">
+                      <p>{chapter.subtitle}</p>
+                      <button
+                        className="chapter-story-button"
+                        onClick={() => replayChapterOpening(chapter.id)}
+                        disabled={
+                          !chapterEpisodes[0] ||
+                          !isEpisodeUnlocked(chapterEpisodes[0])
+                        }
+                      >
+                        이야기 다시 보기
+                      </button>
+                    </div>
                   </div>
                   <div className="episode-list">
                     {chapterEpisodes.map((episode) => {
@@ -635,6 +885,9 @@ export default function Home() {
                               <span aria-hidden="true">{episode.weatherIcon} </span>
                               {episode.title}
                             </h2>
+                            <span className="episode-character-chip">
+                              {getWearerName(episode)}에게 입혀요
+                            </span>
                             <p>{episode.teaser}</p>
                           </div>
                           {unlocked ? (
@@ -675,7 +928,10 @@ export default function Home() {
           <div className="mission-copy">
             <p className="eyebrow">{activeEpisode.kicker}</p>
             <h1>{activeEpisode.title}</h1>
-            <p>문자에서 T·P·O 단서를 찾아보세요. 아직 시간은 흐르지 않아요.</p>
+            <p>{episodeNarrative?.cause ?? activeEpisode.teaser}</p>
+            <p className="mission-read-note">
+              문자에서 T·P·O 단서를 찾아보세요. 아직 시간은 흐르지 않아요.
+            </p>
             <div className="tpo-clues">
               <div><span>T</span><strong>{activeEpisode.tpo.time}</strong></div>
               <div><span>P</span><strong>{activeEpisode.tpo.place}</strong></div>
@@ -720,7 +976,7 @@ export default function Home() {
             </div>
             <div className="phone-action">
               <button className="primary-button" onClick={beginDressing}>
-                {activeEpisode.timeLimitSeconds}초 옷입히기 시작
+                옷장 열기 · 첫 선택부터 {activeEpisode.timeLimitSeconds}초
                 <span aria-hidden="true">→</span>
               </button>
             </div>
@@ -733,9 +989,7 @@ export default function Home() {
   if (stage === "dress") {
     const percentage =
       (timeLeft / activeEpisode.timeLimitSeconds) * 100;
-    const availableItems = episodeItems.filter(
-      (item) => item.slot === activeSlot,
-    );
+    const availableItems = getItemsForEpisodeSlot(activeEpisode, activeSlot);
 
     return (
       <main className="game-shell dress-screen">
@@ -748,7 +1002,7 @@ export default function Home() {
             ← 도전 끝내기
           </button>
           <div className="mission-title">
-            <small>{activeEpisode.kicker}</small>
+            <small>{wearerName}에게 입히는 중</small>
             <strong>{activeEpisode.title}</strong>
           </div>
           <div className={`timer ${timeLeft <= 10 ? "timer-danger" : ""}`}>
@@ -785,6 +1039,7 @@ export default function Home() {
                 mood="ready"
                 priority
                 episodeSlug={activeEpisode.slug}
+                characterName={wearerName}
               />
               <div className="selected-summary">
                 {slots.map((slot) => {
@@ -805,7 +1060,7 @@ export default function Home() {
             <div className="wardrobe-heading">
               <div>
                 <p className="eyebrow">WARDROBE</p>
-                <h2>옷장을 열어 코디해요</h2>
+                <h2>{wearerName}의 옷장을 열어요</h2>
               </div>
               <button className="text-button" onClick={() => setSelection({})}>
                 모두 벗기
@@ -816,6 +1071,7 @@ export default function Home() {
                 selectedItems={selectedItems}
                 mood="ready"
                 episodeSlug={activeEpisode.slug}
+                characterName={wearerName}
               />
               <div className="mobile-outfit-preview-copy">
                 <span>현재 코디</span>
@@ -863,7 +1119,6 @@ export default function Home() {
                     >
                       <ItemThumbnail
                         item={item}
-                        episodeSlug={activeEpisode.slug}
                       />
                     </span>
                     <strong>{item.name}</strong>
@@ -908,6 +1163,8 @@ export default function Home() {
   }
 
   const passed = Boolean(result && result.total >= 60 && result.stars >= 1);
+  const isChapterFinale =
+    activeChapter.episodeSlugs.at(-1) === activeEpisode.slug;
   return (
     <main className="game-shell result-screen">
       <AppHeader onHome={goToModes} bestScore={bestScore} />
@@ -922,13 +1179,14 @@ export default function Home() {
             </h1>
             <p>
               {passed
-                ? "상황의 단서를 잘 읽었어요. 다음 임무가 열렸는지 확인해 봐요."
-                : "빠뜨린 단서를 확인하고 다시 코디하면 더 좋아질 거예요."}
+                ? "선택한 옷이 친구의 하루를 어떻게 바꿨는지 확인해 봐요."
+                : episodeNarrative?.retryLine ??
+                  "빠뜨린 단서를 확인하고 다시 코디하면 더 좋아질 거예요."}
             </p>
             {!passed && (
               <button
                 className="secondary-button result-quick-retry"
-                onClick={beginDressing}
+                onClick={retryDressing}
               >
                 다시 코디하기 <span aria-hidden="true">↻</span>
               </button>
@@ -939,6 +1197,7 @@ export default function Home() {
                 mood={passed ? "success" : "retry"}
                 priority
                 episodeSlug={activeEpisode.slug}
+                characterName={wearerName}
               />
             </div>
             <div className="score-orbit">
@@ -1010,6 +1269,38 @@ export default function Home() {
               <span>P</span><strong>{activeEpisode.tpo.place}</strong>
               <span>O</span><strong>{activeEpisode.tpo.occasion}</strong>
             </div>
+            {episodeNarrative && (
+              <section
+                className={`story-aftermath ${
+                  passed ? "" : "story-aftermath-retry"
+                }`}
+                aria-labelledby="story-aftermath-title"
+              >
+                <span className="feedback-index">
+                  {passed ? "AFTER STORY" : "STILL AT HQ"}
+                </span>
+                <h3 id="story-aftermath-title">
+                  {passed
+                    ? `${wearerName}의 임무 후 이야기`
+                    : "아직 출발 전이에요"}
+                </h3>
+                {passed ? (
+                  <>
+                    {episodeNarrative.successAftermath.map((beat) => (
+                      <p key={beat.id}>{beat.text}</p>
+                    ))}
+                    {!isChapterFinale &&
+                      episodeNarrative.nextHook.map((beat) => (
+                        <p className="story-next-hook" key={beat.id}>
+                          다음 이야기 · {beat.text}
+                        </p>
+                      ))}
+                  </>
+                ) : (
+                  <p>{episodeNarrative.retryLine}</p>
+                )}
+              </section>
+            )}
             {episodeLearning && (
               <section className="learning-check" aria-labelledby="learning-title">
                 <div className="learning-reason">
@@ -1076,7 +1367,7 @@ export default function Home() {
             )}
             <div className="result-actions">
               {passed && (
-                <button className="secondary-button" onClick={beginDressing}>
+                <button className="secondary-button" onClick={retryDressing}>
                   다시 코디하기
                 </button>
               )}
@@ -1086,7 +1377,20 @@ export default function Home() {
               >
                 스토리 맵
               </button>
-              {passed && nextEpisode ? (
+              {passed && isChapterFinale ? (
+                <button
+                  className="primary-button"
+                  onClick={startChapterOutro}
+                  disabled={!transferPassed}
+                >
+                  {transferPassed
+                    ? nextEpisode
+                      ? "챕터 마무리 보기"
+                      : "최종 엔딩 보기"
+                    : "새 상황을 먼저 풀어 주세요"}
+                  <span aria-hidden="true">→</span>
+                </button>
+              ) : passed && nextEpisode ? (
                 <button
                   className="primary-button"
                   onClick={() => openEpisode(nextEpisode)}
@@ -1100,7 +1404,7 @@ export default function Home() {
                   className="primary-button"
                   onClick={() => setStage("story")}
                 >
-                  {passed ? "모든 임무 완료!" : "맵에서 다시 고르기"}
+                  {passed ? "이야기 완료" : "맵에서 다시 고르기"}
                   <span aria-hidden="true">→</span>
                 </button>
               )}

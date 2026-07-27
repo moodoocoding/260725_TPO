@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536" data-rig-id="otter-v1.0.0" data-character-id="eunho-silver-fox" data-species="silver-fox" data-layer="success">
+
+  <g id="face-success">
+      <path d="M405 324 C438 299 468 305 488 321 M564 321 C584 305 614 299 647 324" fill="none" stroke="#18324a" stroke-width="12" stroke-linecap="round"/>
+    <path d="M412 360 C434 334 465 334 488 360 M564 360 C587 334 618 334 640 360" fill="none" stroke="#18324a" stroke-width="12" stroke-linecap="round"/>
+    <path d="M460 449 C492 505 560 505 592 449 C553 468 499 468 460 449 Z" fill="#ef7e73" stroke="#8e4b43" stroke-width="9"/>
+      <path d="M507 404 Q526 391 545 404 Q542 426 526 433 Q510 426 507 404 Z" fill="#46525f" stroke="#18324a" stroke-width="6"/>
+      <path d="M526 431 V442" stroke="#18324a" stroke-width="5" stroke-linecap="round"/>
+      <path d="M456 410 L374 394 M456 431 L371 438 M596 410 L678 394 M596 431 L681 438" fill="none" stroke="#46525f" stroke-width="5" stroke-linecap="round"/>
+    </g>
+</svg>

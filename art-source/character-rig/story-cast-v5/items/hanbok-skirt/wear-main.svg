@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536" data-rig-id="otter-v1.0.0" data-item-id="hanbok-skirt" data-slot="bottom" data-layer="main">
+  <defs><linearGradient id="fabric" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#77b9c4"/>
+    <stop offset=".7" stop-color="#77b9c4"/>
+    <stop offset="1" stop-color="#397985"/>
+  </linearGradient></defs>
+  <path d="M382 850 C428 844 477 842 526 842 C575 842 624 844 670 850 L718 1192 C625 1222 427 1222 334 1192 Z" fill="url(#fabric)" stroke="#18324a" stroke-width="9"/>
+      <path d="M380 850 C429 864 478 869 526 869 C574 869 623 864 672 850" fill="none" stroke="#397985" stroke-width="15"/>
+
+</svg>

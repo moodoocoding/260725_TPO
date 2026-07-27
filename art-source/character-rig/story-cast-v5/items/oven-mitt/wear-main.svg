@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536" data-rig-id="otter-v1.0.0" data-item-id="oven-mitt" data-slot="accessory" data-layer="main">
+  <defs><linearGradient id="fabric" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ef765f"/>
+    <stop offset=".7" stop-color="#ef765f"/>
+    <stop offset="1" stop-color="#a63628"/>
+  </linearGradient></defs>
+  <path d="M249 804 C228 768 251 728 287 742 C302 704 343 720 347 757 L356 867 C339 923 277 929 250 884 Z" fill="url(#fabric)" stroke="#18324a" stroke-width="8"/>
+      <path d="M803 804 C824 768 801 728 765 742 C750 704 709 720 705 757 L696 867 C713 923 775 929 802 884 Z" fill="url(#fabric)" stroke="#18324a" stroke-width="8"/>
+</svg>

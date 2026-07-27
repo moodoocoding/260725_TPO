@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536" data-rig-id="otter-v1.0.0" data-item-id="canvas-tote" data-slot="accessory" data-layer="back">
+  <defs><linearGradient id="fabric" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#e5cda7"/>
+    <stop offset=".7" stop-color="#e5cda7"/>
+    <stop offset="1" stop-color="#9e7c4e"/>
+  </linearGradient></defs>
+  <path d="M378 584 Q526 502 674 584 L704 1030 Q526 1102 348 1030 Z" fill="url(#fabric)" stroke="#18324a" stroke-width="10"/>
+</svg>

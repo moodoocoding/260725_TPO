@@ -16,7 +16,7 @@
     "art:validate": "node scripts/validate-art-assets.mjs",
     "test:art": "node --test tests/art-manifest.test.mjs",
     "story:generate": "node scripts/generate-story-catalog.mjs",
-    "story:validate": "node --test tests/story-catalog.test.mjs",
+    "story:validate": "node --test tests/story-catalog.test.mjs tests/story-narrative.test.mjs tests/tpo-learning.test.mjs",
     "episode1-art:prepare": "node scripts/prepare-episode1-assets.mjs",
     "episode1-otter:prepare": "node scripts/prepare-episode1-otter-assets.mjs",
     "episode1-rig:validate": "node scripts/validate-episode1-rig.mjs && node scripts/validate-episode1-production-rig.mjs",
@@ -27,7 +27,11 @@
     "episode1-art:validate": "node scripts/validate-episode1-assets.mjs",
     "story-art:generate": "node scripts/generate-story-assets.mjs",
     "story-art:validate": "node scripts/validate-story-assets.mjs && node scripts/validate-episode1-assets.mjs",
-    "test": "npm run art:validate && npm run test:art && npm run story:validate && npm run story-art:validate && npm run episode1-rig:validate && npm run build && npm run build:sites",
+    "story-characters:generate": "node scripts/generate-story-characters.mjs",
+    "story-characters:qa": "node scripts/render-story-character-outfit-qa.mjs",
+    "story-characters:validate": "node scripts/validate-story-characters.mjs",
+    "story-characters:production": "npm run story-characters:generate && npm run story-characters:qa && npm run story-characters:validate",
+    "test": "npm run art:validate && npm run test:art && npm run story:validate && npm run story-art:validate && npm run episode1-rig:validate && npm run story-characters:validate && npm run build && npm run build:sites",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },
   "dependencies": {

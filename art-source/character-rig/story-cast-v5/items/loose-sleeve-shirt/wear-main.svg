@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536" data-rig-id="otter-v1.0.0" data-item-id="loose-sleeve-shirt" data-slot="top" data-layer="main">
+  <defs><linearGradient id="fabric" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#f0b7da"/>
+    <stop offset=".7" stop-color="#f0b7da"/>
+    <stop offset="1" stop-color="#9f5d86"/>
+  </linearGradient></defs>
+
+    <path d="M405 589 C365 604 337 635 320 676 L278 780 C300 800 326 812 355 815 L410 706 L421 660 Z" fill="url(#fabric)" stroke="#18324a" stroke-width="9"/>
+    <path d="M647 589 C687 604 715 635 732 676 L774 780 C752 800 726 812 697 815 L642 706 L631 660 Z" fill="url(#fabric)" stroke="#18324a" stroke-width="9"/>
+    <path d="M407 586 C446 566 485 558 526 558 C567 558 606 566 645 586 L668 892 C625 924 427 924 384 892 Z" fill="url(#fabric)" stroke="#18324a" stroke-width="9"/>
+    <path d="M463 579 L526 650 L589 579 L566 566 C547 592 505 592 486 566 Z" fill="#fffaf0" stroke="#18324a" stroke-width="7"/>
+    <path d="M526 650 V890" stroke="#9f5d86" stroke-width="11"/>
+    <path d="M397 874 C440 887 483 892 526 892 C569 892 612 887 655 874" fill="none" stroke="#9f5d86" stroke-width="12"/>
+</svg>

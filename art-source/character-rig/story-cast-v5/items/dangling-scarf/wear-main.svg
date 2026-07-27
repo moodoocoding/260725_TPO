@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536" data-rig-id="otter-v1.0.0" data-item-id="dangling-scarf" data-slot="accessory" data-layer="main">
+  <defs><linearGradient id="fabric" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#dd6f97"/>
+    <stop offset=".7" stop-color="#dd6f97"/>
+    <stop offset="1" stop-color="#8f3658"/>
+  </linearGradient></defs>
+  <path d="M450 560 Q526 615 602 560 L582 694 Q526 730 470 694 Z" fill="url(#fabric)" stroke="#18324a" stroke-width="8"/>
+      <circle cx="526" cy="700" r="29" fill="#8f3658" stroke="#18324a" stroke-width="7"/>
+</svg>

@@ -1,0 +1,2202 @@
+{
+  "artVersion": "v5-v4-rig-requester-cast-1.0.0",
+  "result": "passed",
+  "episodeMappings": 13,
+  "layeredCharacters": 11,
+  "preservedHaruMoodFiles": 3,
+  "preservedHaruHashes": {
+    "ready": {
+      "episode1V4": "e6ee20e170312df1eb0724a938ffc6070f8bc1a81e91ad80d80e0ae9036523bb",
+      "episode5V5": "e6ee20e170312df1eb0724a938ffc6070f8bc1a81e91ad80d80e0ae9036523bb"
+    },
+    "success": {
+      "episode1V4": "e6ee20e170312df1eb0724a938ffc6070f8bc1a81e91ad80d80e0ae9036523bb",
+      "episode5V5": "e6ee20e170312df1eb0724a938ffc6070f8bc1a81e91ad80d80e0ae9036523bb"
+    },
+    "retry": {
+      "episode1V4": "e6ee20e170312df1eb0724a938ffc6070f8bc1a81e91ad80d80e0ae9036523bb",
+      "episode5V5": "e6ee20e170312df1eb0724a938ffc6070f8bc1a81e91ad80d80e0ae9036523bb"
+    }
+  },
+  "itemCount": 91,
+  "wearLayerCount": 98,
+  "slotCounts": {
+    "top": 22,
+    "bottom": 16,
+    "shoes": 15,
+    "accessory": 38
+  },
+  "connectionQa": {
+    "waistAnchor": {
+      "x": 526,
+      "y": 862
+    },
+    "waistAnchorChecks": 38,
+    "waistAnchorErrors": 0,
+    "ankleAnchors": {
+      "left": {
+        "x": 410,
+        "y": 1202
+      },
+      "right": {
+        "x": 648,
+        "y": 1202
+      }
+    },
+    "ankleAnchorChecks": 30,
+    "ankleAnchorErrors": 0,
+    "expectedShoeGroundY": 1308,
+    "shoeGroundTolerance": 4,
+    "shoeGroundErrors": 0
+  },
+  "sourceSvgCount": 142,
+  "runtimeWebpCount": 236,
+  "anchorCount": 23,
+  "commonBodyAlphaHash": "774df23179c2eda6977011e0b69fc40f9710ea531b32b63da7c1f281ed315278",
+  "characterResults": [
+    {
+      "id": "minjun-puppy",
+      "baseBytes": 41710,
+      "bounds": {
+        "left": 245,
+        "top": 113,
+        "right": 806,
+        "bottom": 1277,
+        "count": 384983
+      },
+      "bodyHash": "774df23179c2eda6977011e0b69fc40f9710ea531b32b63da7c1f281ed315278",
+      "faces": [
+        {
+          "mood": "ready",
+          "bytes": 6158,
+          "bounds": {
+            "left": 403,
+            "top": 299,
+            "right": 648,
+            "bottom": 480,
+            "count": 19184
+          }
+        },
+        {
+          "mood": "success",
+          "bytes": 5446,
+          "bounds": {
+            "left": 399,
+            "top": 301,
+            "right": 652,
+            "bottom": 495,
+            "count": 10849
+          }
+        },
+        {
+          "mood": "retry",
+          "bytes": 6168,
+          "bounds": {
+            "left": 399,
+            "top": 300,
+            "right": 653,
+            "bottom": 475,
+            "count": 18128
+          }
+        }
+      ]
+    },
+    {
+      "id": "somi-hamster",
+      "baseBytes": 41198,
+      "bounds": {
+        "left": 245,
+        "top": 113,
+        "right": 806,
+        "bottom": 1277,
+        "count": 375031
+      },
+      "bodyHash": "774df23179c2eda6977011e0b69fc40f9710ea531b32b63da7c1f281ed315278",
+      "faces": [
+        {
+          "mood": "ready",
+          "bytes": 6798,
+          "bounds": {
+            "left": 386,
+            "top": 299,
+            "right": 665,
+            "bottom": 480,
+            "count": 21536
+          }
+        },
+        {
+          "mood": "success",
+          "bytes": 6100,
+          "bounds": {
+            "left": 386,
+            "top": 301,
+            "right": 665,
+            "bottom": 495,
+            "count": 13201
+          }
+        },
+        {
+          "mood": "retry",
+          "bytes": 6710,
+          "bounds": {
+            "left": 386,
+            "top": 300,
+            "right": 665,
+            "bottom": 475,
+            "count": 20480
+          }
+        }
+      ]
+    },
+    {
+      "id": "jiwoo-quokka",
+      "baseBytes": 40148,
+      "bounds": {
+        "left": 245,
+        "top": 113,
+        "right": 806,
+        "bottom": 1277,
+        "count": 373430
+      },
+      "bodyHash": "774df23179c2eda6977011e0b69fc40f9710ea531b32b63da7c1f281ed315278",
+      "faces": [
+        {
+          "mood": "ready",
+          "bytes": 6082,
+          "bounds": {
+            "left": 403,
+            "top": 299,
+            "right": 648,
+            "bottom": 480,
+            "count": 19184
+          }
+        },
+        {
+          "mood": "success",
+          "bytes": 5416,
+          "bounds": {
+            "left": 399,
+            "top": 301,
+            "right": 652,
+            "bottom": 495,
+            "count": 10849
+          }
+        },
+        {
+          "mood": "retry",
+          "bytes": 6112,
+          "bounds": {
+            "left": 399,
+            "top": 300,
+            "right": 653,
+            "bottom": 475,
+            "count": 18128
+          }
+        }
+      ]
+    },
+    {
+      "id": "seojun-penguin",
+      "baseBytes": 40130,
+      "bounds": {
+        "left": 245,
+        "top": 111,
+        "right": 806,
+        "bottom": 1277,
+        "count": 364397
+      },
+      "bodyHash": "774df23179c2eda6977011e0b69fc40f9710ea531b32b63da7c1f281ed315278",
+      "faces": [
+        {
+          "mood": "ready",
+          "bytes": 5934,
+          "bounds": {
+            "left": 403,
+            "top": 299,
+            "right": 648,
+            "bottom": 480,
+            "count": 19184
+          }
+        },
+        {
+          "mood": "success",
+          "bytes": 5252,
+          "bounds": {
+            "left": 399,
+            "top": 301,
+            "right": 652,
+            "bottom": 495,
+            "count": 10849
+          }
+        },
+        {
+          "mood": "retry",
+          "bytes": 5928,
+          "bounds": {
+            "left": 399,
+            "top": 300,
+            "right": 653,
+            "bottom": 475,
+            "count": 18128
+          }
+        }
+      ]
+    },
+    {
+      "id": "yerin-polar-bear",
+      "baseBytes": 40484,
+      "bounds": {
+        "left": 245,
+        "top": 113,
+        "right": 806,
+        "bottom": 1277,
+        "count": 377610
+      },
+      "bodyHash": "774df23179c2eda6977011e0b69fc40f9710ea531b32b63da7c1f281ed315278",
+      "faces": [
+        {
+          "mood": "ready",
+          "bytes": 6040,
+          "bounds": {
+            "left": 403,
+            "top": 299,
+            "right": 648,
+            "bottom": 480,
+            "count": 19184
+          }
+        },
+        {
+          "mood": "success",
+          "bytes": 5422,
+          "bounds": {
+            "left": 399,
+            "top": 301,
+            "right": 652,
+            "bottom": 495,
+            "count": 10849
+          }
+        },
+        {
+          "mood": "retry",
+          "bytes": 6058,
+          "bounds": {
+            "left": 399,
+            "top": 300,
+            "right": 653,
+            "bottom": 475,
+            "count": 18128
+          }
+        }
+      ]
+    },
+    {
+      "id": "daon-red-panda",
+      "baseBytes": 45050,
+      "bounds": {
+        "left": 245,
+        "top": 107,
+        "right": 806,
+        "bottom": 1277,
+        "count": 376003
+      },
+      "bodyHash": "774df23179c2eda6977011e0b69fc40f9710ea531b32b63da7c1f281ed315278",
+      "faces": [
+        {
+          "mood": "ready",
+          "bytes": 7182,
+          "bounds": {
+            "left": 368,
+            "top": 299,
+            "right": 683,
+            "bottom": 480,
+            "count": 21118
+          }
+        },
+        {
+          "mood": "success",
+          "bytes": 6232,
+          "bounds": {
+            "left": 368,
+            "top": 301,
+            "right": 683,
+            "bottom": 495,
+            "count": 12979
+          }
+        },
+        {
+          "mood": "retry",
+          "bytes": 7172,
+          "bounds": {
+            "left": 368,
+            "top": 300,
+            "right": 683,
+            "bottom": 475,
+            "count": 20008
+          }
+        }
+      ]
+    },
+    {
+      "id": "eunho-silver-fox",
+      "baseBytes": 44062,
+      "bounds": {
+        "left": 245,
+        "top": 107,
+        "right": 806,
+        "bottom": 1277,
+        "count": 376003
+      },
+      "bodyHash": "774df23179c2eda6977011e0b69fc40f9710ea531b32b63da7c1f281ed315278",
+      "faces": [
+        {
+          "mood": "ready",
+          "bytes": 7118,
+          "bounds": {
+            "left": 368,
+            "top": 299,
+            "right": 683,
+            "bottom": 480,
+            "count": 21118
+          }
+        },
+        {
+          "mood": "success",
+          "bytes": 6160,
+          "bounds": {
+            "left": 368,
+            "top": 301,
+            "right": 683,
+            "bottom": 495,
+            "count": 12979
+          }
+        },
+        {
+          "mood": "retry",
+          "bytes": 7088,
+          "bounds": {
+            "left": 368,
+            "top": 300,
+            "right": 683,
+            "bottom": 475,
+            "count": 20008
+          }
+        }
+      ]
+    },
+    {
+      "id": "harin-squirrel",
+      "baseBytes": 40684,
+      "bounds": {
+        "left": 245,
+        "top": 113,
+        "right": 806,
+        "bottom": 1277,
+        "count": 373430
+      },
+      "bodyHash": "774df23179c2eda6977011e0b69fc40f9710ea531b32b63da7c1f281ed315278",
+      "faces": [
+        {
+          "mood": "ready",
+          "bytes": 6220,
+          "bounds": {
+            "left": 403,
+            "top": 299,
+            "right": 648,
+            "bottom": 480,
+            "count": 19184
+          }
+        },
+        {
+          "mood": "success",
+          "bytes": 5420,
+          "bounds": {
+            "left": 399,
+            "top": 301,
+            "right": 652,
+            "bottom": 495,
+            "count": 10849
+          }
+        },
+        {
+          "mood": "retry",
+          "bytes": 6150,
+          "bounds": {
+            "left": 399,
+            "top": 300,
+            "right": 653,
+            "bottom": 475,
+            "count": 18128
+          }
+        }
+      ]
+    },
+    {
+      "id": "doyoon-badger",
+      "baseBytes": 45040,
+      "bounds": {
+        "left": 245,
+        "top": 113,
+        "right": 806,
+        "bottom": 1277,
+        "count": 373531
+      },
+      "bodyHash": "774df23179c2eda6977011e0b69fc40f9710ea531b32b63da7c1f281ed315278",
+      "faces": [
+        {
+          "mood": "ready",
+          "bytes": 5988,
+          "bounds": {
+            "left": 403,
+            "top": 299,
+            "right": 648,
+            "bottom": 480,
+            "count": 19184
+          }
+        },
+        {
+          "mood": "success",
+          "bytes": 5316,
+          "bounds": {
+            "left": 399,
+            "top": 301,
+            "right": 652,
+            "bottom": 495,
+            "count": 10849
+          }
+        },
+        {
+          "mood": "retry",
+          "bytes": 5958,
+          "bounds": {
+            "left": 399,
+            "top": 300,
+            "right": 653,
+            "bottom": 475,
+            "count": 18128
+          }
+        }
+      ]
+    },
+    {
+      "id": "chaewon-calico-cat",
+      "baseBytes": 46952,
+      "bounds": {
+        "left": 245,
+        "top": 107,
+        "right": 806,
+        "bottom": 1277,
+        "count": 376007
+      },
+      "bodyHash": "774df23179c2eda6977011e0b69fc40f9710ea531b32b63da7c1f281ed315278",
+      "faces": [
+        {
+          "mood": "ready",
+          "bytes": 7380,
+          "bounds": {
+            "left": 368,
+            "top": 299,
+            "right": 683,
+            "bottom": 480,
+            "count": 21118
+          }
+        },
+        {
+          "mood": "success",
+          "bytes": 6334,
+          "bounds": {
+            "left": 368,
+            "top": 301,
+            "right": 683,
+            "bottom": 495,
+            "count": 12979
+          }
+        },
+        {
+          "mood": "retry",
+          "bytes": 7382,
+          "bounds": {
+            "left": 368,
+            "top": 300,
+            "right": 683,
+            "bottom": 475,
+            "count": 20008
+          }
+        }
+      ]
+    },
+    {
+      "id": "taeo-ferret",
+      "baseBytes": 44186,
+      "bounds": {
+        "left": 245,
+        "top": 113,
+        "right": 806,
+        "bottom": 1277,
+        "count": 373430
+      },
+      "bodyHash": "774df23179c2eda6977011e0b69fc40f9710ea531b32b63da7c1f281ed315278",
+      "faces": [
+        {
+          "mood": "ready",
+          "bytes": 6034,
+          "bounds": {
+            "left": 403,
+            "top": 299,
+            "right": 648,
+            "bottom": 480,
+            "count": 19184
+          }
+        },
+        {
+          "mood": "success",
+          "bytes": 5396,
+          "bounds": {
+            "left": 399,
+            "top": 301,
+            "right": 652,
+            "bottom": 495,
+            "count": 10849
+          }
+        },
+        {
+          "mood": "retry",
+          "bytes": 6088,
+          "bounds": {
+            "left": 399,
+            "top": 300,
+            "right": 653,
+            "bottom": 475,
+            "count": 18128
+          }
+        }
+      ]
+    }
+  ],
+  "itemResults": [
+    {
+      "id": "active-pants",
+      "slot": "bottom",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 10480,
+          "bounds": {
+            "left": 345,
+            "top": 837,
+            "right": 706,
+            "bottom": 1222,
+            "count": 119306
+          }
+        }
+      ]
+    },
+    {
+      "id": "apron",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 8644,
+          "bounds": {
+            "left": 407,
+            "top": 555,
+            "right": 644,
+            "bottom": 911,
+            "count": 76449
+          }
+        }
+      ]
+    },
+    {
+      "id": "aqua-shoes",
+      "slot": "shoes",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 10260,
+          "bounds": {
+            "left": 303,
+            "top": 1171,
+            "right": 748,
+            "bottom": 1305,
+            "count": 41137
+          }
+        }
+      ]
+    },
+    {
+      "id": "beige-shorts",
+      "slot": "bottom",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 8758,
+          "bounds": {
+            "left": 345,
+            "top": 837,
+            "right": 706,
+            "bottom": 1074,
+            "count": 75264
+          }
+        }
+      ]
+    },
+    {
+      "id": "black-bag",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 6286,
+          "bounds": {
+            "left": 654,
+            "top": 662,
+            "right": 815,
+            "bottom": 1016,
+            "count": 50841
+          }
+        }
+      ]
+    },
+    {
+      "id": "black-cardigan",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 14516,
+          "bounds": {
+            "left": 272,
+            "top": 553,
+            "right": 779,
+            "bottom": 898,
+            "count": 124333
+          }
+        }
+      ]
+    },
+    {
+      "id": "black-skirt",
+      "slot": "bottom",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 7334,
+          "bounds": {
+            "left": 329,
+            "top": 837,
+            "right": 722,
+            "bottom": 1218,
+            "count": 129469
+          }
+        }
+      ]
+    },
+    {
+      "id": "black-umbrella",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "back",
+          "bytes": 9292,
+          "bounds": {
+            "left": 118,
+            "top": 138,
+            "right": 933,
+            "bottom": 418,
+            "count": 151525
+          }
+        },
+        {
+          "kind": "front",
+          "bytes": 1740,
+          "bounds": {
+            "left": 678,
+            "top": 376,
+            "right": 797,
+            "bottom": 973,
+            "count": 14164
+          }
+        }
+      ]
+    },
+    {
+      "id": "blanket",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "back",
+          "bytes": 12446,
+          "bounds": {
+            "left": 247,
+            "top": 524,
+            "right": 804,
+            "bottom": 1250,
+            "count": 284093
+          }
+        },
+        {
+          "kind": "front",
+          "bytes": 6116,
+          "bounds": {
+            "left": 382,
+            "top": 561,
+            "right": 669,
+            "bottom": 1056,
+            "count": 16693
+          }
+        }
+      ]
+    },
+    {
+      "id": "bow-tie",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 4808,
+          "bounds": {
+            "left": 444,
+            "top": 551,
+            "right": 607,
+            "bottom": 727,
+            "count": 19264
+          }
+        }
+      ]
+    },
+    {
+      "id": "bright-necklace",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 5628,
+          "bounds": {
+            "left": 444,
+            "top": 551,
+            "right": 607,
+            "bottom": 735,
+            "count": 19866
+          }
+        }
+      ]
+    },
+    {
+      "id": "canvas-tote",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "back",
+          "bytes": 10328,
+          "bounds": {
+            "left": 342,
+            "top": 538,
+            "right": 709,
+            "bottom": 1070,
+            "count": 170688
+          }
+        },
+        {
+          "kind": "front",
+          "bytes": 4478,
+          "bounds": {
+            "left": 356,
+            "top": 579,
+            "right": 695,
+            "bottom": 952,
+            "count": 17232
+          }
+        }
+      ]
+    },
+    {
+      "id": "cape",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "back",
+          "bytes": 11892,
+          "bounds": {
+            "left": 247,
+            "top": 524,
+            "right": 804,
+            "bottom": 1250,
+            "count": 284093
+          }
+        },
+        {
+          "kind": "front",
+          "bytes": 2574,
+          "bounds": {
+            "left": 432,
+            "top": 561,
+            "right": 619,
+            "bottom": 625,
+            "count": 5531
+          }
+        }
+      ]
+    },
+    {
+      "id": "chef-hat",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 7078,
+          "bounds": {
+            "left": 340,
+            "top": 146,
+            "right": 711,
+            "bottom": 360,
+            "count": 55236
+          }
+        }
+      ]
+    },
+    {
+      "id": "clear-umbrella",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "back",
+          "bytes": 10568,
+          "bounds": {
+            "left": 118,
+            "top": 138,
+            "right": 933,
+            "bottom": 418,
+            "count": 151525
+          }
+        },
+        {
+          "kind": "front",
+          "bytes": 1770,
+          "bounds": {
+            "left": 678,
+            "top": 376,
+            "right": 797,
+            "bottom": 973,
+            "count": 14164
+          }
+        }
+      ]
+    },
+    {
+      "id": "closed-safety-shoes",
+      "slot": "shoes",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 9268,
+          "bounds": {
+            "left": 303,
+            "top": 1101,
+            "right": 748,
+            "bottom": 1305,
+            "count": 64157
+          }
+        }
+      ]
+    },
+    {
+      "id": "cooking-pants",
+      "slot": "bottom",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 11446,
+          "bounds": {
+            "left": 345,
+            "top": 837,
+            "right": 706,
+            "bottom": 1222,
+            "count": 119306
+          }
+        }
+      ]
+    },
+    {
+      "id": "cotton-pajama-top",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 15172,
+          "bounds": {
+            "left": 272,
+            "top": 553,
+            "right": 779,
+            "bottom": 920,
+            "count": 130471
+          }
+        }
+      ]
+    },
+    {
+      "id": "cotton-pants",
+      "slot": "bottom",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 12288,
+          "bounds": {
+            "left": 345,
+            "top": 837,
+            "right": 706,
+            "bottom": 1222,
+            "count": 119306
+          }
+        }
+      ]
+    },
+    {
+      "id": "cotton-tshirt",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 16852,
+          "bounds": {
+            "left": 272,
+            "top": 553,
+            "right": 779,
+            "bottom": 898,
+            "count": 124333
+          }
+        }
+      ]
+    },
+    {
+      "id": "cream-sweater",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 15646,
+          "bounds": {
+            "left": 272,
+            "top": 553,
+            "right": 779,
+            "bottom": 920,
+            "count": 130471
+          }
+        }
+      ]
+    },
+    {
+      "id": "dangling-scarf",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 5292,
+          "bounds": {
+            "left": 444,
+            "top": 551,
+            "right": 607,
+            "bottom": 732,
+            "count": 19617
+          }
+        }
+      ]
+    },
+    {
+      "id": "dress-shoes",
+      "slot": "shoes",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 7144,
+          "bounds": {
+            "left": 303,
+            "top": 1171,
+            "right": 748,
+            "bottom": 1305,
+            "count": 41137
+          }
+        }
+      ]
+    },
+    {
+      "id": "fitted-cooking-top",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 17400,
+          "bounds": {
+            "left": 272,
+            "top": 553,
+            "right": 779,
+            "bottom": 898,
+            "count": 124333
+          }
+        }
+      ]
+    },
+    {
+      "id": "flashlight",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 8004,
+          "bounds": {
+            "left": 654,
+            "top": 662,
+            "right": 815,
+            "bottom": 1016,
+            "count": 50841
+          }
+        }
+      ]
+    },
+    {
+      "id": "fleece-sweater",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 15760,
+          "bounds": {
+            "left": 272,
+            "top": 553,
+            "right": 779,
+            "bottom": 920,
+            "count": 130471
+          }
+        }
+      ]
+    },
+    {
+      "id": "flower-basket",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 7480,
+          "bounds": {
+            "left": 654,
+            "top": 662,
+            "right": 815,
+            "bottom": 1016,
+            "count": 50841
+          }
+        }
+      ]
+    },
+    {
+      "id": "flower-crown",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 6318,
+          "bounds": {
+            "left": 340,
+            "top": 165,
+            "right": 711,
+            "bottom": 360,
+            "count": 54504
+          }
+        }
+      ]
+    },
+    {
+      "id": "formal-flats",
+      "slot": "shoes",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 7424,
+          "bounds": {
+            "left": 303,
+            "top": 1171,
+            "right": 748,
+            "bottom": 1305,
+            "count": 41137
+          }
+        }
+      ]
+    },
+    {
+      "id": "formal-jacket",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 14354,
+          "bounds": {
+            "left": 272,
+            "top": 553,
+            "right": 779,
+            "bottom": 898,
+            "count": 124333
+          }
+        }
+      ]
+    },
+    {
+      "id": "formal-pants",
+      "slot": "bottom",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 10612,
+          "bounds": {
+            "left": 345,
+            "top": 837,
+            "right": 706,
+            "bottom": 1222,
+            "count": 119306
+          }
+        }
+      ]
+    },
+    {
+      "id": "gift-bag",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 7948,
+          "bounds": {
+            "left": 236,
+            "top": 662,
+            "right": 397,
+            "bottom": 1016,
+            "count": 50841
+          }
+        }
+      ]
+    },
+    {
+      "id": "gloves",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 7070,
+          "bounds": {
+            "left": 237,
+            "top": 716,
+            "right": 814,
+            "bottom": 917,
+            "count": 40126
+          }
+        }
+      ]
+    },
+    {
+      "id": "goggles",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 7376,
+          "bounds": {
+            "left": 382,
+            "top": 308,
+            "right": 669,
+            "bottom": 441,
+            "count": 33093
+          }
+        }
+      ]
+    },
+    {
+      "id": "hanbok-hat",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 5548,
+          "bounds": {
+            "left": 340,
+            "top": 165,
+            "right": 711,
+            "bottom": 360,
+            "count": 54504
+          }
+        }
+      ]
+    },
+    {
+      "id": "hanbok-jeogori",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 16820,
+          "bounds": {
+            "left": 272,
+            "top": 553,
+            "right": 779,
+            "bottom": 898,
+            "count": 124333
+          }
+        }
+      ]
+    },
+    {
+      "id": "hanbok-shoes",
+      "slot": "shoes",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 8274,
+          "bounds": {
+            "left": 303,
+            "top": 1171,
+            "right": 748,
+            "bottom": 1305,
+            "count": 41137
+          }
+        }
+      ]
+    },
+    {
+      "id": "hanbok-skirt",
+      "slot": "bottom",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 7938,
+          "bounds": {
+            "left": 329,
+            "top": 837,
+            "right": 722,
+            "bottom": 1218,
+            "count": 129469
+          }
+        }
+      ]
+    },
+    {
+      "id": "helmet",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 5790,
+          "bounds": {
+            "left": 340,
+            "top": 165,
+            "right": 711,
+            "bottom": 360,
+            "count": 54504
+          }
+        }
+      ]
+    },
+    {
+      "id": "hiking-boots",
+      "slot": "shoes",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 9754,
+          "bounds": {
+            "left": 303,
+            "top": 1101,
+            "right": 748,
+            "bottom": 1305,
+            "count": 64157
+          }
+        }
+      ]
+    },
+    {
+      "id": "kitchen-nonslip-shoes",
+      "slot": "shoes",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 8966,
+          "bounds": {
+            "left": 303,
+            "top": 1101,
+            "right": 748,
+            "bottom": 1305,
+            "count": 64157
+          }
+        }
+      ]
+    },
+    {
+      "id": "knee-pads",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 3496,
+          "bounds": {
+            "left": 247,
+            "top": 777,
+            "right": 804,
+            "bottom": 863,
+            "count": 12112
+          }
+        }
+      ]
+    },
+    {
+      "id": "lab-coat",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 17850,
+          "bounds": {
+            "left": 272,
+            "top": 553,
+            "right": 779,
+            "bottom": 1028,
+            "count": 168597
+          }
+        }
+      ]
+    },
+    {
+      "id": "lab-gloves",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 7392,
+          "bounds": {
+            "left": 237,
+            "top": 716,
+            "right": 814,
+            "bottom": 917,
+            "count": 40126
+          }
+        }
+      ]
+    },
+    {
+      "id": "lab-pants",
+      "slot": "bottom",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 10874,
+          "bounds": {
+            "left": 345,
+            "top": 837,
+            "right": 706,
+            "bottom": 1222,
+            "count": 119306
+          }
+        }
+      ]
+    },
+    {
+      "id": "life-jacket",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 8476,
+          "bounds": {
+            "left": 407,
+            "top": 555,
+            "right": 644,
+            "bottom": 911,
+            "count": 76449
+          }
+        }
+      ]
+    },
+    {
+      "id": "long-skirt",
+      "slot": "bottom",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 8614,
+          "bounds": {
+            "left": 329,
+            "top": 837,
+            "right": 722,
+            "bottom": 1218,
+            "count": 129469
+          }
+        }
+      ]
+    },
+    {
+      "id": "loose-bracelet",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 3810,
+          "bounds": {
+            "left": 247,
+            "top": 777,
+            "right": 804,
+            "bottom": 863,
+            "count": 12112
+          }
+        }
+      ]
+    },
+    {
+      "id": "loose-sleeve-shirt",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 17024,
+          "bounds": {
+            "left": 272,
+            "top": 553,
+            "right": 779,
+            "bottom": 920,
+            "count": 130471
+          }
+        }
+      ]
+    },
+    {
+      "id": "mint-windbreaker",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 15578,
+          "bounds": {
+            "left": 272,
+            "top": 553,
+            "right": 779,
+            "bottom": 898,
+            "count": 124333
+          }
+        }
+      ]
+    },
+    {
+      "id": "navy-cardigan",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 13492,
+          "bounds": {
+            "left": 272,
+            "top": 553,
+            "right": 779,
+            "bottom": 898,
+            "count": 124333
+          }
+        }
+      ]
+    },
+    {
+      "id": "norigae",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 5274,
+          "bounds": {
+            "left": 444,
+            "top": 551,
+            "right": 607,
+            "bottom": 735,
+            "count": 19866
+          }
+        }
+      ]
+    },
+    {
+      "id": "notebook",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 8030,
+          "bounds": {
+            "left": 236,
+            "top": 662,
+            "right": 397,
+            "bottom": 1016,
+            "count": 50841
+          }
+        }
+      ]
+    },
+    {
+      "id": "oven-mitt",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 7660,
+          "bounds": {
+            "left": 237,
+            "top": 716,
+            "right": 814,
+            "bottom": 917,
+            "count": 40126
+          }
+        }
+      ]
+    },
+    {
+      "id": "pajama-pants",
+      "slot": "bottom",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 11434,
+          "bounds": {
+            "left": 327,
+            "top": 837,
+            "right": 724,
+            "bottom": 1222,
+            "count": 124006
+          }
+        }
+      ]
+    },
+    {
+      "id": "party-chinos",
+      "slot": "bottom",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 12540,
+          "bounds": {
+            "left": 345,
+            "top": 837,
+            "right": 706,
+            "bottom": 1222,
+            "count": 119306
+          }
+        }
+      ]
+    },
+    {
+      "id": "party-hat",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 7192,
+          "bounds": {
+            "left": 340,
+            "top": 146,
+            "right": 711,
+            "bottom": 360,
+            "count": 55236
+          }
+        }
+      ]
+    },
+    {
+      "id": "party-shirt",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 16826,
+          "bounds": {
+            "left": 272,
+            "top": 553,
+            "right": 779,
+            "bottom": 898,
+            "count": 124333
+          }
+        }
+      ]
+    },
+    {
+      "id": "party-sneakers",
+      "slot": "shoes",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 8956,
+          "bounds": {
+            "left": 303,
+            "top": 1171,
+            "right": 748,
+            "bottom": 1305,
+            "count": 41137
+          }
+        }
+      ]
+    },
+    {
+      "id": "protective-cargo-pants",
+      "slot": "bottom",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 11064,
+          "bounds": {
+            "left": 327,
+            "top": 837,
+            "right": 724,
+            "bottom": 1222,
+            "count": 124006
+          }
+        }
+      ]
+    },
+    {
+      "id": "protective-jacket",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 15856,
+          "bounds": {
+            "left": 272,
+            "top": 553,
+            "right": 779,
+            "bottom": 1028,
+            "count": 168597
+          }
+        }
+      ]
+    },
+    {
+      "id": "rain-boots",
+      "slot": "shoes",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 10482,
+          "bounds": {
+            "left": 303,
+            "top": 1101,
+            "right": 748,
+            "bottom": 1305,
+            "count": 64157
+          }
+        }
+      ]
+    },
+    {
+      "id": "reflective-band",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 3836,
+          "bounds": {
+            "left": 247,
+            "top": 777,
+            "right": 804,
+            "bottom": 863,
+            "count": 12112
+          }
+        }
+      ]
+    },
+    {
+      "id": "running-shoes",
+      "slot": "shoes",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 8874,
+          "bounds": {
+            "left": 303,
+            "top": 1171,
+            "right": 748,
+            "bottom": 1305,
+            "count": 41137
+          }
+        }
+      ]
+    },
+    {
+      "id": "safety-goggles",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 7286,
+          "bounds": {
+            "left": 382,
+            "top": 308,
+            "right": 669,
+            "bottom": 441,
+            "count": 33093
+          }
+        }
+      ]
+    },
+    {
+      "id": "sandals",
+      "slot": "shoes",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 10650,
+          "bounds": {
+            "left": 303,
+            "top": 1171,
+            "right": 748,
+            "bottom": 1305,
+            "count": 41137
+          }
+        }
+      ]
+    },
+    {
+      "id": "scarf",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 5168,
+          "bounds": {
+            "left": 444,
+            "top": 551,
+            "right": 607,
+            "bottom": 723,
+            "count": 19046
+          }
+        }
+      ]
+    },
+    {
+      "id": "school-backpack",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "back",
+          "bytes": 9290,
+          "bounds": {
+            "left": 342,
+            "top": 538,
+            "right": 709,
+            "bottom": 1070,
+            "count": 170688
+          }
+        },
+        {
+          "kind": "front",
+          "bytes": 4538,
+          "bounds": {
+            "left": 356,
+            "top": 579,
+            "right": 695,
+            "bottom": 952,
+            "count": 17232
+          }
+        }
+      ]
+    },
+    {
+      "id": "school-cardigan",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 14888,
+          "bounds": {
+            "left": 272,
+            "top": 553,
+            "right": 779,
+            "bottom": 898,
+            "count": 124333
+          }
+        }
+      ]
+    },
+    {
+      "id": "school-track-jacket",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 15092,
+          "bounds": {
+            "left": 272,
+            "top": 553,
+            "right": 779,
+            "bottom": 898,
+            "count": 124333
+          }
+        }
+      ]
+    },
+    {
+      "id": "school-track-pants",
+      "slot": "bottom",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 11134,
+          "bounds": {
+            "left": 327,
+            "top": 837,
+            "right": 724,
+            "bottom": 1222,
+            "count": 124006
+          }
+        }
+      ]
+    },
+    {
+      "id": "simple-ribbon",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 7018,
+          "bounds": {
+            "left": 236,
+            "top": 662,
+            "right": 397,
+            "bottom": 1016,
+            "count": 50841
+          }
+        }
+      ]
+    },
+    {
+      "id": "ski-boots",
+      "slot": "shoes",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 9236,
+          "bounds": {
+            "left": 303,
+            "top": 1101,
+            "right": 748,
+            "bottom": 1305,
+            "count": 64157
+          }
+        }
+      ]
+    },
+    {
+      "id": "ski-goggles",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 7274,
+          "bounds": {
+            "left": 382,
+            "top": 308,
+            "right": 669,
+            "bottom": 441,
+            "count": 33093
+          }
+        }
+      ]
+    },
+    {
+      "id": "ski-helmet",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 5568,
+          "bounds": {
+            "left": 340,
+            "top": 165,
+            "right": 711,
+            "bottom": 360,
+            "count": 54504
+          }
+        }
+      ]
+    },
+    {
+      "id": "ski-jacket",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 17112,
+          "bounds": {
+            "left": 272,
+            "top": 490,
+            "right": 779,
+            "bottom": 898,
+            "count": 134703
+          }
+        }
+      ]
+    },
+    {
+      "id": "ski-pants",
+      "slot": "bottom",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 10298,
+          "bounds": {
+            "left": 327,
+            "top": 837,
+            "right": 724,
+            "bottom": 1222,
+            "count": 124006
+          }
+        }
+      ]
+    },
+    {
+      "id": "sky-denim",
+      "slot": "bottom",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 11950,
+          "bounds": {
+            "left": 345,
+            "top": 837,
+            "right": 706,
+            "bottom": 1222,
+            "count": 119306
+          }
+        }
+      ]
+    },
+    {
+      "id": "sleep-mask",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 7308,
+          "bounds": {
+            "left": 382,
+            "top": 308,
+            "right": 669,
+            "bottom": 441,
+            "count": 33093
+          }
+        }
+      ]
+    },
+    {
+      "id": "sleep-socks",
+      "slot": "shoes",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 8520,
+          "bounds": {
+            "left": 303,
+            "top": 1171,
+            "right": 748,
+            "bottom": 1305,
+            "count": 41137
+          }
+        }
+      ]
+    },
+    {
+      "id": "slippers",
+      "slot": "shoes",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 10330,
+          "bounds": {
+            "left": 303,
+            "top": 1171,
+            "right": 748,
+            "bottom": 1305,
+            "count": 41137
+          }
+        }
+      ]
+    },
+    {
+      "id": "sneakers",
+      "slot": "shoes",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 8812,
+          "bounds": {
+            "left": 303,
+            "top": 1171,
+            "right": 748,
+            "bottom": 1305,
+            "count": 41137
+          }
+        }
+      ]
+    },
+    {
+      "id": "sports-cap",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 9286,
+          "bounds": {
+            "left": 340,
+            "top": 146,
+            "right": 766,
+            "bottom": 377,
+            "count": 63313
+          }
+        }
+      ]
+    },
+    {
+      "id": "sports-hoodie",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 16690,
+          "bounds": {
+            "left": 272,
+            "top": 490,
+            "right": 779,
+            "bottom": 920,
+            "count": 140841
+          }
+        }
+      ]
+    },
+    {
+      "id": "swim-cap",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 8390,
+          "bounds": {
+            "left": 340,
+            "top": 165,
+            "right": 766,
+            "bottom": 377,
+            "count": 62581
+          }
+        }
+      ]
+    },
+    {
+      "id": "swim-rashguard",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 14860,
+          "bounds": {
+            "left": 272,
+            "top": 553,
+            "right": 779,
+            "bottom": 898,
+            "count": 124333
+          }
+        }
+      ]
+    },
+    {
+      "id": "swim-shorts",
+      "slot": "bottom",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 8346,
+          "bounds": {
+            "left": 345,
+            "top": 837,
+            "right": 706,
+            "bottom": 1074,
+            "count": 75264
+          }
+        }
+      ]
+    },
+    {
+      "id": "towel",
+      "slot": "accessory",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 7934,
+          "bounds": {
+            "left": 236,
+            "top": 662,
+            "right": 397,
+            "bottom": 1016,
+            "count": 50841
+          }
+        }
+      ]
+    },
+    {
+      "id": "white-shirt",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 16148,
+          "bounds": {
+            "left": 272,
+            "top": 553,
+            "right": 779,
+            "bottom": 898,
+            "count": 124333
+          }
+        }
+      ]
+    },
+    {
+      "id": "wool-coat",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "main",
+          "bytes": 15980,
+          "bounds": {
+            "left": 272,
+            "top": 553,
+            "right": 779,
+            "bottom": 1028,
+            "count": 168597
+          }
+        }
+      ]
+    },
+    {
+      "id": "yellow-raincoat",
+      "slot": "top",
+      "layers": [
+        {
+          "kind": "back",
+          "bytes": 5326,
+          "bounds": {
+            "left": 386,
+            "top": 517,
+            "right": 665,
+            "bottom": 765,
+            "count": 54207
+          }
+        },
+        {
+          "kind": "main",
+          "bytes": 18388,
+          "bounds": {
+            "left": 272,
+            "top": 490,
+            "right": 779,
+            "bottom": 1028,
+            "count": 178967
+          }
+        }
+      ]
+    }
+  ],
+  "failures": []
+}

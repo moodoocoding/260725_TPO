@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536" data-rig-id="otter-v1.0.0" data-item-id="flower-basket" data-slot="accessory" data-layer="main">
+  <defs><linearGradient id="fabric" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#efb6c5"/>
+    <stop offset=".7" stop-color="#efb6c5"/>
+    <stop offset="1" stop-color="#9d6172"/>
+  </linearGradient></defs>
+  <path d="M659 704 Q735 659 811 704 L803 995 Q735 1030 667 995 Z" fill="url(#fabric)" stroke="#18324a" stroke-width="9"/>
+    <path d="M692 718 Q735 620 778 718" fill="none" stroke="#9d6172" stroke-width="14"/>
+</svg>

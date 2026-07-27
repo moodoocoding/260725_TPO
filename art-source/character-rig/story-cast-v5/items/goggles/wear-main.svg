@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536" data-rig-id="otter-v1.0.0" data-item-id="goggles" data-slot="accessory" data-layer="main">
+  <defs><linearGradient id="fabric" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#49b7dc"/>
+    <stop offset=".7" stop-color="#49b7dc"/>
+    <stop offset="1" stop-color="#176d8f"/>
+  </linearGradient></defs>
+  <path d="M387 334 Q526 292 665 334 L650 421 Q526 454 402 421 Z" fill="url(#fabric)" stroke="#18324a" stroke-width="9"/>
+      <path d="M421 347 Q466 330 506 349 L497 405 Q454 420 417 399 Z M546 349 Q586 330 631 347 L635 399 Q598 420 555 405 Z" fill="#fffaf0" opacity=".55" stroke="#18324a" stroke-width="6"/>
+</svg>

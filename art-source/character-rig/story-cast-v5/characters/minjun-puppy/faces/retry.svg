@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536" data-rig-id="otter-v1.0.0" data-character-id="minjun-puppy" data-species="puppy" data-layer="retry">
+
+  <g id="face-retry">
+      <path d="M405 323 C433 300 463 303 485 319 M567 319 C592 300 623 306 648 331" fill="none" stroke="#18324a" stroke-width="12" stroke-linecap="round"/>
+    <ellipse cx="450" cy="359" rx="38" ry="47" fill="#fffdf5" stroke="#18324a" stroke-width="8"/><ellipse cx="602" cy="359" rx="38" ry="47" fill="#fffdf5" stroke="#18324a" stroke-width="8"/>
+    <ellipse cx="458" cy="367" rx="22" ry="30" fill="#50301f"/><ellipse cx="594" cy="367" rx="22" ry="30" fill="#50301f"/>
+    <circle cx="465" cy="355" r="8" fill="#fff"/><circle cx="601" cy="355" r="8" fill="#fff"/>
+    <path d="M483 471 C506 450 546 450 569 471" fill="none" stroke="#8e4b43" stroke-width="9" stroke-linecap="round"/>
+      <path d="M507 404 Q526 391 545 404 Q542 426 526 433 Q510 426 507 404 Z" fill="#8d5738" stroke="#18324a" stroke-width="6"/>
+      <path d="M526 431 V442" stroke="#18324a" stroke-width="5" stroke-linecap="round"/>
+
+    </g>
+</svg>

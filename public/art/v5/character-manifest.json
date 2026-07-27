@@ -1,0 +1,1066 @@
+{
+  "schemaVersion": 2,
+  "artVersion": "v5-v4-rig-requester-cast-1.0.0",
+  "deterministic": true,
+  "canvas": {
+    "width": 1024,
+    "height": 1536
+  },
+  "rig": {
+    "id": "otter-v1.0.0",
+    "anchors": {
+      "headTop": {
+        "x": 526,
+        "y": 159
+      },
+      "headCenter": {
+        "x": 526,
+        "y": 360
+      },
+      "earLeft": {
+        "x": 318,
+        "y": 299
+      },
+      "earRight": {
+        "x": 736,
+        "y": 299
+      },
+      "neckCenter": {
+        "x": 526,
+        "y": 590
+      },
+      "shoulderLeft": {
+        "x": 401,
+        "y": 602
+      },
+      "shoulderRight": {
+        "x": 650,
+        "y": 602
+      },
+      "elbowLeft": {
+        "x": 309,
+        "y": 744
+      },
+      "elbowRight": {
+        "x": 742,
+        "y": 744
+      },
+      "wristLeft": {
+        "x": 274,
+        "y": 849
+      },
+      "wristRight": {
+        "x": 779,
+        "y": 849
+      },
+      "handLeft": {
+        "x": 267,
+        "y": 883
+      },
+      "handRight": {
+        "x": 788,
+        "y": 883
+      },
+      "waistCenter": {
+        "x": 526,
+        "y": 862
+      },
+      "hipLeft": {
+        "x": 443,
+        "y": 1002
+      },
+      "hipRight": {
+        "x": 610,
+        "y": 1002
+      },
+      "kneeLeft": {
+        "x": 409,
+        "y": 1093
+      },
+      "kneeRight": {
+        "x": 643,
+        "y": 1093
+      },
+      "ankleLeft": {
+        "x": 410,
+        "y": 1202
+      },
+      "ankleRight": {
+        "x": 648,
+        "y": 1202
+      },
+      "footLeft": {
+        "x": 389,
+        "y": 1242
+      },
+      "footRight": {
+        "x": 671,
+        "y": 1242
+      },
+      "groundCenter": {
+        "x": 526,
+        "y": 1278
+      }
+    },
+    "safeAreas": {
+      "character": {
+        "left": 208,
+        "top": 96,
+        "right": 828,
+        "bottom": 1278
+      },
+      "face": {
+        "left": 345,
+        "top": 270,
+        "right": 707,
+        "bottom": 510
+      },
+      "wear": {
+        "left": 100,
+        "top": 48,
+        "right": 940,
+        "bottom": 1312
+      }
+    },
+    "baseGroundY": 1278,
+    "shoeGroundY": 1308,
+    "planeZ": {
+      "wearBack": 10,
+      "body": 20,
+      "bottom": 30,
+      "shoes": 40,
+      "top": 50,
+      "accessory": 60,
+      "wearFront": 70,
+      "face": 80
+    },
+    "moodAliases": {
+      "neutral": "ready",
+      "happy": "success",
+      "worried": "retry"
+    }
+  },
+  "roots": {
+    "characters": "/art/v5/characters",
+    "items": "/art/v5/items"
+  },
+  "episodeMap": {
+    "rescue-team-trial": {
+      "episodeOrder": 1,
+      "characterId": "haru-otter-v4",
+      "name": "하루",
+      "species": "otter",
+      "mode": "full-frame-moods",
+      "rigId": "otter-v1.0.0",
+      "moods": {
+        "ready": "/art/v4/episodes/rescue-team-trial/character/ready.webp",
+        "success": "/art/v4/episodes/rescue-team-trial/character/success.webp",
+        "retry": "/art/v4/episodes/rescue-team-trial/character/retry.webp"
+      }
+    },
+    "school-pe-rush": {
+      "episodeOrder": 2,
+      "characterId": "minjun-puppy",
+      "name": "민준",
+      "species": "puppy",
+      "mode": "layered-base-face",
+      "rigId": "otter-v1.0.0",
+      "base": "characters/minjun-puppy/base.webp",
+      "faces": {
+        "ready": "characters/minjun-puppy/faces/ready.webp",
+        "success": "characters/minjun-puppy/faces/success.webp",
+        "retry": "characters/minjun-puppy/faces/retry.webp"
+      }
+    },
+    "bedtime-ready": {
+      "episodeOrder": 3,
+      "characterId": "somi-hamster",
+      "name": "소미",
+      "species": "hamster",
+      "mode": "layered-base-face",
+      "rigId": "otter-v1.0.0",
+      "base": "characters/somi-hamster/base.webp",
+      "faces": {
+        "ready": "characters/somi-hamster/faces/ready.webp",
+        "success": "characters/somi-hamster/faces/success.webp",
+        "retry": "characters/somi-hamster/faces/retry.webp"
+      }
+    },
+    "friend-birthday-party": {
+      "episodeOrder": 4,
+      "characterId": "jiwoo-quokka",
+      "name": "지우",
+      "species": "quokka",
+      "mode": "layered-base-face",
+      "rigId": "otter-v1.0.0",
+      "base": "characters/jiwoo-quokka/base.webp",
+      "faces": {
+        "ready": "characters/jiwoo-quokka/faces/ready.webp",
+        "success": "characters/jiwoo-quokka/faces/success.webp",
+        "retry": "characters/jiwoo-quokka/faces/retry.webp"
+      }
+    },
+    "rainy-market-errand": {
+      "episodeOrder": 5,
+      "characterId": "haru-otter-v4",
+      "name": "하루",
+      "species": "otter",
+      "mode": "full-frame-moods",
+      "rigId": "otter-v1.0.0",
+      "moods": {
+        "ready": "characters/haru-otter-v4/ready.webp",
+        "success": "characters/haru-otter-v4/success.webp",
+        "retry": "characters/haru-otter-v4/retry.webp"
+      }
+    },
+    "summer-waterpark": {
+      "episodeOrder": 6,
+      "characterId": "seojun-penguin",
+      "name": "서준",
+      "species": "penguin",
+      "mode": "layered-base-face",
+      "rigId": "otter-v1.0.0",
+      "base": "characters/seojun-penguin/base.webp",
+      "faces": {
+        "ready": "characters/seojun-penguin/faces/ready.webp",
+        "success": "characters/seojun-penguin/faces/success.webp",
+        "retry": "characters/seojun-penguin/faces/retry.webp"
+      }
+    },
+    "winter-ski-class": {
+      "episodeOrder": 7,
+      "characterId": "yerin-polar-bear",
+      "name": "예린",
+      "species": "polar-bear",
+      "mode": "layered-base-face",
+      "rigId": "otter-v1.0.0",
+      "base": "characters/yerin-polar-bear/base.webp",
+      "faces": {
+        "ready": "characters/yerin-polar-bear/faces/ready.webp",
+        "success": "characters/yerin-polar-bear/faces/success.webp",
+        "retry": "characters/yerin-polar-bear/faces/retry.webp"
+      }
+    },
+    "wedding-flower-child": {
+      "episodeOrder": 8,
+      "characterId": "daon-red-panda",
+      "name": "다온",
+      "species": "red-panda",
+      "mode": "layered-base-face",
+      "rigId": "otter-v1.0.0",
+      "base": "characters/daon-red-panda/base.webp",
+      "faces": {
+        "ready": "characters/daon-red-panda/faces/ready.webp",
+        "success": "characters/daon-red-panda/faces/success.webp",
+        "retry": "characters/daon-red-panda/faces/retry.webp"
+      }
+    },
+    "family-funeral": {
+      "episodeOrder": 9,
+      "characterId": "eunho-silver-fox",
+      "name": "은호",
+      "species": "silver-fox",
+      "mode": "layered-base-face",
+      "rigId": "otter-v1.0.0",
+      "base": "characters/eunho-silver-fox/base.webp",
+      "faces": {
+        "ready": "characters/eunho-silver-fox/faces/ready.webp",
+        "success": "characters/eunho-silver-fox/faces/success.webp",
+        "retry": "characters/eunho-silver-fox/faces/retry.webp"
+      }
+    },
+    "lunar-new-year-visit": {
+      "episodeOrder": 10,
+      "characterId": "harin-squirrel",
+      "name": "하린",
+      "species": "squirrel",
+      "mode": "layered-base-face",
+      "rigId": "otter-v1.0.0",
+      "base": "characters/harin-squirrel/base.webp",
+      "faces": {
+        "ready": "characters/harin-squirrel/faces/ready.webp",
+        "success": "characters/harin-squirrel/faces/success.webp",
+        "retry": "characters/harin-squirrel/faces/retry.webp"
+      }
+    },
+    "science-lab-experiment": {
+      "episodeOrder": 11,
+      "characterId": "doyoon-badger",
+      "name": "도윤",
+      "species": "badger",
+      "mode": "layered-base-face",
+      "rigId": "otter-v1.0.0",
+      "base": "characters/doyoon-badger/base.webp",
+      "faces": {
+        "ready": "characters/doyoon-badger/faces/ready.webp",
+        "success": "characters/doyoon-badger/faces/success.webp",
+        "retry": "characters/doyoon-badger/faces/retry.webp"
+      }
+    },
+    "family-cooking": {
+      "episodeOrder": 12,
+      "characterId": "chaewon-calico-cat",
+      "name": "채원",
+      "species": "calico-cat",
+      "mode": "layered-base-face",
+      "rigId": "otter-v1.0.0",
+      "base": "characters/chaewon-calico-cat/base.webp",
+      "faces": {
+        "ready": "characters/chaewon-calico-cat/faces/ready.webp",
+        "success": "characters/chaewon-calico-cat/faces/success.webp",
+        "retry": "characters/chaewon-calico-cat/faces/retry.webp"
+      }
+    },
+    "zombie-city-escape": {
+      "episodeOrder": 13,
+      "characterId": "taeo-ferret",
+      "name": "태오",
+      "species": "ferret",
+      "mode": "layered-base-face",
+      "rigId": "otter-v1.0.0",
+      "base": "characters/taeo-ferret/base.webp",
+      "faces": {
+        "ready": "characters/taeo-ferret/faces/ready.webp",
+        "success": "characters/taeo-ferret/faces/success.webp",
+        "retry": "characters/taeo-ferret/faces/retry.webp"
+      }
+    }
+  },
+  "items": {
+    "active-pants": {
+      "id": "active-pants",
+      "slot": "bottom",
+      "thumbnail": "items/active-pants/thumb.webp",
+      "layers": {
+        "main": "items/active-pants/wear-main.webp"
+      }
+    },
+    "apron": {
+      "id": "apron",
+      "slot": "accessory",
+      "thumbnail": "items/apron/thumb.webp",
+      "layers": {
+        "main": "items/apron/wear-main.webp"
+      }
+    },
+    "aqua-shoes": {
+      "id": "aqua-shoes",
+      "slot": "shoes",
+      "thumbnail": "items/aqua-shoes/thumb.webp",
+      "layers": {
+        "main": "items/aqua-shoes/wear-main.webp"
+      }
+    },
+    "beige-shorts": {
+      "id": "beige-shorts",
+      "slot": "bottom",
+      "thumbnail": "items/beige-shorts/thumb.webp",
+      "layers": {
+        "main": "items/beige-shorts/wear-main.webp"
+      }
+    },
+    "black-bag": {
+      "id": "black-bag",
+      "slot": "accessory",
+      "thumbnail": "items/black-bag/thumb.webp",
+      "layers": {
+        "main": "items/black-bag/wear-main.webp"
+      }
+    },
+    "black-cardigan": {
+      "id": "black-cardigan",
+      "slot": "top",
+      "thumbnail": "items/black-cardigan/thumb.webp",
+      "layers": {
+        "main": "items/black-cardigan/wear-main.webp"
+      }
+    },
+    "black-skirt": {
+      "id": "black-skirt",
+      "slot": "bottom",
+      "thumbnail": "items/black-skirt/thumb.webp",
+      "layers": {
+        "main": "items/black-skirt/wear-main.webp"
+      }
+    },
+    "black-umbrella": {
+      "id": "black-umbrella",
+      "slot": "accessory",
+      "thumbnail": "items/black-umbrella/thumb.webp",
+      "layers": {
+        "back": "items/black-umbrella/wear-back.webp",
+        "front": "items/black-umbrella/wear-front.webp"
+      }
+    },
+    "blanket": {
+      "id": "blanket",
+      "slot": "accessory",
+      "thumbnail": "items/blanket/thumb.webp",
+      "layers": {
+        "back": "items/blanket/wear-back.webp",
+        "front": "items/blanket/wear-front.webp"
+      }
+    },
+    "bow-tie": {
+      "id": "bow-tie",
+      "slot": "accessory",
+      "thumbnail": "items/bow-tie/thumb.webp",
+      "layers": {
+        "main": "items/bow-tie/wear-main.webp"
+      }
+    },
+    "bright-necklace": {
+      "id": "bright-necklace",
+      "slot": "accessory",
+      "thumbnail": "items/bright-necklace/thumb.webp",
+      "layers": {
+        "main": "items/bright-necklace/wear-main.webp"
+      }
+    },
+    "canvas-tote": {
+      "id": "canvas-tote",
+      "slot": "accessory",
+      "thumbnail": "items/canvas-tote/thumb.webp",
+      "layers": {
+        "back": "items/canvas-tote/wear-back.webp",
+        "front": "items/canvas-tote/wear-front.webp"
+      }
+    },
+    "cape": {
+      "id": "cape",
+      "slot": "accessory",
+      "thumbnail": "items/cape/thumb.webp",
+      "layers": {
+        "back": "items/cape/wear-back.webp",
+        "front": "items/cape/wear-front.webp"
+      }
+    },
+    "chef-hat": {
+      "id": "chef-hat",
+      "slot": "accessory",
+      "thumbnail": "items/chef-hat/thumb.webp",
+      "layers": {
+        "main": "items/chef-hat/wear-main.webp"
+      }
+    },
+    "clear-umbrella": {
+      "id": "clear-umbrella",
+      "slot": "accessory",
+      "thumbnail": "items/clear-umbrella/thumb.webp",
+      "layers": {
+        "back": "items/clear-umbrella/wear-back.webp",
+        "front": "items/clear-umbrella/wear-front.webp"
+      }
+    },
+    "closed-safety-shoes": {
+      "id": "closed-safety-shoes",
+      "slot": "shoes",
+      "thumbnail": "items/closed-safety-shoes/thumb.webp",
+      "layers": {
+        "main": "items/closed-safety-shoes/wear-main.webp"
+      }
+    },
+    "cooking-pants": {
+      "id": "cooking-pants",
+      "slot": "bottom",
+      "thumbnail": "items/cooking-pants/thumb.webp",
+      "layers": {
+        "main": "items/cooking-pants/wear-main.webp"
+      }
+    },
+    "cotton-pajama-top": {
+      "id": "cotton-pajama-top",
+      "slot": "top",
+      "thumbnail": "items/cotton-pajama-top/thumb.webp",
+      "layers": {
+        "main": "items/cotton-pajama-top/wear-main.webp"
+      }
+    },
+    "cotton-pants": {
+      "id": "cotton-pants",
+      "slot": "bottom",
+      "thumbnail": "items/cotton-pants/thumb.webp",
+      "layers": {
+        "main": "items/cotton-pants/wear-main.webp"
+      }
+    },
+    "cotton-tshirt": {
+      "id": "cotton-tshirt",
+      "slot": "top",
+      "thumbnail": "items/cotton-tshirt/thumb.webp",
+      "layers": {
+        "main": "items/cotton-tshirt/wear-main.webp"
+      }
+    },
+    "cream-sweater": {
+      "id": "cream-sweater",
+      "slot": "top",
+      "thumbnail": "items/cream-sweater/thumb.webp",
+      "layers": {
+        "main": "items/cream-sweater/wear-main.webp"
+      }
+    },
+    "dangling-scarf": {
+      "id": "dangling-scarf",
+      "slot": "accessory",
+      "thumbnail": "items/dangling-scarf/thumb.webp",
+      "layers": {
+        "main": "items/dangling-scarf/wear-main.webp"
+      }
+    },
+    "dress-shoes": {
+      "id": "dress-shoes",
+      "slot": "shoes",
+      "thumbnail": "items/dress-shoes/thumb.webp",
+      "layers": {
+        "main": "items/dress-shoes/wear-main.webp"
+      }
+    },
+    "fitted-cooking-top": {
+      "id": "fitted-cooking-top",
+      "slot": "top",
+      "thumbnail": "items/fitted-cooking-top/thumb.webp",
+      "layers": {
+        "main": "items/fitted-cooking-top/wear-main.webp"
+      }
+    },
+    "flashlight": {
+      "id": "flashlight",
+      "slot": "accessory",
+      "thumbnail": "items/flashlight/thumb.webp",
+      "layers": {
+        "main": "items/flashlight/wear-main.webp"
+      }
+    },
+    "fleece-sweater": {
+      "id": "fleece-sweater",
+      "slot": "top",
+      "thumbnail": "items/fleece-sweater/thumb.webp",
+      "layers": {
+        "main": "items/fleece-sweater/wear-main.webp"
+      }
+    },
+    "flower-basket": {
+      "id": "flower-basket",
+      "slot": "accessory",
+      "thumbnail": "items/flower-basket/thumb.webp",
+      "layers": {
+        "main": "items/flower-basket/wear-main.webp"
+      }
+    },
+    "flower-crown": {
+      "id": "flower-crown",
+      "slot": "accessory",
+      "thumbnail": "items/flower-crown/thumb.webp",
+      "layers": {
+        "main": "items/flower-crown/wear-main.webp"
+      }
+    },
+    "formal-flats": {
+      "id": "formal-flats",
+      "slot": "shoes",
+      "thumbnail": "items/formal-flats/thumb.webp",
+      "layers": {
+        "main": "items/formal-flats/wear-main.webp"
+      }
+    },
+    "formal-jacket": {
+      "id": "formal-jacket",
+      "slot": "top",
+      "thumbnail": "items/formal-jacket/thumb.webp",
+      "layers": {
+        "main": "items/formal-jacket/wear-main.webp"
+      }
+    },
+    "formal-pants": {
+      "id": "formal-pants",
+      "slot": "bottom",
+      "thumbnail": "items/formal-pants/thumb.webp",
+      "layers": {
+        "main": "items/formal-pants/wear-main.webp"
+      }
+    },
+    "gift-bag": {
+      "id": "gift-bag",
+      "slot": "accessory",
+      "thumbnail": "items/gift-bag/thumb.webp",
+      "layers": {
+        "main": "items/gift-bag/wear-main.webp"
+      }
+    },
+    "gloves": {
+      "id": "gloves",
+      "slot": "accessory",
+      "thumbnail": "items/gloves/thumb.webp",
+      "layers": {
+        "main": "items/gloves/wear-main.webp"
+      }
+    },
+    "goggles": {
+      "id": "goggles",
+      "slot": "accessory",
+      "thumbnail": "items/goggles/thumb.webp",
+      "layers": {
+        "main": "items/goggles/wear-main.webp"
+      }
+    },
+    "hanbok-hat": {
+      "id": "hanbok-hat",
+      "slot": "accessory",
+      "thumbnail": "items/hanbok-hat/thumb.webp",
+      "layers": {
+        "main": "items/hanbok-hat/wear-main.webp"
+      }
+    },
+    "hanbok-jeogori": {
+      "id": "hanbok-jeogori",
+      "slot": "top",
+      "thumbnail": "items/hanbok-jeogori/thumb.webp",
+      "layers": {
+        "main": "items/hanbok-jeogori/wear-main.webp"
+      }
+    },
+    "hanbok-shoes": {
+      "id": "hanbok-shoes",
+      "slot": "shoes",
+      "thumbnail": "items/hanbok-shoes/thumb.webp",
+      "layers": {
+        "main": "items/hanbok-shoes/wear-main.webp"
+      }
+    },
+    "hanbok-skirt": {
+      "id": "hanbok-skirt",
+      "slot": "bottom",
+      "thumbnail": "items/hanbok-skirt/thumb.webp",
+      "layers": {
+        "main": "items/hanbok-skirt/wear-main.webp"
+      }
+    },
+    "helmet": {
+      "id": "helmet",
+      "slot": "accessory",
+      "thumbnail": "items/helmet/thumb.webp",
+      "layers": {
+        "main": "items/helmet/wear-main.webp"
+      }
+    },
+    "hiking-boots": {
+      "id": "hiking-boots",
+      "slot": "shoes",
+      "thumbnail": "items/hiking-boots/thumb.webp",
+      "layers": {
+        "main": "items/hiking-boots/wear-main.webp"
+      }
+    },
+    "kitchen-nonslip-shoes": {
+      "id": "kitchen-nonslip-shoes",
+      "slot": "shoes",
+      "thumbnail": "items/kitchen-nonslip-shoes/thumb.webp",
+      "layers": {
+        "main": "items/kitchen-nonslip-shoes/wear-main.webp"
+      }
+    },
+    "knee-pads": {
+      "id": "knee-pads",
+      "slot": "accessory",
+      "thumbnail": "items/knee-pads/thumb.webp",
+      "layers": {
+        "main": "items/knee-pads/wear-main.webp"
+      }
+    },
+    "lab-coat": {
+      "id": "lab-coat",
+      "slot": "top",
+      "thumbnail": "items/lab-coat/thumb.webp",
+      "layers": {
+        "main": "items/lab-coat/wear-main.webp"
+      }
+    },
+    "lab-gloves": {
+      "id": "lab-gloves",
+      "slot": "accessory",
+      "thumbnail": "items/lab-gloves/thumb.webp",
+      "layers": {
+        "main": "items/lab-gloves/wear-main.webp"
+      }
+    },
+    "lab-pants": {
+      "id": "lab-pants",
+      "slot": "bottom",
+      "thumbnail": "items/lab-pants/thumb.webp",
+      "layers": {
+        "main": "items/lab-pants/wear-main.webp"
+      }
+    },
+    "life-jacket": {
+      "id": "life-jacket",
+      "slot": "accessory",
+      "thumbnail": "items/life-jacket/thumb.webp",
+      "layers": {
+        "main": "items/life-jacket/wear-main.webp"
+      }
+    },
+    "long-skirt": {
+      "id": "long-skirt",
+      "slot": "bottom",
+      "thumbnail": "items/long-skirt/thumb.webp",
+      "layers": {
+        "main": "items/long-skirt/wear-main.webp"
+      }
+    },
+    "loose-bracelet": {
+      "id": "loose-bracelet",
+      "slot": "accessory",
+      "thumbnail": "items/loose-bracelet/thumb.webp",
+      "layers": {
+        "main": "items/loose-bracelet/wear-main.webp"
+      }
+    },
+    "loose-sleeve-shirt": {
+      "id": "loose-sleeve-shirt",
+      "slot": "top",
+      "thumbnail": "items/loose-sleeve-shirt/thumb.webp",
+      "layers": {
+        "main": "items/loose-sleeve-shirt/wear-main.webp"
+      }
+    },
+    "mint-windbreaker": {
+      "id": "mint-windbreaker",
+      "slot": "top",
+      "thumbnail": "items/mint-windbreaker/thumb.webp",
+      "layers": {
+        "main": "items/mint-windbreaker/wear-main.webp"
+      }
+    },
+    "navy-cardigan": {
+      "id": "navy-cardigan",
+      "slot": "top",
+      "thumbnail": "items/navy-cardigan/thumb.webp",
+      "layers": {
+        "main": "items/navy-cardigan/wear-main.webp"
+      }
+    },
+    "norigae": {
+      "id": "norigae",
+      "slot": "accessory",
+      "thumbnail": "items/norigae/thumb.webp",
+      "layers": {
+        "main": "items/norigae/wear-main.webp"
+      }
+    },
+    "notebook": {
+      "id": "notebook",
+      "slot": "accessory",
+      "thumbnail": "items/notebook/thumb.webp",
+      "layers": {
+        "main": "items/notebook/wear-main.webp"
+      }
+    },
+    "oven-mitt": {
+      "id": "oven-mitt",
+      "slot": "accessory",
+      "thumbnail": "items/oven-mitt/thumb.webp",
+      "layers": {
+        "main": "items/oven-mitt/wear-main.webp"
+      }
+    },
+    "pajama-pants": {
+      "id": "pajama-pants",
+      "slot": "bottom",
+      "thumbnail": "items/pajama-pants/thumb.webp",
+      "layers": {
+        "main": "items/pajama-pants/wear-main.webp"
+      }
+    },
+    "party-chinos": {
+      "id": "party-chinos",
+      "slot": "bottom",
+      "thumbnail": "items/party-chinos/thumb.webp",
+      "layers": {
+        "main": "items/party-chinos/wear-main.webp"
+      }
+    },
+    "party-hat": {
+      "id": "party-hat",
+      "slot": "accessory",
+      "thumbnail": "items/party-hat/thumb.webp",
+      "layers": {
+        "main": "items/party-hat/wear-main.webp"
+      }
+    },
+    "party-shirt": {
+      "id": "party-shirt",
+      "slot": "top",
+      "thumbnail": "items/party-shirt/thumb.webp",
+      "layers": {
+        "main": "items/party-shirt/wear-main.webp"
+      }
+    },
+    "party-sneakers": {
+      "id": "party-sneakers",
+      "slot": "shoes",
+      "thumbnail": "items/party-sneakers/thumb.webp",
+      "layers": {
+        "main": "items/party-sneakers/wear-main.webp"
+      }
+    },
+    "protective-cargo-pants": {
+      "id": "protective-cargo-pants",
+      "slot": "bottom",
+      "thumbnail": "items/protective-cargo-pants/thumb.webp",
+      "layers": {
+        "main": "items/protective-cargo-pants/wear-main.webp"
+      }
+    },
+    "protective-jacket": {
+      "id": "protective-jacket",
+      "slot": "top",
+      "thumbnail": "items/protective-jacket/thumb.webp",
+      "layers": {
+        "main": "items/protective-jacket/wear-main.webp"
+      }
+    },
+    "rain-boots": {
+      "id": "rain-boots",
+      "slot": "shoes",
+      "thumbnail": "items/rain-boots/thumb.webp",
+      "layers": {
+        "main": "items/rain-boots/wear-main.webp"
+      }
+    },
+    "reflective-band": {
+      "id": "reflective-band",
+      "slot": "accessory",
+      "thumbnail": "items/reflective-band/thumb.webp",
+      "layers": {
+        "main": "items/reflective-band/wear-main.webp"
+      }
+    },
+    "running-shoes": {
+      "id": "running-shoes",
+      "slot": "shoes",
+      "thumbnail": "items/running-shoes/thumb.webp",
+      "layers": {
+        "main": "items/running-shoes/wear-main.webp"
+      }
+    },
+    "safety-goggles": {
+      "id": "safety-goggles",
+      "slot": "accessory",
+      "thumbnail": "items/safety-goggles/thumb.webp",
+      "layers": {
+        "main": "items/safety-goggles/wear-main.webp"
+      }
+    },
+    "sandals": {
+      "id": "sandals",
+      "slot": "shoes",
+      "thumbnail": "items/sandals/thumb.webp",
+      "layers": {
+        "main": "items/sandals/wear-main.webp"
+      }
+    },
+    "scarf": {
+      "id": "scarf",
+      "slot": "accessory",
+      "thumbnail": "items/scarf/thumb.webp",
+      "layers": {
+        "main": "items/scarf/wear-main.webp"
+      }
+    },
+    "school-backpack": {
+      "id": "school-backpack",
+      "slot": "accessory",
+      "thumbnail": "items/school-backpack/thumb.webp",
+      "layers": {
+        "back": "items/school-backpack/wear-back.webp",
+        "front": "items/school-backpack/wear-front.webp"
+      }
+    },
+    "school-cardigan": {
+      "id": "school-cardigan",
+      "slot": "top",
+      "thumbnail": "items/school-cardigan/thumb.webp",
+      "layers": {
+        "main": "items/school-cardigan/wear-main.webp"
+      }
+    },
+    "school-track-jacket": {
+      "id": "school-track-jacket",
+      "slot": "top",
+      "thumbnail": "items/school-track-jacket/thumb.webp",
+      "layers": {
+        "main": "items/school-track-jacket/wear-main.webp"
+      }
+    },
+    "school-track-pants": {
+      "id": "school-track-pants",
+      "slot": "bottom",
+      "thumbnail": "items/school-track-pants/thumb.webp",
+      "layers": {
+        "main": "items/school-track-pants/wear-main.webp"
+      }
+    },
+    "simple-ribbon": {
+      "id": "simple-ribbon",
+      "slot": "accessory",
+      "thumbnail": "items/simple-ribbon/thumb.webp",
+      "layers": {
+        "main": "items/simple-ribbon/wear-main.webp"
+      }
+    },
+    "ski-boots": {
+      "id": "ski-boots",
+      "slot": "shoes",
+      "thumbnail": "items/ski-boots/thumb.webp",
+      "layers": {
+        "main": "items/ski-boots/wear-main.webp"
+      }
+    },
+    "ski-goggles": {
+      "id": "ski-goggles",
+      "slot": "accessory",
+      "thumbnail": "items/ski-goggles/thumb.webp",
+      "layers": {
+        "main": "items/ski-goggles/wear-main.webp"
+      }
+    },
+    "ski-helmet": {
+      "id": "ski-helmet",
+      "slot": "accessory",
+      "thumbnail": "items/ski-helmet/thumb.webp",
+      "layers": {
+        "main": "items/ski-helmet/wear-main.webp"
+      }
+    },
+    "ski-jacket": {
+      "id": "ski-jacket",
+      "slot": "top",
+      "thumbnail": "items/ski-jacket/thumb.webp",
+      "layers": {
+        "main": "items/ski-jacket/wear-main.webp"
+      }
+    },
+    "ski-pants": {
+      "id": "ski-pants",
+      "slot": "bottom",
+      "thumbnail": "items/ski-pants/thumb.webp",
+      "layers": {
+        "main": "items/ski-pants/wear-main.webp"
+      }
+    },
+    "sky-denim": {
+      "id": "sky-denim",
+      "slot": "bottom",
+      "thumbnail": "items/sky-denim/thumb.webp",
+      "layers": {
+        "main": "items/sky-denim/wear-main.webp"
+      }
+    },
+    "sleep-mask": {
+      "id": "sleep-mask",
+      "slot": "accessory",
+      "thumbnail": "items/sleep-mask/thumb.webp",
+      "layers": {
+        "main": "items/sleep-mask/wear-main.webp"
+      }
+    },
+    "sleep-socks": {
+      "id": "sleep-socks",
+      "slot": "shoes",
+      "thumbnail": "items/sleep-socks/thumb.webp",
+      "layers": {
+        "main": "items/sleep-socks/wear-main.webp"
+      }
+    },
+    "slippers": {
+      "id": "slippers",
+      "slot": "shoes",
+      "thumbnail": "items/slippers/thumb.webp",
+      "layers": {
+        "main": "items/slippers/wear-main.webp"
+      }
+    },
+    "sneakers": {
+      "id": "sneakers",
+      "slot": "shoes",
+      "thumbnail": "items/sneakers/thumb.webp",
+      "layers": {
+        "main": "items/sneakers/wear-main.webp"
+      }
+    },
+    "sports-cap": {
+      "id": "sports-cap",
+      "slot": "accessory",
+      "thumbnail": "items/sports-cap/thumb.webp",
+      "layers": {
+        "main": "items/sports-cap/wear-main.webp"
+      }
+    },
+    "sports-hoodie": {
+      "id": "sports-hoodie",
+      "slot": "top",
+      "thumbnail": "items/sports-hoodie/thumb.webp",
+      "layers": {
+        "main": "items/sports-hoodie/wear-main.webp"
+      }
+    },
+    "swim-cap": {
+      "id": "swim-cap",
+      "slot": "accessory",
+      "thumbnail": "items/swim-cap/thumb.webp",
+      "layers": {
+        "main": "items/swim-cap/wear-main.webp"
+      }
+    },
+    "swim-rashguard": {
+      "id": "swim-rashguard",
+      "slot": "top",
+      "thumbnail": "items/swim-rashguard/thumb.webp",
+      "layers": {
+        "main": "items/swim-rashguard/wear-main.webp"
+      }
+    },
+    "swim-shorts": {
+      "id": "swim-shorts",
+      "slot": "bottom",
+      "thumbnail": "items/swim-shorts/thumb.webp",
+      "layers": {
+        "main": "items/swim-shorts/wear-main.webp"
+      }
+    },
+    "towel": {
+      "id": "towel",
+      "slot": "accessory",
+      "thumbnail": "items/towel/thumb.webp",
+      "layers": {
+        "main": "items/towel/wear-main.webp"
+      }
+    },
+    "white-shirt": {
+      "id": "white-shirt",
+      "slot": "top",
+      "thumbnail": "items/white-shirt/thumb.webp",
+      "layers": {
+        "main": "items/white-shirt/wear-main.webp"
+      }
+    },
+    "wool-coat": {
+      "id": "wool-coat",
+      "slot": "top",
+      "thumbnail": "items/wool-coat/thumb.webp",
+      "layers": {
+        "main": "items/wool-coat/wear-main.webp"
+      }
+    },
+    "yellow-raincoat": {
+      "id": "yellow-raincoat",
+      "slot": "top",
+      "thumbnail": "items/yellow-raincoat/thumb.webp",
+      "layers": {
+        "back": "items/yellow-raincoat/wear-back.webp",
+        "main": "items/yellow-raincoat/wear-main.webp"
+      }
+    }
+  }
+}

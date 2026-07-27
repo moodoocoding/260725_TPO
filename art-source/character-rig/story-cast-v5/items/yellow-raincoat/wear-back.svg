@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536" data-rig-id="otter-v1.0.0" data-item-id="yellow-raincoat" data-slot="top" data-layer="back">
+  <defs><linearGradient id="fabric" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#ffd54f"/>
+    <stop offset=".7" stop-color="#ffd54f"/>
+    <stop offset="1" stop-color="#f3a712"/>
+  </linearGradient></defs>
+  <path d="M430 558 Q526 486 622 558 L660 734 Q526 788 392 734 Z" fill="#f3a712" stroke="#18324a" stroke-width="9"/>
+</svg>

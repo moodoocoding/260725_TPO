@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536" data-rig-id="otter-v1.0.0" data-item-id="protective-cargo-pants" data-slot="bottom" data-layer="main">
+  <defs><linearGradient id="fabric" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#58654c"/>
+    <stop offset=".7" stop-color="#58654c"/>
+    <stop offset="1" stop-color="#2c3726"/>
+  </linearGradient></defs>
+  <path d="M382 850 C428 844 477 842 526 842 C575 842 624 844 670 850 C680 887 692 927 700 970 L720 1210 C660 1222 618 1221 574 1208 L550 1018 L526 982 L502 1018 L478 1208 C434 1221 392 1222 332 1210 L352 970 C360 927 372 887 382 850 Z" fill="url(#fabric)" stroke="#18324a" stroke-width="9"/>
+    <path d="M382 850 C428 858 477 862 526 862 C575 862 624 858 670 850 L680 892 C629 903 578 908 526 908 C474 908 423 903 372 892 Z" fill="#2c3726" opacity=".78"/>
+    <path d="M526 908 V982" stroke="#18324a" stroke-width="7"/>
+</svg>

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536" data-rig-id="otter-v1.0.0" data-item-id="sports-cap" data-slot="accessory" data-layer="main">
+  <defs><linearGradient id="fabric" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#f6c84d"/>
+    <stop offset=".7" stop-color="#f6c84d"/>
+    <stop offset="1" stop-color="#b57912"/>
+  </linearGradient></defs>
+  <path d="M346 286 C360 132 692 132 706 286 L670 354 Q526 299 382 354 Z" fill="url(#fabric)" stroke="#18324a" stroke-width="10"/>
+      <path d="M494 318 C608 293 704 313 759 365 C674 384 584 369 505 346 Z" fill="#b57912" stroke="#18324a" stroke-width="8"/>
+      <circle cx="526" cy="171" r="22" fill="#b57912" stroke="#18324a" stroke-width="6"/>
+</svg>

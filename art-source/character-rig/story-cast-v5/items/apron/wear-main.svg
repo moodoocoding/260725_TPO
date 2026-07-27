@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1536" viewBox="0 0 1024 1536" data-rig-id="otter-v1.0.0" data-item-id="apron" data-slot="accessory" data-layer="main">
+  <defs><linearGradient id="fabric" x1="0" y1="0" x2="0" y2="1">
+    <stop offset="0" stop-color="#e9c27e"/>
+    <stop offset=".7" stop-color="#e9c27e"/>
+    <stop offset="1" stop-color="#9f7134"/>
+  </linearGradient></defs>
+  <path d="M412 594 Q464 562 484 560 L526 646 L568 560 Q588 562 640 594 L635 890 Q526 925 417 890 Z" fill="url(#fabric)" stroke="#18324a" stroke-width="9"/>
+      <path d="M526 646 V875" stroke="#9f7134" stroke-width="12"/>
+</svg>
