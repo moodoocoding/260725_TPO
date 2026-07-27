@@ -209,6 +209,7 @@ export default function Home() {
         .filter((item): item is ClothingItem => Boolean(item)),
     [episodeItems, selection],
   );
+  const isOutfitComplete = selectedItems.length === slots.length;
   const completedCount = STORY_EPISODES.filter(
     (episode) => progress.episodes[episode.slug]?.completed,
   ).length;
@@ -241,6 +242,10 @@ export default function Home() {
     window.localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
     window.localStorage.setItem("tpo-best-score", String(bestScore));
   }, [bestScore, progress, progressLoaded]);
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [stage]);
 
   const isEpisodeUnlocked = useCallback(
     (episode: StoryEpisode) => {
@@ -289,6 +294,11 @@ export default function Home() {
 
   const submitOutfit = useCallback(
     async (timedOut = false) => {
+      if (!isOutfitComplete) {
+        setSubmitError("겉옷·하의·신발·소품을 모두 골라 주세요.");
+        return;
+      }
+
       if (
         submitLockRef.current ||
         submitting ||
@@ -361,6 +371,7 @@ export default function Home() {
     },
     [
       activeEpisode,
+      isOutfitComplete,
       selection,
       stage,
       submitting,
@@ -800,6 +811,22 @@ export default function Home() {
                 모두 벗기
               </button>
             </div>
+            <div className="mobile-outfit-preview">
+              <CharacterRenderer
+                selectedItems={selectedItems}
+                mood="ready"
+                episodeSlug={activeEpisode.slug}
+              />
+              <div className="mobile-outfit-preview-copy">
+                <span>현재 코디</span>
+                <strong>{selectedItems.length} / {slots.length}</strong>
+                <small>
+                  {isOutfitComplete
+                    ? "준비 완료! 코디를 확인해 보세요."
+                    : `${slots.length - selectedItems.length}개를 더 골라 주세요.`}
+                </small>
+              </div>
+            </div>
             <div className="slot-tabs" role="group" aria-label="옷 종류">
               {slots.map((slot) => (
                 <button
@@ -861,10 +888,17 @@ export default function Home() {
               <button
                 className="primary-button"
                 onClick={() => void submitOutfit(false)}
-                disabled={submitting}
+                disabled={submitting || !isOutfitComplete}
+                aria-busy={submitting}
               >
-                {submitting ? "채점하는 중…" : "이 코디로 출발!"}
-                {!submitting && <span aria-hidden="true">→</span>}
+                {submitting
+                  ? "채점하는 중…"
+                  : isOutfitComplete
+                    ? "이 코디로 출발!"
+                    : `${slots.length - selectedItems.length}개 더 골라요`}
+                {!submitting && isOutfitComplete && (
+                  <span aria-hidden="true">→</span>
+                )}
               </button>
             </div>
           </div>
@@ -880,7 +914,9 @@ export default function Home() {
       {result && (
         <section className="result-layout">
           <div className="result-hero">
-            <p className="eyebrow">MISSION COMPLETE</p>
+            <p className="eyebrow">
+              {passed ? "MISSION COMPLETE" : "MISSION RETRY"}
+            </p>
             <h1>
               {passed ? activeEpisode.successTitle : activeEpisode.retryTitle}
             </h1>
@@ -889,6 +925,14 @@ export default function Home() {
                 ? "상황의 단서를 잘 읽었어요. 다음 임무가 열렸는지 확인해 봐요."
                 : "빠뜨린 단서를 확인하고 다시 코디하면 더 좋아질 거예요."}
             </p>
+            {!passed && (
+              <button
+                className="secondary-button result-quick-retry"
+                onClick={beginDressing}
+              >
+                다시 코디하기 <span aria-hidden="true">↻</span>
+              </button>
+            )}
             <div className="result-character-wrap">
               <CharacterRenderer
                 selectedItems={selectedItems}
@@ -1031,9 +1075,11 @@ export default function Home() {
               </section>
             )}
             <div className="result-actions">
-              <button className="secondary-button" onClick={beginDressing}>
-                다시 코디하기
-              </button>
+              {passed && (
+                <button className="secondary-button" onClick={beginDressing}>
+                  다시 코디하기
+                </button>
+              )}
               <button
                 className="secondary-button"
                 onClick={() => setStage("story")}
