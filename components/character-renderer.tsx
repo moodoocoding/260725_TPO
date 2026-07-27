@@ -8,10 +8,6 @@ import {
   type ArtMood,
 } from "@/lib/art-manifest";
 import type { ClothingItem } from "@/lib/story-data";
-import {
-  LegacyCssCharacter,
-  type LegacyCharacterMood,
-} from "@/components/legacy-css-character";
 
 type CharacterRendererProps = {
   selectedItems: readonly ClothingItem[];
@@ -26,14 +22,7 @@ type ImageCharacterRendererProps = {
   mood: ArtMood;
   ariaLabel: string;
   priority: boolean;
-  onAssetError: () => void;
   episodeSlug?: string;
-};
-
-const LEGACY_MOOD: Record<ArtMood, LegacyCharacterMood> = {
-  ready: "ready",
-  success: "happy",
-  retry: "thinking",
 };
 
 function getCharacterSummary(
@@ -54,13 +43,31 @@ export function ImageCharacterRenderer({
   mood,
   ariaLabel,
   priority,
-  onAssetError,
   episodeSlug,
 }: ImageCharacterRendererProps) {
+  const [failedLayerIds, setFailedLayerIds] = useState<ReadonlySet<string>>(
+    () => new Set(),
+  );
   const layers = useMemo(
     () => resolveCharacterLayers(mood, selectedItems, episodeSlug),
     [episodeSlug, mood, selectedItems],
   );
+  const visibleLayers = useMemo(
+    () => layers.filter((layer) => !failedLayerIds.has(layer.id)),
+    [failedLayerIds, layers],
+  );
+  const hasCharacterLayer = visibleLayers.some(
+    (layer) => layer.plane === "body",
+  );
+
+  const markLayerFailed = (layerId: string) => {
+    setFailedLayerIds((current) => {
+      if (current.has(layerId)) return current;
+      const next = new Set(current);
+      next.add(layerId);
+      return next;
+    });
+  };
 
   return (
     <div
@@ -70,7 +77,10 @@ export function ImageCharacterRenderer({
       data-renderer="image-v5-animal"
     >
       <div className="image-character-canvas" aria-hidden="true">
-        {layers.map((layer) => (
+        {!hasCharacterLayer && (
+          <span className="animal-character-fallback">🐾</span>
+        )}
+        {visibleLayers.map((layer) => (
           <Image
             key={layer.id}
             className="image-character-layer"
@@ -81,7 +91,7 @@ export function ImageCharacterRenderer({
             unoptimized
             priority={priority}
             draggable={false}
-            onError={onAssetError}
+            onError={() => markLayerFailed(layer.id)}
             style={{ zIndex: layer.zIndex }}
           />
         ))}
@@ -101,27 +111,16 @@ export function CharacterRenderer({
     .map((item) => item.id)
     .sort()
     .join(",")}`;
-  const [failedSignature, setFailedSignature] = useState<string | null>(null);
   const ariaLabel = getCharacterSummary(selectedItems, characterName);
-
-  if (failedSignature === assetSignature) {
-    return (
-      <LegacyCssCharacter
-        selectedItems={selectedItems}
-        mood={LEGACY_MOOD[mood]}
-        ariaLabel={ariaLabel}
-      />
-    );
-  }
 
   return (
     <ImageCharacterRenderer
+      key={assetSignature}
       selectedItems={selectedItems}
       mood={mood}
       ariaLabel={ariaLabel}
       priority={priority}
       episodeSlug={episodeSlug}
-      onAssetError={() => setFailedSignature(assetSignature)}
     />
   );
 }

@@ -1,4 +1,5 @@
 import { scoreOutfit } from "@/lib/scoring";
+import { isElapsedSecondsWithinLimit } from "@/lib/score-request";
 import { getEpisode } from "@/lib/story-data";
 
 type ScoreRequest = {
@@ -21,8 +22,7 @@ export async function POST(request: Request) {
     !Array.isArray(body.selectedItemIds) ||
     body.selectedItemIds.length > 4 ||
     body.selectedItemIds.some((id) => typeof id !== "string") ||
-    typeof body.elapsedSeconds !== "number" ||
-    !Number.isFinite(body.elapsedSeconds)
+    typeof body.elapsedSeconds !== "number"
   ) {
     return Response.json({ error: "코디 정보가 올바르지 않습니다." }, { status: 400 });
   }
@@ -30,6 +30,18 @@ export async function POST(request: Request) {
   const episode = getEpisode(body.scenarioSlug);
   if (!episode) {
     return Response.json({ error: "존재하지 않는 스토리 임무입니다." }, { status: 404 });
+  }
+
+  if (
+    !isElapsedSecondsWithinLimit(
+      body.elapsedSeconds,
+      episode.timeLimitSeconds,
+    )
+  ) {
+    return Response.json(
+      { error: "경과 시간이 올바른 범위를 벗어났습니다." },
+      { status: 400 },
+    );
   }
 
   const availableItemIds = new Set(episode.itemIds);

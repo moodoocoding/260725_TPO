@@ -14,6 +14,14 @@ import {
 } from "@/components/character-renderer";
 import { StoryCutscene } from "@/components/story-cutscene";
 import { getEpisodeBackground } from "@/lib/art-manifest";
+import { getRemainingSeconds } from "@/lib/game-timer";
+import {
+  createEmptyProgress,
+  loadStoryProgress,
+  readStorageNumber,
+  writeStorageValues,
+  type StoryProgress,
+} from "@/lib/progress-storage";
 import type { ScoreResult } from "@/lib/scoring";
 import {
   STORY_FINAL_ENDING,
@@ -49,27 +57,17 @@ type Stage =
   | "chapterOutro";
 
 type Selection = Partial<Record<Slot, string>>;
-type EpisodeProgress = {
-  completed: boolean;
-  stars: number;
-  bestScore: number;
-};
-type StoryProgress = {
-  version: 3;
-  episodes: Record<string, EpisodeProgress>;
-  seenChapterOpenings: string[];
-  seenChapterEndings: string[];
-};
 
 const PROGRESS_KEY = "tpo-story-progress-v3";
 const LEGACY_PROGRESS_KEY = "tpo-story-progress-v2";
 const nowInMilliseconds = () => Date.now();
-const EMPTY_PROGRESS: StoryProgress = {
-  version: 3,
-  episodes: {},
-  seenChapterOpenings: [],
-  seenChapterEndings: [],
-};
+const EMPTY_PROGRESS = createEmptyProgress();
+const STORY_EPISODE_SLUGS = new Set(
+  STORY_EPISODES.map((episode) => episode.slug),
+);
+const STORY_CHAPTER_IDS = new Set(
+  STORY_CHAPTERS.map((chapter) => chapter.id),
+);
 const slots = STORY_SLOTS;
 const firstEpisode = STORY_EPISODES[0];
 const SCORE_LABELS: Array<[keyof ScoreResult["breakdown"], string, number]> = [
@@ -96,55 +94,6 @@ function getConversationLabel(sender: string) {
   return `${trimmedSender}${hasFinalConsonant ? "과" : "와"}의 문자 대화`;
 }
 
-function parseProgress(raw: string | null): StoryProgress {
-  if (!raw) return EMPTY_PROGRESS;
-  try {
-    const parsed = JSON.parse(raw) as Partial<StoryProgress> & {
-      version?: number;
-    };
-    if (
-      ![2, 3].includes(parsed.version ?? 0) ||
-      typeof parsed.episodes !== "object"
-    ) {
-      return EMPTY_PROGRESS;
-    }
-
-    const episodes: Record<string, EpisodeProgress> = {};
-    for (const episode of STORY_EPISODES) {
-      const value = parsed.episodes?.[episode.slug];
-      if (!value || typeof value !== "object") continue;
-      const score = Number(value.bestScore);
-      const stars = Number(value.stars);
-      if (!Number.isFinite(score) || !Number.isFinite(stars)) continue;
-      const bestScore = Math.max(0, Math.min(100, Math.round(score)));
-      const safeStars = Math.max(0, Math.min(3, Math.round(stars)));
-      episodes[episode.slug] = {
-        bestScore,
-        stars: safeStars,
-        completed: bestScore >= 60 && safeStars >= 1,
-      };
-    }
-    const chapterIds = new Set(STORY_CHAPTERS.map((chapter) => chapter.id));
-    const seenChapterOpenings =
-      parsed.version === 3 && Array.isArray(parsed.seenChapterOpenings)
-        ? parsed.seenChapterOpenings.filter((id) => chapterIds.has(id))
-        : [];
-    const seenChapterEndings =
-      parsed.version === 3 && Array.isArray(parsed.seenChapterEndings)
-        ? parsed.seenChapterEndings.filter((id) => chapterIds.has(id))
-        : [];
-
-    return {
-      version: 3,
-      episodes,
-      seenChapterOpenings,
-      seenChapterEndings,
-    };
-  } catch {
-    return EMPTY_PROGRESS;
-  }
-}
-
 function LogoMark() {
   return (
     <span className="logo-mark" aria-hidden="true">
@@ -159,10 +108,12 @@ function AppHeader({
   onHome,
   bestScore,
   homeLabel = "모드 선택으로 이동",
+  notice,
 }: {
   onHome: () => void;
   bestScore: number;
   homeLabel?: string;
+  notice?: string;
 }) {
   return (
     <header className="app-header">
@@ -170,6 +121,11 @@ function AppHeader({
         <LogoMark />
         <span>스타일 구조대</span>
       </button>
+      {notice && (
+        <p className="header-notice" role="status">
+          {notice}
+        </p>
+      )}
       <div className="header-score" aria-label={`전체 최고 점수 ${bestScore}점`}>
         <span aria-hidden="true">★</span>
         <strong>{bestScore}</strong>
@@ -225,6 +181,7 @@ export default function Home() {
   const [activeSlot, setActiveSlot] = useState<Slot>("top");
   const [selection, setSelection] = useState<Selection>({});
   const [timeLeft, setTimeLeft] = useState(firstEpisode.timeLimitSeconds);
+  const [timerStarted, setTimerStarted] = useState(false);
   const [result, setResult] = useState<ScoreResult | null>(null);
   const [submitting, setSubmitting] = useState(false);
   const [submitError, setSubmitError] = useState("");
@@ -232,12 +189,14 @@ export default function Home() {
   const [progress, setProgress] = useState<StoryProgress>(EMPTY_PROGRESS);
   const [legacyBestScore, setLegacyBestScore] = useState(0);
   const [progressLoaded, setProgressLoaded] = useState(false);
+  const [storageWarning, setStorageWarning] = useState("");
   const [reasonRevealed, setReasonRevealed] = useState(false);
   const [transferChoice, setTransferChoice] = useState<string | null>(null);
   const [cutsceneIndex, setCutsceneIndex] = useState(0);
   const startedAtRef = useRef(0);
   const deadlineAtRef = useRef(0);
   const submitLockRef = useRef(false);
+  const timeoutHandledRef = useRef(false);
 
   const activeEpisode =
     getEpisode(activeEpisodeSlug) ?? firstEpisode;
@@ -276,19 +235,31 @@ export default function Home() {
   const transferPassed =
     !episodeLearning ||
     transferChoice === episodeLearning.transfer.correctOptionId;
+  const hasTimedOut =
+    stage === "dress" && timerStarted && timeLeft === 0;
 
   useEffect(() => {
     const syncStoredProgress = window.setTimeout(() => {
-      setProgress(
-        parseProgress(
-          window.localStorage.getItem(PROGRESS_KEY) ??
-            window.localStorage.getItem(LEGACY_PROGRESS_KEY),
-        ),
+      const storedProgress = loadStoryProgress(
+        () => window.localStorage,
+        [PROGRESS_KEY, LEGACY_PROGRESS_KEY],
+        STORY_EPISODE_SLUGS,
+        STORY_CHAPTER_IDS,
       );
-      const oldBest = Number(
-        window.localStorage.getItem("tpo-best-score") || 0,
+      const storedBestScore = readStorageNumber(
+        () => window.localStorage,
+        "tpo-best-score",
       );
-      if (Number.isFinite(oldBest)) setLegacyBestScore(oldBest);
+      setProgress(storedProgress.progress);
+      setLegacyBestScore(storedBestScore.value);
+      if (
+        !storedProgress.storageAvailable ||
+        !storedBestScore.storageAvailable
+      ) {
+        setStorageWarning(
+          "진행 저장을 사용할 수 없어요.",
+        );
+      }
       setProgressLoaded(true);
     }, 0);
     return () => window.clearTimeout(syncStoredProgress);
@@ -296,8 +267,19 @@ export default function Home() {
 
   useEffect(() => {
     if (!progressLoaded) return;
-    window.localStorage.setItem(PROGRESS_KEY, JSON.stringify(progress));
-    window.localStorage.setItem("tpo-best-score", String(bestScore));
+    const saved = writeStorageValues(
+      () => window.localStorage,
+      [
+        [PROGRESS_KEY, JSON.stringify(progress)],
+        ["tpo-best-score", String(bestScore)],
+      ],
+    );
+    if (!saved) {
+      const warningTimer = window.setTimeout(() => {
+        setStorageWarning("진행 저장을 사용할 수 없어요.");
+      }, 0);
+      return () => window.clearTimeout(warningTimer);
+    }
   }, [bestScore, progress, progressLoaded]);
 
   useEffect(() => {
@@ -328,9 +310,11 @@ export default function Home() {
       setTransferChoice(null);
       setActiveSlot("top");
       setTimeLeft(episode.timeLimitSeconds);
+      setTimerStarted(false);
       setCutsceneIndex(0);
       startedAtRef.current = 0;
       deadlineAtRef.current = 0;
+      timeoutHandledRef.current = false;
       setStage(
         progress.seenChapterOpenings.includes(episode.chapterId)
           ? "episodeIntro"
@@ -348,8 +332,10 @@ export default function Home() {
     setTransferChoice(null);
     setActiveSlot("top");
     setTimeLeft(activeEpisode.timeLimitSeconds);
+    setTimerStarted(false);
     startedAtRef.current = 0;
     deadlineAtRef.current = 0;
+    timeoutHandledRef.current = false;
     setStage("dress");
   };
 
@@ -359,24 +345,22 @@ export default function Home() {
     setReasonRevealed(false);
     setTransferChoice(null);
     setTimeLeft(activeEpisode.timeLimitSeconds);
+    setTimerStarted(true);
     startedAtRef.current = nowInMilliseconds();
     deadlineAtRef.current =
       startedAtRef.current + activeEpisode.timeLimitSeconds * 1000;
+    timeoutHandledRef.current = false;
     setStage("dress");
   };
 
   const submitOutfit = useCallback(
     async (timedOut = false) => {
-      if (!isOutfitComplete) {
+      if (!isOutfitComplete && !timedOut) {
         setSubmitError("겉옷·하의·신발·소품을 모두 골라 주세요.");
         return;
       }
 
-      if (
-        submitLockRef.current ||
-        submitting ||
-        stage !== "dress"
-      ) {
+      if (submitLockRef.current || stage !== "dress") {
         return;
       }
       submitLockRef.current = true;
@@ -385,7 +369,7 @@ export default function Home() {
 
       const measuredElapsed = startedAtRef.current
         ? Math.round((nowInMilliseconds() - startedAtRef.current) / 1000)
-        : activeEpisode.timeLimitSeconds - timeLeft;
+        : 0;
       const elapsedSeconds = timedOut
         ? activeEpisode.timeLimitSeconds
         : Math.min(
@@ -448,35 +432,56 @@ export default function Home() {
       isOutfitComplete,
       selection,
       stage,
-      submitting,
-      timeLeft,
     ],
   );
 
   useEffect(() => {
-    if (stage !== "dress") return;
+    if (stage !== "dress" || !timerStarted) return;
     const updateRemainingTime = () => {
       if (!deadlineAtRef.current) return;
-      const remaining = Math.max(
-        0,
-        Math.ceil((deadlineAtRef.current - nowInMilliseconds()) / 1000),
+      const remaining = getRemainingSeconds(
+        deadlineAtRef.current,
+        nowInMilliseconds(),
       );
       setTimeLeft(remaining);
+      if (remaining === 0 && !timeoutHandledRef.current) {
+        timeoutHandledRef.current = true;
+        void submitOutfit(true);
+      }
     };
     updateRemainingTime();
     const timer = window.setInterval(() => {
       updateRemainingTime();
     }, 250);
     return () => window.clearInterval(timer);
-  }, [stage]);
+  }, [stage, submitOutfit, timerStarted]);
 
   const selectItem = (item: ClothingItem) => {
+    if (
+      deadlineAtRef.current > 0 &&
+      nowInMilliseconds() >= deadlineAtRef.current
+    ) {
+      setTimeLeft(0);
+      return;
+    }
     if (!startedAtRef.current) {
       startedAtRef.current = nowInMilliseconds();
       deadlineAtRef.current =
         startedAtRef.current + activeEpisode.timeLimitSeconds * 1000;
+      setTimerStarted(true);
     }
     setSelection((current) => ({ ...current, [item.slot]: item.id }));
+  };
+
+  const clearSelection = () => {
+    if (
+      deadlineAtRef.current > 0 &&
+      nowInMilliseconds() >= deadlineAtRef.current
+    ) {
+      setTimeLeft(0);
+      return;
+    }
+    setSelection({});
   };
 
   const goToModes = () => {
@@ -667,6 +672,7 @@ export default function Home() {
           onHome={() => setStage("welcome")}
           bestScore={bestScore}
           homeLabel="처음 화면으로 이동"
+          notice={storageWarning}
         />
         <section className="mode-content">
           <p className="eyebrow">SELECT MODE</p>
@@ -748,6 +754,7 @@ export default function Home() {
           onHome={() => setStage("story")}
           bestScore={bestScore}
           homeLabel="스토리 맵으로 이동"
+          notice={storageWarning}
         />
         <StoryCutscene
           eyebrow={
@@ -795,7 +802,11 @@ export default function Home() {
   if (stage === "story") {
     return (
       <main className="game-shell story-screen">
-        <AppHeader onHome={goToModes} bestScore={bestScore} />
+        <AppHeader
+          onHome={goToModes}
+          bestScore={bestScore}
+          notice={storageWarning}
+        />
         <section className="story-content">
           <div className="story-heading">
             <div>
@@ -923,6 +934,7 @@ export default function Home() {
           onHome={() => setStage("story")}
           bestScore={bestScore}
           homeLabel="스토리 맵으로 이동"
+          notice={storageWarning}
         />
         <section className="message-layout">
           <div className="mission-copy">
@@ -997,6 +1009,7 @@ export default function Home() {
           <button
             className="back-button compact"
             onClick={() => setStage("messages")}
+            disabled={submitting}
             aria-label="현재 도전을 끝내고 문자 다시 보기"
           >
             ← 도전 끝내기
@@ -1005,7 +1018,14 @@ export default function Home() {
             <small>{wearerName}에게 입히는 중</small>
             <strong>{activeEpisode.title}</strong>
           </div>
-          <div className={`timer ${timeLeft <= 10 ? "timer-danger" : ""}`}>
+          <div
+            className={`timer ${timeLeft <= 10 ? "timer-danger" : ""}`}
+            role="timer"
+            aria-live={timeLeft <= 10 ? "polite" : "off"}
+            aria-label={
+              hasTimedOut ? "제한 시간 종료" : `남은 시간 ${timeLeft}초`
+            }
+          >
             <div
               className="timer-ring"
               style={{ "--progress": `${percentage}%` } as CSSProperties}
@@ -1062,7 +1082,11 @@ export default function Home() {
                 <p className="eyebrow">WARDROBE</p>
                 <h2>{wearerName}의 옷장을 열어요</h2>
               </div>
-              <button className="text-button" onClick={() => setSelection({})}>
+              <button
+                className="text-button"
+                onClick={clearSelection}
+                disabled={submitting || hasTimedOut}
+              >
                 모두 벗기
               </button>
             </div>
@@ -1106,6 +1130,7 @@ export default function Home() {
                       isSelected ? "item-selected" : ""
                     }`}
                     onClick={() => selectItem(item)}
+                    disabled={submitting || hasTimedOut}
                     aria-pressed={isSelected}
                   >
                     <span
@@ -1142,16 +1167,20 @@ export default function Home() {
               </div>
               <button
                 className="primary-button"
-                onClick={() => void submitOutfit(false)}
-                disabled={submitting || !isOutfitComplete}
+                onClick={() => void submitOutfit(hasTimedOut)}
+                disabled={
+                  submitting || (!isOutfitComplete && !hasTimedOut)
+                }
                 aria-busy={submitting}
               >
                 {submitting
                   ? "채점하는 중…"
+                  : hasTimedOut
+                    ? "시간 종료 · 결과 확인"
                   : isOutfitComplete
                     ? "이 코디로 출발!"
                     : `${slots.length - selectedItems.length}개 더 골라요`}
-                {!submitting && isOutfitComplete && (
+                {!submitting && (isOutfitComplete || hasTimedOut) && (
                   <span aria-hidden="true">→</span>
                 )}
               </button>
@@ -1167,7 +1196,11 @@ export default function Home() {
     activeChapter.episodeSlugs.at(-1) === activeEpisode.slug;
   return (
     <main className="game-shell result-screen">
-      <AppHeader onHome={goToModes} bestScore={bestScore} />
+      <AppHeader
+        onHome={goToModes}
+        bestScore={bestScore}
+        notice={storageWarning}
+      />
       {result && (
         <section className="result-layout">
           <div className="result-hero">

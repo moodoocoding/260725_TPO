@@ -205,6 +205,16 @@ p {
   cursor: pointer;
 }
 
+.header-notice {
+  max-width: min(420px, 48vw);
+  margin: 0 auto;
+  color: var(--danger);
+  font-size: 11px;
+  font-weight: 850;
+  line-height: 1.35;
+  text-align: center;
+}
+
 .header-score {
   display: grid;
   grid-template-columns: auto auto;
@@ -441,6 +451,19 @@ p {
 .image-character-canvas {
   position: absolute;
   inset: 0;
+}
+
+.animal-character-fallback {
+  position: absolute;
+  z-index: 20;
+  inset: 18% 12%;
+  display: grid;
+  place-items: center;
+  border: 3px dashed rgba(20, 36, 58, 0.28);
+  border-radius: 44% 44% 36% 36%;
+  color: var(--navy);
+  background: rgba(255, 255, 255, 0.76);
+  font-size: 74px;
 }
 
 .image-character-layer {
@@ -1887,9 +1910,16 @@ p {
     box-shadow 140ms ease;
 }
 
-.item-card:hover {
+.item-card:hover:not(:disabled) {
   border-color: var(--ink);
   transform: translateY(-3px);
+}
+
+.item-card:disabled,
+.back-button:disabled,
+.text-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.58;
 }
 
 .item-card.item-selected {
@@ -2608,6 +2638,11 @@ p {
 
   .brand-button > span:last-child {
     display: none;
+  }
+
+  .header-notice {
+    max-width: 52vw;
+    font-size: 9px;
   }
 
   .welcome-copy {

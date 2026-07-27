@@ -15,6 +15,7 @@
     "art:generate": "node scripts/generate-art-assets.mjs",
     "art:validate": "node scripts/validate-art-assets.mjs",
     "test:art": "node --test tests/art-manifest.test.mjs",
+    "test:logic": "node --experimental-strip-types --test tests/game-timer.test.mjs tests/progress-storage.test.mjs tests/score-request.test.mjs",
     "story:generate": "node scripts/generate-story-catalog.mjs",
     "story:validate": "node --test tests/story-catalog.test.mjs tests/story-narrative.test.mjs tests/tpo-learning.test.mjs",
     "episode1-art:prepare": "node scripts/prepare-episode1-assets.mjs",
@@ -32,7 +33,7 @@
     "story-characters:validate": "node scripts/validate-story-characters.mjs",
     "story-characters:production": "npm run story-characters:generate && npm run story-characters:qa && npm run story-characters:validate",
     "playtest:children": "node scripts/simulate-child-playtest.mjs",
-    "test": "npm run art:validate && npm run test:art && npm run story:validate && npm run story-art:validate && npm run episode1-rig:validate && npm run story-characters:validate && npm run playtest:children && npm run build && npm run build:sites",
+    "test": "npm run art:validate && npm run test:art && npm run test:logic && npm run story:validate && npm run story-art:validate && npm run episode1-rig:validate && npm run story-characters:validate && npm run playtest:children && npm run build && npm run build:sites",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },
   "dependencies": {
