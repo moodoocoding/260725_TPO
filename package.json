@@ -31,7 +31,8 @@
     "story-characters:qa": "node scripts/render-story-character-outfit-qa.mjs",
     "story-characters:validate": "node scripts/validate-story-characters.mjs",
     "story-characters:production": "npm run story-characters:generate && npm run story-characters:qa && npm run story-characters:validate",
-    "test": "npm run art:validate && npm run test:art && npm run story:validate && npm run story-art:validate && npm run episode1-rig:validate && npm run story-characters:validate && npm run build && npm run build:sites",
+    "playtest:children": "node scripts/simulate-child-playtest.mjs",
+    "test": "npm run art:validate && npm run test:art && npm run story:validate && npm run story-art:validate && npm run episode1-rig:validate && npm run story-characters:validate && npm run playtest:children && npm run build && npm run build:sites",
     "lint": "eslint . --ignore-pattern dist --ignore-pattern .next"
   },
   "dependencies": {
